@@ -1,20 +1,7 @@
 {
     "compilerOptions": {
-        "lib": [
-            "ES5"
-        ],
-        "target": "ES5",
-        "module": "ES2015",
-        "strict": true,
-        "typeRoots": [
-            "**/types",
-            "node_modules/@types"
-        ],
-        "outDir": "build",
-        "forceConsistentCasingInFileNames": true,
-        "removeComments": true,
-        "noImplicitAny": false,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true,
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true
     }
 }
