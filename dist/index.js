@@ -1,10 +1,13 @@
+"ui";
+
+
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 628:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*
  * @Author: BATU1579
@@ -93,6 +96,7 @@ logger_1.Record.info("Start running script");
 /***/ 564:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
+"use strict";
 
 
 var __extends = this && this.__extends || function () {
@@ -316,6 +320,7 @@ exports.isConfigInvalidException = isConfigInvalidException;
 /***/ 103:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -374,6 +379,7 @@ exports.init = init;
 /***/ 437:
 /***/ (function(__unused_webpack_module, exports) {
 
+"use strict";
 
 
 var __extends = this && this.__extends || function () {
@@ -1316,6 +1322,554 @@ function defaultFormatter(line, callerName) {
   return "  | at line ".concat(line, ", in <").concat(callerName, ">");
 }
 
+/***/ }),
+
+/***/ 154:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __exportStar = this && this.__exportStar || function (m, exports) {
+  for (var p in m) {
+    if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+  }
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+__exportStar(__webpack_require__(919), exports);
+
+/***/ }),
+
+/***/ 919:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.xyrun = void 0;
+
+var utils_1 = __webpack_require__(4);
+
+var tryTime = 0; // 找到商品详情并过滤数据， 进行数据的查找
+
+function findDom() {
+  console.log('-----find----'); // var list = className("android.view.View").depth(13).find();
+
+  var list = className("android.widget.ImageView").descContains('更多').find();
+
+  if ((list === null || list === void 0 ? void 0 : list.length) === 0) {
+    list = className("android.view.View").descContains('更多').find();
+  }
+
+  console.log('-----list----', list);
+
+  for (var i = 0; i < list.length; i++) {
+    var rect = list[i].boundsInParent();
+
+    try {
+      var text = String(list[i].contentDescription); // console.log('-------------text----------',text)
+
+      var info = (0, utils_1.getInfo)(text);
+
+      if (info && info.title) {
+        (0, utils_1.buildBookSet)(info.title, info);
+      }
+
+      if (i === list.length - 1) {
+        // var scrollDowninfo = scrollDom.scrollForward()
+        var swipeinfo = swipe(500, 448 * 4.5, 500, 100, 1000); // console.log('---------swipeinfo-----------', swipeinfo, text.toString())
+
+        sleep(3000);
+        console.log('---------哎呀，到底啦--------------', text.indexOf('哎呀，到底啦') !== -1);
+
+        if (text.indexOf('哎呀，到底啦') === -1) {
+          findDom();
+        } else {
+          console.log('-----end----');
+        }
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
+} // 获取对应的按钮
+// 抵扣逻辑
+
+
+function handlerDikou() {
+  var list = className("android.view.View").text('立即开启').find();
+  console.log('-----list----', list.length);
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+
+    try {
+      var text = String(list[i].text());
+      console.log('-------------text----------', text);
+      list[i].click();
+      sleep(5000);
+
+      if (i % 4 === 0) {
+        var swipeinfo = swipe(500, 448 * 5, 500, 100, 1000);
+        sleep(2000);
+      } // console.log('-----text----', text)
+
+
+      if (i === list.length - 1) {
+        // var scrollDowninfo = scrollDom.scrollForward()
+        // console.log('---------swipeinfo-----------', swipeinfo, text.toString())
+        // 检查是否到了底部
+        console.log('---------哎呀，到底啦--------------', text.indexOf('哎呀，到底啦') === -1);
+
+        if (text.indexOf('哎呀，到底啦') === -1) {
+          handlerDikou();
+        } else {
+          console.log('-----end----');
+        }
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
+} // 获取对应的按钮
+// 金币推广
+
+
+function handleTuiguang() {
+  for (var i = 0; i < 20; i++) {
+    try {
+      var hotTitle = '【清仓包邮】正版二手 新概念51单片机C语言教程——入门';
+      var listLength = 0;
+      var list = className("android.view.View").textContains('去推广').find();
+      var parent = list[0].parent().parent();
+      var itemBoxHeight = list[0].parent().parent().bounds().height();
+      console.log('-----list----', list.length, '----parent------', parent.bounds());
+
+      while (listLength < list.length) {
+        var swipeinfo;
+
+        for (var i_1 = listLength; i_1 < list.length;) {
+          swipeinfo = swipe(500, itemBoxHeight * 8, 500, 10, 100);
+          sleep(1000);
+          i_1 = i_1 + 6;
+        }
+
+        listLength = list.length;
+
+        if (swipeinfo) {
+          list = className("android.view.View").textContains('去推广').find();
+          console.log('-----list----', list.length);
+        } else {
+          console.log('-----end----');
+        }
+      }
+
+      for (var i_2 = 0; i_2 < list.length; i_2++) {
+        var item = list[i_2];
+        var parent = list[i_2].parent().parent(); // 找到info
+
+        var info = [];
+        parent.children().forEach(function (tv, index) {
+          if (tv.text() != "") {
+            log('-----------------text---------------', index, tv.text()); // 获取标题
+            // var title = tv.text();
+            // var price = 
+
+            info.push(tv.text());
+          }
+        });
+
+        if (info && info.length && info[0]) {
+          // 对比数据
+          var title = info[0];
+
+          if (title.indexOf(hotTitle) !== -1) {
+            // 进入设置页面
+            item.click();
+            sleep(2000);
+            handleSetting();
+            sleep(2000);
+          }
+        }
+      }
+    } catch (error) {
+      console.log('------error----------', error);
+      sleep(1000);
+      continue;
+    }
+  }
+} // 进入设置页面后的操作
+
+
+function handleSetting() {
+  // 设置1000金币的
+  var btn100 = className("android.view.View").text("100人").findOne();
+  btn100.click(); // 确认按钮
+
+  var btn开始推广 = className("android.view.View").text("开始推广").findOne(); // 点击推广按钮
+
+  btn开始推广.click();
+  sleep(1000);
+  var btn确认推广 = className("android.view.View").text("确认推广").findOne();
+  btn确认推广.click();
+  back();
+} // setTimeout(()=>{
+// 	findDom()
+// }, 1000);
+
+
+function xyrun() {
+  launchApp("闲鱼");
+  threads.start(function () {
+    var time = setInterval(function () {}, 1000);
+    var window = floaty.window("<vertical>\n                <button id=\"center\"  margin=\"0\" w=\"60\">\u63A8\u5E7F</button>\n                <button id=\"start\"   margin=\"0\" w=\"60\">\u66DD\u5149</button>\n                <button id=\"dc\"   margin=\"0\" w=\"60\">\u62B5\u6263</button>\n                <button id=\"showData\"   margin=\"0\" w=\"60\">\u6253\u5370\u6570\u636E</button>\n                <button id=\"stop\"    margin=\"0\" w=\"60\" >\u505C\u6B62</button>\n                <button id=\"console\" margin=\"0\" w=\"60\">\u8C03\u8BD5</button>\n                <button id=\"exit\"    margin=\"0\" w=\"60\">\u9000\u51FA</button>\n            </vertical>");
+    window.setPosition(window.getX(), window.getY() + 200);
+    var x = 0,
+        y = 0,
+        windowX = 0,
+        windowY = 0,
+        isRuning = false,
+        showConsole = false,
+        isShowingAll = true;
+    window.center.setOnTouchListener(function (view, event) {
+      switch (event.getAction()) {
+        case event.ACTION_DOWN:
+          x = event.getRawX();
+          y = event.getRawY();
+          windowX = window.getX();
+          windowY = window.getY();
+          break;
+
+        case event.ACTION_MOVE:
+          window.setPosition(windowX + (event.getRawX() - x), windowY + (event.getRawY() - y));
+          break;
+
+        case event.ACTION_UP:
+          if (Math.abs(event.getRawY() - y) < 5 && Math.abs(event.getRawX() - x) < 5) {
+            console.log('--------------推广-------------');
+            isRuning = true;
+            ui.run(function () {
+              window.center.setVisibility('gone');
+              window.stop.setVisibility('visible');
+            });
+            threads.start(function () {
+              // xyInit()
+              handleTuiguang();
+            });
+          }
+
+          break;
+      }
+
+      return true;
+    });
+    window.start.click(function (view) {
+      isRuning = true;
+      ui.run(function () {
+        window.start.visibility = 'gone'; // window.stop.setVisibility('visible');
+      }); // threads.start(function () {
+      // xyInit()
+      // findDom();
+      // });
+    });
+    window.dc.click(function (view) {
+      isRuning = true;
+      ui.run(function () {
+        window.dc.setVisibility('gone');
+        window.stop.setVisibility('visible');
+      });
+      threads.start(function () {
+        handlerDikou();
+      });
+    });
+    window.showData.click(function () {
+      threads.start(function () {
+        var storage = storages.create("book");
+        console.log('---------------', storage.get("bookMaps"));
+      });
+    });
+
+    function stopAuto(view) {
+      isRuning = false;
+      ui.run(function () {
+        window.start.setVisibility('visible');
+        window.dc.setVisibility('visible');
+        window.center.setVisibility('visible');
+        window.stop.setVisibility('gone');
+      });
+      threads.shutDownAll();
+    }
+
+    window.stop.click(stopAuto);
+    window.console.click(function () {
+      threads.start(function () {
+        if (showConsole == false) {
+          showConsole = true;
+          console.show();
+        } else {
+          showConsole = false;
+          console.hide();
+        }
+      });
+    });
+    window.exit.click(function () {
+      // threads.shutDownAll()
+      // clearInterval(time)
+      // exit();
+      // thread.interrupt();
+      window.close();
+    });
+  });
+}
+
+exports.xyrun = xyrun;
+
+/***/ }),
+
+/***/ 4:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.xyInit = exports.buildBookSet = exports.getInfo = void 0; // 开发环境
+// const host = 'http://192.168.3.3:3000'
+
+var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI5ODM2OTg4NjQzY2M0ZDIwMDBiZTQzZDcxZTk3YzU3IiwibmFtZSI6Inlhb3ljIiwidXNlcm5hbWUiOiJ5YW95YyJ9LCJleHAiOjE3MTIxODUzMDMsImlhdCI6MTcwNDk4NTMwM30.1ymfrT0S8xdxjYPUXDPfEqM5IGGUKT9e91DfrkGpP5Y';
+var header = {
+  'Content-Type': 'application/json',
+  'Authorization': "Bearer ".concat(token)
+}; // 线上环境
+
+var host = 'https://xfyapi.xfysj.top';
+var shopNameArr = ["蓝小飞鱼", "tb133799136652"];
+var storage = storages.create("shopName");
+var spreadBookInfoStorage = storages.create("spreadBookInfo");
+var shopIndex = storage.get('shopName') || 0;
+var shopName = shopNameArr[shopIndex];
+
+var getInfo = function getInfo(text) {
+  var regex = /(【[^】]+】)?(.{10,15}\S+)/; // [\s\S]*[曝光]?(\d*)[\s\S]*[浏览]?(\d*)[\s\S]*[想要]?(\d*);  
+
+  var bgRegex = /曝光(\d+)/;
+  var llRegex = /浏览(\d+)/;
+  var xyRegex = /想要(\d+)/;
+  var matches = regex.exec(text);
+  var bgMatches = bgRegex.exec(text);
+  var llMatches = llRegex.exec(text);
+  var xyMatches = xyRegex.exec(text);
+
+  if (matches) {
+    var title = matches[2] || null;
+    var exposure = bgMatches && bgMatches[1] || 0;
+    var views = llMatches && llMatches[1] || 0;
+    var wants = xyMatches && xyMatches[1] || 0;
+    console.log("标题: " + title);
+    console.log("曝光次数: " + exposure);
+    console.log("浏览次数: " + views);
+    console.log("想要次数: " + wants);
+    return {
+      title: title,
+      exposure: exposure,
+      views: views,
+      wants: wants
+    };
+  } else {
+    console.log("未找到匹配的结果", text);
+  }
+
+  return {};
+};
+
+exports.getInfo = getInfo;
+var bookMaps = {}; // 获取所有数据， 用map key进行唯一标识
+
+var buildBookSet = function buildBookSet(key, info) {
+  var bookStorage = storages.create("book");
+
+  if (info && info.title) {
+    if (bookMaps[key]) {
+      Object.assign(bookMaps[key], info);
+    } else {
+      bookMaps[key] = info;
+    }
+  }
+
+  sleep(1000);
+  console.log(shopName); // 对数据进行推送
+
+  var options = {
+    'method': 'PUT',
+    'headers': header,
+    body: JSON.stringify({
+      title: info.title,
+      shopName: shopName,
+      exposure: info.exposure,
+      views: info.views,
+      wants: info.wants
+    })
+  };
+  console.log('info.title', info.title); // var url = "https://baidu.com";
+
+  var res = http.request("".concat(host, "/api/updateByTitle"), options);
+  console.log('------res====', res);
+
+  if (res.statusCode === 401) {
+    // 重现授权
+    console.log('401');
+    (0, exports.xyInit)();
+  } else {
+    console.log('更新成功！');
+  }
+
+  bookStorage.put("bookMaps", bookMaps);
+};
+
+exports.buildBookSet = buildBookSet;
+
+var xyInit = function xyInit() {
+  var options = {
+    'method': 'POST',
+    'headers': header,
+    body: JSON.stringify({
+      "username": "yaoyc",
+      "password": "123456"
+    })
+  }; // var url = "https://baidu.com";
+
+  var res = http.request("".concat(host, "/api/login"), options);
+
+  if (res.statusCode === 200) {
+    var data = res.body.json();
+    console.log('-------data------', data);
+
+    if (data.code === 0 && data.token) {
+      token = data.token;
+      header.Authorization = "Bearer ".concat(token);
+    }
+  }
+};
+
+exports.xyInit = xyInit; // 获取需要推广的数据
+
+var spreadBookInfo = function spreadBookInfo() {
+  var options = {
+    'method': 'GET',
+    'headers': header
+  }; // var url = "https://baidu.com";
+
+  var res = http.request("".concat(host, "/api/spreadBookInfo"), options);
+
+  if (res.statusCode === 401) {
+    // 重现授权
+    console.log('401');
+    (0, exports.xyInit)();
+  } else if (res.statusCode === 200) {
+    console.log('-------e------', res);
+    var data = res.body.json();
+    console.log('-------data------', data);
+    spreadBookInfoStorage.put('spreadBookInfo', data.data[shopName]);
+    console.log('更新成功！');
+  }
+}; // 收集樊登读书信息
+
+
+var getFSBookInfo = function getFSBookInfo(book) {
+  var options = {
+    'method': 'POST',
+    'headers': header,
+    body: JSON.stringify(book)
+  }; // var url = "https://baidu.com";
+
+  var res = http.request("".concat(host, "/api/fsBook"), options);
+
+  if (res.statusCode === 401) {
+    // 重现授权
+    console.log('401');
+    (0, exports.xyInit)();
+  } else if (res.statusCode === 200) {
+    console.log('-------e------', res);
+    var data = res.body.json();
+    console.log('-------data------', data);
+    console.log('更新成功！');
+  }
+}; // 获取当前已经存在的书籍名称
+
+
+var getSavedBooks = function getSavedBooks() {
+  var options = {
+    'method': 'GET',
+    'headers': header
+  }; // var url = "https://baidu.com";
+
+  var res = http.request("".concat(host, "/api/fsBooks?omit=recommend,wonderful,authorIntroduction,explainContent,receive&pageSize=2000"), options);
+
+  if (res.statusCode === 200) {
+    try {
+      var data = res.body.json(); // console.log('-------data------', data.data)
+
+      var names = data.data.list.map(function (item) {
+        return item.title;
+      }); // console.log('-------name------', names)
+
+      return names;
+    } catch (error) {
+      return [];
+    }
+  } else {
+    return [];
+  }
+}; // module.exports = {
+//     getInfo,
+//     buildBookSet,
+//     xyInit,
+//     spreadBookInfo,
+//     getFSBookInfo,
+//     getSavedBooks
+// };
+// var str = `更多
+// 降价
+// 编辑
+// 【​正​版​二​手​包​邮​】​ ​沟​通​的​艺​术​（​插​图​修​订​第​1​4​版​）​：​看​入​人​里​，​
+// ¥
+// 22
+// .82
+// 曝光4
+//  · 
+// 想要0`
+// getInfo(str)
+// xyInit()
+// getSavedBooks()
+
 /***/ })
 
 /******/ 	});
@@ -1350,7 +1904,8 @@ var __webpack_exports__ = {};
 (() => {
 var exports = __webpack_exports__;
 var __webpack_unused_export__;
-
+"ui";
+"use strict";
 
 __webpack_unused_export__ = ({
   value: true
@@ -1358,7 +1913,10 @@ __webpack_unused_export__ = ({
 
 var init_1 = __webpack_require__(103);
 
+var xianyu_1 = __webpack_require__(154);
+
 (0, init_1.init)();
+(0, xianyu_1.xyrun)();
 })();
 
 /******/ })()
