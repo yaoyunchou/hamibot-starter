@@ -1,11 +1,22 @@
 import  { getInfo,buildBookSet, xyInit}  from '../utils';
 
 
-let tryTime = 0;
-
+const findPage = () =>{
+    // 检查页面情况, 找到对应的页面后再执行，寻找页面
+    const myBtn = id("tab_title").className("android.widget.TextView").text("我的").findOne()
+    if(myBtn){
+        myBtn.click()
+    }else{
+        // 退出咸鱼， 并且重新打开
+        back();
+    }
+    
+}
 // 找到商品详情并过滤数据， 进行数据的查找
-function findDom() {
-	console.log('-----find----')
+function findDom(logText) {
+    // 检查页面情况, 找到对应的页面后再执行，寻找页面
+
+
 	
 
 	// var list = className("android.view.View").depth(13).find();
@@ -300,12 +311,53 @@ export function xyrun(){
 export const xyBaseRun = () =>{
     // 打开闲鱼
     launchApp("闲鱼");
+    // 运行对应的收集数据代码
+    findDom();
     // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
-    var qq = '12345678';
-    app.startActivity({
-    action: 'android.intent.action.VIEW',
-    data: 'mqq://im/chat?chat_type=wpa&version=1&src_type=web&uin=' + qq,
-    packageName: 'com.tencent.mobileqq',
-    });
+    threads.start(function () {
+        var time = setInterval(() => {
+	
+        }, 1000);
+
+        var window = floaty.window(
+            `<vertical>
+                <button id="center"  margin="0" w="60">页面信息</button>
+                <button id="start"   margin="0" w="60">曝光</button>
+                <button id="exit"   margin="0" w="60">退出</button>
+            </vertical>` as any
+        );
+        window.setPosition(window.getX(), window.getY() + 200);
+        var x = 0,
+            y = 0,
+            windowX = 0,
+            windowY = 0,
+            isRuning = false,
+            showConsole = false,
+            isShowingAll = true;
+    
+        window.center.setOnTouchListener(function (view, event) {
+            switch (event.getAction()) {
+                case event.ACTION_DOWN:
+                    x = event.getRawX();
+                    y = event.getRawY();
+                    windowX = window.getX();
+                    windowY = window.getY();
+                    break;
+                case event.ACTION_MOVE:
+                    window.setPosition(windowX + (event.getRawX() - x), windowY + (event.getRawY() - y));
+                    break;
+                case event.ACTION_UP:
+                    // 获取当前页面的信息，并且打印出来
+                    console.log('currentActivity', currentActivity())
+
+                    break;
+            }
+            return true;
+        });
+        
+        window.exit.click(function () {
+            window.close();
+        });
+    }); 
 
 }
