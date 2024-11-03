@@ -1,6 +1,3 @@
-"ui";
-
-
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -1372,15 +1369,14 @@ __exportStar(__webpack_require__(919), exports);
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.xyrun = void 0;
+exports.xyBaseRun = exports.xyrun = void 0;
 
-var utils_1 = __webpack_require__(4);
+var utils_1 = __webpack_require__(4); // 找到商品详情并过滤数据， 进行数据的查找
 
-var tryTime = 0; // 找到商品详情并过滤数据， 进行数据的查找
 
 function findDom() {
-  console.log('-----find----'); // var list = className("android.view.View").depth(13).find();
-
+  // 检查页面情况
+  // var list = className("android.view.View").depth(13).find();
   var list = className("android.widget.ImageView").descContains('更多').find();
 
   if ((list === null || list === void 0 ? void 0 : list.length) === 0) {
@@ -1648,7 +1644,54 @@ function xyrun() {
   });
 }
 
-exports.xyrun = xyrun;
+exports.xyrun = xyrun; // 不要视觉了， 直接找页面,然后执行对应的 逻辑
+// 获取曝光
+
+var xyBaseRun = function xyBaseRun() {
+  // 打开闲鱼
+  launchApp("闲鱼"); // 运行对应的收集数据代码
+
+  findDom(); // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
+
+  threads.start(function () {
+    var time = setInterval(function () {}, 1000);
+    var window = floaty.window("<vertical>\n                <button id=\"center\"  margin=\"0\" w=\"60\">\u9875\u9762\u4FE1\u606F</button>\n                <button id=\"start\"   margin=\"0\" w=\"60\">\u66DD\u5149</button>\n                <button id=\"exit\"   margin=\"0\" w=\"60\">\u9000\u51FA</button>\n            </vertical>");
+    window.setPosition(window.getX(), window.getY() + 200);
+    var x = 0,
+        y = 0,
+        windowX = 0,
+        windowY = 0,
+        isRuning = false,
+        showConsole = false,
+        isShowingAll = true;
+    window.center.setOnTouchListener(function (view, event) {
+      switch (event.getAction()) {
+        case event.ACTION_DOWN:
+          x = event.getRawX();
+          y = event.getRawY();
+          windowX = window.getX();
+          windowY = window.getY();
+          break;
+
+        case event.ACTION_MOVE:
+          window.setPosition(windowX + (event.getRawX() - x), windowY + (event.getRawY() - y));
+          break;
+
+        case event.ACTION_UP:
+          // 获取当前页面的信息，并且打印出来
+          console.log('currentActivity', currentActivity());
+          break;
+      }
+
+      return true;
+    });
+    window.exit.click(function () {
+      window.close();
+    });
+  });
+};
+
+exports.xyBaseRun = xyBaseRun;
 
 /***/ }),
 
@@ -1916,7 +1959,7 @@ var init_1 = __webpack_require__(103);
 var xianyu_1 = __webpack_require__(154);
 
 (0, init_1.init)();
-(0, xianyu_1.xyrun)();
+(0, xianyu_1.xyBaseRun)();
 })();
 
 /******/ })()
