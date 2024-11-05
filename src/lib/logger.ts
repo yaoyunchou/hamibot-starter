@@ -1,3 +1,5 @@
+import { createLogs } from "./service";
+
 /*
  * @Author: BATU1579
  * @CreateDate: 2022-02-05 04:00:16
@@ -642,7 +644,7 @@ export class Record {
     private static recLog(scheme: LoggerScheme, config: LogRecordConfig, logMessage?: string): string {
         // TODO(BATU1579): 自定义日志格式
         logMessage = `[${scheme.displayName}] [${getCallerName(config.skipCallerNumber)}]: ${logMessage}`;
-
+        const msg = `[${scheme.displayName}]:${logMessage}`;
         // 向日志堆栈中添加数据
         let needRecord = config.needRecord ?? scheme.needRecord ?? true;
         if (needRecord && scheme.level >= Record.RECORD_LEVEL) {
@@ -652,7 +654,11 @@ export class Record {
         // 输出日志
         let needPrint = config.needPrint ?? scheme.needPrint ?? true;
         if (needPrint && scheme.level >= Record.DISPLAY_LEVEL) {
+            // console.log('logMessage---', logMessage, scheme);
+
+            createLogs('闲鱼', msg);
             scheme.logFunction(logMessage);
+
         }
 
         return logMessage;
