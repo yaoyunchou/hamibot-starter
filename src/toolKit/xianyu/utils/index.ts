@@ -1,3 +1,28 @@
+/*
+ * @Author: yaoyc yaoyunchou@bananain.com
+ * @Date: 2024-11-04 10:54:46
+ * @LastEditors: yaoyc yaoyunchou@bananain.com
+ * @LastEditTime: 2024-11-05 12:22:10
+ * @FilePath: \hamibot202041101\src\toolKit\xianyu\utils\index.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+// 检查APP是否打开
+// export function isAppOpen() {
+//     // 获取当前页面的包名
+//     const name = currentPackage();
+//     console.log('当前页面的包名', name)
+//     // currentPackage()
+    
+// }
+
+// 获取正在运行的APP列表（可能需要根据Hamibot版本和设备情况进行调整）
+function getRunningApps() {
+    // 这里使用Hamibot的特定方法来获取正在运行的APP信息，实际实现可能因版本而异
+    return device.getRunningApps(); 
+}
+
+
+
 // 开发环境
 // const host = 'http://192.168.3.3:3000'
 let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI5ODM2OTg4NjQzY2M0ZDIwMDBiZTQzZDcxZTk3YzU3IiwibmFtZSI6Inlhb3ljIiwidXNlcm5hbWUiOiJ5YW95YyJ9LCJleHAiOjE3MTIxODUzMDMsImlhdCI6MTcwNDk4NTMwM30.1ymfrT0S8xdxjYPUXDPfEqM5IGGUKT9e91DfrkGpP5Y'

@@ -1,5 +1,5 @@
+import { Record } from '../../../lib/logger';
 import  { getInfo,buildBookSet, xyInit}  from '../utils';
-
 
 const findPage = () =>{
     // 检查页面情况, 找到对应的页面后再执行，寻找页面
@@ -7,15 +7,16 @@ const findPage = () =>{
     if(myBtn){
         myBtn.click()
     }else{
-        // 退出咸鱼， 并且重新打开
-        back();
+        // // 退出咸鱼， 并且重新打开
+        // back();
     }
     
 }
 // 找到商品详情并过滤数据， 进行数据的查找
-function findDom(logText) {
+function findDom(logText?:any) {
     // 检查页面情况, 找到对应的页面后再执行，寻找页面
-
+    findPage()
+    return
 
 	
 
@@ -24,7 +25,7 @@ function findDom(logText) {
     if(list?.length === 0){
         list = className("android.view.View").descContains('更多').find();
     }
-	console.log('-----list----', list)
+    Record.info('-----list----', list)
 
 	for(let i = 0; i < list.length; i++) {
 		var rect =  list[i].boundsInParent()
@@ -310,9 +311,9 @@ export function xyrun(){
 // 获取曝光
 export const xyBaseRun = () =>{
     // 打开闲鱼
-    launchApp("闲鱼");
+    // launchApp("闲鱼");
     // 运行对应的收集数据代码
-    findDom();
+    // findDom();
     // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
     threads.start(function () {
         var time = setInterval(() => {
@@ -348,8 +349,11 @@ export const xyBaseRun = () =>{
                     break;
                 case event.ACTION_UP:
                     // 获取当前页面的信息，并且打印出来
-                    console.log('currentActivity', currentActivity())
-
+                    // Record.info('currentActivity', currentActivity())
+                    // const name = currentPackage();
+                    // //
+                    // Record.info('currentPackage', name)
+                    Record.info('currentPackage', 'name')
                     break;
             }
             return true;
@@ -357,6 +361,13 @@ export const xyBaseRun = () =>{
         
         window.exit.click(function () {
             window.close();
+        });
+        window.start.click(function () {
+           try {
+            app.startActivity('com.taobao.idlefish.webview.WebHybridActivity');
+           } catch (error) {
+               Record.error('error', error)
+           }
         });
     }); 
 

@@ -5,3 +5,4 @@ regex.md
 index.dts
 *.code-workspace
 dist
+dist/*

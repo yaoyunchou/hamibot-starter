@@ -339,8 +339,12 @@ var global_1 = __webpack_require__(628);
 
 var exception_1 = __webpack_require__(564);
 
+var service_1 = __webpack_require__(124);
+
 function init() {
-  // check accessibility permission
+  // 初始化服务器的token
+  (0, service_1.xyLogin)(); // check accessibility permission
+
   if (auto.service === null) {
     if (!confirm('Please enable accessibility permission')) {
       throw new exception_1.PermissionException("Accessibility permission obtaining failure.");
@@ -374,7 +378,7 @@ exports.init = init;
 /***/ }),
 
 /***/ 437:
-/***/ (function(__unused_webpack_module, exports) {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -421,6 +425,8 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.sendLog = exports.sendMessage = exports.setToken = exports.Record = exports.getStackTrace = exports.getRawStackTrace = exports.getCallerName = exports.LOG_STACK = exports.LoggerSchemes = exports.LogLevel = void 0;
+
+var service_1 = __webpack_require__(124);
 /*
  * @Author: BATU1579
  * @CreateDate: 2022-02-05 04:00:16
@@ -429,6 +435,7 @@ exports.sendLog = exports.sendMessage = exports.setToken = exports.Record = expo
  * @FilePath: \\src\\lib\\logger.ts
  * @Description: 存放关于日志和调试信息的预制方法。
  */
+
 
 var FrameCollection =
 /** @class */
@@ -1106,7 +1113,8 @@ function () {
     var _a, _b, _c, _d; // TODO(BATU1579): 自定义日志格式
 
 
-    logMessage = "[".concat(scheme.displayName, "] [").concat(getCallerName(config.skipCallerNumber), "]: ").concat(logMessage); // 向日志堆栈中添加数据
+    logMessage = "[".concat(scheme.displayName, "] [").concat(getCallerName(config.skipCallerNumber), "]: ").concat(logMessage);
+    var msg = "[".concat(scheme.displayName, "]:").concat(logMessage); // 向日志堆栈中添加数据
 
     var needRecord = (_b = (_a = config.needRecord) !== null && _a !== void 0 ? _a : scheme.needRecord) !== null && _b !== void 0 ? _b : true;
 
@@ -1118,6 +1126,8 @@ function () {
     var needPrint = (_d = (_c = config.needPrint) !== null && _c !== void 0 ? _c : scheme.needPrint) !== null && _d !== void 0 ? _d : true;
 
     if (needPrint && scheme.level >= Record.DISPLAY_LEVEL) {
+      // console.log('logMessage---', logMessage, scheme);
+      (0, service_1.createLogs)('闲鱼', msg);
       scheme.logFunction(logMessage);
     }
 
@@ -1321,6 +1331,125 @@ function defaultFormatter(line, callerName) {
 
 /***/ }),
 
+/***/ 124:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+/*
+ * @Author: yaoyc yaoyunchou@bananain.com
+ * @Date: 2024-11-04 19:02:19
+ * @LastEditors: yaoyc yaoyunchou@bananain.com
+ * @LastEditTime: 2024-11-05 12:25:20
+ * @FilePath: \hamibot202041101\src\lib\service.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+// login
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.createLogs = exports.xyLogin = exports.setToken = exports.getNestToken = exports.getToken = void 0;
+
+var logger_1 = __webpack_require__(437);
+
+var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI5ODM2OTg4NjQzY2M0ZDIwMDBiZTQzZDcxZTk3YzU3IiwibmFtZSI6Inlhb3ljIiwidXNlcm5hbWUiOiJ5YW95YyJ9LCJleHAiOjE3MTIxODUzMDMsImlhdCI6MTcwNDk4NTMwM30.1ymfrT0S8xdxjYPUXDPfEqM5IGGUKT9e91DfrkGpP5Y';
+var access_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inlhb3l1bmNob3UiLCJzdWIiOjEsImlhdCI6MTczMDc3MTc1MCwiZXhwIjoxNzMwODU4MTUwfQ.47PjS1P9r9NYF1r94xtqPPSI3cQJgHrNl0kQKtGPHeY";
+var header = {
+  'Content-Type': 'application/json',
+  'Authorization': "Bearer ".concat(token)
+};
+var nestHeader = {
+  'Content-Type': 'application/json',
+  'Authorization': "Bearer ".concat(access_token)
+}; // 线上环境
+
+var host = 'https://xfyapi.xfysj.top';
+var nestHost = 'https://nestapi.zeabur.app';
+
+var getToken = function getToken() {
+  return header;
+};
+
+exports.getToken = getToken;
+
+var getNestToken = function getNestToken() {
+  return nestHeader;
+};
+
+exports.getNestToken = getNestToken;
+
+var setToken = function setToken(token) {
+  header.Authorization = "Bearer ".concat(token);
+};
+
+exports.setToken = setToken;
+
+var xyLogin = function xyLogin() {
+  var options = {
+    'method': 'POST',
+    'headers': header,
+    body: JSON.stringify({
+      "username": "yaoyunchou",
+      "password": "123456"
+    })
+  }; // var url = "https://baidu.com";
+
+  var res = http.request("".concat(host, "/api/login"), options);
+
+  if (res.statusCode === 200) {
+    var data = res.body.json();
+
+    if (data.code === 0 && data.token) {
+      token = data.token;
+      header.Authorization = "Bearer ".concat(token);
+    }
+  }
+
+  var options = {
+    'method': 'POST',
+    'headers': header,
+    body: JSON.stringify({
+      "username": "yaoyunchou",
+      "password": "123456"
+    })
+  }; // var url = "https://baidu.com";
+
+  var res = http.request("".concat(nestHost, "/api/v1/auth/signin"), options);
+
+  if (res.statusCode === 200 || res.statusCode === 201) {
+    var data = res.body.json();
+
+    if (data) {
+      access_token = data.access_token;
+    }
+  }
+};
+
+exports.xyLogin = xyLogin;
+
+var createLogs = function createLogs(name, data) {
+  try {
+    var options = {
+      'method': 'POST',
+      'headers': nestHeader,
+      body: JSON.stringify({
+        "msg": JSON.stringify(data),
+        name: name,
+        appName: 'hamibot',
+        appId: 'b9836988643cc4d200be43d71e97c57'
+      })
+    };
+    var res = http.request("".concat(nestHost, "/api/v1/logs"), options);
+  } catch (error) {
+    logger_1.Record.error('createLogs error', error);
+  }
+};
+
+exports.createLogs = createLogs;
+
+/***/ }),
+
 /***/ 154:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -1371,19 +1500,34 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.xyBaseRun = exports.xyrun = void 0;
 
-var utils_1 = __webpack_require__(4); // 找到商品详情并过滤数据， 进行数据的查找
+var logger_1 = __webpack_require__(437);
+
+var utils_1 = __webpack_require__(407);
+
+var findPage = function findPage() {
+  // 检查页面情况, 找到对应的页面后再执行，寻找页面
+  var myBtn = id("tab_title").className("android.widget.TextView").text("我的").findOne();
+
+  if (myBtn) {
+    myBtn.click();
+  } else {// // 退出咸鱼， 并且重新打开
+    // back();
+  }
+}; // 找到商品详情并过滤数据， 进行数据的查找
 
 
-function findDom() {
-  // 检查页面情况
-  // var list = className("android.view.View").depth(13).find();
+function findDom(logText) {
+  // 检查页面情况, 找到对应的页面后再执行，寻找页面
+  findPage();
+  return; // var list = className("android.view.View").depth(13).find();
+
   var list = className("android.widget.ImageView").descContains('更多').find();
 
   if ((list === null || list === void 0 ? void 0 : list.length) === 0) {
     list = className("android.view.View").descContains('更多').find();
   }
 
-  console.log('-----list----', list);
+  logger_1.Record.info('-----list----', list);
 
   for (var i = 0; i < list.length; i++) {
     var rect = list[i].boundsInParent();
@@ -1649,10 +1793,10 @@ exports.xyrun = xyrun; // 不要视觉了， 直接找页面,然后执行对应�
 
 var xyBaseRun = function xyBaseRun() {
   // 打开闲鱼
-  launchApp("闲鱼"); // 运行对应的收集数据代码
-
-  findDom(); // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
-
+  // launchApp("闲鱼");
+  // 运行对应的收集数据代码
+  // findDom();
+  // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
   threads.start(function () {
     var time = setInterval(function () {}, 1000);
     var window = floaty.window("<vertical>\n                <button id=\"center\"  margin=\"0\" w=\"60\">\u9875\u9762\u4FE1\u606F</button>\n                <button id=\"start\"   margin=\"0\" w=\"60\">\u66DD\u5149</button>\n                <button id=\"exit\"   margin=\"0\" w=\"60\">\u9000\u51FA</button>\n            </vertical>");
@@ -1679,7 +1823,11 @@ var xyBaseRun = function xyBaseRun() {
 
         case event.ACTION_UP:
           // 获取当前页面的信息，并且打印出来
-          console.log('currentActivity', currentActivity());
+          // Record.info('currentActivity', currentActivity())
+          // const name = currentPackage();
+          // //
+          // Record.info('currentPackage', name)
+          logger_1.Record.info('currentPackage', 'name');
           break;
       }
 
@@ -1688,6 +1836,13 @@ var xyBaseRun = function xyBaseRun() {
     window.exit.click(function () {
       window.close();
     });
+    window.start.click(function () {
+      try {
+        app.startActivity('com.taobao.idlefish.webview.WebHybridActivity');
+      } catch (error) {
+        logger_1.Record.error('error', error);
+      }
+    });
   });
 };
 
@@ -1695,17 +1850,38 @@ exports.xyBaseRun = xyBaseRun;
 
 /***/ }),
 
-/***/ 4:
+/***/ 407:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 
+/*
+ * @Author: yaoyc yaoyunchou@bananain.com
+ * @Date: 2024-11-04 10:54:46
+ * @LastEditors: yaoyc yaoyunchou@bananain.com
+ * @LastEditTime: 2024-11-05 12:22:10
+ * @FilePath: \hamibot202041101\src\toolKit\xianyu\utils\index.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+// 检查APP是否打开
+// export function isAppOpen() {
+//     // 获取当前页面的包名
+//     const name = currentPackage();
+//     console.log('当前页面的包名', name)
+//     // currentPackage()
 
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.xyInit = exports.buildBookSet = exports.getInfo = void 0; // 开发环境
+exports.xyInit = exports.buildBookSet = exports.getInfo = void 0; // }
+// 获取正在运行的APP列表（可能需要根据Hamibot版本和设备情况进行调整）
+
+function getRunningApps() {
+  // 这里使用Hamibot的特定方法来获取正在运行的APP信息，实际实现可能因版本而异
+  return device.getRunningApps();
+} // 开发环境
 // const host = 'http://192.168.3.3:3000'
+
 
 var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI5ODM2OTg4NjQzY2M0ZDIwMDBiZTQzZDcxZTk3YzU3IiwibmFtZSI6Inlhb3ljIiwidXNlcm5hbWUiOiJ5YW95YyJ9LCJleHAiOjE3MTIxODUzMDMsImlhdCI6MTcwNDk4NTMwM30.1ymfrT0S8xdxjYPUXDPfEqM5IGGUKT9e91DfrkGpP5Y';
 var header = {

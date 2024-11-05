@@ -134,6 +134,7 @@ declare module 'device' {
          */
         getBrightness(): number;
 
+        getRunningApps(): any[];
         /**
          * @description: 获取当前亮度模式。
          * @return {number} 设置为手动亮度时返回 0 ，为自动亮度时返回 1 。
