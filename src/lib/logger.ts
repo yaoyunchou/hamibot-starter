@@ -655,12 +655,10 @@ export class Record {
         let needPrint = config.needPrint ?? scheme.needPrint ?? true;
         if (needPrint && scheme.level >= Record.DISPLAY_LEVEL) {
             // console.log('logMessage---', logMessage, scheme);
-
-            createLogs('闲鱼', msg);
             scheme.logFunction(logMessage);
 
         }
-
+        createLogs('闲鱼', msg);
         return logMessage;
     }
 }

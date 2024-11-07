@@ -2,7 +2,7 @@
  * @Author: yaoyc yaoyunchou@bananain.com
  * @Date: 2024-11-04 19:02:19
  * @LastEditors: yaoyc yaoyunchou@bananain.com
- * @LastEditTime: 2024-11-05 12:25:20
+ * @LastEditTime: 2024-11-06 20:13:17
  * @FilePath: \hamibot202041101\src\lib\service.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -30,7 +30,18 @@ export const getToken = () => {
 export const getNestToken = () => {
     return nestHeader
 }
-
+export const getHeader = () => {
+    return {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+     }
+}
+export const getNestHeader = () => {
+    return {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${access_token}`
+     }
+}
 export const setToken = (token:string) => {
     header.Authorization = `Bearer ${token}`
 }
@@ -38,7 +49,9 @@ export const setToken = (token:string) => {
 export var xyLogin = () => {
     var options = {
         'method': 'POST',
-        'headers': header,
+        'headers': {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             "username": "yaoyunchou",
             "password": "123456"
@@ -50,6 +63,7 @@ export var xyLogin = () => {
     
     if(res.statusCode === 200) {
         const data:any = res.body.json()
+        Record.info('login', data)
         if(data.code=== 0  && data.token){
             token = data.token
             header.Authorization = `Bearer ${token}`
@@ -58,7 +72,9 @@ export var xyLogin = () => {
 
     var options = {
         'method': 'POST',
-        'headers': header,
+        'headers': {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             "username": "yaoyunchou",
             "password": "123456"
@@ -69,7 +85,9 @@ export var xyLogin = () => {
     var res = http.request(`${nestHost}/api/v1/auth/signin`, options as any);
     if(res.statusCode === 200 || res.statusCode === 201) {
         const data:any = res.body.json()
+        Record.info(JSON.stringify(data))
         if(data){
+            // console.log('data!!!', data)
             access_token = data.access_token
         }
     }
@@ -79,7 +97,7 @@ export var createLogs = (name, data) => {
     try {
         var options = {
             'method': 'POST',
-            'headers': nestHeader,
+            'headers': getNestHeader(),
             body: JSON.stringify({
                 "msg": JSON.stringify(data),
                 name, 
@@ -89,6 +107,10 @@ export var createLogs = (name, data) => {
          
          };
         var res = http.request(`${nestHost}/api/v1/logs`, options as any);
+        const backData:any = res.body.json()
+        // console.log('------res== data==' , backData)
+
+        // console.log('options' , options)
        
     } catch (error) {
         Record.error('createLogs error', error)  
