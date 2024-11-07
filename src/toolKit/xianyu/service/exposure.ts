@@ -50,6 +50,7 @@ export function findDom() {
 function handlerDikou() {
 	var list = className("android.view.View").text('立即开启').find();
     console.log('-----list----', list.length)
+    
 	for(let i = 0; i < list.length; i++) {
 		var item =  list[i]
 		try {
