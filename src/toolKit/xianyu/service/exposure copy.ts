@@ -1,22 +1,31 @@
 import { Record } from '../../../lib/logger';
 import  { getInfo,buildBookSet, xyInit}  from '../utils';
-import { runInfo, setRunInfo } from './base';
 
+export enum PageType {
+    'home'="android.widget.RelativeLayout",
+    'goldCoin'="com.taobao.idlefish.webview.WebHybridActivity",
+    "product"='com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity'
+}
+
+// 通过页面名称找到对应的页面
 
 // 找到商品详情并过滤数据， 进行数据的查找
-export function findDom() {
-    console.log('-----真的进来了！----')
+function findDom(logText?:any) {
+    // 检查页面情况, 找到对应的页面后再执行，寻找页面
+    // findPage('home', logText)
+    return
+
+	
+
 	// var list = className("android.view.View").depth(13).find();
-    sleep(2000)
 	var list = className("android.widget.ImageView").descContains('更多').find();
     if(list?.length === 0){
         list = className("android.view.View").descContains('更多').find();
     }
-    Record.info(`list: ${list.length}`)
+    // Record.info('-----list----', list)
 
 	for(let i = 0; i < list.length; i++) {
 		var rect =  list[i].boundsInParent()
-        setRunInfo(`第${i}个页面获取`);
 		try {
 			var text = String(list[i].contentDescription);
 
@@ -28,14 +37,14 @@ export function findDom() {
 		
 			if(i === list.length -1){
 				// var scrollDowninfo = scrollDom.scrollForward()
-				const swipeinfo = swipe(500, 448 * 5, 500, 100,1000)
+				const swipeinfo = swipe(500, 448 * 4.5, 500, 100,1000)
 				// console.log('---------swipeinfo-----------', swipeinfo, text.toString())
 				sleep(3000)
 				console.log('---------哎呀，到底啦--------------', text.indexOf('哎呀，到底啦')!== -1)
 				if(text.indexOf('哎呀，到底啦')  === -1){
 					findDom()
 				}else{
-                    Record.info('-----end----')
+					console.log('-----end----')
 				}
 			}
 		} catch (error) {
@@ -172,3 +181,94 @@ function handleSetting() {
 
 // 不要视觉了， 直接找页面,然后执行对应的 逻辑
 
+// 获取曝光
+export const xyBaseRun = () =>{
+    // 打开闲鱼
+    launchApp("闲鱼");
+    // 运行对应的收集数据代码
+    // findDom();
+    // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
+
+    threads.start(function () {
+        let runLog = '执行闲鱼任务'
+        var window = floaty.window(
+            `<vertical>
+                <button id="center"  margin="0" w="60">页面信息</button>
+                <button id="start"  margin="0" w="60">尝试</button>
+        
+                <button id="exit"   margin="0" w="60">退出</button>
+                <text id="runLog"  padding="10 5 10 5" bg="#ff0000" w="300" h="auto" text="Hello" />
+            </vertical>` as any
+        );
+        window.setPosition(window.getX(), window.getY() + 200);
+           var x = 0,
+            y = 0,
+            windowX = 0,
+            windowY = 0,
+            isRuning = false,
+            showConsole = false,
+            isShowingAll = true;
+    
+        window.center.setOnTouchListener(function (view, event) {
+            switch (event.getAction()) {
+                case event.ACTION_DOWN:
+                    x = event.getRawX();
+                    y = event.getRawY();
+                    windowX = window.getX();
+                    windowY = window.getY();
+                    break;
+                case event.ACTION_MOVE:
+                    window.setPosition(windowX + (event.getRawX() - x), windowY + (event.getRawY() - y));
+                    break;
+                case event.ACTION_UP:
+                    // 获取当前页面的信息，并且打印出来
+                    try {
+                        Record.info(`currentActivity: ${currentActivity()}`)
+                        // console.log('currentActivity', currentActivity())
+                        const name = currentPackage();
+                        Record.info(`currentPackage: ${name}`)
+                    } catch (error) {
+                        Record.error(error?.message)
+                    }
+                   
+                    break;
+            }
+            return true;
+        });
+        
+        window.exit.click(function () {
+            window.close();
+        });
+        window.start.click(function () {
+           try {
+            
+            // const packageName = 'com.taobao.idlefish';
+            // const activityName = 'com.taobao.idlefish.webview.WebHybridActivity'
+            // const activityName = 'WebHybridActivity'
+            // app.openAppSetting(packageName);//打开app的详细信息
+            const myBtn = id("tab_title").className("android.widget.TextView").text("我的").findOne()
+            console.log('-----myBtn----', myBtn)
+            if(myBtn){
+                myBtn.parent().parent().parent().click()
+            }else{
+                // 多次退出， 希望能退出闲鱼
+                back();
+            }
+           } catch (error) {
+               Record.error(error?.message)
+           }
+        });
+
+        var time = setInterval(() => {
+            if(window && window.runLog){
+                ui.run(function () {
+                 window.runLog.setText(runLog);   
+                })
+            }
+        }, 2000);
+        // 执行获取商品信息的逻辑
+        findDom(runLog)
+       
+    }); 
+
+}

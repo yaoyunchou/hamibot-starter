@@ -9,7 +9,7 @@
  */
 import {} from "./global";
 import { init } from "./lib/init";
-import { xyrun, xyBaseRun } from "./toolKit/xianyu";
+import { xyBaseRun } from "./toolKit/xianyu";
 init();
 
 xyBaseRun();
