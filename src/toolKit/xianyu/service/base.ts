@@ -190,10 +190,14 @@ export const xyBaseRun = () =>{
         }, 2000);
         // 初始化
         initRunInfo(window)
-        // 执行获取商品信息的逻辑
+        // 进入获取金币页面
+        findPage('goldCoin')
+        // 执行获取金币的逻辑
+        
+        // 进入商品详情页面
         findPage('product')
         // 执行曝光逻辑
-        findDom()
+        // findDom()
 
         // 到达金币页面执行金币逻辑
 
