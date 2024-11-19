@@ -1,7 +1,8 @@
 import { Record } from "../../../lib/logger";
+import { coinExchange } from "./getGold";
 import { findDom } from "./exposure";
 
-const APPNAME = 'com.taobao.idlefish'
+export const APPNAME = 'com.taobao.idlefish'
 
 export enum PageType {
     'home'="com.taobao.idlefish.maincontainer.activity.MainActivity",
@@ -32,7 +33,7 @@ export const setRunInfo = (log:string) =>{
 }
 
 // 通过页面名称找到对应的页面
-const findPage = (pageName:string) =>{
+export const findPage = (pageName:string) =>{
     setRunInfo('findPage');
     // 当前页面的信息
     const name = currentPackage();
@@ -52,6 +53,51 @@ const findPage = (pageName:string) =>{
         case 'home':
             break;
         case 'goldCoin':
+            if(activity === PageType.goldCoin){
+                
+                console.log('进入金币页面了！！！')
+                setRunInfo('进入金币页面')
+            }else {
+                // 默认是在主页进行路径的查找
+                if(activity === PageType.home){
+                    console.log('-----PageType.home----')
+
+                    // 找到对应的商品
+                    const myBtn = className("android.widget.FrameLayout").descContains("我的").findOne()
+               
+                    if(myBtn){
+                        myBtn.click()
+                    }
+                    sleep(2000)
+                    //  找到金币入口
+                    const goldButtons =  className("android.view.View").clickable(true).depth(12).find()
+
+                    console.log('-----goldButtons----', goldButtons.length)
+                    for(let i = 0; i < goldButtons.length; i++){
+                        const btn = goldButtons[i]
+                        const react = btn.bounds()
+                        console.log('-----btn----', react.left, react.top, react.right, react.bottom)
+                        console.log('-----btn-children---', btn.childCount())
+                        // 找到后进行点击进入领取金币页面
+                        if(react.left === 23 && react.right ===435){
+                            btn.click()
+                            Record.info('进入金币页面')
+                            setRunInfo('进入金币页面')
+                            sleep(1000)
+                            return;
+                        }
+                    }
+                    // 如果没有命中则再次执行定位页面逻辑
+                    back();
+                    sleep(1000)
+                    findPage(pageName)
+                    // findDom(log)
+                }else{
+                    back();
+                    sleep(1000)
+                    findPage(pageName)
+                }
+            }
             break;
         case 'product':
             if(activity === PageType.product){
@@ -116,9 +162,13 @@ export const xyBaseRun = () =>{
     // 运行对应的收集数据代码
     // findDom();
     // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
+    var time = setInterval(() => {
 
+    }, 2000);
     threads.start(function () {
-        let runLog = '执行闲鱼任务'
+        var time = setInterval(() => {
+           
+        }, 2000);
         var window = floaty.window(
             `<vertical>
                 <button id="center"  margin="0" w="60">页面信息</button>
@@ -151,10 +201,10 @@ export const xyBaseRun = () =>{
                 case event.ACTION_UP:
                     // 获取当前页面的信息，并且打印出来
                     try {
-                        Record.info(`currentActivity: ${currentActivity()}`)
+                        // Record.info(`currentActivity: ${currentActivity()}`)
                         // console.log('currentActivity', currentActivity())
-                        const name = currentPackage();
-                        Record.info(`currentPackage: ${name}`)
+                        // const name = currentPackage();
+                        // Record.info(`currentPackage: ${name}`)
                     } catch (error) {
                         Record.error(error?.message)
                     }
@@ -174,28 +224,23 @@ export const xyBaseRun = () =>{
             // const activityName = 'com.taobao.idlefish.webview.WebHybridActivity'
             // const activityName = 'WebHybridActivity'
             // app.openAppSetting(packageName);//打开app的详细信息
-          
+            const mainPopup = className("android.view.View").text("今天").findOne(1000)
+            console.log('----------mainPopup---------- ', mainPopup)
+            
            } catch (error) {
-               Record.error(error?.message)
+               console.log(error)
            }
         });
 
-        var time = setInterval(() => {
-            if(window && window.runLog){
-                // console.log('-----runInfo.log----', runInfo.log)
-                ui.run(function () {
-                 window.runLog.setText(runInfo.log);   
-                })
-            }
-        }, 2000);
+        
         // 初始化
         initRunInfo(window)
         // 进入获取金币页面
         findPage('goldCoin')
         // 执行获取金币的逻辑
-        
+        coinExchange()
         // 进入商品详情页面
-        findPage('product')
+        // findPage('product')
         // 执行曝光逻辑
         // findDom()
 
