@@ -33,7 +33,7 @@ const {
     _TOKEN,
     _SHOW_CONSOLE,
 } = hamibot.env;
-
+Record.info("Configuration loaded " + JSON.stringify(hamibot.env));
 // -------------------- register listener -----------------------
 
 // register exit listener
@@ -82,6 +82,7 @@ if (_TOKEN && _TOKEN !== "" && setToken(_TOKEN) == false) {
 
 // show console
 if (typeof _SHOW_CONSOLE !== "boolean") {
+    Record.warn("err------ show console");
     throw new ConfigInvalidException("show console");
 }
 export const SHOW_CONSOLE = _SHOW_CONSOLE;
