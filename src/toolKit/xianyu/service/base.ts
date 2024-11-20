@@ -220,12 +220,30 @@ export const xyBaseRun = () =>{
         window.start.click(function () {
            try {
             
-            // const packageName = 'com.taobao.idlefish';
-            // const activityName = 'com.taobao.idlefish.webview.WebHybridActivity'
-            // const activityName = 'WebHybridActivity'
-            // app.openAppSetting(packageName);//打开app的详细信息
-            const mainPopup = className("android.view.View").text("今天").findOne(1000)
-            console.log('----------mainPopup---------- ', mainPopup)
+            // 进入到了搜索页面
+            setText(0,"iphone")
+            const searchBtn = className("android.widget.Button").findOne(300)
+            if(searchBtn){
+                searchBtn.click()
+            }
+            setTimeout(() => {
+                for(let i = 0; i < 20;){
+                    const result = gesture(100,2300,100,1900,1000)
+                    const result = gesture(1000, [0, 0], [500, 500], [500, 1000])
+                    console.log('-----result----', result)
+                    if(result){
+                        console.log('-----scrollForward----', i)
+
+                        i++
+                    }else{
+                        i ++ 
+                    }
+                   
+                 
+                }
+            }, 2000);
+           
+        // 搜索完后要进行页面滚动
             
            } catch (error) {
                console.log(error)
@@ -236,9 +254,9 @@ export const xyBaseRun = () =>{
         // 初始化
         initRunInfo(window)
         // 进入获取金币页面
-        findPage('goldCoin')
+        // findPage('goldCoin')
         // 执行获取金币的逻辑
-        coinExchange()
+        // coinExchange()
         // 进入商品详情页面
         // findPage('product')
         // 执行曝光逻辑

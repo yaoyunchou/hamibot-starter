@@ -79,7 +79,7 @@ declare module 'touch-operation' {
          * @param {number} y2 滑动的起始纵坐标。
          * @param {number} duration 滑动时长，单位毫秒。
          */
-        function swipe(x1: number, y1: number, x2: number, y2: number, duration: number): void;
+        function swipe(x1: number, y1: number, x2: number, y2: number, duration: number): Boolean;
 
         /**
          * @description: 模拟手势操作。
