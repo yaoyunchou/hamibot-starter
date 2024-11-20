@@ -28,18 +28,32 @@ const goAntForest = () => {
 }
 
 // 搜一搜推荐商品
-const searchForRecommendedGoods = () => {
+export const searchForRecommendedGoods = () => {
     // 进入的页面为1688页面
     const page =  className("android.view.View").text("搜索有福利").findOne()
     if(page){
         // 进入到了搜索页面
-        setText(0,"测试0")
+        setText(0,"iphone")
         const searchBtn = className("android.widget.Button").findOne(300)
         if(searchBtn){
             searchBtn.click()
         }
-        sleep(1000)
-        className("android.widget.ListView").findOne()
+        sleep(2000)
+        for(let i = 0; i < 20;){
+            const result = swipe(10,2200,10,1700,400)
+            console.log('-----result----', result)
+            if(result){
+                console.log('-----scrollForward----', i)
+
+                i++
+            }else{
+                i ++ 
+            }
+            
+            
+        }
+    
+       
         // 搜索完后要进行页面滚动
 
     }else{
