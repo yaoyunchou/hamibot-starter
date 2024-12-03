@@ -31,6 +31,13 @@ export const setRunInfo = (log:string) =>{
    
 
 }
+// 获取当前页面的信息
+export const getPageInfo = () =>{
+    const name = currentPackage();
+    console.log(`currentPackage: ${name}`)
+    const activity = currentActivity();
+    console.log(`currentActivity: ${activity}`)
+}
 
 // 通过页面名称找到对应的页面
 export const findPage = (pageName:string) =>{
@@ -155,6 +162,7 @@ export const findPage = (pageName:string) =>{
     
 }
 
+
 // 获取曝光
 export const xyBaseRun = () =>{
     // 打开闲鱼
@@ -206,7 +214,8 @@ export const xyBaseRun = () =>{
                         // const name = currentPackage();
                         // Record.info(`currentPackage: ${name}`)
                     } catch (error) {
-                        Record.error(error?.message)
+                        // Record.error(error?.message)
+                        console.log(error?.message)
                     }
                    
                     break;
@@ -219,29 +228,8 @@ export const xyBaseRun = () =>{
         });
         window.start.click(function () {
            try {
-            
-            // 进入到了搜索页面
-            setText(0,"iphone")
-            const searchBtn = className("android.widget.Button").findOne(300)
-            if(searchBtn){
-                searchBtn.click()
-            }
-            setTimeout(() => {
-                for(let i = 0; i < 20;){
-                    const result = gesture(100,2300,100,1900,1000)
-                    const result = gesture(1000, [0, 0], [500, 500], [500, 1000])
-                    console.log('-----result----', result)
-                    if(result){
-                        console.log('-----scrollForward----', i)
-
-                        i++
-                    }else{
-                        i ++ 
-                    }
-                   
-                 
-                }
-            }, 2000);
+             getPageInfo()
+          
            
         // 搜索完后要进行页面滚动
             
@@ -254,9 +242,9 @@ export const xyBaseRun = () =>{
         // 初始化
         initRunInfo(window)
         // 进入获取金币页面
-        // findPage('goldCoin')
+        findPage('goldCoin')
         // 执行获取金币的逻辑
-        // coinExchange()
+        coinExchange()
         // 进入商品详情页面
         // findPage('product')
         // 执行曝光逻辑

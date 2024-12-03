@@ -79,7 +79,7 @@ declare module 'touch-operation' {
          * @param {number} y2 滑动的起始纵坐标。
          * @param {number} duration 滑动时长，单位毫秒。
          */
-        function swipe(x1: number, y1: number, x2: number, y2: number, duration: number): Boolean;
+        function swipe(x1: number, y1: number, x2: number, y2: number, duration: number): any;
 
         /**
          * @description: 模拟手势操作。
@@ -96,7 +96,7 @@ declare module 'touch-operation' {
          * gesture(1000, [0, 0], [500, 500], [500, 1000])
          * ```
          */
-        function gesture(duration: number, ...points: [number, number][]): void;
+        function gesture(duration: number, ...points: [number, number][]): any;
 
         /**
          * @description: 同时模拟多个手势。
