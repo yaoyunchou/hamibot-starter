@@ -3,8 +3,8 @@
         "configFile": "src/config.json",
         "scriptFile": "dist/index.js"
     },
-    "name": "hamibot202041101",
-    "scriptId": "67242d9ce2fed0e6e3d10639",
+    "name": "hamibot20250413",
+    "scriptId": "67fb176c915cdf62b1ec8a20",
     "executeRobot": {
         "_id": "672349f1364a634dae6c9a4b",
         "name": "荣耀20"

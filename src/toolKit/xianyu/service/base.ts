@@ -1,13 +1,15 @@
 import { Record } from "../../../lib/logger";
 import { coinExchange } from "./getGold";
 import { findDom } from "./exposure";
+import { startAutoComment } from "./autoComment";
 
 export const APPNAME = 'com.taobao.idlefish'
 
 export enum PageType {
     'home'="com.taobao.idlefish.maincontainer.activity.MainActivity",
     'goldCoin'="com.taobao.idlefish.webview.WebHybridActivity",
-    "product"='com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity'
+    "product"='com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+    "comment" = "com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity"
 }
 
 // 优化日志
@@ -147,6 +149,45 @@ export const findPage = (pageName:string) =>{
                 }
             }
             break;
+        case 'comment':
+           
+            // 进行检查， 是否是comment, 并且有我卖出的导航
+            if(activity === PageType.comment){
+                const mySoleTab =className("android.view.View").descContains("我卖出的").findOne(1000)
+                if(mySoleTab){
+                    console.log('in comment !!!!!')
+                    // 执行自动品论
+                    startAutoComment()
+                }else{
+                    back();
+                    sleep(1000)
+                    findPage(pageName) 
+                }
+            }else{
+                if(activity === PageType.home){
+                    console.log('-----PageType.home----')
+
+                    // 找到对应的商品
+                    const myBtn = className("android.widget.FrameLayout").descContains("我的").findOne()
+                    if(myBtn){
+                        myBtn.click()
+                    }
+                    sleep(1000)
+                    //  找到我的待评价
+                    const commentEntryBtn =  className("android.widget.ImageView").descContains("待评价").findOne()
+                    if(commentEntryBtn){
+                        commentEntryBtn.click()
+                    }
+                    sleep(1000)
+                    findPage(pageName)
+                    // findDom(log)
+                }else{
+                    back();
+                    sleep(1000)
+                    findPage(pageName)
+                }
+            }
+            break;
         default:
             console.log('dddd');
             
@@ -242,9 +283,9 @@ export const xyBaseRun = () =>{
         // 初始化
         initRunInfo(window)
         // 进入获取金币页面
-        findPage('goldCoin')
-        // 执行获取金币的逻辑
-        coinExchange()
+        findPage('comment')
+        // // 执行获取金币的逻辑
+        // coinExchange()
         // 进入商品详情页面
         // findPage('product')
         // 执行曝光逻辑
