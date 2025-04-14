@@ -22,7 +22,7 @@ const nestHeader = {
 }
 // 线上环境
 const host = 'https://xfyapi.xfysj.top'
-const nestHost = 'https://nestapi.zeabur.app'
+const nestHost = 'https://nestapi.xfysj.top/admin'
 
 export const getToken = () => {
     return header

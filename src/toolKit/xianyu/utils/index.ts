@@ -104,16 +104,16 @@ export  var buildBookSet= function (key,info) {
         })
      
      };
-    console.log('info.title', info.title)
+    console.log('info.title', info)
     // var url = "https://baidu.com";
     var res = http.request(`${host}/api/updateByTitle`, options as any);
     console.log('------res====' , res)
     if(res.statusCode === 401){
         // 重现授权
-        console.log('401')
+        console.log('401-----')
         xyInit()
     }else{
-        console.log('更新成功！')
+        console.log('更新成功!!!！')
     } 
     bookStorage.put("bookMaps", bookMaps);  
 }
@@ -123,7 +123,7 @@ export var xyInit = () => {
         'method': 'POST',
         'headers': header,
         body: JSON.stringify({
-            "username": "yaoyc",
+            "username": "yaoyunchou",
             "password": "123456"
         })
      

@@ -14,7 +14,6 @@ import { xyLogin } from "./service";
 export function init() {
     // 初始化服务器的token
     xyLogin()
-    
     // check accessibility permission
     if (auto.service === null) {
         if (!confirm('Please enable accessibility permission')) {

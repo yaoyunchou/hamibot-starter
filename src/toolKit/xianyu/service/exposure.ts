@@ -8,11 +8,11 @@ export function findDom() {
     console.log('-----真的进来了！----')
 	// var list = className("android.view.View").depth(13).find();
     sleep(2000)
-	var list = className("android.widget.ImageView").descContains('更多').find();
+	var list = className("android.widget.ImageView").descContains(`降价`).find();
     if(list?.length === 0){
-        list = className("android.view.View").descContains('更多').find();
+        list = className("android.view.View").descContains(`降价`).find();
     }
-    Record.info(`list: ${list.length}`)
+    Record.info(`list:## ${list.length}`)
 
 	for(let i = 0; i < list.length; i++) {
 		var rect =  list[i].boundsInParent()
@@ -31,8 +31,10 @@ export function findDom() {
 				const swipeinfo = swipe(500, 448 * 5, 500, 100,1000)
 				// console.log('---------swipeinfo-----------', swipeinfo, text.toString())
 				sleep(3000)
-				console.log('---------哎呀，到底啦--------------', text.indexOf('哎呀，到底啦')!== -1)
-				if(text.indexOf('哎呀，到底啦')  === -1){
+                // 如果出现转卖你的其他好物，则结束
+                const bottom =  className("android.view.View").desc("转卖你的其他好物").findOne()
+                console.log('-----bottom----', bottom)
+				if(!bottom){
 					findDom()
 				}else{
                     Record.info('-----end----')
