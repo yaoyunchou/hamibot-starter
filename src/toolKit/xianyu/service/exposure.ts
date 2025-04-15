@@ -8,9 +8,9 @@ export function findDom() {
     console.log('-----真的进来了！----')
 	// var list = className("android.view.View").depth(13).find();
     sleep(2000)
-	var list = className("android.widget.ImageView").descContains('更多').find();
+	var list = className("android.widget.ImageView").descContains('降价').find();
     if(list?.length === 0){
-        list = className("android.view.View").descContains('更多').find();
+        list = className("android.view.View").descContains('编辑').find();
     }
     Record.info(`list: ${list.length}`)
 

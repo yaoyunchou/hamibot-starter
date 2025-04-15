@@ -118,3 +118,23 @@ export var createLogs = (name, data) => {
    
 
 }
+
+export var getGoodInfo = (nickName, title) => {
+    var options = {
+        'method': 'GET',
+        'headers': getNestHeader(),
+    }
+    var res = http.request(`${nestHost}/api/v1/order/fs/order/good?nikeName=${nickName}&title=${title}`, options as any)
+    const data:any = res.body.json()
+    return data
+}
+
+export var getGoodInfoByOrderNumber = (orderNumber) => {
+    var options = {
+        'method': 'GET',
+        'headers': getNestHeader(),
+    }
+    var res = http.request(`${nestHost}/api/v1/order/fs/order/orderNumber?orderNumber=${orderNumber}`, options as any)
+    const data:any = res.body.json()
+    return data
+}
