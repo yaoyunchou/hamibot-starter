@@ -214,6 +214,24 @@ var getSavedBooks = () => {
         return []
     }
 }
+
+
+const getGoodInfo = (nickName, title) => {
+    var options = {
+        'method': 'POST',
+        'headers': header,
+        body: JSON.stringify({
+            nickName,
+            title
+        })
+     
+     };
+    var res = http.request(`${host}/api/goodsInfo?nickName=${nickName}&title=${title}`, options as any);
+    if(res.statusCode === 200){
+        const data:any = res.body.json()
+        console.log('-------data------', data)
+    }
+}   
 // module.exports = {
 //     getInfo,
 //     buildBookSet,
