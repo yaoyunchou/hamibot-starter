@@ -22,9 +22,10 @@ let maxLoopMap:any = {
 
 
 let maxErrorCount = 0
+let commentErrorNikeNameList = []
 
 /**
- * 1. 金币兑换
+ * 1. 自动
  * 2. 做各种任务， 获取
  */
 export function startAutoComment() {
@@ -37,17 +38,23 @@ export function startAutoComment() {
         }
         // 查看列表
         const list = className("android.widget.ImageView").descContains("闲鱼号").find()
+        const errorList = []
         // 循环list
         for(let i = 0; i < list.length; i++){
             const item = list[i]
             // 获取内容
             const contentDescription = item.contentDescription + ''
-            
+            if(commentErrorNikeNameList.includes(contentDescription)){
+                setRunInfo(`${contentDescription}  这个数据有问题， 跳过,执行下一次循环`)
+                continue
+            }
             console.log("昵称===================", contentDescription)
+            setRunInfo(`开始自动评论， 昵称：${contentDescription}`)
             // 寻找父级
             const parent = item.parent()
             if(!parent){
                 maxErrorCount++
+                setRunInfo(`没有找到父级， 跳过,执行下一次循环`)
                 continue
                 
             }
@@ -59,6 +66,7 @@ export function startAutoComment() {
             const goodsDetail = className("android.view.View").descContains("订单编号").findOne()
             if(!goodsDetail){
                 maxErrorCount++
+                setRunInfo(`没有找到订单编号， 跳过,执行下一次循环`)
                 continue
             }
             // 获取订单编号
@@ -67,6 +75,7 @@ export function startAutoComment() {
             const orderNumberMatch = orderText.match(/订单编号\s*(\d+)/);
             if (!orderNumberMatch) {
                 maxErrorCount++
+                setRunInfo(`没有匹配到订单编号， 跳过,执行下一次循环`)
                 continue
             }
             // 获取订单编号
@@ -82,12 +91,21 @@ export function startAutoComment() {
                
                 const goodsInfo =  getGoodInfoByOrderNumber(orderNumber)
                 console.log("商品信息===================", goodsInfo)
+                setRunInfo(`获取商品信息成功， 开始自动评论`)
                 // 获取评价
                 if(goodsInfo.code === 0){
                     try {
+                        if(goodsInfo.data.items.length === 0){
+                            setRunInfo(`没有对应的评价， 跳过,执行下一次循环`)
+                            // 回退一步， 进行下次循环
+                            commentErrorNikeNameList.push(contentDescription)
+                            back()
+                            continue
+                        }
                         // 获取评价
                         const comment = goodsInfo.data.items[0].fields["评价"].value[0].text
                         console.log("评价===================", comment)
+                        setRunInfo(`点击评价按钮`)
                         // 进入好评弹框入口
                         const goodCommentPopup =className("android.view.View").descContains("按钮, 去评价").findOne(1000)
                         // 获取他的位置信息
@@ -126,6 +144,7 @@ export function startAutoComment() {
                         // 点击提交
                         const submit = className("android.view.View").descContains("提交评价").findOne(1000)
                         console.log("submit===================", submit)
+                        setRunInfo(`点击提交评价`)
                         if(submit){
                             // 找到这个地方的坐标
                             const submitReact = submit.bounds()
