@@ -16,8 +16,8 @@ export const backMainPage = () => {
     // 去到其他app了
     const appName = currentPackage();
     // 执行完成后需要返回两次回到主弹窗页面
-    const mainPopup = className("android.view.View").text("今天").findOne(1000)
-    const guideButton = className("android.view.View").text("攻略").findOne(1000)
+    const mainPopup = className("android.widget.TextView").text("今天").findOne(1000)
+    const guideButton = className("android.widget.TextView").text("攻略").findOne(1000)
     if(appName !== APPNAME){
         // 当前app不是闲鱼，直接回退
         back();
@@ -117,7 +117,7 @@ const goOtherApp = () => {
 // 搜一搜推荐商品
 export const searchForRecommendedGoods = () => {
     // 进入的页面为1688页面
-    const page =  className("android.view.View").text("搜索有福利").findOne(1000)
+    const page =  className("android.widget.TextView").text("搜索有福利").findOne(1000)
     if(page){
         // 进入到了搜索页面
         setText(0,"iphone")
@@ -127,7 +127,7 @@ export const searchForRecommendedGoods = () => {
         }
         sleep(1000)
         let number = 1
-        let gameOver = className("android.view.View").textContains("任务完成逛逛宝贝").findOne(1000)
+        let gameOver = className("android.widget.TextView").textContains("任务完成逛逛宝贝").findOne(1000)
         while(!gameOver){
             const result = swipe(200,2200,200,1700,1000)
             if(result){
@@ -136,7 +136,7 @@ export const searchForRecommendedGoods = () => {
             }
             number++
             console.log('-----number----', number)
-            gameOver = className("android.view.View").textContains("任务完成逛逛宝贝").findOne(100)
+            gameOver = className("android.widget.TextView").textContains("任务完成逛逛宝贝").findOne(100)
             if(number > 60){
                 break;
             }
@@ -153,14 +153,14 @@ export const searchForRecommendedGoods = () => {
 export const browseGoodsInSpecifiedChannel = () => {
     try {
         console.log('浏览指定频道好物')
-        let gameOver = className("android.view.View").text("点击领取").findOne(100)
+        let gameOver = className("android.widget.TextView").text("点击领取").findOne(100)
    
         while(!gameOver){
             const result = swipe(10,2200,10,1200,1000)
             if(result){
                 sleep(500)
             }
-            gameOver = className("android.view.View").text("点击领取").findOne(100)
+            gameOver = className("android.widget.TextView").text("点击领取").findOne(100)
             
         } 
         if(gameOver){

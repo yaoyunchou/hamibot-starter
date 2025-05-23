@@ -79,12 +79,7 @@ Record.info("Verifying configurations");
 if (_TOKEN && _TOKEN !== "" && setToken(_TOKEN) == false) {
     throw new ConfigInvalidException("pushplus token", "needs to be a 32-bit hexadecimal number");
 }
-
-// show console
-if (typeof _SHOW_CONSOLE !== "boolean") {
-    Record.warn("err------ show console");
-    throw new ConfigInvalidException("show console");
-}
-export const SHOW_CONSOLE = _SHOW_CONSOLE;
+// 手动控制日志弹框
+export const SHOW_CONSOLE = false;
 
 Record.info("Start running script");

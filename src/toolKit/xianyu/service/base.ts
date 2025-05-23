@@ -2,6 +2,7 @@ import { Record } from "../../../lib/logger";
 import { coinExchange } from "./getGold";
 import { findDom } from "./exposure";
 import { startAutoComment } from "./autoComment";
+const { jobs=[] } = hamibot.env;
 
 export const APPNAME = 'com.taobao.idlefish'
 
@@ -196,7 +197,7 @@ export const getPageInfo = () =>{
 
 // 通过页面名称找到对应的页面
 export const findPage = (pageName:string) =>{
-    setRunInfo('findPage');
+    setRunInfo('findPage:'+ pageName);
     // 当前页面的信息
     const name = currentPackage();
     // 当前页面的activity
@@ -205,7 +206,6 @@ export const findPage = (pageName:string) =>{
         launch(APPNAME);
         sleep(1000)
         const newPageName = currentPackage();
-        console.log('-----name----', newPageName)
         findPage(pageName)
         return;
     }
@@ -217,7 +217,7 @@ export const findPage = (pageName:string) =>{
         case 'goldCoin':
             if(activity === PageType.goldCoin){
                 
-                console.log('进入金币页面了！！！')
+                console.log('已经进度到金币页面')
                 setRunInfo('进入金币页面')
             }else {
                 // 默认是在主页进行路径的查找
@@ -269,6 +269,7 @@ export const findPage = (pageName:string) =>{
                 if(btn){
                     // 执行对应的逻辑
                     setRunInfo('进入商品详情页面')
+                    // findDom()
                 }else{
                     back();
                     findPage(pageName)
@@ -315,6 +316,7 @@ export const findPage = (pageName:string) =>{
                         console.log('没有需要执行的评论')
                     }else{
                         console.log('in comment !!!!!')
+                        setRunInfo('进入评论页面')
                         // 执行自动品论
                         startAutoComment()
                     }
@@ -368,102 +370,111 @@ export const findPage = (pageName:string) =>{
 // 获取曝光
 export const xyBaseRun = () =>{
     // 打开闲鱼
-    // launchApp("闲鱼");
+    launchApp("闲鱼");
     // 运行对应的收集数据代码
-    // findDom();
+    findDom();
     // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
-    // var time = setInterval(() => {
+    var time = setInterval(() => {
 
-    // }, 2000);
-    // threads.start(function () {
-    //     var time = setInterval(() => {
+    }, 2000);
+    threads.start(function () {
+        var time = setInterval(() => {
            
-    //     }, 2000);
-    //     var window = floaty.window(
-    //         `<vertical>
-    //             <button id="center"  margin="0" w="60">页面信息</button>
-    //             <button id="start"  margin="0" w="60">尝试</button>
-        
-    //             <button id="exit"   margin="0" w="60">退出</button>
-    //             <text id="runLog"  padding="10 5 10 5" bg="#ff0000" w="300" h="auto" text="Hello" />
-    //         </vertical>` as any
-    //     );
-    //     window.setPosition(window.getX(), window.getY() + 100);
-    //        var x = 0,
-    //         y = 0,
-    //         windowX = 0,
-    //         windowY = 0,
-    //         isRuning = false,
-    //         showConsole = false,
-    //         isShowingAll = true;
-    
-    //     window.center.setOnTouchListener(function (view, event) {
-    //         switch (event.getAction()) {
-    //             case event.ACTION_DOWN:
-    //                 x = event.getRawX();
-    //                 y = event.getRawY();
-    //                 windowX = window.getX();
-    //                 windowY = window.getY();
-    //                 break;
-    //             case event.ACTION_MOVE:
-    //                 window.setPosition(windowX + (event.getRawX() - x), windowY + (event.getRawY() - y));
-    //                 break;
-    //             case event.ACTION_UP:
-    //                 // 获取当前页面的信息，并且打印出来
-    //                 try {
-    //                     // Record.info(`currentActivity: ${currentActivity()}`)
-    //                     // console.log('currentActivity', currentActivity())
-    //                     // const name = currentPackage();
-    //                     // Record.info(`currentPackage: ${name}`)
-    //                 } catch (error) {
-    //                     // Record.error(error?.message)
-    //                     console.log(error?.message)
-    //                 }
+        }, 2000);
+        var window = floaty.window(
+            `<vertical>
+                <text id="runLog"  padding="10 5 10 5" bg="#ff0000" w="300" h="auto" text="Hello" />
+            </vertical>` as any
+        );
+        window.setPosition(window.getX(), window.getY() + 100);
+        //    var x = 0,
+        //     y = 0,
+        //     windowX = 0,
+        //     windowY = 0,
+        //     isRuning = false,
+        //     showConsole = false,
+        //     isShowingAll = true;
+        // window.center.setOnTouchListener(function (view, event) {
+        //     switch (event.getAction()) {
+        //         case event.ACTION_DOWN:
+        //             x = event.getRawX();
+        //             y = event.getRawY();
+        //             windowX = window.getX();
+        //             windowY = window.getY();
+        //             break;
+        //         case event.ACTION_MOVE:
+        //             window.setPosition(windowX + (event.getRawX() - x), windowY + (event.getRawY() - y));
+        //             break;
+        //         case event.ACTION_UP:
+        //             // 获取当前页面的信息，并且打印出来
+        //             try {
+        //                 // Record.info(`currentActivity: ${currentActivity()}`)
+        //                 // console.log('currentActivity', currentActivity())
+        //                 // const name = currentPackage();
+        //                 // Record.info(`currentPackage: ${name}`)
+        //             } catch (error) {
+        //                 // Record.error(error?.message)
+        //                 console.log(error?.message)
+        //             }
                    
-    //                 break;
-    //         }
-    //         return true;
-    //     });
+        //             break;
+        //     }
+        //     return true;
+        // });
         
-    //     window.exit.click(function () {
-    //         window.close();
-    //     });
-    //     window.start.click(function () {
-    //        try {
-    //          getPageInfo()
+        // window.exit.click(function () {
+        //     window.close();
+        // });
+        // window.start.click(function () {
+        //    try {
+        //      getPageInfo()
           
            
-    //     // 搜索完后要进行页面滚动
+        // // 搜索完后要进行页面滚动
             
-    //        } catch (error) {
-    //            console.log(error)
-    //        }
-    //     });
+        //    } catch (error) {
+        //        console.log(error)
+        //    }
+        // });
 
+        console.log('start', jobs)
         
-    //     // 初始化
-    //     initRunInfo(window)
-    //     // 进入获取金币页面
-    //     findPage('comment')
-    //     // // 执行获取金币的逻辑
-    //     // coinExchange()
-    //     // 进入商品详情页面
-    //     // findPage('product')
-    //     // 执行曝光逻辑
-    //     // findDom()
-
-    //     // 到达金币页面执行金币逻辑
-
-    //     // 进入特定页面执行对应的逻辑
+        // 初始化
+        initRunInfo(window)
        
-    // }); 
+        if(jobs.includes('comment')){
+            findPage('comment')
+        }
+        if(jobs.includes('goldCoin')){
+            findPage('goldCoin')
+            coinExchange()
+        }
+        if(jobs.includes('product')){
+            findPage('product')
+            findDom()
+        }
+        // // 进入获取金币页面
+        // findPage('comment')
+        // // // 执行获取金币的逻辑
+        // findPage('goldCoin')
+        // coinExchange()
+        // 进入商品详情页面
+        // findPage('product')
+        // 执行曝光逻辑
+        // findDom()
+
+        // 到达金币页面执行金币逻辑
+
+        // 进入特定页面执行对应的逻辑
+       
+    }); 
 
     // 执行曝光逻辑
-    findPage('comment')
+    // findPage('comment')
     // 执行金币逻辑
-    findPage('goldCoin')
-    // 执行商品详情逻辑
-    findPage('product')
+    // findPage('goldCoin')
+    // // 执行商品详情逻辑
+    // findPage('product')
 
 }
 

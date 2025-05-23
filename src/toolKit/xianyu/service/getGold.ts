@@ -69,14 +69,18 @@ export function runActivePopups() {
 export function checkGetGold() {
  sleep(1000)
  // 如果有领取奖励的按钮随手领取掉
- const getGold = className("android.view.View").text("领取奖励").find()
+ const getGold = className("android.widget.TextView").text("领取奖励").find()
+
  if(getGold){
+    setRunInfo('领取奖励')
      for(let i = 0; i< getGold.length; i++){
         console.log('-----getGold----', getGold[i])
 
          getGold[i].click()
          sleep(1000)
      }
+ }else{
+    setRunInfo('没有找到领取奖励')
  }
 }
 
@@ -87,24 +91,25 @@ export function checkGetGold() {
  * 
  */
 export function mainPopupFn(title:string, callback,task:any) {
-
+    setRunInfo('领取奖励')
     checkGetGold()
     // 如果亲到没有点击随手签到
-    const qdBtn = className("android.view.View").text("签到").findOne(1000)
+    const qdBtn = className("android.widget.TextView").text("签到").findOne(1000)
     if(qdBtn){
         qdBtn.click()
+        setRunInfo('签到')
         sleep(1000)
     }
 
     //  处理搜一搜推荐商品
-    const sysBtn = className("android.view.View").text(title).findOne(1000)
+    const sysBtn = className("android.widget.TextView").text(title).findOne(1000)
     // 滚动容器
     const scrollBox = className("android.view.View").scrollable(true).findOne(1000)
   
     if(sysBtn && scrollBox){
         // 获取当前sysBtn的坐标
         const findBtn = () => {
-            const sysBtn = className("android.view.View").text(title).findOne(1000)
+            const sysBtn = className("android.widget.TextView").text(title).findOne(1000)
             const sysReact = sysBtn.bounds()
 
             Record.info(`baseReact2222, x: ${sysReact.left}, y: ${sysReact.top}`)
@@ -136,7 +141,7 @@ export function mainPopupFn(title:string, callback,task:any) {
                 findBtn()
             }else{
                 sleep(1000)
-                const goBtns = className("android.view.View").text("去完成").find()
+                const goBtns = className("android.widget.TextView").text("去完成").find()
                 console.log('-----goBtns----', goBtns.length)
                 for(let i = 0; i< goBtns.length; i++){
                     const btn = goBtns[i]
@@ -157,6 +162,7 @@ export function mainPopupFn(title:string, callback,task:any) {
                 task.hasRun = true
                 //  如果没有找到则为已经获取了对应的金币
                 Record.info(`已经获取了对应的金币`)
+                setRunInfo('已经获取了对应的金币')
             }
         }
         // 执行查找
@@ -167,6 +173,7 @@ export function mainPopupFn(title:string, callback,task:any) {
 }
 
 export function mainPopupTask() {
+
     try {
         // 获取列表
         for(let i = 0; i< taskList.length; i++){
@@ -206,6 +213,7 @@ export function mainPopupTask() {
 
 /**
  * 一直回退到闲鱼页面
+ * 
  */
 
 export function xianyuBack(){
@@ -225,8 +233,8 @@ export function xianyuBack(){
  */
 export function coinExchange() {
     try {
-        // 进入领取金币页面，判断是是否有领取， 领取金币, 是否有 攻略按钮
-        const guideButton = className("android.view.View").text("攻略").findOne(5000)
+        // 进入领取金币页面，判断是是否有领取， 领取金币, 是否有 攻略按钮, 获取按钮能保证后面截图
+        const guideButton = className("android.widget.TextView").text("攻略").findOne(5000)
         /**
          *  1. 如果有则证明到了金币页面
          *  功能点：
@@ -243,111 +251,41 @@ export function coinExchange() {
         // 检查是否有弹框需要处理
         // 处理活动弹框
         runActivePopups()
-        console.log('----------coinExchange()-----------')
-        maxLoopMap.coinExchangeRunTime ++
-        if(guideButton){
-            // 是否有主弹框
-            const mainPopup = className("android.view.View").text("今天").findOne(1000)
-            console.log('----------mainPopup---------- ', mainPopup) 
-            // 领取酬金
-            const lqcjBtn = className("android.view.View").text("领取酬金").findOne(1000)
-            if(lqcjBtn){
-                lqcjBtn.parent().click()
+        // 截屏，查看对应的页面，来判断是否相关的逻辑
+        setRunInfo('准备处理金币页面！')
+        if (!requestScreenCapture()) {
+            toastLog('没有授予 Hamibot 屏幕截图权限');
+            hamibot.exit();
+          }
+        sleep(1000);
+        log('开始截屏');
+        const img = captureScreen();
+        toastLog('开始识别');
+        const res = ocr.recognize(img);
+        const {text, results} = res;
+ 
+        for(let i = 0; i< results.length; i++){
+            /**
+             *  item 有 bounds
+             *  bounds: { left: 100, top: 100, right: 200, bottom: 200 }
+             */
+            const item = results[i]
+            console.log('-----item----', JSON.stringify(item))
+            // 处理领取收益
+            if(item.text.length===4 &&(item.text.includes('收益') || item.text.includes('领取'))){
+                // 点击领取收益 
+                midClick(item.bounds)
+                console.log('-----领取收益----', item.bounds)
+                sleep(1000)
             }
-            // 如果是主弹框
-            if(mainPopup){
-                //  如图有则需要处理弹框逻辑, 先看是否有没有收取的次数， TODO: 这里应该做成配置， 不应该写死
-                console.log('2222')
-                mainPopupTask()
-                // 运行到其他的核心逻辑则算成功， 进行数据清空
-                maxLoopMap.coinExchangeRunTime = 1
-            }else{
-                console.log('----------!!!!----------')
-                // 查找一赚到底的“新”, 然后再定位到扔色子寻宝按钮
-
-                const yzddxBtn =  className("android.view.View").text("新").findOne(1000)
-                if(yzddxBtn){
-                    // 找到扔色子寻宝按钮
-                    const mainBtn = yzddxBtn.parent().parent().child(4);
-                    if(mainBtn){
-                        console.log('111111111111')
-                        if(mainBtn.child(1).text() === "赚"){
-                            mainBtn.click();
-                            sleep(1000)
-                            // 处理主弹框逻辑
-                            coinExchange()
-                        }else{
-                            mainBtn.click();
-                            sleep(1000)
-                            
-                            // 处理完成后再执行
-                            coinExchange()
-                        }
-                       
-                    }
-                }else{
-                    // 没有找到就重新执行一次
-                    console.log('----------没有找到就重新执行一次----------')
-                    back();
-                    coinExchange()
-                }
-            }
-        }else{
-            Record.error(`coinExchange, 金币页面未找到攻略按钮`)
-            maxLoopMap.pageTime = maxLoopMap.pageTime ? maxLoopMap.pageTime + 1 : 1
-            // 当次数大于3的时候就进行回退， 不然就进行重试
-            if(maxLoopMap.pageTime > 3){
-                maxLoopMap.pageTime = 1;
-                findPage('goldCoin')
-                coinExchange();
-            }else{
-                coinExchange();
-            }
+            if(item.text.length===5 && item.text.includes('子寻宝')){
+                // 点击领取收益 
+                midClick(item.bounds)
+                console.log('-----骰子寻宝----', item.bounds)
+                sleep(1000)
+                coinExchange()
+            }    
         }
-        
-        
-       
-
-        // // 找到中间的按钮
-        // id("mapDiceBtn").findOne().click()
-        // // 有弹框直接关闭
-        // if(className("android.widget.Image").clickable(true).depth(8).exists()){
-        //     className("android.widget.Image").clickable(true).depth(8).click()
-        // }
-    
-        // // 如果存在"用闲鱼币兑权益"文本
-        // if(className("android.view.View").text("用闲鱼币兑权益").exists()) {
-        //     // 点击领取按钮
-        //     click(780, 1100);
-        //     sleep(2000)
-        //     // 有签到按钮直接顺手签到
-        //     if(className("android.view.View").text("签到").exists()){
-        //         console.log('----------coinExchange()-----------', '签到')
-        //         className("android.view.View").text("签到").findOne().click()
-        //     }
-        //     for(let i =0; i< 100; i++) {
-        //         console.log('执行第'+i+'次')
-        //         let list = className("android.view.View").textContains("领取").find()
-        //         console.log('----list--------',list.nonEmpty())
-        //         if(list.nonEmpty()) {
-        //             list.each(function(item){
-        //                 item.click();
-        //             })
-        //         }
-        //         var zoo = className("android.view.View").textMatches(/00:[54]\d:[0-9]{2}/).find()
-        //         console.log('----zoo--------',zoo.nonEmpty())
-
-        //         if(zoo.nonEmpty()){
-        //             exit()
-        //         }
-        //         // 超过30次应该是程序卡了，回退修复
-        //         sleep(10000)
-        //     }
-        //     exit();
-        // }else{
-        //     // fixPage()
-
-        // }
     } catch (error) {
         // 记录错误
         Record.error(`coinExchange, ${error}`)
@@ -359,3 +297,17 @@ export function coinExchange() {
 }
 
 
+/**
+ * 1. 根据当前页面的文字判断不同的点击逻辑
+ * 
+ * 1. 领取收益
+ * 2. 骰子寻宝
+ * 
+ * 
+ * 
+ */
+export function midClick(bounds) {
+    if(bounds && bounds.left !==undefined && bounds.top!==undefined && bounds.right!==undefined && bounds.bottom!==undefined){
+        click((bounds.left + bounds.right)/2, (bounds.top + bounds.bottom)/2)
+    }
+}
