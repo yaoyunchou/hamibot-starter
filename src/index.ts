@@ -9,10 +9,11 @@
  */
 import {} from "./global";
 import { init } from "./lib/init";
-import { xyBaseRun } from "./toolKit/xianyu";
+import { xyBaseRunWithLog } from "./toolKit/xianyu";
 init();
 
-xyBaseRun();
-
+xyBaseRunWithLog();
+// 打开控制台
+console.show();
 
 
