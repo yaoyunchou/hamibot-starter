@@ -15,13 +15,13 @@ export const PROJECT_NAME = "xianyu Script"
 /**
  * @description: 脚本版本号。建议根据 [语义化版本号] 迭代
  */
-export const VERSION = "0.1.3";
+export const VERSION = "1.0.4";
 
-export const LISTENER_INTERVAL = 100;
+export const LISTENER_INTERVAL = 100; // 监听间隔
 
-export const SHORT_WAIT_MS = 300;
+export const SHORT_WAIT_MS = 300; // 短等待时间
 
-export const LONG_WAIT_MS = 1000;
+export const LONG_WAIT_MS = 1000; // 长等待时间
 
 export const EVENT = events.emitter();
 

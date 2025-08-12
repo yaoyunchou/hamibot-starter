@@ -12,26 +12,14 @@
 //     const name = currentPackage();
 //     console.log('当前页面的包名', name)
 //     // currentPackage()
+
+import { Record } from "../../../lib/logger";
+import { getHeader, nestHost, host, xyLogin } from "../../../lib/service";
+import { setRunInfo } from "../service/base";
+
     
-// }
 
-// 获取正在运行的APP列表（可能需要根据Hamibot版本和设备情况进行调整）
-function getRunningApps() {
-    // 这里使用Hamibot的特定方法来获取正在运行的APP信息，实际实现可能因版本而异
-    return device.getRunningApps(); 
-}
-
-
-
-// 开发环境
-// const host = 'http://192.168.3.3:3000'
-let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI5ODM2OTg4NjQzY2M0ZDIwMDBiZTQzZDcxZTk3YzU3IiwibmFtZSI6Inlhb3ljIiwidXNlcm5hbWUiOiJ5YW95YyJ9LCJleHAiOjE3MTIxODUzMDMsImlhdCI6MTcwNDk4NTMwM30.1ymfrT0S8xdxjYPUXDPfEqM5IGGUKT9e91DfrkGpP5Y'
-const header = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
- }
 // 线上环境
-const host = 'https://xfyapi.xfysj.top'
 
 const shopNameArr=["蓝小飞鱼","tb133799136652"]
 var storage = storages.create("shopName");
@@ -43,7 +31,8 @@ const shopIndex = storage.get('shopName') || 0;
 const shopName = shopNameArr[shopIndex]
 export var getInfo = function (text) {
 
-    const regex = /(【[^】]+】)?(.{10,15}\S+)/;
+    const regex = /(?:添加种草笔记，获得更多首页流量\s*)([^\n]+?)(?=\s*¥|\s*$)/;
+
     // [\s\S]*[曝光]?(\d*)[\s\S]*[浏览]?(\d*)[\s\S]*[想要]?(\d*);  
     const bgRegex = /曝光(\d+)/
     const llRegex = /浏览(\d+)/
@@ -54,7 +43,8 @@ export var getInfo = function (text) {
     const xyMatches = xyRegex.exec(text);
 
     if (matches) {
-        const title = matches[2] || null;
+        console.log('matches', matches)
+        const title = matches[1].trim();
         const exposure = bgMatches && bgMatches[1] ||  0;
         const views = llMatches &&  llMatches[1] ||  0;
         const wants = xyMatches &&  xyMatches[1] || 0;
@@ -90,63 +80,56 @@ export  var buildBookSet= function (key,info) {
         }
     }
     sleep(1000)
-    console.log(shopName)
+    Record.info(`${shopName} 开始获取数据 ${info.title}`)
+    setRunInfo(`${info.title} 开始获取数据`)
     // 对数据进行推送
-    var options = {
-        'method': 'PUT',
-        'headers':header,
-        body: JSON.stringify({
-            title:info.title,
-            shopName: shopName,
-            exposure: info.exposure,
-            views: info.views,
-            wants: info.wants,
-        })
-     
-     };
-    console.log('info.title', info.title)
+   
     // var url = "https://baidu.com";
-    var res = http.request(`${host}/api/updateByTitle`, options as any);
-    console.log('------res====' , res)
-    if(res.statusCode === 401){
+    var book = http.request(`${nestHost}/api/v1/xyBook/book/getByOtherData?search=${info.title}`, {
+        'method': 'GET',
+        'headers':getHeader()
+    } as any);
+   
+
+    if(book.statusCode === 401){
         // 重现授权
         console.log('401')
-        xyInit()
+        setRunInfo("通过title获取数据失败")
+        xyLogin()
     }else{
-        console.log('更新成功！')
+        const bookData:any = book.body.json()
+        if(bookData.code ==='200'){
+                // 更新数据
+            var options = {
+                'method': 'POST',
+                'headers':getHeader(),
+                body: JSON.stringify({
+                    title:info.title,
+                    shopName: shopName,
+                    exposure: info.exposure,
+                    views: info.views,
+                    wants: info.wants,
+                    product_id: bookData?.data?.product_id
+                })
+            };
+            var result = http.request(`${nestHost}/api/v1/book/view`, options as any)
+            if(result.statusCode === 200){
+                const resultData:any = result.body.json()
+                setRunInfo(`${info.title} 更新成功!`)
+                Record.info('result', resultData?.message)
+            }
+        }
     } 
     bookStorage.put("bookMaps", bookMaps);  
 }
 
-export var xyInit = () => {
-    var options = {
-        'method': 'POST',
-        'headers': header,
-        body: JSON.stringify({
-            "username": "yaoyc",
-            "password": "123456"
-        })
-     
-     };
-    // var url = "https://baidu.com";
-    var res = http.request(`${host}/api/login`, options as any);
-    
-    if(res.statusCode === 200) {
-        const data:any = res.body.json()
-        console.log('-------data------', data)
-        if(data.code=== 0  && data.token){
-            token = data.token
-            header.Authorization = `Bearer ${token}`
-        }
-    }
-}
 
 
 // 获取需要推广的数据
 var spreadBookInfo = () => {
     var options = {
         'method': 'GET',
-        'headers': header,
+        'headers': getHeader(),
      
      };
     // var url = "https://baidu.com";
@@ -155,7 +138,7 @@ var spreadBookInfo = () => {
     if(res.statusCode === 401){
         // 重现授权
         console.log('401')
-        xyInit()
+        xyLogin()
     }else if(res.statusCode === 200){
         console.log('-------e------', res)
         const data:any = res.body.json()
@@ -169,7 +152,7 @@ var spreadBookInfo = () => {
 var getFSBookInfo = (book) => {
     var options = {
         'method': 'POST',
-        'headers': header,
+        'headers': getHeader(),
         body: JSON.stringify(book)
      };
     // var url = "https://baidu.com";
@@ -178,7 +161,7 @@ var getFSBookInfo = (book) => {
     if(res.statusCode === 401){
         // 重现授权
         console.log('401')
-        xyInit()
+        xyLogin()
     }else if(res.statusCode === 200){
         console.log('-------e------', res)
         const data = res.body.json()
@@ -192,7 +175,7 @@ var getFSBookInfo = (book) => {
 var getSavedBooks = () => {
     var options = {
         'method': 'GET',
-        'headers': header,
+        'headers': getHeader(),
      
      };
     // var url = "https://baidu.com";
@@ -219,7 +202,7 @@ var getSavedBooks = () => {
 const getGoodInfo = (nickName, title) => {
     var options = {
         'method': 'POST',
-        'headers': header,
+        'headers': getHeader(),
         body: JSON.stringify({
             nickName,
             title

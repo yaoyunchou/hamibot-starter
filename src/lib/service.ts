@@ -21,8 +21,9 @@ const nestHeader = {
     'Authorization': `Bearer ${access_token}`
 }
 // 线上环境
-const host = 'https://xfyapi.xfysj.top'
-const nestHost = 'https://nestapi.xfysj.top/admin'
+export const host = 'https://xfyapi.xfysj.top'
+export const nestHost = 'https://nestapi.xfysj.top/admin'
+export const nestHostXcx = 'https://nestapi.xfysj.top/xcx'
 
 export const getToken = () => {
     return header
@@ -76,7 +77,7 @@ export var xyLogin = () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "username": "yaoyunchou",
+            "username": "yaoyc",
             "password": "123456"
         })
      
@@ -138,3 +139,52 @@ export var getGoodInfoByOrderNumber = (orderNumber) => {
     const data:any = res.body.json()
     return data
 }
+
+
+/**
+ *  1. 获取缓存数据
+ */
+
+export const getElementCache = () => {
+    var options = {
+        'method': 'GET',
+        'headers': getNestHeader(),
+    }
+    var res = http.request(`${nestHostXcx}/api/v1/dictionary/category/hamibot/name/elementCatch`, options as any)
+    const data:any = res.body.json()
+    // 需要将类型为string的value转换成map
+    if(data.code ===0 && data.data.value){
+        const cacheData = JSON.parse(data.data.value)
+        // 将cacheData转换成map - 修复Map构造方式
+        const cacheMap = new Map<string, any>();
+        if (Array.isArray(cacheData)) {
+            cacheData.forEach((item: any) => {
+                if (item && item.key && item.value !== undefined) {
+                    cacheMap.set(item.key, item.value);
+                }
+            });
+        }
+        console.log('cacheMap', data.data.value)
+        return cacheMap
+    }else{
+        return new Map<string, any>()
+    }
+}
+
+export const saveElementCache = (cache: Map<string, any>) => {
+    // 需要把map转成string，存入数据库
+    const cacheData = Array.from(cache.entries()).map(([key, value]) => ({ key, value }));
+    const cacheString = {
+        "category": "hamibot",
+        "name": "elementCatch",
+        "value": JSON.stringify(cacheData)
+    }
+    const options = {
+        'method': 'PUT',
+        'headers': getNestHeader(),
+         body: JSON.stringify(cacheString),
+    }
+    var res = http.request(`${nestHostXcx}/api/v1/dictionary/update/value`, options as any)
+    // console.log('saveElementCache', cacheString)
+}
+

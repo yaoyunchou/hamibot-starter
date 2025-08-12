@@ -1,5 +1,5 @@
 import { Record } from '../../../lib/logger';
-import  { getInfo,buildBookSet, xyInit}  from '../utils';
+import  { getInfo,buildBookSet}  from '../utils';
 
 export enum PageType {
     'home'="android.widget.RelativeLayout",
