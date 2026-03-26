@@ -1,0 +1,42 @@
+页面导航流程
+============
+文件：src/toolKit/xianyu/service/base.ts
+函数：findPage()  /  goBackMyPage()
+
+─────────────────────────────────────────
+findPage(pageName)
+─────────────────────────────────────────
+    │
+    ├─[当前 app 不是闲鱼]─► launch(闲鱼) ──► findPage(pageName) [重试]
+    │
+    ├─[找不到"我的交易"]─► goBackMyPage() ──► 回来继续
+    │
+    └─[找到"我的交易"]─► switch(pageName)
+            │
+            ├─ 'goldCoin' ─► 检查 activity
+            │                   ├─[已在金币页]─► coinExchange()
+            │                   └─[在主页]─► 找"简历认证"按钮 ─► 点击 ─► coinExchange()
+            │
+            ├─ 'product'  ─► 找"我发布的"按钮 ─► 点击 ─► findDom()
+            │
+            └─ 'comment'  ─► 找"待评价"按钮 ─► 点击 ─► startAutoComment()
+
+
+─────────────────────────────────────────
+goBackMyPage()
+─────────────────────────────────────────
+    │
+    ├─[找到"我的"按钮]
+    │       │
+    │       ├─[找到"我的交易"]─► 回退完成 ✓
+    │       │
+    │       └─[没找到"我的交易"]─► 点击"我的"按钮
+    │               │
+    │               ├─[找到"我的交易"]─► 回退完成 ✓
+    │               └─[还没找到]─► goBackMyPage() [递归]
+    │
+    └─[没找到"我的"按钮]
+            │
+            ├─[超过 3 次]─► closeApp('闲鱼') ─► sleep ─► findPage('home') ─► goBackMyPage()
+            │
+            └─[未超限]─► back() ─► goBackMyPage() [递归]

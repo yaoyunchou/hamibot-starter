@@ -7,13 +7,15 @@
  * @FilePath: \\src\\index.ts
  * @Description: 脚本入口
  */
-import {} from "./global";
+import { SHOW_CONSOLE } from "./global";
 import { init } from "./lib/init";
 import { xyBaseRunWithLog } from "./toolKit/xianyu";
 init();
 
 xyBaseRunWithLog();
-// 打开控制台
-console.show();
+
+if (SHOW_CONSOLE) {
+    console.show();
+}
 
 

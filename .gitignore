@@ -6,3 +6,13 @@ index.dts
 *.code-workspace
 dist
 dist/*
+
+# Python 本地服务器
+server/.env
+server/__pycache__/
+server/**/__pycache__/
+server/*.pyc
+server/.venv/
+# 运行时日志（不提交）
+server/data/server*.log
+server/data/device_logs/

@@ -1,0 +1,40 @@
+架构调用流程
+============
+
+─────────────────────────────────────────
+当前架构（直连外部 API，凭据写死在脚本）
+─────────────────────────────────────────
+
+Hamibot 脚本
+    └── lib/service.ts
+            │  (JWT 硬编码在源码中)
+            ├──► xfyapi.xfysj.top      直连
+            └──► nestapi.xfysj.top     直连
+
+
+─────────────────────────────────────────
+当前架构（本地服务器，无外部鉴权依赖）
+─────────────────────────────────────────
+
+Hamibot 脚本
+    └── lib/service.ts
+            │  (只请求 localhost，无凭据)
+            └──► localhost:3000  (server/ FastAPI)
+
+
+─────────────────────────────────────────
+server 内部结构
+─────────────────────────────────────────
+
+server/
+    ├── main.py                  ── FastAPI 入口，注册路由
+    ├── core/
+    │   └── config.py            ── 从 .env 读取配置（端口）
+    └── routers/
+        ├── logs.py              ── POST /api/logs       （待实现）
+        ├── order.py             ── GET  /api/order/good （待实现）
+        │                           GET  /api/order/number
+        ├── cache.py             ── GET  /api/cache/element （待实现）
+        │                           PUT  /api/cache/element
+        ├── book.py              ── 书单相关              （待实现）
+        └── goods.py             ── 商品信息相关          （待实现）

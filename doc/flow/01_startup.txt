@@ -1,0 +1,23 @@
+整体启动流程
+=============
+文件：src/index.ts  →  src/lib/init.ts  →  src/toolKit/xianyu/service/base.ts
+
+index.ts 入口
+    │
+    ▼
+init()  ── 初始化日志
+    │
+    ▼
+xyBaseRunWithLog()
+    │
+    ├─► closeApp('闲鱼')
+    │
+    ├─► launchApp('闲鱼')
+    │       │
+    │       ├─[主线程]─► findDom()  ── 采集商品数据（同步）
+    │       │
+    │       └─[子线程]─► floaty.window()  ── 创建悬浮日志窗口
+    │                        │
+    │                        └─► findPage('goldCoin')  ── 进入金币页面
+    │
+    └─── 脚本持续运行

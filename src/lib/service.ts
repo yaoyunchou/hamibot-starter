@@ -1,190 +1,92 @@
-/*
- * @Author: yaoyc yaoyunchou@bananain.com
- * @Date: 2024-11-04 19:02:19
- * @LastEditors: yaoyc yaoyunchou@bananain.com
- * @LastEditTime: 2024-11-06 20:13:17
- * @FilePath: \hamibot202041101\src\lib\service.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
-// login
-
 import { Record } from "./logger"
 
-let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI5ODM2OTg4NjQzY2M0ZDIwMDBiZTQzZDcxZTk3YzU3IiwibmFtZSI6Inlhb3ljIiwidXNlcm5hbWUiOiJ5YW95YyJ9LCJleHAiOjE3MTIxODUzMDMsImlhdCI6MTcwNDk4NTMwM30.1ymfrT0S8xdxjYPUXDPfEqM5IGGUKT9e91DfrkGpP5Y'
-let access_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inlhb3l1bmNob3UiLCJzdWIiOjEsImlhdCI6MTczMDc3MTc1MCwiZXhwIjoxNzMwODU4MTUwfQ.47PjS1P9r9NYF1r94xtqPPSI3cQJgHrNl0kQKtGPHeY"
-const header = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
- }
-const nestHeader = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${access_token}`
-}
-// 线上环境
-export const host = 'https://xfyapi.xfysj.top'
-export const nestHost = 'https://nestapi.xfysj.top/admin'
-export const nestHostXcx = 'https://nestapi.xfysj.top/xcx'
+// 本地代理服务器地址，通过 Hamibot 配置面板的 _LOCAL_SERVER 字段填写电脑局域网 IP
+// 例如：http://192.168.1.100:3000
+const localHost: string = (hamibot.env as any)._LOCAL_SERVER || 'http://192.168.1.100:3000'
 
-export const getToken = () => {
-    return header
-}
-export const getNestToken = () => {
-    return nestHeader
-}
-export const getHeader = () => {
-    return {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-     }
-}
-export const getNestHeader = () => {
-    return {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${access_token}`
-     }
-}
-export const setToken = (token:string) => {
-    header.Authorization = `Bearer ${token}`
+const baseHeaders = { 'Content-Type': 'application/json' }
+
+type RequestOptions = { method?: string; headers?: object; body?: string }
+
+const request = (path: string, options: RequestOptions = {}) => {
+    return http.request(`${localHost}${path}`, {
+        ...options,
+        headers: { ...baseHeaders, ...(options.headers || {}) }
+    } as any)
 }
 
-export var xyLogin = () => {
-    var options = {
-        'method': 'POST',
-        'headers': {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "username": "yaoyunchou",
-            "password": "123456"
-        })
-     
-     };
-    // var url = "https://baidu.com";
-    var res = http.request(`${host}/api/login`, options as any);
-    
-    if(res.statusCode === 200) {
-        const data:any = res.body.json()
-        Record.info('login', data)
-        if(data.code=== 0  && data.token){
-            token = data.token
-            header.Authorization = `Bearer ${token}`
-        }
-    }
-
-    var options = {
-        'method': 'POST',
-        'headers': {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "username": "yaoyc",
-            "password": "123456"
-        })
-     
-     };
-    // var url = "https://baidu.com";
-    var res = http.request(`${nestHost}/api/v1/auth/signin`, options as any);
-    if(res.statusCode === 200 || res.statusCode === 201) {
-        const data:any = res.body.json()
-        Record.info(JSON.stringify(data))
-        if(data){
-            // console.log('data!!!', data)
-            access_token = data.access_token
-        }
-    }
+// token 由本地服务器统一管理，脚本端无需登录
+export const xyLogin = () => {
+    // 登录在本地服务器启动时自动完成，此处保留空实现以兼容现有调用
 }
 
-export var createLogs = (name, data) => {
+// getHeader / getNestHeader 已无需返回 Authorization，保留空实现以兼容现有调用
+export const getHeader = () => baseHeaders
+export const getNestHeader = () => baseHeaders
+
+// ------------------------------------------------------------------ //
+// 日志
+// ------------------------------------------------------------------ //
+
+export const createLogs = (name: string, data: unknown): void => {
     try {
-        var options = {
-            'method': 'POST',
-            'headers': getNestHeader(),
-            body: JSON.stringify({
-                "msg": JSON.stringify(data),
-                name, 
-                appName: 'hamibot',
-                appId: 'b9836988643cc4d200be43d71e97c57'
-            })
-         
-         };
-        var res = http.request(`${nestHost}/api/v1/logs`, options as any);
-        const backData:any = res.body.json()
-        // console.log('------res== data==' , backData)
-
-        // console.log('options' , options)
-       
+        request('/api/logs', {
+            method: 'POST',
+            body: JSON.stringify({ name, data }),
+        })
     } catch (error) {
-        Record.error('createLogs error', error)  
+        Record.error('createLogs error', error)
     }
-   
-
 }
 
-export var getGoodInfo = (nickName, title) => {
-    var options = {
-        'method': 'GET',
-        'headers': getNestHeader(),
-    }
-    var res = http.request(`${nestHost}/api/v1/order/fs/order/good?nikeName=${nickName}&title=${title}`, options as any)
-    const data:any = res.body.json()
-    return data
+// ------------------------------------------------------------------ //
+// 订单查询
+// ------------------------------------------------------------------ //
+
+export const getGoodInfo = (nickName: string, title: string) => {
+    const res = request(`/api/order/good?nickName=${encodeURIComponent(nickName)}&title=${encodeURIComponent(title)}`)
+    return (res.body.json() as any)
 }
 
-export var getGoodInfoByOrderNumber = (orderNumber) => {
-    var options = {
-        'method': 'GET',
-        'headers': getNestHeader(),
-    }
-    var res = http.request(`${nestHost}/api/v1/order/fs/order/orderNumber?orderNumber=${orderNumber}`, options as any)
-    const data:any = res.body.json()
-    return data
+export const getGoodInfoByOrderNumber = (orderNumber: string) => {
+    const res = request(`/api/order/number?orderNumber=${encodeURIComponent(orderNumber)}`)
+    return (res.body.json() as any)
 }
 
+// ------------------------------------------------------------------ //
+// Element 缓存（读写本地文件，速度极快）
+// ------------------------------------------------------------------ //
 
-/**
- *  1. 获取缓存数据
- */
-
-export const getElementCache = () => {
-    var options = {
-        'method': 'GET',
-        'headers': getNestHeader(),
-    }
-    var res = http.request(`${nestHostXcx}/api/v1/dictionary/category/hamibot/name/elementCatch`, options as any)
-    const data:any = res.body.json()
-    // 需要将类型为string的value转换成map
-    if(data.code ===0 && data.data.value){
-        const cacheData = JSON.parse(data.data.value)
-        // 将cacheData转换成map - 修复Map构造方式
-        const cacheMap = new Map<string, any>();
-        if (Array.isArray(cacheData)) {
-            cacheData.forEach((item: any) => {
-                if (item && item.key && item.value !== undefined) {
-                    cacheMap.set(item.key, item.value);
-                }
-            });
+export const getElementCache = (): Map<string, any> => {
+    try {
+        const res = request('/api/cache/element')
+        const data: any = res.body.json()
+        if (data.code === 0 && data.data?.value) {
+            const cacheData = JSON.parse(data.data.value)
+            const cacheMap = new Map<string, any>()
+            if (Array.isArray(cacheData)) {
+                cacheData.forEach((item: any) => {
+                    if (item && item.key !== undefined) {
+                        cacheMap.set(item.key, item.value)
+                    }
+                })
+            }
+            return cacheMap
         }
-        console.log('cacheMap', data.data.value)
-        return cacheMap
-    }else{
-        return new Map<string, any>()
+    } catch (error) {
+        Record.error('getElementCache error', error)
     }
+    return new Map<string, any>()
 }
 
 export const saveElementCache = (cache: Map<string, any>) => {
-    // 需要把map转成string，存入数据库
-    const cacheData = Array.from(cache.entries()).map(([key, value]) => ({ key, value }));
-    const cacheString = {
-        "category": "hamibot",
-        "name": "elementCatch",
-        "value": JSON.stringify(cacheData)
+    try {
+        const cacheData = Array.from(cache.entries()).map(([key, value]) => ({ key, value }))
+        request('/api/cache/element', {
+            method: 'PUT',
+            body: JSON.stringify(cacheData),
+        })
+    } catch (error) {
+        Record.error('saveElementCache error', error)
     }
-    const options = {
-        'method': 'PUT',
-        'headers': getNestHeader(),
-         body: JSON.stringify(cacheString),
-    }
-    var res = http.request(`${nestHostXcx}/api/v1/dictionary/update/value`, options as any)
-    // console.log('saveElementCache', cacheString)
 }
-

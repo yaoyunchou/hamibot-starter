@@ -1,4 +1,3 @@
-import { Record } from "../../../lib/logger";
 import { coinExchange } from "./getGold";
 import { findDom } from "./exposure";
 import { startAutoComment } from "./autoComment";
@@ -96,7 +95,6 @@ export const findPage = (pageName:string) =>{
     if(name !== APPNAME){
         launch(APPNAME);
         sleep(1000)
-        const newPageName = currentPackage();
         findPage(pageName)
         return;
     }
@@ -121,44 +119,20 @@ export const findPage = (pageName:string) =>{
             }else {
                 // 默认是在主页进行路径的查找
                 if(activity === PageType.home){
-                    console.log('-----PageType.home----')
-                    //  找到金币入口，通过简历坐标找到入口
-                    const goldButtons =  className("android.widget.ImageView").desc("简历认证").findOne(1000)
-
-                    // console.log('-----goldButtons----', goldButtons.length)
-                    // for(let i = 0; i < goldButtons.length; i++){
-                    //     const btn = goldButtons[i]
-                    //     const react = btn.bounds()
-                    //     console.log('-----btn----', react.left, react.top, react.right, react.bottom)
-                    //     console.log('-----btn-children---', btn.childCount())
-                    //     // 找到后进行点击进入领取金币页面
-                    //     if(react.left === 23 && react.right ===435){
-                    //         btn.click()
-                    //         Record.info('进入金币页面')
-                    //         setRunInfo('进入金币页面')
-                    //         sleep(1000)
-                    //         return;
-                    //     }
-                    // }
-
-                    // 点击进入到金币也没
+                    const goldButtons = className("android.widget.ImageView").desc("简历认证").findOne(1000)
                     if(goldButtons){
                         setRunInfo('点击进入金币页面')
                         // 点击后， 检查是否是金币页面
                         getGoldEntryClickFn(goldButtons)
                         sleep(1000)
-                        // 执行金币逻辑
                         coinExchange()
                     }else{
-                        // 如果没有命中则再次执行定位页面逻辑
                         goBackMyPage()
                         sleep(1000)
                         findPage(pageName)
                     }
-                   
-                    // findDom(log)
                 }else{
-                    goBackMyPage
+                    goBackMyPage()
                     sleep(1000)
                     findPage(pageName)
                 }
@@ -195,11 +169,8 @@ export const findPage = (pageName:string) =>{
                     if(productBtn){
                         productBtn.click()
                         sleep(1000)
-                        // 执行曝光逻辑
                         findDom()
                     }
-                   
-                    // findDom(log)
                 }else{
                     goBackMyPage()
                     sleep(1000)
@@ -246,7 +217,6 @@ export const findPage = (pageName:string) =>{
                     }
                     sleep(1000)
                     findPage(pageName)
-                    // findDom(log)
                 }else{
                     goBackMyPage()
                     sleep(1000)
@@ -258,110 +228,41 @@ export const findPage = (pageName:string) =>{
             console.log('dddd');
             
     }
-    // const myBtn = id("tab_title").className("android.widget.TextView").text("我的").findOne()
-    // console.log('-----myBtn----', myBtn)
-    // if(myBtn){
-    //     myBtn.parent().parent().click()
-    // }else{
-    //     // 多次退出， 希望能退出闲鱼
-    //     back();
-    // }
-    
 }
 
 
 // 获取曝光
 export const xyBaseRun = () =>{
-    // 打开闲鱼
     launchApp("闲鱼");
-    // 运行对应的收集数据代码
     findDom();
-    // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
-    var time = setInterval(() => {
-
-    }, 2000);
     threads.start(function () {
-        var time = setInterval(() => {
-           
-        }, 2000);
-        var window = floaty.window(
+        const window = floaty.window(
             `<vertical>
                 <text id="runLog"  padding="10 5 10 5" bg="#ff0000" w="300" h="auto" text="Hello" />
             </vertical>` as any
         );
         window.setPosition(window.getX(), window.getY() + 100);
-        // console.log('start', jobs)
-        // 初始化
         initRunInfo(window)
-        // 执行自动评论
-        // if(jobs.includes('comment')){
-        //     findPage('comment')
-        // }
-        // 执行自动获取金币
         if(jobs.includes('goldCoin')){
             findPage('goldCoin')
             coinExchange()
         }
-        // 执行自动同步商品信息
-        
-        // 自动发帖
-        // 自动发商品
-       
     }); 
-
-    // 执行曝光逻辑
-    // findPage('comment')
-    // 执行金币逻辑
-    // findPage('goldCoin')
-    // // 执行商品详情逻辑
-    // findPage('product')
-
 }
 
-// 新的启动方式， 只显示日志在最上面
 export const xyBaseRunWithLog = () =>{
-    // 关闭其他所有运行的软件
     closeApp('闲鱼')
     sleep(1000)
-    // 打开闲鱼
     launchApp("闲鱼");
-    // 运行对应的收集数据代码
     findDom();
-    // 执行曝光， 先找到对应的页面，然后执行对应的逻辑
-    var time = setInterval(() => {
-
-    }, 2000);
     threads.start(function () {
-        var time = setInterval(() => {
-           
-        }, 2000);
-        var window = floaty.window(
+        const window = floaty.window(
             `<vertical>
                 <text id="runLog" fontSize="8"  padding="10 5 10 5" bg="#ff0000" w="300" h="auto" text="Hello" />
             </vertical>` as any
         );
         window.setPosition(window.getX(), window.getY());
-        // console.log('start', jobs)
-        // 初始化
         initRunInfo(window)
-        // 执行自动评论
-        // if(jobs.includes('comment')){
-        //     findPage('comment')
-        // }
-        // 执行自动获取金币
         findPage('goldCoin')
-        // 执行自动同步商品信息
-        
-        // 自动发帖
-        // 自动发商品
-       
     }); 
-
-    // 执行曝光逻辑
-    // findPage('comment')
-    // 执行金币逻辑
-    // findPage('goldCoin')
-    // // 执行商品详情逻辑
-    // findPage('product')
-
 }

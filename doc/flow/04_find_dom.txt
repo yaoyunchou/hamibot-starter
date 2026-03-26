@@ -1,0 +1,23 @@
+商品数据采集流程
+================
+文件：src/toolKit/xianyu/service/exposure.ts
+函数：findDom()
+
+findDom()
+    │
+    ├─► 查找商品列表（descContains "降价"，备选 "编辑"）
+    │
+    ├─[列表为空]─► 结束
+    │
+    └─[有商品]─► 遍历 list[i]
+                    │
+                    ├─► getInfo(text)             ── 解析标题/价格等信息
+                    ├─► buildBookSet(title, info)  ── 写入数据集 / 上报服务端
+                    │
+                    └─[i === 最后一个]
+                            │
+                            ├─► safeSwipe()   ── 向上滑动加载下一页
+                            ├─► sleep(3000)
+                            │
+                            ├─[检测到"哎呀，到底啦"]─► 采集完成 ✓
+                            └─[未到底]─────────────► findDom() [递归，处理下一页]

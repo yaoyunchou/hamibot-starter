@@ -14,12 +14,13 @@
 //     // currentPackage()
 
 import { Record } from "../../../lib/logger";
-import { getHeader, nestHost, host, xyLogin } from "../../../lib/service";
 import { setRunInfo } from "../service/base";
 
-    
-
-// 线上环境
+const localHost: string = (hamibot.env as any)._LOCAL_SERVER || 'http://192.168.1.100:3000'
+const baseHeaders = { 'Content-Type': 'application/json' }
+type RequestOptions = { method?: string; headers?: object; body?: string }
+const localRequest = (path: string, options: RequestOptions = {}) =>
+    http.request(`${localHost}${path}`, { ...options, headers: { ...baseHeaders, ...(options.headers || {}) } } as any)
 
 const shopNameArr=["蓝小飞鱼","tb133799136652"]
 var storage = storages.create("shopName");
@@ -85,34 +86,27 @@ export  var buildBookSet= function (key,info) {
     // 对数据进行推送
    
     // var url = "https://baidu.com";
-    var book = http.request(`${nestHost}/api/v1/xyBook/book/getByOtherData?search=${info.title}`, {
-        'method': 'GET',
-        'headers':getHeader()
-    } as any);
+    var book = localRequest(`/api/book?search=${encodeURIComponent(info.title)}`);
    
 
     if(book.statusCode === 401){
-        // 重现授权
-        console.log('401')
-        setRunInfo("通过title获取数据失败")
-        xyLogin()
+        Record.error(`buildBookSet: 服务端返回 401，请检查本地服务器是否正常运行`)
+        setRunInfo("服务端认证失败，请检查本地服务器")
     }else{
         const bookData:any = book.body.json()
         if(bookData.code ==='200'){
                 // 更新数据
-            var options = {
-                'method': 'POST',
-                'headers':getHeader(),
+            var result = localRequest('/api/book/view', {
+                method: 'POST',
                 body: JSON.stringify({
-                    title:info.title,
+                    title: info.title,
                     shopName: shopName,
                     exposure: info.exposure,
                     views: info.views,
                     wants: info.wants,
                     product_id: bookData?.data?.product_id
                 })
-            };
-            var result = http.request(`${nestHost}/api/v1/book/view`, options as any)
+            })
             if(result.statusCode === 200){
                 const resultData:any = result.body.json()
                 setRunInfo(`${info.title} 更新成功!`)
@@ -127,19 +121,9 @@ export  var buildBookSet= function (key,info) {
 
 // 获取需要推广的数据
 var spreadBookInfo = () => {
-    var options = {
-        'method': 'GET',
-        'headers': getHeader(),
-     
-     };
-    // var url = "https://baidu.com";
-    var res = http.request(`${host}/api/spreadBookInfo`, options as any);
+    var res = localRequest('/api/spread');
     
-    if(res.statusCode === 401){
-        // 重现授权
-        console.log('401')
-        xyLogin()
-    }else if(res.statusCode === 200){
+    if(res.statusCode === 200){
         console.log('-------e------', res)
         const data:any = res.body.json()
         console.log('-------data------', data)
@@ -150,19 +134,12 @@ var spreadBookInfo = () => {
 
 // 收集樊登读书信息
 var getFSBookInfo = (book) => {
-    var options = {
-        'method': 'POST',
-        'headers': getHeader(),
+    var res = localRequest('/api/fsbook', {
+        method: 'POST',
         body: JSON.stringify(book)
-     };
-    // var url = "https://baidu.com";
-    var res = http.request(`${host}/api/fsBook`, options as any);
+    });
     
-    if(res.statusCode === 401){
-        // 重现授权
-        console.log('401')
-        xyLogin()
-    }else if(res.statusCode === 200){
+    if(res.statusCode === 200){
         console.log('-------e------', res)
         const data = res.body.json()
         console.log('-------data------', data)
@@ -173,13 +150,7 @@ var getFSBookInfo = (book) => {
 // 获取当前已经存在的书籍名称
 
 var getSavedBooks = () => {
-    var options = {
-        'method': 'GET',
-        'headers': getHeader(),
-     
-     };
-    // var url = "https://baidu.com";
-    var res = http.request(`${host}/api/fsBooks?omit=recommend,wonderful,authorIntroduction,explainContent,receive&pageSize=2000`, options as any);
+    var res = localRequest('/api/fsbooks?omit=recommend,wonderful,authorIntroduction,explainContent,receive&pageSize=2000');
     
     if(res.statusCode === 200) {
         try {
@@ -200,16 +171,7 @@ var getSavedBooks = () => {
 
 
 const getGoodInfo = (nickName, title) => {
-    var options = {
-        'method': 'POST',
-        'headers': getHeader(),
-        body: JSON.stringify({
-            nickName,
-            title
-        })
-     
-     };
-    var res = http.request(`${host}/api/goodsInfo?nickName=${nickName}&title=${title}`, options as any);
+    var res = localRequest(`/api/goods?nickName=${encodeURIComponent(nickName)}&title=${encodeURIComponent(title)}`);
     if(res.statusCode === 200){
         const data:any = res.body.json()
         console.log('-------data------', data)

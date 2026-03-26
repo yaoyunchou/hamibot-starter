@@ -1,0 +1,41 @@
+金币任务流程
+============
+文件：src/toolKit/xianyu/service/getGold.ts
+       src/toolKit/xianyu/service/getMainPopup.ts
+函数：coinExchange()  /  mainPopupTask()  /  mainPopupFn()
+
+coinExchange()
+    │
+    ├─[找不到"闲鱼币抵扣"]─► backMainPage() ─► 结束（等下次调用）
+    │
+    └─[找到"闲鱼币抵扣"]
+            │
+            ├─[找到"今天"标签 → 主弹框已打开]
+            │       │
+            │       └─► mainPopupTask()
+            │               │
+            │               ├─► checkGetGold()  ── 随手领取奖励
+            │               │
+            │               ├─► 找"签到"按钮 ─► 点击签到
+            │               │
+            │               └─► 遍历 taskList
+            │                       │
+            │                       ├─[task.hasRun = true]─► 跳过
+            │                       │
+            │                       └─[未执行]─► mainPopupFn(title, callback)
+            │                                       │
+            │                                       ├─ 滚动定位到目标任务
+            │                                       ├─ 找到"去完成"按钮并点击
+            │                                       └─ 执行 callback() ─► task.hasRun = true
+            │                       │
+            │                       └─[所有任务完成]─► 结束 ✓
+            │                          [未全完成]──► mainPopupTask() [递归]
+            │
+            └─[没有主弹框]
+                    │
+                    ├─[找到扔色子坐标按钮]─► mainBtn.click()
+                    │       │
+                    │       ├─[触发了弹框]─► handlePopup ─► coinExchange() [重试]
+                    │       └─[没触发弹框]─► coinExchange() [继续]
+                    │
+                    └─[找不到扔色子按钮]─► coinExchange() [重试]

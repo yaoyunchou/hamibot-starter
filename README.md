@@ -127,6 +127,83 @@ setTimeout(() => {
 - [ ] 检查注释中的示例代码是否都能够运行
 - [ ] 统一函数类型（Function、function）
 
+## 本地服务端（server/）
+
+本地服务端使用 Python + FastAPI，建议用 venv 虚拟环境隔离依赖。
+
+### 1. 创建虚拟环境
+
+在 `server/` 目录下执行：
+
+```sh
+cd server
+python -m venv .venv
+```
+
+### 2. 激活虚拟环境
+
+**Windows（PowerShell）**
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+**Windows（CMD）**
+
+```cmd
+.venv\Scripts\activate.bat
+```
+
+**macOS / Linux**
+
+```sh
+source .venv/bin/activate
+```
+
+激活后终端前缀会变为 `(.venv)`，表示已进入虚拟环境。
+
+### 3. 安装依赖
+
+```sh
+pip install -r requirements.txt
+```
+
+### 4. 配置环境变量
+
+复制示例文件并按需修改：
+
+```sh
+cp .env.example .env
+```
+
+`.env` 内容（当前只需配置端口）：
+
+```
+PORT=3000
+```
+
+### 5. 启动服务
+
+```sh
+python main.py
+```
+
+服务启动后访问 `http://localhost:3000/health` 确认运行正常。
+
+### 6. 退出虚拟环境
+
+```sh
+deactivate
+```
+
+### 注意事项
+
+- `.venv/` 已加入 `.gitignore`，不会被提交到仓库
+- 每次开新终端都需要重新激活虚拟环境（步骤 2）
+- 新增依赖后执行 `pip freeze > requirements.txt` 更新依赖文件
+
+---
+
 ## 作者
 
 👤 **BATU1579**
