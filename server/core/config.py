@@ -8,7 +8,6 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # 服务端口
     PORT: int = 3000
 
 

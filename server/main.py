@@ -9,11 +9,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from core.config import settings
 from routers import book, cache, goods, logs, order
 
-# ------------------------------------------------------------------ #
-# 日志配置
-#   - 服务器日志（uvicorn + 应用）→ data/server.log + 控制台
-#   - 设备日志（Hamibot 发来的）  → data/device_logs/{name}/YYYY-MM-DD.log
-# ------------------------------------------------------------------ #
 _LOG_DIR = Path(__file__).parent / "data"
 _LOG_DIR.mkdir(exist_ok=True)
 
@@ -54,7 +49,7 @@ LOGGING_CONFIG = {
 
 logging.config.dictConfig(LOGGING_CONFIG)
 
-app = FastAPI(title="Hamibot 本地代理服务器")
+app = FastAPI(title="Hamibot 本地服务器")
 
 app.add_middleware(
     CORSMiddleware,

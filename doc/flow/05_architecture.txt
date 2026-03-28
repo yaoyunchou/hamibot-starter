@@ -2,24 +2,15 @@
 ============
 
 ─────────────────────────────────────────
-当前架构（直连外部 API，凭据写死在脚本）
-─────────────────────────────────────────
-
-Hamibot 脚本
-    └── lib/service.ts
-            │  (JWT 硬编码在源码中)
-            ├──► xfyapi.xfysj.top      直连
-            └──► nestapi.xfysj.top     直连
-
-
-─────────────────────────────────────────
-当前架构（本地服务器，无外部鉴权依赖）
+当前架构（纯本地，不依赖外部服务器）
 ─────────────────────────────────────────
 
 Hamibot 脚本
     └── lib/service.ts
             │  (只请求 localhost，无凭据)
             └──► localhost:3000  (server/ FastAPI)
+                        │
+                        └── data/*.json  (纯本地 JSON 文件存储)
 
 
 ─────────────────────────────────────────
@@ -29,12 +20,46 @@ server 内部结构
 server/
     ├── main.py                  ── FastAPI 入口，注册路由
     ├── core/
-    │   └── config.py            ── 从 .env 读取配置（端口）
-    └── routers/
-        ├── logs.py              ── POST /api/logs       （待实现）
-        ├── order.py             ── GET  /api/order/good （待实现）
-        │                           GET  /api/order/number
-        ├── cache.py             ── GET  /api/cache/element （待实现）
-        │                           PUT  /api/cache/element
-        ├── book.py              ── 书单相关              （待实现）
-        └── goods.py             ── 商品信息相关          （待实现）
+    │   ├── config.py            ── 从 .env 读取配置（端口）
+    │   ├── local_store.py       ── 本地 JSON 文件读写工具
+    │   └── device_logger.py     ── 设备日志写入本地文件
+    ├── routers/
+    │   ├── logs.py              ── POST /api/logs            写本地设备日志
+    │   ├── order.py             ── GET  /api/order/good      按 nickName+title 查询
+    │   │                           GET  /api/order/number    按 orderNumber 查询
+    │   │                           POST /api/order           新增/更新订单
+    │   ├── cache.py             ── GET  /api/cache/element   读元素缓存
+    │   │                           PUT  /api/cache/element   写元素缓存
+    │   ├── book.py              ── GET  /api/book            按 title 搜索
+    │   │                           POST /api/book/view       更新曝光数据
+    │   │                           GET  /api/spread          获取推广列表
+    │   │                           POST /api/fsbook          新增樊登书籍
+    │   │                           GET  /api/fsbooks         获取樊登书籍列表
+    │   └── goods.py             ── GET  /api/goods           按 nickName+title 查询
+    │                               POST /api/goods           新增/更新商品
+    └── data/
+        ├── element_cache.json   ── 元素缓存
+        ├── orders.json          ── 订单数据
+        ├── books.json           ── 书籍数据
+        ├── fs_books.json        ── 樊登书籍数据
+        ├── spread.json          ── 推广配置
+        ├── goods.json           ── 商品数据
+        ├── server.log           ── 服务器运行日志
+        └── device_logs/         ── 设备日志（按 name/日期 分目录）
+
+
+─────────────────────────────────────────
+后续对接外部 API 时的目标架构
+─────────────────────────────────────────
+
+Hamibot 脚本
+    └── lib/service.ts
+            │
+            └──► localhost:3000  (server/ FastAPI)
+                        │
+                        ├── data/*.json          本地缓存/存储
+                        │
+                        └── core/proxy.py        统一代理层（待实现）
+                                    │
+                                    ├──► xfyapi.xfysj.top
+                                    └──► nestapi.xfysj.top
