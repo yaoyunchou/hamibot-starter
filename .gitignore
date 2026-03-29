@@ -16,5 +16,6 @@ server/**/__pycache__/
 server/*.pyc
 server/.venv/
 # 运行时日志（不提交）
+logs/
 server/data/server*.log
 server/data/device_logs/
