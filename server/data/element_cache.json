@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "key": "coinExchangeMain_闲鱼币",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 40
+    }
+  },
+  {
+    "key": "mainPopup_今天",
+    "value": {
+      "indices": [
+        8
+      ],
+      "errorTime": 40
+    }
+  },
+  {
+    "key": "mainPopup_浏览指定频道好物_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 1
+    }
+  },
+  {
+    "key": "mainPopup_去完成",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 3
+    }
+  },
+  {
+    "key": "coinExchangeMain_闲鱼币抵扣",
+    "value": {
+      "indices": [
+        5
+      ],
+      "errorTime": -2
+    }
+  },
+  {
+    "key": "mainPopup_去浏览全新好物_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 0
+    }
+  },
+  {
+    "key": "scrollPage_滑动浏览",
+    "value": {
+      "indices": [
+        6
+      ],
+      "errorTime": 2
+    }
+  },
+  {
+    "key": "mainPopup_浏览推荐的国补商品_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 0
+    }
+  },
+  {
+    "key": "mainPopup_去淘宝签到领红包_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 2
+    }
+  },
+  {
+    "key": "mainPopup_去蚂蚁庄园逛一逛_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 2
+    }
+  },
+  {
+    "key": "mainPopup_浏览鱼小铺工作台_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 3
+    }
+  },
+  {
+    "key": "mainPopup_去蚂蚁森林逛一逛_strict",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 3
+    }
+  },
+  {
+    "key": "mainPopup_看视频奖励100币_strict",
+    "value": {
+      "indices": [
+        8
+      ],
+      "errorTime": 3
+    }
+  },
+  {
+    "key": "mainPopup_领取奖励",
+    "value": {
+      "indices": [
+        2
+      ],
+      "errorTime": 3
+    }
+  }
+]

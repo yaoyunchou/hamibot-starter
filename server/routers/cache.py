@@ -31,7 +31,10 @@ def _read_cache() -> list:
 
 def _write_cache(data: list):
     try:
-        CACHE_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+        content = json.dumps(data, ensure_ascii=False, indent=2)
+        tmp = CACHE_FILE.with_suffix(".tmp")
+        tmp.write_text(content, encoding="utf-8")
+        tmp.replace(CACHE_FILE)   # 原子替换，避免写到一半崩溃导致 JSON 损坏
     except Exception as e:
         logger.error("写入 element_cache 失败: %s", e)
 
@@ -43,21 +46,17 @@ class CacheItem(BaseModel):
 
 @router.get("/cache/element")
 async def get_element_cache():
-    """
-    返回格式与原接口兼容：
-    { "code": 0, "data": { "value": "[{key,value},...]" } }
-    """
+    """返回格式：{ "code": 0, "data": [{key, value}, ...] }"""
     items = _read_cache()
-    return {
-        "code": 0,
-        "data": {
-            "value": json.dumps(items, ensure_ascii=False)
-        },
-    }
+    return {"code": 0, "data": items}
 
 
 @router.put("/cache/element")
 async def save_element_cache(items: list[CacheItem]):
-    data = [{"key": item.key, "value": item.value} for item in items]
+    # 读取现有缓存，以 key 为索引做合并，避免客户端启动异常时覆盖掉已有数据
+    existing = {entry["key"]: entry["value"] for entry in _read_cache()}
+    for item in items:
+        existing[item.key] = item.value
+    data = [{"key": k, "value": v} for k, v in existing.items()]
     _write_cache(data)
     return {"code": 0, "message": "保存成功", "count": len(data)}

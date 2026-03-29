@@ -2,7 +2,7 @@ import { Record } from "./logger"
 
 // 本地代理服务器地址，通过 Hamibot 配置面板的 _LOCAL_SERVER 字段填写电脑局域网 IP
 // 例如：http://192.168.1.100:3000
-const localHost: string = (hamibot.env as any)._LOCAL_SERVER || 'http://192.168.1.100:3000'
+const localHost: string = (hamibot.env as any)._LOCAL_SERVER || 'http://10.10.30.129:3000'
 
 const baseHeaders = { 'Content-Type': 'application/json' }
 
@@ -11,7 +11,8 @@ type RequestOptions = { method?: string; headers?: object; body?: string }
 const request = (path: string, options: RequestOptions = {}) => {
     return http.request(`${localHost}${path}`, {
         ...options,
-        headers: { ...baseHeaders, ...(options.headers || {}) }
+        headers: { ...baseHeaders, ...(options.headers || {}) },
+        timeout: 10000,
     } as any)
 }
 
@@ -57,36 +58,126 @@ export const getGoodInfoByOrderNumber = (orderNumber: string) => {
 // Element 缓存（读写本地文件，速度极快）
 // ------------------------------------------------------------------ //
 
-export const getElementCache = (): Map<string, any> => {
-    try {
-        const res = request('/api/cache/element')
-        const data: any = res.body.json()
-        if (data.code === 0 && data.data?.value) {
-            const cacheData = JSON.parse(data.data.value)
-            const cacheMap = new Map<string, any>()
-            if (Array.isArray(cacheData)) {
-                cacheData.forEach((item: any) => {
-                    if (item && item.key !== undefined) {
-                        cacheMap.set(item.key, item.value)
-                    }
-                })
+const _loadElementCache = (): Map<string, any> => {
+    // 直接用 http.get 避免带 Content-Type 请求头影响 Hamibot 对响应的处理
+    const res = (http as any).get(`${localHost}/api/cache/element`, { timeout: 10000 })
+    const data: any = res.body.json()
+    if (data && data.code === 0 && Array.isArray(data.data)) {
+        const cacheMap = new Map<string, any>()
+        data.data.forEach((item: any) => {
+            if (item && item.key !== undefined) {
+                cacheMap.set(item.key, item.value)
             }
-            return cacheMap
-        }
-    } catch (error) {
-        Record.error('getElementCache error', error)
+        })
+        return cacheMap
     }
+    return new Map<string, any>()
+}
+
+export const getElementCache = (): Map<string, any> => {
+    // 启动阶段服务器可能尚未就绪，最多重试3次，每次间隔500ms
+    let lastError: any = null
+    for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+            const cacheMap = _loadElementCache()
+            Record.info(`getElementCache 加载成功，共 ${cacheMap.size} 条 (第${attempt}次)`)
+            return cacheMap
+        } catch (error) {
+            lastError = error
+            Record.warn(`getElementCache 第${attempt}次失败: ${error}`)
+            if (attempt < 3) sleep(500)
+        }
+    }
+    Record.error('getElementCache 3次均失败，使用空缓存', lastError)
     return new Map<string, any>()
 }
 
 export const saveElementCache = (cache: Map<string, any>) => {
     try {
         const cacheData = Array.from(cache.entries()).map(([key, value]) => ({ key, value }))
-        request('/api/cache/element', {
+        const res = request('/api/cache/element', {
             method: 'PUT',
             body: JSON.stringify(cacheData),
         })
+        const result: any = res.body.json()
+        // count 是服务端合并后的总条数（含历史数据）
+        const serverCount = result?.count ?? cache.size
+        Record.info(`saveElementCache 服务端共 ${serverCount} 条 (本次新增/更新 ${cache.size} 条)`)
     } catch (error) {
-        Record.error('saveElementCache error', error)
+        Record.error('saveElementCache 保存失败', error)
+    }
+}
+
+// ------------------------------------------------------------------ //
+// 控制面板 — 任务队列
+// ------------------------------------------------------------------ //
+
+/** 拉取指定状态的任务列表，客户端用于轮询待执行任务（POST 接口，兼容 Hamibot GET 限制） */
+export const fetchPendingTasks = (): any => {
+    let raw = ''
+    try {
+        const res = request('/api/control/tasks/poll', {
+            method: 'POST',
+            body: JSON.stringify({ status: 'pending', limit: 1 }),
+        })
+        raw = res.body.string()
+        Record.info('fetchPendingTasks raw[' + raw.length + ']: ' + raw.substring(0, 100))
+        if (!raw) return null
+        return JSON.parse(raw)
+    } catch (error) {
+        Record.error('fetchPendingTasks raw: ' + raw.substring(0, 100))
+        Record.error('fetchPendingTasks error', error)
+        return null
+    }
+}
+
+/** 认领任务（将状态置为 running） */
+export const claimTask = (taskId: string): void => {
+    try {
+        request(`/api/control/task/${taskId}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                status: 'running',
+                started_at: new Date().toLocaleString('zh-CN', { hour12: false })
+            }),
+        })
+    } catch (error) {
+        Record.error('claimTask error', error)
+    }
+}
+
+/** 上报任务完成 */
+export const completeTask = (taskId: string, success: boolean, message?: string): void => {
+    try {
+        request(`/api/control/task/${taskId}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                status: success ? 'completed' : 'error',
+                completed_at: new Date().toLocaleString('zh-CN', { hour12: false }),
+                message: message || null,
+            }),
+        })
+    } catch (error) {
+        Record.error('completeTask error', error)
+    }
+}
+
+// ------------------------------------------------------------------ //
+// 控制面板 — 预警
+// ------------------------------------------------------------------ //
+
+/** 上报预警（在需要预警的地方调用此函数） */
+export const reportAlert = (
+    level: 'info' | 'warn' | 'error',
+    message: string,
+    taskId?: string
+): void => {
+    try {
+        request('/api/control/alert', {
+            method: 'POST',
+            body: JSON.stringify({ level, message, task_id: taskId || null }),
+        })
+    } catch (error) {
+        Record.error('reportAlert error', error)
     }
 }

@@ -14,7 +14,7 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-LOG_DIR = Path(__file__).parent.parent / "data" / "device_logs"
+LOG_DIR = Path(__file__).parent.parent.parent / "logs" / "device"
 
 
 def _log_path(name: str) -> Path:

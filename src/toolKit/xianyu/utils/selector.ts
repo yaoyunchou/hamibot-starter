@@ -1,5 +1,6 @@
 import { Record } from "../../../lib/logger";
 import { getElementCache, saveElementCache } from "../../../lib/service";
+import { setRunInfo } from "../service/base";
 
 
 
@@ -10,27 +11,95 @@ export const getRunElementCache = () => {
     return elementCache
 }
 
+// 本次运行的调用次数计数（内存中，重启清零）
+const _callCount: Map<string, number> = new Map();
+const _incCall = (key: string) => {
+    _callCount.set(key, (_callCount.get(key) || 0) + 1);
+    return _callCount.get(key)!;
+};
+
+const MAX_CACHED_INDICES = 3;
+
+// 兼容旧格式 { index, errorTime } → 新格式 { indices, errorTime }
+const migrateCache = (value: any): { indices: number[]; errorTime: number } => {
+    if (Array.isArray(value?.indices)) return value;
+    return { indices: [value.index], errorTime: value.errorTime ?? 0 };
+};
+
+// 将命中的 index 移到首位，保留最多 MAX_CACHED_INDICES 个
+const promoteIndex = (indices: number[], hitIndex: number): number[] => {
+    const filtered = indices.filter(i => i !== hitIndex);
+    return [hitIndex, ...filtered].slice(0, MAX_CACHED_INDICES);
+};
+
 /**
  * 生成元素查找策略数组
  * @param title 要查找的元素标题
  * @param findMethod 查找方法，默认为 findOne
  * @returns 策略数组
  */
+/**
+ * find() 模式辅助：先用 findOnce() 快速探测是否存在，不存在则跳过 find() 全树遍历。
+ * findOnce() 非阻塞，立即返回，不受 Accessibility Service 超时行为影响。
+ */
+const probeAndFind = (selector: any): any => {
+    if (!selector.findOnce()) return null;
+    return selector.find();
+};
+
+/**
+ * 串行执行所有策略，找到即停并返回
+ * 注：Android Accessibility Service 内部串行处理，多线程并发反而因 join-all 等待所有线程
+ * 而无法提前退出，实测比串行慢数倍，故保持串行逐条尝试。
+ */
+const runStrategiesSerial = <T>(
+    strategies: Array<() => T | null | undefined>,
+    isValid: (r: T | null | undefined) => boolean
+): { index: number; element: T } | null => {
+    for (let i = 0; i < strategies.length; i++) {
+        const r = strategies[i]();
+        if (isValid(r)) return { index: i, element: r as T };
+    }
+    return null;
+};
+
 const createElementStrategies = (title: string, findMethod: 'findOne' | 'find' = 'findOne') => {
-    const timeout = findMethod === 'findOne' ? 10 : undefined;
+    // 策略分两段：精准匹配（text/desc）在前，模糊匹配（textContains/descContains）在后
+    // 每段内部按 View → TextView → ImageView 排列
+    // 缓存命中精准策略后下次直接走精准路径，保证语义准确性
+    const timeout = 10;
+    if (findMethod === 'findOne') {
+        return [
+            // === 精准匹配 ===
+            () => className("android.view.View").text(title).findOne(timeout),
+            () => className("android.view.View").desc(title).findOne(timeout),
+            () => className("android.widget.TextView").text(title).findOne(timeout),
+            () => className("android.widget.TextView").desc(title).findOne(timeout),
+            () => className("android.widget.ImageView").text(title).findOne(timeout),
+            () => className("android.widget.ImageView").desc(title).findOne(timeout),
+            // === 模糊匹配 ===
+            () => className("android.view.View").textContains(title).findOne(timeout),
+            () => className("android.view.View").descContains(title).findOne(timeout),
+            () => className("android.widget.TextView").textContains(title).findOne(timeout),
+            () => className("android.widget.TextView").descContains(title).findOne(timeout),
+            () => className("android.widget.ImageView").textContains(title).findOne(timeout),
+            () => className("android.widget.ImageView").descContains(title).findOne(timeout),
+        ];
+    }
+    // find 模式同上：精准在前，模糊在后
     return [
-        () => timeout? className("android.view.View").text(title)[findMethod](timeout) : className("android.view.View").text(title)[findMethod](),
-        () => timeout ? className("android.view.View").textContains(title)[findMethod](timeout) : className("android.view.View").textContains(title)[findMethod](),
-        () => timeout ? className("android.view.View").desc(title)[findMethod](timeout) : className("android.view.View").desc(title)[findMethod](),
-        () => timeout ? className("android.view.View").descContains(title)[findMethod](timeout) : className("android.view.View").descContains(title)[findMethod](),
-        () => timeout ? className("android.widget.TextView").desc(title)[findMethod](timeout) : className("android.widget.TextView").desc(title)[findMethod](),
-        () => timeout ? className("android.widget.TextView").text(title)[findMethod](timeout) : className("android.widget.TextView").text(title)[findMethod](),
-        () => timeout ? className("android.widget.TextView").textContains(title)[findMethod](timeout) : className("android.widget.TextView").textContains(title)[findMethod](),
-        () => timeout ? className("android.widget.TextView").descContains(title)[findMethod](timeout) : className("android.widget.TextView").descContains(title)[findMethod](),
-        () => timeout ? className("android.widget.ImageView").text(title)[findMethod](timeout) : className("android.widget.ImageView").text(title)[findMethod](),
-        () => timeout ? className("android.widget.ImageView").textContains(title)[findMethod](timeout) : className("android.widget.ImageView").textContains(title)[findMethod](),
-        () => timeout ? className("android.widget.ImageView").desc(title)[findMethod](timeout) : className("android.widget.ImageView").desc(title)[findMethod](),
-        () => timeout ? className("android.widget.ImageView").descContains(title)[findMethod](timeout) : className("android.widget.ImageView").descContains(title)[findMethod](),
+        () => probeAndFind(className("android.view.View").text(title)),
+        () => probeAndFind(className("android.view.View").desc(title)),
+        () => probeAndFind(className("android.widget.TextView").text(title)),
+        () => probeAndFind(className("android.widget.TextView").desc(title)),
+        () => probeAndFind(className("android.widget.ImageView").text(title)),
+        () => probeAndFind(className("android.widget.ImageView").desc(title)),
+        () => probeAndFind(className("android.view.View").textContains(title)),
+        () => probeAndFind(className("android.view.View").descContains(title)),
+        () => probeAndFind(className("android.widget.TextView").textContains(title)),
+        () => probeAndFind(className("android.widget.TextView").descContains(title)),
+        () => probeAndFind(className("android.widget.ImageView").textContains(title)),
+        () => probeAndFind(className("android.widget.ImageView").descContains(title)),
     ];
 };
 /**
@@ -41,86 +110,112 @@ const createElementStrategies = (title: string, findMethod: 'findOne' | 'find' =
  * runLoop 是否执行循环策略, 如果有缓存， runLoop 为false 则跳过本次查找
  */
 export const findTargetElementWithCache = (taskName: string, title: string, errorTime:number = 3) => {
+    const startTs = Date.now();
     const cacheKey = `${taskName}_${title}`;
-    Record.info(`正在查找元素: ${title}`);
-
+    const callN = _incCall(cacheKey);
     const strategies = createElementStrategies(title, 'findOne');
 
-    // 检查缓存
+    // 检查缓存（支持多个候选索引，按最近命中顺序尝试）
     if (elementCache.has(cacheKey)) {
-        const cachedStrategy = elementCache.get(cacheKey)!;
-        Record.info(`使用缓存策略 ${cachedStrategy.index + 1} 查找元素: ${title}`);
-        
-        const element = strategies[cachedStrategy.index]() as UiObject; // 
-        if (element) {
-            Record.info(`缓存策略 ${cachedStrategy.index + 1} 成功找到元素: ${title}----- ${element.text() || element.contentDescription}`);
-            return element;
-        } else {
-            Record.error(`缓存策略失败，清除缓存并重新查找: ${title}`);
-            // 更新缓存
-            elementCache.set(cacheKey, {index:cachedStrategy.index, errorTime:cachedStrategy.errorTime - 1});
-            if(cachedStrategy.errorTime >= 0){
-                return null
+        const cached = migrateCache(elementCache.get(cacheKey)!);
+        const { indices } = cached;
+        setRunInfo(`findTargetElementWithCache:${taskName} [${title}] 缓存候选${indices.map(i => i + 1).join(',')} errorTime=${cached.errorTime}`);
+
+        for (let i = 0; i < indices.length; i++) {
+            const idx = indices[i];
+            const element = strategies[idx]() as UiObject;
+            if (element) {
+                const elapsed = Date.now() - startTs;
+                const promoted = promoteIndex(indices, idx);
+                elementCache.set(cacheKey, { indices: promoted, errorTime });
+                Record.info(`[sel#${callN}] ${taskName}/${title} 缓存#${idx + 1}(${i + 1}/${indices.length}) ✓ ${elapsed}ms`);
+                return element;
             }
         }
+
+        const elapsed = Date.now() - startTs;
+        elementCache.set(cacheKey, { indices, errorTime: cached.errorTime - 1 });
+        if (cached.errorTime >= 0) {
+            Record.info(`[sel#${callN}] ${taskName}/${title} 缓存[${indices.map(i => i + 1).join(',')}] 全部✗ 剩余errorTime=${cached.errorTime - 1} ${elapsed}ms`);
+            return null;
+        }
+        Record.info(`[sel#${callN}] ${taskName}/${title} 缓存[${indices.map(i => i + 1).join(',')}] errorTime耗尽，降级串行 ${elapsed}ms`);
     }
 
-    // 缓存未命中，使用多种策略查找元素
-    for (let i = 0; i < strategies.length; i++) {
-        const element = strategies[i]() as UiObject;
-        if (element) {
-            Record.info(`策略 ${i + 1} 成功找到元素: ${title}----- ${element.text() || element.contentDescription}`);
-            // 将成功的策略索引存入缓存
-            elementCache.set(cacheKey, {index:i, errorTime:errorTime});
-            // 将缓存放入
-            Record.info(`已将策略 ${i + 1} 缓存为: ${cacheKey}`);
-            saveElementCache(elementCache);
-            return element;
-        }
+    // 缓存未命中或已耗尽，串行逐条尝试，找到即停
+    const serialTs = Date.now();
+    Record.info(`[sel#${callN}] ${taskName}/${title} 串行启动 ${strategies.length} 条策略`);
+    const found = runStrategiesSerial(strategies, r => !!r);
+    const serialElapsed = Date.now() - serialTs;
+    const totalElapsed = Date.now() - startTs;
+
+    if (found) {
+        Record.info(`[sel#${callN}] ${taskName}/${title} 串行#${found.index + 1} ✓ 串行${serialElapsed}ms 总${totalElapsed}ms`);
+        setRunInfo(`findTargetElementWithCache:${taskName} [${title}] 策略${found.index + 1} 命中 总耗${totalElapsed}ms`);
+        const oldIndices = elementCache.has(cacheKey) ? migrateCache(elementCache.get(cacheKey)!).indices : [];
+        elementCache.set(cacheKey, { indices: promoteIndex(oldIndices, found.index), errorTime });
+        saveElementCache(elementCache);
+        return found.element as UiObject;
     }
-    
-    Record.error(`所有策略都未找到元素: ${title}`);
+
+    Record.info(`[sel#${callN}] ${taskName}/${title} 串行全部✗ 串行${serialElapsed}ms 总${totalElapsed}ms`);
+    setRunInfo(`findTargetElementWithCache:${taskName} [${title}] 全部策略未命中 总耗${totalElapsed}ms`);
     return null;
 };
 
 
 // 使用多种策略查找元素列表
 export const findTargetElementList = ( taskName: string,title: string, errorTime:number = 3) => {
-    Record.info(`正在查找元素: ${title}`)
+    const startTs = Date.now();
     const cacheKey = `${taskName}_${title}`;
+    const callN = _incCall(cacheKey + '_list');
+    setRunInfo(`findTargetElementWithCache:${taskName} 开始查找元素: ${title}`);
+
     const strategies = createElementStrategies(title, 'find');
 
-
     if (elementCache.has(cacheKey)) {
-        const cachedStrategy = elementCache.get(cacheKey)!;
-        Record.info(`使用缓存策略 ${cachedStrategy.index + 1} 查找元素: ${title}`);
-        
-        const element = strategies[cachedStrategy.index]() as UiCollection; // 
-        if (element?.length > 0) {
-            Record.info(`缓存策略 ${cachedStrategy.index + 1} 成功找到元素: ${title}----`);
-            elementCache.set(cacheKey, {index:cachedStrategy.index, errorTime:errorTime});  
-            return element;
-        } else {
-            Record.error(`缓存策略失败，清除缓存并重新查找: ${title}`);
-            elementCache.set(cacheKey, {index:cachedStrategy.index, errorTime:cachedStrategy.errorTime - 1});
-            if(cachedStrategy.errorTime >= 0){
-                return null
+        const cached = migrateCache(elementCache.get(cacheKey)!);
+        const { indices } = cached;
+
+        for (let i = 0; i < indices.length; i++) {
+            const idx = indices[i];
+            const cacheTs = Date.now();
+            const element = strategies[idx]() as UiCollection;
+            const cacheElapsed = Date.now() - cacheTs;
+            if (element?.length > 0) {
+                const promoted = promoteIndex(indices, idx);
+                elementCache.set(cacheKey, { indices: promoted, errorTime });
+                Record.info(`[sel-list#${callN}] ${taskName}/${title} 缓存#${idx + 1}(${i + 1}/${indices.length}) ✓ ${element.length}个 ${cacheElapsed}ms`);
+                return element;
             }
         }
-    }
-    for (let i = 0; i < strategies.length; i++) {
-        const element = strategies[i]() as UiCollection
-        if (element?.length > 0) {
-            Record.info(`策略 ${i + 1} 成功找到列表元素: ${title}--`, element?.length)
-            elementCache.set(cacheKey, {index:i, errorTime:errorTime});  
-            // 将缓存放入
-            saveElementCache(elementCache);
-            return element
+
+        const elapsed = Date.now() - startTs;
+        elementCache.set(cacheKey, { indices, errorTime: cached.errorTime - 1 });
+        if (cached.errorTime >= 0) {
+            Record.info(`[sel-list#${callN}] ${taskName}/${title} 缓存[${indices.map(i => i + 1).join(',')}] 全部✗ 剩余errorTime=${cached.errorTime - 1} ${elapsed}ms`);
+            return null;
         }
+        Record.info(`[sel-list#${callN}] ${taskName}/${title} 缓存[${indices.map(i => i + 1).join(',')}] errorTime耗尽，降级串行 ${elapsed}ms`);
     }
-    
-    Record.error(`所有策略都未找到元素: ${title}`)
-    return null
+
+    // 串行逐条尝试，找到即停
+    const serialTs = Date.now();
+    Record.info(`[sel-list#${callN}] ${taskName}/${title} 串行启动 ${strategies.length} 条策略`);
+    const found = runStrategiesSerial(strategies, r => (r as any)?.length > 0);
+    const serialElapsed = Date.now() - serialTs;
+    const totalElapsed = Date.now() - startTs;
+
+    if (found) {
+        Record.info(`[sel-list#${callN}] ${taskName}/${title} 串行#${found.index + 1} ✓ ${(found.element as any)?.length}个 串行${serialElapsed}ms 总${totalElapsed}ms`);
+        const oldIndices = elementCache.has(cacheKey) ? migrateCache(elementCache.get(cacheKey)!).indices : [];
+        elementCache.set(cacheKey, { indices: promoteIndex(oldIndices, found.index), errorTime });
+        saveElementCache(elementCache);
+        return found.element as UiCollection;
+    }
+
+    Record.error(`[sel-list#${callN}] ${taskName}/${title} 串行全部✗ 串行${serialElapsed}ms 总${totalElapsed}ms`);
+    return null;
 }
 
 
@@ -161,109 +256,84 @@ export const findTargetElementWithCacheStrict = (
         );
     };
 
+    // 辅助：用 findOnce() 非阻塞预检 + find() 全量过滤
+    const containsFilter = (sel: any): UiObject | null => {
+        if (!sel.findOnce()) return null;
+        const list = sel.find();
+        for (let i = 0; i < list.length; i++) {
+            const node = list[i];
+            const txt = (node.text && node.text()) || (node as any).contentDescription || "";
+            if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) return node;
+        }
+        return null;
+    };
+
     // 统一策略数组（包含 exact 与 contains 两段），以便缓存命中时可直接索引
+    // 使用 findOnce() 替代 findOne(timeout)，避免每条策略阻塞 11-15 秒
     const strategies: Array<() => UiObject | null> = [
-        // exact
-        () => className("android.view.View").textMatches(exactRegex).findOne(timeoutEach),
-        () => className("android.view.View").descMatches(exactRegex).findOne(timeoutEach),
-        () => className("android.widget.TextView").textMatches(exactRegex).findOne(timeoutEach),
-        () => className("android.widget.TextView").descMatches(exactRegex).findOne(timeoutEach),
-        () => className("android.widget.Button").textMatches(exactRegex).findOne(timeoutEach),
-        () => className("android.widget.Button").descMatches(exactRegex).findOne(timeoutEach),
-        // contains with filter
-        () => {
-            const list = className("android.view.View").textContains(title).find();
-            Record.info(`策略 7 (View.textContains): 找到 ${list.length} 个候选元素`);
-            for (let i = 0; i < list.length; i++) {
-                const node = list[i];
-                const txt = (node.text && node.text()) || (node as any).contentDescription || "";
-                if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) {
-                    Record.info(`策略 7 匹配成功: "${txt}"`);
-                    return node;
-                }
-            }
-            Record.info(`策略 7 未找到匹配元素`);
-            return null;
-        },
-        () => {
-            const list = className("android.view.View").descContains(title).find();
-            for (let i = 0; i < list.length; i++) {
-                const node = list[i];
-                const txt = (node.text && node.text()) || (node as any).contentDescription || "";
-                if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) return node;
-            }
-            return null;
-        },
-        () => {
-            const list = className("android.widget.TextView").textContains(title).find();
-            for (let i = 0; i < list.length; i++) {
-                const node = list[i];
-                const txt = (node.text && node.text()) || (node as any).contentDescription || "";
-                if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) return node;
-            }
-            return null;
-        },
-        () => {
-            const list = className("android.widget.TextView").descContains(title).find();
-            for (let i = 0; i < list.length; i++) {
-                const node = list[i];
-                const txt = (node.text && node.text()) || (node as any).contentDescription || "";
-                if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) return node;
-            }
-            return null;
-        },
-        () => {
-            const list = className("android.widget.Button").textContains(title).find();
-            for (let i = 0; i < list.length; i++) {
-                const node = list[i];
-                const txt = (node.text && node.text()) || (node as any).contentDescription || "";
-                if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) return node;
-            }
-            return null;
-        },
-        () => {
-            const list = className("android.widget.Button").descContains(title).find();
-            for (let i = 0; i < list.length; i++) {
-                const node = list[i];
-                const txt = (node.text && node.text()) || (node as any).contentDescription || "";
-                if (txt && txt.trim().startsWith(title) && !isExcluded(txt)) return node;
-            }
-            return null;
-        },
+        // exact（findOnce 非阻塞）
+        () => className("android.view.View").textMatches(exactRegex).findOnce(),
+        () => className("android.view.View").descMatches(exactRegex).findOnce(),
+        () => className("android.widget.TextView").textMatches(exactRegex).findOnce(),
+        () => className("android.widget.TextView").descMatches(exactRegex).findOnce(),
+        () => className("android.widget.Button").textMatches(exactRegex).findOnce(),
+        () => className("android.widget.Button").descMatches(exactRegex).findOnce(),
+        // contains with filter（findOnce 预检 + find 过滤）
+        () => containsFilter(className("android.view.View").textContains(title)),
+        () => containsFilter(className("android.view.View").descContains(title)),
+        () => containsFilter(className("android.widget.TextView").textContains(title)),
+        () => containsFilter(className("android.widget.TextView").descContains(title)),
+        () => containsFilter(className("android.widget.Button").textContains(title)),
+        () => containsFilter(className("android.widget.Button").descContains(title)),
     ];
 
-    // 优先尝试缓存策略
+    const startTs = Date.now();
+    const callN = _incCall(cacheKey);
+
+    // 优先尝试缓存策略（支持多个候选索引）
     if (elementCache.has(cacheKey)) {
-        const cached = elementCache.get(cacheKey) as { index: number; errorTime: number };
+        const cached = migrateCache(elementCache.get(cacheKey)!);
+        const { indices } = cached;
         try {
-            const candidate = strategies[cached.index]() as UiObject | null;
-            if (candidate) {
-                Record.info(`strict 缓存策略 ${cached.index + 1} 命中: ${title}`);
-                // 恢复
-                elementCache.set(cacheKey, { index: cached.index, errorTime: errorTime});
-                return candidate;
-            } else {
-                elementCache.set(cacheKey, { index: cached.index, errorTime: (cached.errorTime || 0) - 1 });
-                // 若多次失败，可选择清理缓存（此处保留，交由调用侧控制）
-                if(cached.errorTime >= 0){
-                    return null
+            for (let i = 0; i < indices.length; i++) {
+                const idx = indices[i];
+                const cacheTs = Date.now();
+                const candidate = strategies[idx]() as UiObject | null;
+                const cacheElapsed = Date.now() - cacheTs;
+                if (candidate) {
+                    const promoted = promoteIndex(indices, idx);
+                    elementCache.set(cacheKey, { indices: promoted, errorTime });
+                    Record.info(`[sel-strict#${callN}] ${taskName}/${title} 缓存#${idx + 1}(${i + 1}/${indices.length}) ✓ ${cacheElapsed}ms`);
+                    return candidate;
                 }
             }
+
+            const elapsed = Date.now() - startTs;
+            elementCache.set(cacheKey, { indices, errorTime: (cached.errorTime || 0) - 1 });
+            if (cached.errorTime >= 0) {
+                Record.info(`[sel-strict#${callN}] ${taskName}/${title} 缓存[${indices.map(i => i + 1).join(',')}] 全部✗ 剩余errorTime=${cached.errorTime - 1} ${elapsed}ms`);
+                return null;
+            }
+            Record.info(`[sel-strict#${callN}] ${taskName}/${title} 缓存[${indices.map(i => i + 1).join(',')}] errorTime耗尽，降级串行 ${elapsed}ms`);
         } catch {}
     }
 
-    // 未命中缓存，遍历策略
-    for (let i = 0; i < strategies.length; i++) {
-        const element = strategies[i]() as UiObject | null;
-        if (element) {
-            elementCache.set(cacheKey, { index: i, errorTime: errorTime });
-            saveElementCache(elementCache);
-            Record.info(`strict 策略 ${i + 1} 命中: ${title}`);
-            return element;
-        }
+    // 未命中缓存或已耗尽，串行逐条尝试，找到即停
+    const serialTs = Date.now();
+    Record.info(`[sel-strict#${callN}] ${taskName}/${title} 串行启动 ${strategies.length} 条策略`);
+    const found = runStrategiesSerial(strategies, r => !!r);
+    const serialElapsed = Date.now() - serialTs;
+    const totalElapsed = Date.now() - startTs;
+
+    if (found) {
+        Record.info(`[sel-strict#${callN}] ${taskName}/${title} 串行#${found.index + 1} ✓ 串行${serialElapsed}ms 总${totalElapsed}ms`);
+        const oldIndices = elementCache.has(cacheKey) ? migrateCache(elementCache.get(cacheKey)!).indices : [];
+        elementCache.set(cacheKey, { indices: promoteIndex(oldIndices, found.index), errorTime });
+        saveElementCache(elementCache);
+        return found.element as UiObject | null;
     }
 
-    Record.error(`strict 模式未命中: ${title}`);
+    Record.error(`[sel-strict#${callN}] ${taskName}/${title} 串行全部✗ 串行${serialElapsed}ms 总${totalElapsed}ms`);
     return null;
 };
 

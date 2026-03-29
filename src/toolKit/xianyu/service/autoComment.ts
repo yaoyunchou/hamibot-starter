@@ -7,7 +7,7 @@
 
 import { Record } from "../../../lib/logger";
 import { getGoodInfo, getGoodInfoByOrderNumber } from "../../../lib/service";
-import { APPNAME, findPage, goBackMyPage, setRunInfo } from "./base";
+import { APPNAME, findPage, flushTraces, goBackMyPage, setRunInfo } from "./base";
 import { backMainPage, closeMainPopup, taskList } from "./getMainPopup";
 
 // 定义最大循环次数接口
@@ -74,15 +74,13 @@ function safeClick(element: any): boolean {
  */
 async function handleComment(contentDescription: string): Promise<boolean> {
     try {
-        // 检查是否在错误列表中
         if (commentErrorNikeNameList.includes(contentDescription)) {
-            setRunInfo(`${contentDescription} 这个数据有问题，跳过,执行下一次循环`);
+            setRunInfo(`handleComment: 跳过错误数据 ${contentDescription}`);
             return false;
         }
 
-        setRunInfo(`开始自动评论，昵称：${contentDescription}`);
+        setRunInfo(`handleComment: 开始处理昵称「${contentDescription}」`);
 
-        // 获取父元素
         const parent = className("android.widget.ImageView")
             .descContains("闲鱼号")
             .findOne()
@@ -90,48 +88,46 @@ async function handleComment(contentDescription: string): Promise<boolean> {
 
         if (!parent) {
             maxErrorCount++;
-            setRunInfo(`没有找到父级，跳过,执行下一次循环`);
+            setRunInfo(`handleComment: 未找到父级元素，跳过`);
             return false;
         }
 
-        // 点击进入商品详情
+        setRunInfo(`handleComment: 点击进入商品详情`);
         if (!safeClick(parent)) {
             maxErrorCount++;
             return false;
         }
         sleep(DEFAULT_TIMEOUT);
 
-        // 获取商品详情
         const goodsDetail = safeFindOne("订单编号");
         if (!goodsDetail) {
             maxErrorCount++;
-            setRunInfo(`没有找到订单编号，跳过,执行下一次循环`);
+            setRunInfo(`handleComment: 未找到订单编号，跳过`);
             return false;
         }
 
-        // 提取订单编号
         const orderText = goodsDetail.contentDescription + '';
         const orderNumberMatch = orderText.match(/订单编号\s*(\d+)/);
         if (!orderNumberMatch) {
             maxErrorCount++;
-            setRunInfo(`没有匹配到订单编号，跳过,执行下一次循环`);
+            setRunInfo(`handleComment: 订单编号匹配失败，跳过`);
             return false;
         }
 
         const orderNumber = orderNumberMatch[1];
+        setRunInfo(`handleComment: 获取订单 ${orderNumber} 的评价内容`);
         Record.info(`订单编号: ${orderNumber}`);
 
-        // 获取商品信息
         const goodsInfo = await getGoodInfoByOrderNumber(orderNumber);
         if (!goodsInfo || goodsInfo.code !== 0 || !goodsInfo.data.items.length) {
-            setRunInfo(`没有对应的评价，跳过,执行下一次循环`);
+            setRunInfo(`handleComment: 无评价内容，跳过订单 ${orderNumber}`);
             commentErrorNikeNameList.push(contentDescription);
             back();
             return false;
         }
 
-        // 处理评价
         const comment = goodsInfo.data.items[0].fields["评价"].value[0].text;
+        setRunInfo(`handleComment: 点击「去评价」按钮`);
         const goodCommentPopup = safeFindOne("按钮, 去评价");
         if (!goodCommentPopup || !safeClick(goodCommentPopup)) {
             maxErrorCount++;
@@ -139,18 +135,17 @@ async function handleComment(contentDescription: string): Promise<boolean> {
             return false;
         }
 
-        // 输入评价
+        setRunInfo(`handleComment: 输入评价内容`);
         const inputItem = className("android.widget.EditText").findOne(DEFAULT_TIMEOUT);
         if (!inputItem) {
             maxErrorCount++;
             back();
             return false;
         }
-
         inputItem.click();
         inputItem.setText(comment);
 
-        // 点击好评
+        setRunInfo(`handleComment: 点击好评`);
         const goodCommentIconBox = safeFindOne("好评");
         if (!goodCommentIconBox || !safeClick(goodCommentIconBox.child(0))) {
             maxErrorCount++;
@@ -158,7 +153,7 @@ async function handleComment(contentDescription: string): Promise<boolean> {
             return false;
         }
 
-        // 提交评价
+        setRunInfo(`handleComment: 提交评价`);
         const submit = safeFindOne("提交评价");
         if (!submit || !safeClick(submit)) {
             maxErrorCount++;
@@ -166,11 +161,12 @@ async function handleComment(contentDescription: string): Promise<boolean> {
             return false;
         }
 
-        // 重置错误计数
+        setRunInfo(`handleComment: 评价提交成功，订单 ${orderNumber}`);
         maxErrorCount = 0;
         return true;
 
     } catch (error) {
+        setRunInfo(`handleComment: 异常 ${error}`);
         Record.error(`处理评论失败: ${error}`);
         maxErrorCount++;
         return false;
@@ -183,29 +179,38 @@ async function handleComment(contentDescription: string): Promise<boolean> {
 export async function startAutoComment() {
     try {
         if (maxErrorCount > MAX_ERROR_COUNT) {
+            setRunInfo('startAutoComment: 错误次数过多，停止执行');
             Record.error('错误次数过多，出现死循环');
+            flushTraces('comment');
             return;
         }
 
+        setRunInfo('startAutoComment: 获取待评价列表');
         const list = className("android.widget.ImageView")
             .descContains("闲鱼号")
             .find();
 
+        setRunInfo(`startAutoComment: 找到 ${list.length} 条待评价`);
         for (let i = 0; i < list.length; i++) {
             const item = list[i];
             const contentDescription = item.contentDescription + '';
+            setRunInfo(`startAutoComment: 处理第 ${i + 1}/${list.length} 条`);
             if (await handleComment(contentDescription)) {
-                // 回到主页并找到评论列表
-                goBackMyPage()
+                setRunInfo('startAutoComment: 评论成功，回到评论列表');
+                goBackMyPage();
                 findPage('comment');
                 break;
             }
         }
 
+        setRunInfo('startAutoComment: 本轮评论执行完成');
         Record.info('自动评论执行完成，进入下一个任务');
+        flushTraces('comment');
 
     } catch (error) {
+        setRunInfo(`startAutoComment: 异常 ${error}`);
         Record.error(`自动评论执行失败: ${error}`);
+        flushTraces('comment');
         findPage('comment');
     }
 }

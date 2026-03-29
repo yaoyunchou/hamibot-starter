@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>闲鱼自动化 · 控制台</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --accent: #6366f1;
+    --accent-h: #818cf8;
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --orange: #f97316;
+    --radius: 10px;
+    --font: 'SF Pro Display', 'PingFang SC', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; }
+
+  /* ── Layout ── */
+  .shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  .sidebar {
+    background: var(--surface); border-right: 1px solid var(--border);
+    padding: 24px 0; display: flex; flex-direction: column; gap: 4px;
+    position: sticky; top: 0; height: 100vh;
+  }
+  .sidebar-logo {
+    padding: 0 20px 20px; font-size: 15px; font-weight: 700;
+    color: var(--accent-h); letter-spacing: .5px;
+    border-bottom: 1px solid var(--border); margin-bottom: 12px;
+  }
+  .sidebar-logo span { font-size: 22px; margin-right: 8px; }
+  .nav-item {
+    padding: 10px 20px; cursor: pointer; border-radius: 0;
+    font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 10px;
+    transition: all .15s; border-left: 3px solid transparent;
+  }
+  .nav-item:hover { color: var(--text); background: rgba(99,102,241,.08); }
+  .nav-item.active { color: var(--accent-h); background: rgba(99,102,241,.12); border-left-color: var(--accent); }
+  .nav-icon { font-size: 16px; width: 20px; text-align: center; }
+
+  .main { padding: 32px; display: flex; flex-direction: column; gap: 24px; }
+  .header { display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 22px; font-weight: 700; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+  .badge-red { background: rgba(239,68,68,.15); color: var(--red); }
+  .badge-green { background: rgba(34,197,94,.15); color: var(--green); }
+  .badge-yellow { background: rgba(234,179,8,.15); color: var(--yellow); }
+  .badge-blue { background: rgba(59,130,246,.15); color: var(--blue); }
+  .badge-muted { background: rgba(100,116,139,.12); color: var(--muted); }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+  }
+  .card-title {
+    font-size: 13px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .8px; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
+  .stat-val { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .stat-label { font-size: 12px; color: var(--muted); }
+
+  /* ── Task actions ── */
+  .task-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer;
+    font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
+    transition: all .15s; font-family: var(--font);
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-h); }
+  .btn-outline {
+    background: transparent; border: 1px solid var(--border); color: var(--text);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent-h); background: rgba(99,102,241,.06); }
+  .btn-danger { background: rgba(239,68,68,.12); color: var(--red); border: 1px solid rgba(239,68,68,.2); }
+  .btn-danger:hover { background: rgba(239,68,68,.2); }
+  .btn-sm { padding: 5px 12px; font-size: 12px; border-radius: 6px; }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+
+  /* ── Table ── */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .tbl th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600;
+             font-size: 11px; text-transform: uppercase; letter-spacing: .6px;
+             border-bottom: 1px solid var(--border); }
+  .tbl td { padding: 12px; border-bottom: 1px solid rgba(42,45,58,.6); vertical-align: middle; }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:hover td { background: rgba(99,102,241,.04); }
+  .type-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+    background: rgba(99,102,241,.12); color: var(--accent-h);
+  }
+  .empty-tip { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
+
+  /* ── Alerts ── */
+  .alert-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px; border-radius: 8px; margin-bottom: 8px;
+    border: 1px solid;
+  }
+  .alert-item.warn { background: rgba(234,179,8,.06); border-color: rgba(234,179,8,.2); }
+  .alert-item.error { background: rgba(239,68,68,.06); border-color: rgba(239,68,68,.2); }
+  .alert-item.info { background: rgba(59,130,246,.06); border-color: rgba(59,130,246,.18); }
+  .alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .alert-body { flex: 1; }
+  .alert-msg { font-size: 13px; margin-bottom: 3px; }
+  .alert-meta { font-size: 11px; color: var(--muted); }
+
+  /* ── Refresh ── */
+  .refresh-bar {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; color: var(--muted);
+  }
+  .refresh-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  /* ── Tabs ── */
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+  .tab {
+    padding: 8px 16px; font-size: 13px; cursor: pointer; color: var(--muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s;
+  }
+  .tab.active { color: var(--accent-h); border-bottom-color: var(--accent); }
+  .tab:hover { color: var(--text); }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 18px; font-size: 13px;
+    opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 999;
+    max-width: 300px;
+  }
+  #toast.show { opacity: 1; }
+
+  .page { display: none; }
+  .page.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo"><span>🐟</span>闲鱼控制台</div>
+    <div class="nav-item active" onclick="showPage('dashboard', this)">
+      <span class="nav-icon">📊</span>总览
+    </div>
+    <div class="nav-item" onclick="showPage('tasks', this)">
+      <span class="nav-icon">📋</span>任务队列
+    </div>
+    <div class="nav-item" onclick="showPage('alerts', this)">
+      <span class="nav-icon">🔔</span>预警中心
+      <span id="alert-badge" class="badge badge-red" style="margin-left:auto;display:none"></span>
+    </div>
+    <div class="nav-item" onclick="showPage('cache', this)">
+      <span class="nav-icon">🗃️</span>元素缓存
+    </div>
+    <div class="nav-item" onclick="showPage('ocr', this); fetchOcrLogs()">
+      <span class="nav-icon">📷</span>OCR 日志
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="header">
+      <h1 id="page-title">总览</h1>
+      <div class="refresh-bar">
+        <div class="refresh-dot"></div>
+        <span id="last-refresh">--</span>
+        <button class="btn btn-outline btn-sm" onclick="refresh()">刷新</button>
+      </div>
+    </div>
+
+    <!-- ── 总览 ── -->
+    <div id="page-dashboard" class="page active">
+      <div class="stat-grid" id="stats">
+        <div class="stat"><div class="stat-val" id="s-total">-</div><div class="stat-label">总任务数</div></div>
+        <div class="stat"><div class="stat-val" style="color:var(--blue)" id="s-running">-</div><div class="stat-label">执行中</div></div>
+        <div class="stat"><div class="stat-val" style="color:var(--green)" id="s-done">-</div><div class="stat-label">已完成</div></div>
+        <div class="stat"><div class="stat-val" style="color:var(--red)" id="s-alert">-</div><div class="stat-label">未确认预警</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">快速派发任务</div>
+        <div class="task-actions">
+          <button class="btn btn-primary" onclick="addTask('goldCoin')">🪙 获取金币</button>
+          <button class="btn btn-outline" onclick="addTask('comment')">💬 自动评论</button>
+          <button class="btn btn-outline" onclick="addTask('product')">📦 商品曝光</button>
+          <button class="btn btn-outline" onclick="addTask('ocr')">📷 OCR截图</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          近期任务
+          <a style="font-size:12px;color:var(--accent);cursor:pointer;font-weight:400;text-transform:none" onclick="showPage('tasks', document.querySelectorAll('.nav-item')[1])">查看全部 →</a>
+        </div>
+        <table class="tbl">
+          <thead><tr>
+            <th>类型</th><th>状态</th><th>创建时间</th><th>耗时</th><th>备注</th>
+          </tr></thead>
+          <tbody id="dash-task-list"><tr><td colspan="5" class="empty-tip">加载中...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── 任务队列 ── -->
+    <div id="page-tasks" class="page">
+      <div class="card">
+        <div class="card-title">
+          任务队列
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-primary btn-sm" onclick="addTask('goldCoin')">+ 获取金币</button>
+            <button class="btn btn-outline btn-sm" onclick="addTask('comment')">+ 自动评论</button>
+            <button class="btn btn-outline btn-sm" onclick="addTask('product')">+ 商品曝光</button>
+            <button class="btn btn-outline btn-sm" onclick="addTask('ocr')">📷 OCR截图</button>
+          </div>
+        </div>
+        <div class="tabs">
+          <div class="tab active" onclick="filterTasks('', this)">全部</div>
+          <div class="tab" onclick="filterTasks('pending', this)">待执行</div>
+          <div class="tab" onclick="filterTasks('running', this)">执行中</div>
+          <div class="tab" onclick="filterTasks('completed', this)">已完成</div>
+          <div class="tab" onclick="filterTasks('error,timeout', this)">异常</div>
+        </div>
+        <table class="tbl">
+          <thead><tr>
+            <th>类型</th><th>状态</th><th>创建时间</th><th>开始时间</th><th>完成时间</th><th>备注</th><th>操作</th>
+          </tr></thead>
+          <tbody id="task-list"><tr><td colspan="7" class="empty-tip">加载中...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── 元素缓存 ── -->
+    <div id="page-cache" class="page">
+      <div class="card">
+        <div class="card-title">
+          元素缓存 <code style="font-size:11px;font-weight:400;color:var(--muted);font-family:monospace">GET /api/cache/element</code>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span id="cache-count" class="badge badge-muted" style="display:none"></span>
+            <button class="btn btn-primary btn-sm" onclick="fetchCache()">🔄 拉取缓存</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleCacheRaw()">{ } 原始JSON</button>
+          </div>
+        </div>
+        <div id="cache-raw-box" style="display:none;margin-bottom:16px">
+          <pre id="cache-raw" style="
+            background:var(--bg);border:1px solid var(--border);border-radius:8px;
+            padding:14px;font-size:12px;font-family:monospace;color:var(--muted);
+            overflow:auto;max-height:320px;white-space:pre-wrap;word-break:break-all;
+          ">-</pre>
+        </div>
+        <table class="tbl">
+          <thead><tr>
+            <th style="width:36%">Key</th>
+            <th>Value</th>
+          </tr></thead>
+          <tbody id="cache-list"><tr><td colspan="2" class="empty-tip">点击「拉取缓存」查看数据</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── OCR 日志 ── -->
+    <div id="page-ocr" class="page">
+      <div class="card">
+        <div class="card-title">
+          OCR 截图识别日志
+          <div style="display:flex;gap:8px;align-items:center">
+            <input type="date" id="ocr-date" style="
+              background:var(--bg);border:1px solid var(--border);border-radius:6px;
+              color:var(--text);padding:5px 10px;font-size:12px;font-family:var(--font);
+            " />
+            <button class="btn btn-outline btn-sm" onclick="fetchOcrLogs()">🔍 查看</button>
+            <button class="btn btn-primary btn-sm" onclick="addTask('ocr')">📷 触发OCR</button>
+          </div>
+        </div>
+        <div id="ocr-list"><div class="empty-tip">点击「触发OCR」让客户端截图识别，结果将在此展示</div></div>
+      </div>
+    </div>
+
+    <!-- ── 预警 ── -->
+    <div id="page-alerts" class="page">
+      <div class="card">
+        <div class="card-title">
+          预警中心
+          <button class="btn btn-outline btn-sm" onclick="clearAcknowledged()">清除已确认</button>
+        </div>
+        <div class="tabs">
+          <div class="tab active" onclick="filterAlerts(null, this)">全部</div>
+          <div class="tab" onclick="filterAlerts(false, this)">未确认</div>
+          <div class="tab" onclick="filterAlerts(true, this)">已确认</div>
+        </div>
+        <div id="alert-list"><div class="empty-tip">加载中...</div></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const BASE = '';
+let taskFilter = '';
+let alertFilter = null;
+let allTasks = [];
+let allAlerts = [];
+
+// ── Navigation ──
+function showPage(name, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('page-title').textContent = el.textContent.trim().replace(/\d+$/, '');
+}
+
+// ── Toast ──
+function toast(msg, type = 'default') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.borderColor = type === 'error' ? 'rgba(239,68,68,.4)' : type === 'ok' ? 'rgba(34,197,94,.3)' : '';
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// ── Status rendering ──
+const STATUS_MAP = {
+  pending:   ['待执行',  'badge-blue'],
+  running:   ['执行中',  'badge-yellow'],
+  completed: ['已完成',  'badge-green'],
+  error:     ['异常',    'badge-red'],
+  timeout:   ['超时',    'badge-red'],
+};
+const TYPE_LABEL = { goldCoin: '🪙 获取金币', comment: '💬 自动评论', product: '📦 商品曝光', ocr: '📷 OCR截图' };
+const ALERT_ICON = { warn: '⚠️', error: '🔴', info: 'ℹ️' };
+
+function statusBadge(s) {
+  const [label, cls] = STATUS_MAP[s] || [s, 'badge-muted'];
+  return `<span class="badge ${cls}">${label}</span>`;
+}
+
+function elapsed(start, end) {
+  if (!start) return '-';
+  const s = new Date(start), e = end ? new Date(end) : new Date();
+  const sec = Math.floor((e - s) / 1000);
+  if (sec < 60) return sec + 's';
+  if (sec < 3600) return Math.floor(sec / 60) + 'm';
+  return (sec / 3600).toFixed(1) + 'h';
+}
+
+// ── Fetch ──
+async function fetchTasks() {
+  const r = await fetch(`${BASE}/api/control/tasks?limit=100`).then(r => r.json());
+  allTasks = r.data || [];
+  renderTasks();
+  renderDash();
+}
+
+async function fetchAlerts() {
+  const r = await fetch(`${BASE}/api/control/alerts?limit=100`).then(r => r.json());
+  allAlerts = r.data || [];
+  renderAlerts();
+  updateAlertBadge();
+}
+
+// ── Render tasks ──
+function filterTasks(status, el) {
+  taskFilter = status;
+  document.querySelectorAll('#page-tasks .tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderTasks();
+}
+
+function renderTasks() {
+  const list = taskFilter
+    ? allTasks.filter(t => taskFilter.split(',').includes(t.status))
+    : allTasks;
+  const tbody = document.getElementById('task-list');
+  if (!list.length) { tbody.innerHTML = '<tr><td colspan="7" class="empty-tip">暂无任务</td></tr>'; return; }
+  tbody.innerHTML = list.map(t => `
+    <tr>
+      <td><span class="type-tag">${TYPE_LABEL[t.type] || t.type}</span></td>
+      <td>${statusBadge(t.status)}</td>
+      <td>${t.created_at || '-'}</td>
+      <td>${t.started_at || '-'}</td>
+      <td>${t.completed_at || '-'}</td>
+      <td style="color:var(--muted);font-size:12px;max-width:160px;overflow:hidden;text-overflow:ellipsis">${t.message || '-'}</td>
+      <td><button class="btn btn-danger btn-sm" onclick="deleteTask('${t.id}')">删除</button></td>
+    </tr>`).join('');
+}
+
+// ── Render dash ──
+function renderDash() {
+  document.getElementById('s-total').textContent = allTasks.length;
+  document.getElementById('s-running').textContent = allTasks.filter(t => t.status === 'running').length;
+  document.getElementById('s-done').textContent = allTasks.filter(t => t.status === 'completed').length;
+  const unack = allAlerts.filter(a => !a.acknowledged).length;
+  document.getElementById('s-alert').textContent = unack;
+
+  const recent = allTasks.slice(0, 8);
+  const tbody = document.getElementById('dash-task-list');
+  if (!recent.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty-tip">暂无任务</td></tr>'; return; }
+  tbody.innerHTML = recent.map(t => `
+    <tr>
+      <td><span class="type-tag">${TYPE_LABEL[t.type] || t.type}</span></td>
+      <td>${statusBadge(t.status)}</td>
+      <td>${t.created_at || '-'}</td>
+      <td>${elapsed(t.started_at, t.completed_at)}</td>
+      <td style="color:var(--muted);font-size:12px">${t.message || '-'}</td>
+    </tr>`).join('');
+}
+
+// ── Render alerts ──
+function filterAlerts(ack, el) {
+  alertFilter = ack;
+  document.querySelectorAll('#page-alerts .tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderAlerts();
+}
+
+function renderAlerts() {
+  const list = alertFilter === null
+    ? allAlerts
+    : allAlerts.filter(a => a.acknowledged === alertFilter);
+  const container = document.getElementById('alert-list');
+  if (!list.length) { container.innerHTML = '<div class="empty-tip">暂无预警</div>'; return; }
+  container.innerHTML = list.map(a => `
+    <div class="alert-item ${a.level}" style="${a.acknowledged ? 'opacity:.45' : ''}">
+      <div class="alert-icon">${ALERT_ICON[a.level] || '🔔'}</div>
+      <div class="alert-body">
+        <div class="alert-msg">${a.message}</div>
+        <div class="alert-meta">${a.timestamp}${a.task_id ? ' · 任务 ' + a.task_id.slice(0, 8) + '...' : ''}</div>
+      </div>
+      ${!a.acknowledged ? `<button class="btn btn-outline btn-sm" onclick="ackAlert('${a.id}')">确认</button>` : '<span style="font-size:12px;color:var(--muted)">已确认</span>'}
+    </div>`).join('');
+}
+
+function updateAlertBadge() {
+  const n = allAlerts.filter(a => !a.acknowledged).length;
+  const b = document.getElementById('alert-badge');
+  if (n > 0) { b.textContent = n; b.style.display = ''; }
+  else { b.style.display = 'none'; }
+}
+
+// ── Actions ──
+async function addTask(type) {
+  const r = await fetch(`${BASE}/api/control/task`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type })
+  }).then(r => r.json());
+  if (r.code === 0) { toast('✅ 任务已加入队列', 'ok'); }
+  else { toast('⚠️ ' + r.message, 'error'); }
+  refresh();
+}
+
+async function deleteTask(id) {
+  await fetch(`${BASE}/api/control/task/${id}`, { method: 'DELETE' });
+  toast('已删除');
+  refresh();
+}
+
+async function ackAlert(id) {
+  await fetch(`${BASE}/api/control/alert/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ acknowledged: true })
+  });
+  refresh();
+}
+
+async function clearAcknowledged() {
+  await fetch(`${BASE}/api/control/alerts/acknowledged`, { method: 'DELETE' });
+  toast('已清除已确认预警');
+  refresh();
+}
+
+// ── Cache ──
+let cacheRawVisible = false;
+
+async function fetchCache() {
+  const tbody = document.getElementById('cache-list');
+  const rawEl = document.getElementById('cache-raw');
+  tbody.innerHTML = '<tr><td colspan="2" class="empty-tip">加载中...</td></tr>';
+  try {
+    const r = await fetch(`${BASE}/api/cache/element`).then(r => r.json());
+    rawEl.textContent = JSON.stringify(r, null, 2);
+    if (r.code !== 0) {
+      tbody.innerHTML = `<tr><td colspan="2" class="empty-tip" style="color:var(--red)">接口返回异常: ${r.message || r.code}</td></tr>`;
+      return;
+    }
+    let items = [];
+    try { items = JSON.parse(r.data?.value || '[]'); } catch(e) { items = []; }
+    const countEl = document.getElementById('cache-count');
+    if (items.length) {
+      countEl.textContent = items.length + ' 条';
+      countEl.style.display = '';
+    } else {
+      countEl.style.display = 'none';
+    }
+    if (!items.length) {
+      tbody.innerHTML = '<tr><td colspan="2" class="empty-tip">缓存为空</td></tr>';
+      return;
+    }
+    tbody.innerHTML = items.map(item => {
+      const valStr = typeof item.value === 'object'
+        ? JSON.stringify(item.value)
+        : String(item.value ?? '');
+      return `<tr>
+        <td style="font-family:monospace;font-size:12px;color:var(--accent-h);word-break:break-all">${escHtml(item.key)}</td>
+        <td style="font-size:12px;color:var(--muted);word-break:break-all;max-width:400px">${escHtml(valStr)}</td>
+      </tr>`;
+    }).join('');
+    toast('✅ 已加载 ' + items.length + ' 条缓存', 'ok');
+  } catch(e) {
+    tbody.innerHTML = `<tr><td colspan="2" class="empty-tip" style="color:var(--red)">请求失败: ${e.message}</td></tr>`;
+    rawEl.textContent = String(e);
+    toast('⚠️ 请求失败: ' + e.message, 'error');
+  }
+}
+
+function toggleCacheRaw() {
+  cacheRawVisible = !cacheRawVisible;
+  document.getElementById('cache-raw-box').style.display = cacheRawVisible ? '' : 'none';
+}
+
+// ── OCR Logs ──
+async function fetchOcrLogs() {
+  const dateEl = document.getElementById('ocr-date');
+  const today = new Date().toISOString().slice(0, 10);
+  if (!dateEl.value) dateEl.value = today;
+  const date = dateEl.value;
+  const container = document.getElementById('ocr-list');
+  container.innerHTML = '<div class="empty-tip">加载中...</div>';
+  try {
+    const r = await fetch(`${BASE}/api/logs/ocr?date=${date}`).then(r => r.json());
+    if (!r.data || !r.data.length) {
+      container.innerHTML = '<div class="empty-tip">该日期暂无 OCR 记录，可点击「触发OCR」让客户端截图识别</div>';
+      return;
+    }
+    // 每行格式: [timestamp] [appName] {json_payload}
+    container.innerHTML = r.data.slice().reverse().map(line => {
+      const m = line.match(/^\[([^\]]+)\]\s*\[([^\]]+)\]\s*(.+)$/);
+      if (!m) return `<div style="padding:10px 0;border-bottom:1px solid var(--border);font-family:monospace;font-size:12px;color:var(--muted)">${escHtml(line)}</div>`;
+      const [, ts, app, payload] = m;
+      let data = null;
+      try { data = JSON.parse(payload); } catch {}
+      const method = data?.method || '-';
+      const pkg = data?.package || '-';
+      const results = data?.result;
+      const texts = Array.isArray(results) ? results : (results ? [JSON.stringify(results)] : []);
+      return `<div style="padding:14px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px">
+          <span style="font-size:12px;color:var(--muted)">${escHtml(ts)}</span>
+          <span class="badge badge-muted">${escHtml(method)}</span>
+          <span style="font-size:12px;color:var(--muted);font-family:monospace">${escHtml(pkg)}</span>
+          <span style="font-size:12px;color:var(--accent-h)">${texts.length} 个文本块</span>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;font-family:monospace;max-height:260px;overflow-y:auto">
+          ${texts.length ? texts.map((t, i) => `<div style="padding:3px 0;border-bottom:1px solid rgba(42,45,58,.5);color:var(--text)"><span style="color:var(--muted);margin-right:8px">${i + 1}.</span>${escHtml(typeof t === 'string' ? t : JSON.stringify(t))}</div>`).join('') : '<span style="color:var(--muted)">无文本内容</span>'}
+        </div>
+      </div>`;
+    }).join('');
+  } catch (e) {
+    container.innerHTML = `<div class="empty-tip" style="color:var(--red)">请求失败: ${e.message}</div>`;
+  }
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── OCR 日志 ──
+async function fetchOcrLogs() {
+  const dateEl = document.getElementById('ocr-date');
+  const today = new Date().toISOString().slice(0, 10);
+  if (!dateEl.value) dateEl.value = today;
+  const date = dateEl.value;
+  const listEl = document.getElementById('ocr-list');
+  listEl.innerHTML = '<div class="empty-tip">加载中...</div>';
+  try {
+    const r = await fetch(`${BASE}/api/logs/ocr?date=${date}`).then(r => r.json());
+    if (!r.data || !r.data.length) {
+      listEl.innerHTML = `<div class="empty-tip">暂无 OCR 记录（${date}）</div>`;
+      return;
+    }
+    listEl.innerHTML = r.data.slice().reverse().map(line => {
+      // 每行格式：[timestamp] [appName] {json}
+      const m = line.match(/^\[([^\]]+)\]\s*\[[^\]]+\]\s*(.+)$/);
+      const ts = m ? m[1] : '';
+      const raw = m ? m[2] : line;
+      let parsed = null;
+      try { parsed = JSON.parse(raw); } catch {}
+      const method = parsed?.method || '-';
+      const pkg = parsed?.package || '-';
+      const result = parsed?.result;
+      const resultStr = Array.isArray(result)
+        ? result.map(r => typeof r === 'object' ? (r.text || JSON.stringify(r)) : String(r)).join(' · ')
+        : (result ? String(result) : raw);
+      return `
+        <div style="border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font-size:12px;color:var(--muted)">${ts || date}</span>
+            <span class="badge badge-blue">${method}</span>
+            <span style="font-size:11px;color:var(--muted);font-family:monospace">${pkg}</span>
+          </div>
+          <div style="font-size:13px;line-height:1.7;color:var(--text);word-break:break-all;white-space:pre-wrap">${escHtml(resultStr)}</div>
+        </div>`;
+    }).join('');
+  } catch (e) {
+    listEl.innerHTML = `<div class="empty-tip" style="color:var(--red)">请求失败: ${e.message}</div>`;
+  }
+}
+
+// ── Refresh ──
+async function refresh() {
+  await Promise.all([fetchTasks(), fetchAlerts()]);
+  document.getElementById('last-refresh').textContent = new Date().toLocaleTimeString('zh-CN');
+}
+
+// Auto refresh every 10s
+refresh();
+setInterval(refresh, 10000);
+</script>
+</body>
+</html>
