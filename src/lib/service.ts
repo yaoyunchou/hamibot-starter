@@ -181,3 +181,52 @@ export const reportAlert = (
         Record.error('reportAlert error', error)
     }
 }
+
+// ------------------------------------------------------------------ //
+// 远程调试
+// ------------------------------------------------------------------ //
+
+/** 轮询待执行的调试指令（POST，兼容 Hamibot） */
+export const pollDebugCommands = (): any => {
+    let raw = ''
+    try {
+        const res = request('/api/debug/commands/poll', {
+            method: 'POST',
+            body: JSON.stringify({ limit: 5 }),
+        })
+        raw = res.body.string()
+        if (!raw) return null
+        return JSON.parse(raw)
+    } catch (error) {
+        Record.error('pollDebugCommands error', error)
+        return null
+    }
+}
+
+/** 认领调试指令（标记为 running） */
+export const claimDebugCommand = (cmdId: string): void => {
+    try {
+        request(`/api/debug/command/${cmdId}`, {
+            method: 'PUT',
+            body: JSON.stringify({ status: 'running' }),
+        })
+    } catch (error) {
+        Record.error('claimDebugCommand error', error)
+    }
+}
+
+/** 上报调试指令执行结果 */
+export const reportDebugResult = (cmdId: string, success: boolean, result?: any, error?: string): void => {
+    try {
+        request(`/api/debug/command/${cmdId}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                status: success ? 'completed' : 'error',
+                result: result ?? null,
+                error: error ?? null,
+            }),
+        })
+    } catch (err) {
+        Record.error('reportDebugResult error', err)
+    }
+}

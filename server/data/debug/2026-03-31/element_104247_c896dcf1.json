@@ -1,0 +1,20 @@
+{
+  "id": "c896dcf1-de39-4246-8832-4a6178732312",
+  "type": "element",
+  "params": {
+    "method": "id",
+    "value": "taskListWrap",
+    "action": "info",
+    "timeout": 3000,
+    "index": 0
+  },
+  "status": "completed",
+  "created_at": "2026-03-31 10:42:30",
+  "completed_at": "2026-03-31 10:42:47",
+  "result": {
+    "found": false,
+    "method": "id",
+    "value": "taskListWrap"
+  },
+  "error": null
+}

@@ -1,41 +1,97 @@
-金币任务流程
-============
-文件：src/toolKit/xianyu/service/getGold.ts
-       src/toolKit/xianyu/service/getMainPopup.ts
-函数：coinExchange()  /  mainPopupTask()  /  mainPopupFn()
+金币任务流程（主弹框 / 领取 / 状态机）
+========================================
+相关文件：
+  src/toolKit/xianyu/service/getGold.ts   — coinExchange、mainPopupTask、mainPopupFn、checkGetGold
+  src/toolKit/xianyu/service/getMainPopup.ts — taskList 定义；taskList 加载后为每项补 awaitingRewardClaim=false
+
+────────────────────────────────────────
+一、务必区分的两件事（避免以后改错）
+────────────────────────────────────────
+1. 「领取奖励」按钮
+   - 只应在 checkGetGold() 里统一查找、点击、与 taskList 标题做「同行」对齐（可选标记 hasRun）。
+   - mainPopupFn() 在任务行上【不要】再查、再点「领取奖励」；任务行上只处理「去完成」。
+   - 顶栏会先出现可领奖励，这是 checkGetGold 的职责，不是 mainPopupFn 里按行先扫领取再扫去完成。
+
+2. hasRun 与 awaitingRewardClaim（task 对象上的两个布尔字段）
+   - hasRun：表示该 taskList 项在脚本语义上「已闭环」。当前约定：主要在 checkGetGold 里，成功点到与标题同行的「领取奖励」后置 true；或「有候选但未对上同行仍点了领取」时对候选批量置 true；或三轮结束强制置 true。
+   - awaitingRewardClaim：表示「脚本刚跑完去完成流程（或其它分支认为需要等顶栏/列表领币）」，下一轮（或本轮开头）checkGetGold 应优先只对这些项做标题 strict 查找，避免对整表 18+ 任务盲目 findTargetElementWithCacheStrict。
+   - mainPopupFn 里点完「去完成」+ callback 后：只设 awaitingRewardClaim=true，【不】设 hasRun。
+
+────────────────────────────────────────
+二、mainPopupTask(round) 每轮顺序（最多 3 轮）
+────────────────────────────────────────
+常量：MAIN_POPUP_TASK_ROUNDS_MAX = 3（整表扫 3 轮，不是单任务 back 重试）。
+
+1. checkGetGold()
+   - 开头 sleep(1000)。
+   - findTargetElementList 找所有「领取奖励」。
+   - 对每个领取按钮：当前 awaitingRewardClaim===true 的任务组成 candidates；仅对 candidates 做 findTargetElementWithCacheStrict(title) + 同行判断。
+   - 对上：点击、hasRun=true、awaitingRewardClaim=false。
+   - 对不上仍点击领取：若无 candidates 只点；若有 candidates 则点完后对这些项 awaitingRewardClaim=false 且 hasRun=true（防止死等）。
+
+2. 签到（可选）
+
+3. for 遍历 taskList
+   - 若 awaitingRewardClaim && !hasRun：跳过 mainPopupFn（等本轮开头的 checkGetGold 已处理或下轮再处理）。
+   - 若 !hasRun：mainPopupFn(title, callback, task)
+   - 若 hasRun：跳过
+
+4. 若仍有 !hasRun：round+1 递归 mainPopupTask；满 3 轮仍剩则强制 hasRun=true、awaitingRewardClaim=false 并 flush。
+
+────────────────────────────────────────
+三、mainPopupFn（任务行逻辑）
+────────────────────────────────────────
+- 找不到标题、主弹框在：只 awaitingRewardClaim=true（不在这里设 hasRun）。
+- 主弹框不在：backMainPage()，return，本任务下轮再试。
+- 坐标在可视范围内：【仅】 findMainPopupActionAligned(..., "去完成")，点击 → callback → awaitingRewardClaim=true；不在这里设 hasRun。
+- 无 sysBtn 或无 scrollBox：awaitingRewardClaim=true（不在这里设 hasRun）。
+
+────────────────────────────────────────
+四、coinExchange() 总览 ASCII（与上文「一～三」一致；细节以代码为准）
+────────────────────────────────────────
+说明：下列树状图保留原有结构，已按当前实现补充/修正（入口文案为代码里的「闲鱼币」；
+      hasRun 主要在 checkGetGold 领取后置位，mainPopupFn 只置 awaitingRewardClaim）。
 
 coinExchange()
     │
-    ├─[找不到"闲鱼币抵扣"]─► backMainPage() ─► 结束（等下次调用）
+    ├─[找不到 coinExchangeMain「闲鱼币」]─► backMainPage() ─► 结束（等下次 coinExchange）
     │
-    └─[找到"闲鱼币抵扣"]
+    └─[找到「闲鱼币」→ 已在金币页]
             │
-            ├─[找到"今天"标签 → 主弹框已打开]
+            ├─[找到 mainPopup「今天」→ 主弹框已打开]
             │       │
-            │       └─► mainPopupTask()
+            │       └─► mainPopupTask(round)，round 从 0 起，整表最多 3 轮
             │               │
-            │               ├─► checkGetGold()  ── 随手领取奖励
+            │               ├─► checkGetGold()
+            │               │       统一查找/点击「领取奖励」；仅对 awaitingRewardClaim 任务做标题同行
+            │               │       对齐；对上则 hasRun=true；详见「二、1」
             │               │
-            │               ├─► 找"签到"按钮 ─► 点击签到
+            │               ├─► 找「签到」─► 有则点击
             │               │
-            │               └─► 遍历 taskList
+            │               └─► for 遍历 taskList
             │                       │
-            │                       ├─[task.hasRun = true]─► 跳过
+            │                       ├─[hasRun = true]───────────────────────────► 跳过
             │                       │
-            │                       └─[未执行]─► mainPopupFn(title, callback)
+            │                       ├─[awaitingRewardClaim && !hasRun]──────────► 跳过 mainPopupFn
+            │                       │   （本轮开头 checkGetGold 已处理或留待下轮）
+            │                       │
+            │                       └─[!hasRun 且非上条]─► mainPopupFn(title, callback, task)
             │                                       │
-            │                                       ├─ 滚动定位到目标任务
-            │                                       ├─ 找到"去完成"按钮并点击
-            │                                       └─ 执行 callback() ─► task.hasRun = true
-            │                       │
-            │                       └─[所有任务完成]─► 结束 ✓
-            │                          [未全完成]──► mainPopupTask() [递归]
+            │                                       ├─ 滚动把任务标题滚进可视区
+            │                                       ├─ 按行找「去完成」并点击（不在此找/点「领取奖励」）
+            │                                       └─ callback() 后 awaitingRewardClaim=true
+            │                                           （【不】在此处 task.hasRun=true）
+            │               │
+            │               ├─[全部 hasRun]─► flushTraces / 结束本轮金币弹框任务 ✓
+            │               │
+            │               └─[仍有 !hasRun]
+            │                       ├─ round+1 < 3 ─► mainPopupTask(round+1) 递归
+            │                       └─ 已满 3 轮 ─► 剩余任务强制 hasRun，避免死循环
             │
-            └─[没有主弹框]
+            └─[未找到「今天」]
                     │
-                    ├─[找到扔色子坐标按钮]─► mainBtn.click()
+                    ├─[找到扔色子坐标按钮]─► click → 再等「今天」/重入 coinExchange()
                     │       │
-                    │       ├─[触发了弹框]─► handlePopup ─► coinExchange() [重试]
-                    │       └─[没触发弹框]─► coinExchange() [继续]
+                    │       └─[仍无今天/无按钮]─► coinExchange() 或 backMainPage 等（见代码分支）
                     │
-                    └─[找不到扔色子按钮]─► coinExchange() [重试]
+                    └─[找不到扔色子]─► coinExchange() 重试或其它弹窗处理（见代码）

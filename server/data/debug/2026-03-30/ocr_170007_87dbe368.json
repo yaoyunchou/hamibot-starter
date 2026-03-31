@@ -1,0 +1,411 @@
+{
+  "id": "87dbe368-f65a-4c9f-8a15-edb514923d38",
+  "type": "ocr",
+  "params": {},
+  "status": "completed",
+  "created_at": "2026-03-30 17:00:03",
+  "completed_at": "2026-03-30 17:00:07",
+  "result": {
+    "method": "ocr",
+    "package": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.maincontainer.activity.MainActivity",
+    "count": 1,
+    "result": {
+      "text": "EQ执行调试指令[ocr]OCR热点我中8苏28领红包神奇副业手机数码闲鱼回收神奇鱼塘鱼币包邮广州女生寻求稳定依靠包邮济宁曲阜未婚女生相亲②一周内发布帖99年本科学历身高165￥53.332人小刀价￥9.90￥99乌衣巷讨厌早起的珊瑚虾济宁牵线搭桥SE888公8888万包邮韩国菲律宾打造6口QQ实闲消息我的闲鱼深圳",
+      "results": [
+        {
+          "bounds": {
+            "bottom": 157,
+            "left": 825,
+            "right": 887,
+            "top": 112
+          },
+          "confidence": 0.12571958,
+          "text": "E"
+        },
+        {
+          "bounds": {
+            "bottom": 150,
+            "left": 965,
+            "right": 1002,
+            "top": 120
+          },
+          "confidence": 0.4944699,
+          "text": "Q"
+        },
+        {
+          "bounds": {
+            "bottom": 167,
+            "left": 275,
+            "right": 591,
+            "top": 130
+          },
+          "confidence": 0.93217963,
+          "text": "执行调试指令[ocr]"
+        },
+        {
+          "bounds": {
+            "bottom": 267,
+            "left": 381,
+            "right": 469,
+            "top": 227
+          },
+          "confidence": 0.99720985,
+          "text": "OCR"
+        },
+        {
+          "bounds": {
+            "bottom": 272,
+            "left": 810,
+            "right": 882,
+            "top": 230
+          },
+          "confidence": 0.8034605,
+          "text": "热点"
+        },
+        {
+          "bounds": {
+            "bottom": 275,
+            "left": 916,
+            "right": 970,
+            "top": 225
+          },
+          "confidence": 0.08322346,
+          "text": "我"
+        },
+        {
+          "bounds": {
+            "bottom": 442,
+            "left": 441,
+            "right": 542,
+            "top": 350
+          },
+          "confidence": 0.0904886,
+          "text": "中"
+        },
+        {
+          "bounds": {
+            "bottom": 425,
+            "left": 815,
+            "right": 908,
+            "top": 365
+          },
+          "confidence": 0.13680665,
+          "text": "8"
+        },
+        {
+          "bounds": {
+            "bottom": 422,
+            "left": 90,
+            "right": 147,
+            "top": 372
+          },
+          "confidence": 0.11830994,
+          "text": "苏"
+        },
+        {
+          "bounds": {
+            "bottom": 422,
+            "left": 275,
+            "right": 334,
+            "top": 380
+          },
+          "confidence": 0.31303704,
+          "text": "2"
+        },
+        {
+          "bounds": {
+            "bottom": 420,
+            "left": 654,
+            "right": 713,
+            "top": 385
+          },
+          "confidence": 0.097491056,
+          "text": "8"
+        },
+        {
+          "bounds": {
+            "bottom": 507,
+            "left": 67,
+            "right": 168,
+            "top": 462
+          },
+          "confidence": 0.99949265,
+          "text": "领红包"
+        },
+        {
+          "bounds": {
+            "bottom": 502,
+            "left": 244,
+            "right": 371,
+            "top": 470
+          },
+          "confidence": 0.99826413,
+          "text": "神奇副业"
+        },
+        {
+          "bounds": {
+            "bottom": 510,
+            "left": 420,
+            "right": 563,
+            "top": 465
+          },
+          "confidence": 0.9996891,
+          "text": "手机数码"
+        },
+        {
+          "bounds": {
+            "bottom": 507,
+            "left": 607,
+            "right": 750,
+            "top": 467
+          },
+          "confidence": 0.99562865,
+          "text": "闲鱼回收"
+        },
+        {
+          "bounds": {
+            "bottom": 502,
+            "left": 799,
+            "right": 932,
+            "top": 470
+          },
+          "confidence": 0.9912598,
+          "text": "神奇鱼塘"
+        },
+        {
+          "bounds": {
+            "bottom": 502,
+            "left": 996,
+            "right": 1077,
+            "top": 470
+          },
+          "confidence": 0.9720024,
+          "text": "鱼币"
+        },
+        {
+          "bounds": {
+            "bottom": 1272,
+            "left": 41,
+            "right": 490,
+            "top": 1222
+          },
+          "confidence": 0.9887827,
+          "text": "包邮广州女生寻求稳定依靠"
+        },
+        {
+          "bounds": {
+            "bottom": 1300,
+            "left": 565,
+            "right": 1020,
+            "top": 1247
+          },
+          "confidence": 0.98650104,
+          "text": "包邮济宁曲阜未婚女生相亲"
+        },
+        {
+          "bounds": {
+            "bottom": 1332,
+            "left": 44,
+            "right": 251,
+            "top": 1287
+          },
+          "confidence": 0.8684514,
+          "text": "②一周内发布"
+        },
+        {
+          "bounds": {
+            "bottom": 1345,
+            "left": 571,
+            "right": 1007,
+            "top": 1307
+          },
+          "confidence": 0.99688756,
+          "text": "帖99年本科学历身高165"
+        },
+        {
+          "bounds": {
+            "bottom": 1412,
+            "left": 38,
+            "right": 358,
+            "top": 1347
+          },
+          "confidence": 0.9848726,
+          "text": "￥53.332人小刀价"
+        },
+        {
+          "bounds": {
+            "bottom": 1420,
+            "left": 568,
+            "right": 763,
+            "top": 1365
+          },
+          "confidence": 0.91589934,
+          "text": "￥9.90￥99"
+        },
+        {
+          "bounds": {
+            "bottom": 1482,
+            "left": 38,
+            "right": 501,
+            "top": 1422
+          },
+          "confidence": 0.94738334,
+          "text": "乌衣巷讨厌早起的珊瑚虾"
+        },
+        {
+          "bounds": {
+            "bottom": 1487,
+            "left": 573,
+            "right": 848,
+            "top": 1435
+          },
+          "confidence": 0.9036577,
+          "text": "济宁牵线搭桥"
+        },
+        {
+          "bounds": {
+            "bottom": 1622,
+            "left": 659,
+            "right": 807,
+            "top": 1552
+          },
+          "confidence": 0.7195912,
+          "text": "SE"
+        },
+        {
+          "bounds": {
+            "bottom": 1670,
+            "left": 937,
+            "right": 1002,
+            "top": 1645
+          },
+          "confidence": 0.96997625,
+          "text": "888"
+        },
+        {
+          "bounds": {
+            "bottom": 1737,
+            "left": 911,
+            "right": 1015,
+            "top": 1680
+          },
+          "confidence": 0.118342295,
+          "text": "公8"
+        },
+        {
+          "bounds": {
+            "bottom": 1777,
+            "left": 913,
+            "right": 1015,
+            "top": 1745
+          },
+          "confidence": 0.99818873,
+          "text": "888万"
+        },
+        {
+          "bounds": {
+            "bottom": 2232,
+            "left": 41,
+            "right": 368,
+            "top": 2202
+          },
+          "confidence": 0.68907636,
+          "text": "包邮韩国菲律宾打造"
+        },
+        {
+          "bounds": {
+            "bottom": 2300,
+            "left": 485,
+            "right": 581,
+            "top": 2212
+          },
+          "confidence": 0.47528327,
+          "text": "6"
+        },
+        {
+          "bounds": {
+            "bottom": 2317,
+            "left": 77,
+            "right": 153,
+            "top": 2250
+          },
+          "confidence": 0.2161231,
+          "text": "口"
+        },
+        {
+          "bounds": {
+            "bottom": 2310,
+            "left": 280,
+            "right": 347,
+            "top": 2252
+          },
+          "confidence": 0.4327684,
+          "text": "Q"
+        },
+        {
+          "bounds": {
+            "bottom": 2315,
+            "left": 924,
+            "right": 991,
+            "top": 2255
+          },
+          "confidence": 0.30707663,
+          "text": "Q"
+        },
+        {
+          "bounds": {
+            "bottom": 2332,
+            "left": 495,
+            "right": 573,
+            "top": 2277
+          },
+          "confidence": 0.6059928,
+          "text": "实闲"
+        },
+        {
+          "bounds": {
+            "bottom": 2360,
+            "left": 724,
+            "right": 789,
+            "top": 2315
+          },
+          "confidence": 0.9961946,
+          "text": "消息"
+        },
+        {
+          "bounds": {
+            "bottom": 2357,
+            "left": 934,
+            "right": 983,
+            "top": 2320
+          },
+          "confidence": 0.88152605,
+          "text": "我的"
+        },
+        {
+          "bounds": {
+            "bottom": 2357,
+            "left": 88,
+            "right": 142,
+            "top": 2322
+          },
+          "confidence": 0.9856329,
+          "text": "闲鱼"
+        },
+        {
+          "bounds": {
+            "bottom": 2357,
+            "left": 288,
+            "right": 340,
+            "top": 2322
+          },
+          "confidence": 0.9981175,
+          "text": "深圳"
+        }
+      ],
+      "elapsed": 1547
+    }
+  },
+  "error": null
+}

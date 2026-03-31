@@ -1,5 +1,46 @@
 import { Record } from "../../../lib/logger";
+import { getScreenWidth, getScreenHeight } from "../../../lib/screenSize";
 import { flushElementCache } from "./selector";
+
+/**
+ * 按无障碍节点上的 id 字符串查找（与 layout 导出里 node.id() 一致）。
+ * WebView/H5 里 DOM 的 id 往往不能用于 id() 选择器，需 DFS 当前窗口根。
+ * @param occurrenceIndex 同一 id 出现多次时取第几个（0 起，按深度优先顺序）
+ */
+export const findByA11yId = (targetId: string, timeoutMs = 3000, occurrenceIndex = 0): UiObject | null => {
+  const endAt = Date.now() + timeoutMs;
+  const collect = (node: UiObject | null, out: UiObject[]) => {
+    if (!node) return;
+    try {
+      if (node.id() === targetId) out.push(node);
+    } catch {
+      /* skip */
+    }
+    const n = typeof node.childCount === "function" ? node.childCount() : 0;
+    for (let i = 0; i < n; i++) {
+      try {
+        collect(node.child(i), out);
+      } catch {
+        /* skip */
+      }
+    }
+  };
+  const rootGetter = (auto as any).rootInActiveWindow || (auto as any).root;
+  while (Date.now() < endAt) {
+    try {
+      const root = typeof rootGetter === "function" ? rootGetter() : rootGetter;
+      if (root) {
+        const hits: UiObject[] = [];
+        collect(root, hits);
+        if (hits.length > occurrenceIndex) return hits[occurrenceIndex];
+      }
+    } catch {
+      /* skip */
+    }
+    sleep(100);
+  }
+  return null;
+};
 
 // 尝试点击节点（含父节点），失败则坐标点击
 export const tryClickNode = (node: UiObject | null | undefined) => {
@@ -169,7 +210,7 @@ export const closeApp = (appNameOrPackage: string) => {
                    textMatches(new RegExp(packageName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))).findOne(800);
       if (card) {
         const b = card.bounds();
-        swipe(b.centerX(), b.centerY(), b.centerX(), Math.max(0, b.centerY() - device.height * 0.6), 250);
+        swipe(b.centerX(), b.centerY(), b.centerX(), Math.max(0, b.centerY() - getScreenHeight() * 0.6), 250);
         sleep(300);
         Record.info("已通过最近任务页卡片滑动关闭应用");
         try { flushElementCache(); } catch {}
@@ -286,12 +327,12 @@ export const closeAllRecentApps = (options?: { preferButton?: boolean; maxSwipes
 
     // 方式2：兜底 - 通过滑动卡片关闭（各列多次上滑）
     const columns = [
-      Math.floor(device.width * 0.33),
-      Math.floor(device.width * 0.5),
-      Math.floor(device.width * 0.67),
+      Math.floor(getScreenWidth() * 0.33),
+      Math.floor(getScreenWidth() * 0.5),
+      Math.floor(getScreenWidth() * 0.67),
     ];
-    const startY = Math.floor(device.height * 0.6);
-    const endY = Math.floor(device.height * 0.15);
+    const startY = Math.floor(getScreenHeight() * 0.6);
+    const endY = Math.floor(getScreenHeight() * 0.15);
     let swiped = 0;
     for (let i = 0; i < maxSwipes; i++) {
       const x = columns[i % columns.length];
@@ -314,7 +355,7 @@ export const closeAllRecentApps = (options?: { preferButton?: boolean; maxSwipes
 // 在最近任务页底部查找关闭按钮（优先资源ID，再文案匹配）
 const findBottomCloseButton = (timeout = 2500) => {
   const endAt = Date.now() + timeout;
-  const bottomThreshold = Math.floor(device.height * 0.75);
+  const bottomThreshold = Math.floor(getScreenHeight() * 0.75);
   const textRegex = /(关闭|清理|清除|一键清理|关闭全部|清理全部|全部清除|全部关闭|结束全部|清除全部|Clear\s*all|Close\s*all|Dismiss\s*all|Remove\s*all|Close)/i;
   const ids = [
     // 与 findCloseAllButton 同步的 ID 集

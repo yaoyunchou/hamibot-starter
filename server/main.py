@@ -9,7 +9,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from core.config import settings
-from routers import book, cache, control, goods, logs, order
+from routers import book, cache, control, debug, goods, logs, order
 
 _SERVER_DIR = Path(__file__).parent
 _LOG_DIR = _SERVER_DIR.parent / "logs"
@@ -67,6 +67,7 @@ app.include_router(cache.router, prefix="/api")
 app.include_router(book.router, prefix="/api")
 app.include_router(goods.router, prefix="/api")
 app.include_router(control.router, prefix="/api")
+app.include_router(debug.router, prefix="/api")
 
 # 静态文件（控制面板 HTML/CSS/JS）
 _STATIC_DIR = _SERVER_DIR / "static"

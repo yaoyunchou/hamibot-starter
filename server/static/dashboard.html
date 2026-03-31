@@ -147,6 +147,44 @@
 
   .page { display: none; }
   .page.active { display: block; }
+
+  /* ── Debug Tool ── */
+  .dbg-quick { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .dbg-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 960px) { .dbg-panels { grid-template-columns: 1fr; } }
+  .dbg-input-group { margin-bottom: 12px; }
+  .dbg-input-group label {
+    display: block; font-size: 11px; color: var(--muted); margin-bottom: 4px;
+    text-transform: uppercase; letter-spacing: .5px; font-weight: 600;
+  }
+  .dbg-input, .dbg-select, .dbg-textarea {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text); padding: 8px 12px; font-size: 13px; font-family: var(--font);
+    transition: border-color .15s;
+  }
+  .dbg-input:focus, .dbg-select:focus, .dbg-textarea:focus { outline: none; border-color: var(--accent); }
+  .dbg-textarea { font-family: 'SF Mono', 'Fira Code', monospace; min-height: 120px; resize: vertical; }
+  .dbg-result {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px; font-size: 12px; font-family: 'SF Mono', 'Fira Code', monospace;
+    color: var(--text); overflow: auto; max-height: 480px;
+    white-space: pre-wrap; word-break: break-all; line-height: 1.6;
+  }
+  .dbg-result-placeholder { color: var(--muted); font-style: italic; }
+  .dbg-result img { max-width: 100%; border-radius: 6px; margin-top: 8px; }
+  .dbg-status-dot {
+    width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px;
+  }
+  .dbg-status-dot.pending { background: var(--blue); }
+  .dbg-status-dot.running { background: var(--yellow); animation: pulse 1s infinite; }
+  .dbg-status-dot.completed { background: var(--green); }
+  .dbg-status-dot.error { background: var(--red); }
+  .dbg-history-item {
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px; cursor: pointer; transition: background .1s;
+  }
+  .dbg-history-item:hover { background: rgba(99,102,241,.06); }
+  .dbg-history-item:last-child { border-bottom: none; }
 </style>
 </head>
 <body>
@@ -168,8 +206,8 @@
     <div class="nav-item" onclick="showPage('cache', this)">
       <span class="nav-icon">🗃️</span>元素缓存
     </div>
-    <div class="nav-item" onclick="showPage('ocr', this); fetchOcrLogs()">
-      <span class="nav-icon">📷</span>OCR 日志
+    <div class="nav-item" onclick="showPage('debug', this); fetchDebugHistory()">
+      <span class="nav-icon">🛠️</span>调试工具
     </div>
   </aside>
 
@@ -199,7 +237,6 @@
           <button class="btn btn-primary" onclick="addTask('goldCoin')">🪙 获取金币</button>
           <button class="btn btn-outline" onclick="addTask('comment')">💬 自动评论</button>
           <button class="btn btn-outline" onclick="addTask('product')">📦 商品曝光</button>
-          <button class="btn btn-outline" onclick="addTask('ocr')">📷 OCR截图</button>
         </div>
       </div>
 
@@ -226,7 +263,6 @@
             <button class="btn btn-primary btn-sm" onclick="addTask('goldCoin')">+ 获取金币</button>
             <button class="btn btn-outline btn-sm" onclick="addTask('comment')">+ 自动评论</button>
             <button class="btn btn-outline btn-sm" onclick="addTask('product')">+ 商品曝光</button>
-            <button class="btn btn-outline btn-sm" onclick="addTask('ocr')">📷 OCR截图</button>
           </div>
         </div>
         <div class="tabs">
@@ -273,24 +309,6 @@
       </div>
     </div>
 
-    <!-- ── OCR 日志 ── -->
-    <div id="page-ocr" class="page">
-      <div class="card">
-        <div class="card-title">
-          OCR 截图识别日志
-          <div style="display:flex;gap:8px;align-items:center">
-            <input type="date" id="ocr-date" style="
-              background:var(--bg);border:1px solid var(--border);border-radius:6px;
-              color:var(--text);padding:5px 10px;font-size:12px;font-family:var(--font);
-            " />
-            <button class="btn btn-outline btn-sm" onclick="fetchOcrLogs()">🔍 查看</button>
-            <button class="btn btn-primary btn-sm" onclick="addTask('ocr')">📷 触发OCR</button>
-          </div>
-        </div>
-        <div id="ocr-list"><div class="empty-tip">点击「触发OCR」让客户端截图识别，结果将在此展示</div></div>
-      </div>
-    </div>
-
     <!-- ── 预警 ── -->
     <div id="page-alerts" class="page">
       <div class="card">
@@ -304,6 +322,119 @@
           <div class="tab" onclick="filterAlerts(true, this)">已确认</div>
         </div>
         <div id="alert-list"><div class="empty-tip">加载中...</div></div>
+      </div>
+    </div>
+
+    <!-- ── 调试工具 ── -->
+    <div id="page-debug" class="page">
+      <!-- 快捷按钮 -->
+      <div class="dbg-quick">
+        <button class="btn btn-primary" onclick="dbgSendQuick('page_info')">📱 页面信息</button>
+        <button class="btn btn-outline" onclick="dbgSendQuick('screenshot')">🖼️ 截图</button>
+        <button class="btn btn-outline" onclick="dbgSendQuick('layout',{depth:3})">🌳 布局树</button>
+        <button class="btn btn-danger btn-sm" onclick="dbgClearAll()" style="margin-left:auto">清空记录</button>
+      </div>
+
+      <div class="dbg-panels">
+        <!-- 左栏：指令面板 -->
+        <div>
+          <div class="card">
+            <div class="card-title">发送调试指令</div>
+            <div class="tabs" id="dbg-type-tabs">
+              <div class="tab active" onclick="dbgSwitchType('element',this)">元素查询</div>
+              <div class="tab" onclick="dbgSwitchType('script',this)">脚本执行</div>
+              <div class="tab" onclick="dbgSwitchType('screenshot',this)">截图</div>
+              <div class="tab" onclick="dbgSwitchType('layout',this)">布局</div>
+            </div>
+
+            <!-- element -->
+            <div id="dbg-form-element" class="dbg-form">
+              <div class="dbg-input-group">
+                <label>选择器方法</label>
+                <select class="dbg-select" id="dbg-el-method">
+                  <option value="text">text</option>
+                  <option value="textContains" selected>textContains</option>
+                  <option value="id">id</option>
+                  <option value="desc">desc</option>
+                  <option value="descContains">descContains</option>
+                  <option value="className">className</option>
+                </select>
+              </div>
+              <div class="dbg-input-group">
+                <label>匹配值</label>
+                <input class="dbg-input" id="dbg-el-value" placeholder="例：我发布的" />
+              </div>
+              <div style="display:flex;gap:10px">
+                <div class="dbg-input-group" style="flex:1">
+                  <label>操作</label>
+                  <select class="dbg-select" id="dbg-el-action">
+                    <option value="info" selected>info（详细信息）</option>
+                    <option value="exists">exists（是否存在）</option>
+                    <option value="click">click（点击）</option>
+                    <option value="bounds">bounds（坐标）</option>
+                  </select>
+                </div>
+                <div class="dbg-input-group" style="width:80px">
+                  <label>超时(ms)</label>
+                  <input class="dbg-input" id="dbg-el-timeout" type="number" value="3000" />
+                </div>
+                <div class="dbg-input-group" style="width:60px">
+                  <label>Index</label>
+                  <input class="dbg-input" id="dbg-el-index" type="number" value="0" />
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="dbgSendElement()" style="width:100%;margin-top:4px">发送</button>
+            </div>
+
+            <!-- script -->
+            <div id="dbg-form-script" class="dbg-form" style="display:none">
+              <div class="dbg-input-group">
+                <label>Auto.js 代码</label>
+                <textarea class="dbg-textarea" id="dbg-script-code" placeholder="toast('hello');\nreturn 1 + 1;"></textarea>
+              </div>
+              <button class="btn btn-primary" onclick="dbgSendScript()" style="width:100%;margin-top:4px">执行</button>
+            </div>
+
+            <!-- screenshot -->
+            <div id="dbg-form-screenshot" class="dbg-form" style="display:none">
+              <div class="dbg-input-group">
+                <label>JPEG 质量 (1-100)</label>
+                <input class="dbg-input" id="dbg-ss-quality" type="number" value="60" min="1" max="100" />
+              </div>
+              <button class="btn btn-primary" onclick="dbgSendScreenshot()" style="width:100%;margin-top:4px">截图</button>
+            </div>
+
+            <!-- layout -->
+            <div id="dbg-form-layout" class="dbg-form" style="display:none">
+              <div class="dbg-input-group">
+                <label>遍历深度</label>
+                <input class="dbg-input" id="dbg-layout-depth" type="number" value="3" min="1" max="10" />
+              </div>
+              <button class="btn btn-primary" onclick="dbgSendLayout()" style="width:100%;margin-top:4px">获取布局</button>
+            </div>
+          </div>
+
+          <!-- 历史记录 -->
+          <div class="card" style="margin-top:20px">
+            <div class="card-title">历史记录 <span id="dbg-history-count" class="badge badge-muted" style="display:none"></span></div>
+            <div id="dbg-history" style="max-height:320px;overflow-y:auto">
+              <div class="empty-tip">暂无记录</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右栏：结果展示 -->
+        <div>
+          <div class="card" style="position:sticky;top:32px">
+            <div class="card-title">
+              执行结果
+              <span id="dbg-result-status" style="font-size:12px;font-weight:400;text-transform:none"></span>
+            </div>
+            <div id="dbg-result" class="dbg-result">
+              <span class="dbg-result-placeholder">发送指令后，结果将在此展示...</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -345,7 +476,7 @@ const STATUS_MAP = {
   error:     ['异常',    'badge-red'],
   timeout:   ['超时',    'badge-red'],
 };
-const TYPE_LABEL = { goldCoin: '🪙 获取金币', comment: '💬 自动评论', product: '📦 商品曝光', ocr: '📷 OCR截图' };
+const TYPE_LABEL = { goldCoin: '🪙 获取金币', comment: '💬 自动评论', product: '📦 商品曝光' };
 const ALERT_ICON = { warn: '⚠️', error: '🔴', info: 'ℹ️' };
 
 function statusBadge(s) {
@@ -538,92 +669,160 @@ function toggleCacheRaw() {
   document.getElementById('cache-raw-box').style.display = cacheRawVisible ? '' : 'none';
 }
 
-// ── OCR Logs ──
-async function fetchOcrLogs() {
-  const dateEl = document.getElementById('ocr-date');
-  const today = new Date().toISOString().slice(0, 10);
-  if (!dateEl.value) dateEl.value = today;
-  const date = dateEl.value;
-  const container = document.getElementById('ocr-list');
-  container.innerHTML = '<div class="empty-tip">加载中...</div>';
-  try {
-    const r = await fetch(`${BASE}/api/logs/ocr?date=${date}`).then(r => r.json());
-    if (!r.data || !r.data.length) {
-      container.innerHTML = '<div class="empty-tip">该日期暂无 OCR 记录，可点击「触发OCR」让客户端截图识别</div>';
-      return;
-    }
-    // 每行格式: [timestamp] [appName] {json_payload}
-    container.innerHTML = r.data.slice().reverse().map(line => {
-      const m = line.match(/^\[([^\]]+)\]\s*\[([^\]]+)\]\s*(.+)$/);
-      if (!m) return `<div style="padding:10px 0;border-bottom:1px solid var(--border);font-family:monospace;font-size:12px;color:var(--muted)">${escHtml(line)}</div>`;
-      const [, ts, app, payload] = m;
-      let data = null;
-      try { data = JSON.parse(payload); } catch {}
-      const method = data?.method || '-';
-      const pkg = data?.package || '-';
-      const results = data?.result;
-      const texts = Array.isArray(results) ? results : (results ? [JSON.stringify(results)] : []);
-      return `<div style="padding:14px 0;border-bottom:1px solid var(--border)">
-        <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px">
-          <span style="font-size:12px;color:var(--muted)">${escHtml(ts)}</span>
-          <span class="badge badge-muted">${escHtml(method)}</span>
-          <span style="font-size:12px;color:var(--muted);font-family:monospace">${escHtml(pkg)}</span>
-          <span style="font-size:12px;color:var(--accent-h)">${texts.length} 个文本块</span>
-        </div>
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;font-family:monospace;max-height:260px;overflow-y:auto">
-          ${texts.length ? texts.map((t, i) => `<div style="padding:3px 0;border-bottom:1px solid rgba(42,45,58,.5);color:var(--text)"><span style="color:var(--muted);margin-right:8px">${i + 1}.</span>${escHtml(typeof t === 'string' ? t : JSON.stringify(t))}</div>`).join('') : '<span style="color:var(--muted)">无文本内容</span>'}
-        </div>
-      </div>`;
-    }).join('');
-  } catch (e) {
-    container.innerHTML = `<div class="empty-tip" style="color:var(--red)">请求失败: ${e.message}</div>`;
-  }
-}
-
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ── OCR 日志 ──
-async function fetchOcrLogs() {
-  const dateEl = document.getElementById('ocr-date');
-  const today = new Date().toISOString().slice(0, 10);
-  if (!dateEl.value) dateEl.value = today;
-  const date = dateEl.value;
-  const listEl = document.getElementById('ocr-list');
-  listEl.innerHTML = '<div class="empty-tip">加载中...</div>';
+// ── Debug Tool ──
+let dbgCurrentType = 'element';
+let dbgHistory = [];
+let _dbgPollTimer = null;
+
+function dbgSwitchType(type, el) {
+  dbgCurrentType = type;
+  document.querySelectorAll('#dbg-type-tabs .tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.dbg-form').forEach(f => f.style.display = 'none');
+  const form = document.getElementById('dbg-form-' + type);
+  if (form) form.style.display = '';
+}
+
+async function _dbgSendCommand(type, params) {
   try {
-    const r = await fetch(`${BASE}/api/logs/ocr?date=${date}`).then(r => r.json());
-    if (!r.data || !r.data.length) {
-      listEl.innerHTML = `<div class="empty-tip">暂无 OCR 记录（${date}）</div>`;
+    const r = await fetch(`${BASE}/api/debug/command`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, params })
+    }).then(r => r.json());
+    if (r.code !== 0) { toast(r.message, 'error'); return; }
+    toast('指令已下发，等待客户端执行...', 'ok');
+    _dbgShowPending(r.data);
+    _dbgStartPolling(r.data.id);
+  } catch (e) {
+    toast('发送失败: ' + e.message, 'error');
+  }
+}
+
+function _dbgShowPending(cmd) {
+  const statusEl = document.getElementById('dbg-result-status');
+  statusEl.innerHTML = `<span class="dbg-status-dot pending"></span>pending — ${cmd.type}`;
+  document.getElementById('dbg-result').innerHTML = '<span class="dbg-result-placeholder">等待客户端执行...</span>';
+}
+
+function _dbgStartPolling(cmdId) {
+  if (_dbgPollTimer) clearInterval(_dbgPollTimer);
+  const statusEl = document.getElementById('dbg-result-status');
+  let polls = 0;
+  _dbgPollTimer = setInterval(async () => {
+    polls++;
+    try {
+      const r = await fetch(`${BASE}/api/debug/command/${cmdId}`).then(r => r.json());
+      if (r.code !== 0) return;
+      const cmd = r.data;
+      if (cmd.status === 'running') {
+        statusEl.innerHTML = `<span class="dbg-status-dot running"></span>running...`;
+      }
+      if (cmd.status === 'completed' || cmd.status === 'error') {
+        clearInterval(_dbgPollTimer);
+        _dbgPollTimer = null;
+        _dbgRenderResult(cmd);
+        fetchDebugHistory();
+      }
+    } catch {}
+    if (polls > 60) { clearInterval(_dbgPollTimer); _dbgPollTimer = null; statusEl.innerHTML = '<span style="color:var(--yellow)">轮询超时</span>'; }
+  }, 2000);
+}
+
+function _dbgRenderResult(cmd) {
+  const statusEl = document.getElementById('dbg-result-status');
+  const resultEl = document.getElementById('dbg-result');
+  if (cmd.status === 'error') {
+    statusEl.innerHTML = `<span class="dbg-status-dot error"></span>error`;
+    resultEl.innerHTML = `<span style="color:var(--red)">${escHtml(cmd.error || '未知错误')}</span>`;
+    return;
+  }
+  statusEl.innerHTML = `<span class="dbg-status-dot completed"></span>completed — ${cmd.completed_at || ''}`;
+
+  if (cmd.type === 'screenshot' && cmd.result && cmd.result.base64) {
+    resultEl.innerHTML = `<div style="margin-bottom:8px;color:var(--muted)">${escHtml(cmd.result.package)} / ${escHtml(cmd.result.activity)}</div><img src="data:image/jpeg;base64,${cmd.result.base64}" alt="screenshot" />`;
+    return;
+  }
+  resultEl.textContent = JSON.stringify(cmd.result, null, 2);
+}
+
+function dbgSendQuick(type, params) {
+  _dbgSendCommand(type, params || {});
+}
+
+function dbgSendElement() {
+  _dbgSendCommand('element', {
+    method: document.getElementById('dbg-el-method').value,
+    value: document.getElementById('dbg-el-value').value,
+    action: document.getElementById('dbg-el-action').value,
+    timeout: parseInt(document.getElementById('dbg-el-timeout').value) || 3000,
+    index: parseInt(document.getElementById('dbg-el-index').value) || 0,
+  });
+}
+
+function dbgSendScript() {
+  const code = document.getElementById('dbg-script-code').value.trim();
+  if (!code) { toast('请输入代码', 'error'); return; }
+  _dbgSendCommand('script', { code });
+}
+
+function dbgSendScreenshot() {
+  _dbgSendCommand('screenshot', {
+    quality: parseInt(document.getElementById('dbg-ss-quality').value) || 60,
+  });
+}
+
+function dbgSendLayout() {
+  _dbgSendCommand('layout', {
+    depth: parseInt(document.getElementById('dbg-layout-depth').value) || 3,
+  });
+}
+
+const DBG_TYPE_LABEL = {
+  element: '🔍 元素', script: '⚡ 脚本',
+  screenshot: '🖼️ 截图', page_info: '📱 页面', layout: '🌳 布局',
+};
+
+async function fetchDebugHistory() {
+  try {
+    const r = await fetch(`${BASE}/api/debug/commands?limit=30`).then(r => r.json());
+    dbgHistory = r.data || [];
+    const container = document.getElementById('dbg-history');
+    const countEl = document.getElementById('dbg-history-count');
+    if (!dbgHistory.length) {
+      container.innerHTML = '<div class="empty-tip">暂无记录</div>';
+      countEl.style.display = 'none';
       return;
     }
-    listEl.innerHTML = r.data.slice().reverse().map(line => {
-      // 每行格式：[timestamp] [appName] {json}
-      const m = line.match(/^\[([^\]]+)\]\s*\[[^\]]+\]\s*(.+)$/);
-      const ts = m ? m[1] : '';
-      const raw = m ? m[2] : line;
-      let parsed = null;
-      try { parsed = JSON.parse(raw); } catch {}
-      const method = parsed?.method || '-';
-      const pkg = parsed?.package || '-';
-      const result = parsed?.result;
-      const resultStr = Array.isArray(result)
-        ? result.map(r => typeof r === 'object' ? (r.text || JSON.stringify(r)) : String(r)).join(' · ')
-        : (result ? String(result) : raw);
-      return `
-        <div style="border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:10px">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-            <span style="font-size:12px;color:var(--muted)">${ts || date}</span>
-            <span class="badge badge-blue">${method}</span>
-            <span style="font-size:11px;color:var(--muted);font-family:monospace">${pkg}</span>
-          </div>
-          <div style="font-size:13px;line-height:1.7;color:var(--text);word-break:break-all;white-space:pre-wrap">${escHtml(resultStr)}</div>
-        </div>`;
-    }).join('');
-  } catch (e) {
-    listEl.innerHTML = `<div class="empty-tip" style="color:var(--red)">请求失败: ${e.message}</div>`;
-  }
+    countEl.textContent = dbgHistory.length;
+    countEl.style.display = '';
+    container.innerHTML = dbgHistory.map(cmd => `
+      <div class="dbg-history-item" onclick="dbgViewHistory('${cmd.id}')">
+        <span class="dbg-status-dot ${cmd.status}"></span>
+        <span class="type-tag" style="font-size:11px;padding:2px 8px">${DBG_TYPE_LABEL[cmd.type] || cmd.type}</span>
+        <span style="font-size:12px;color:var(--muted);flex:1">${escHtml(cmd.created_at || '')}</span>
+        ${cmd.status === 'error' ? '<span style="font-size:11px;color:var(--red)">失败</span>' : ''}
+      </div>`).join('');
+  } catch {}
+}
+
+async function dbgViewHistory(cmdId) {
+  try {
+    const r = await fetch(`${BASE}/api/debug/command/${cmdId}`).then(r => r.json());
+    if (r.code === 0) _dbgRenderResult(r.data);
+  } catch {}
+}
+
+async function dbgClearAll() {
+  await fetch(`${BASE}/api/debug/commands`, { method: 'DELETE' });
+  toast('已清空调试记录');
+  fetchDebugHistory();
+  document.getElementById('dbg-result').innerHTML = '<span class="dbg-result-placeholder">发送指令后，结果将在此展示...</span>';
+  document.getElementById('dbg-result-status').innerHTML = '';
 }
 
 // ── Refresh ──

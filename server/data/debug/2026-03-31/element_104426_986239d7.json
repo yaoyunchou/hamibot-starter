@@ -1,0 +1,20 @@
+{
+  "id": "986239d7-9945-4e83-9c6d-1e2226d8a381",
+  "type": "element",
+  "params": {
+    "method": "id",
+    "value": "taskWrap",
+    "action": "info",
+    "timeout": 3000,
+    "index": 0
+  },
+  "status": "completed",
+  "created_at": "2026-03-31 10:44:11",
+  "completed_at": "2026-03-31 10:44:26",
+  "result": {
+    "found": false,
+    "method": "id",
+    "value": "taskWrap"
+  },
+  "error": null
+}

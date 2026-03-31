@@ -8,7 +8,8 @@
  */
 import { Record } from "./logger";
 import { SHOW_CONSOLE, SHORT_WAIT_MS } from "../global";
-import { PermissionException, ServiceNotEnabled } from "./exception";
+import { PermissionException } from "./exception";
+import { ensureScreenSize, getScreenWidth, getScreenHeight } from "./screenSize";
 
 export function init() {
     // check accessibility permission
@@ -21,22 +22,18 @@ export function init() {
         Record.verbose("Accessibility permissions enabled");
     }
 
-    // check is service alive
-    if (device.height === 0 || device.width === 0) {
-        throw new ServiceNotEnabled(
-            'Failed to get the screen size. ' +
-            'Please try restarting the service or re-installing Hamibot'
-        );
-    } else {
-        Record.debug("Screen size: " + device.height + " x " + device.width);
-    }
+    const { w, h } = ensureScreenSize();
+    const fromDevice = device.width > 0 && device.height > 0;
+    Record.debug(
+        "Screen size: " + h + " x " + w + (fromDevice ? "" : " (DisplayMetrics 或默认 1080×2400)")
+    );
 
     // show console
     if (SHOW_CONSOLE) {
         console.show();
         sleep(SHORT_WAIT_MS);
         console.setPosition(0, 100);
-        console.setSize(device.width, device.height / 4);
+        console.setSize(getScreenWidth(), Math.floor(getScreenHeight() / 4));
     }
 
     setScreenMetrics(1080, 2400);

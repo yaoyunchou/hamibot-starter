@@ -6,6 +6,8 @@
  *
  * 注意： 主弹框的元素都用mainPopup作为taskName
  *       页面里面的元素都用coinExchangeMain作为taskName
+ *
+ * 主弹框任务状态机（hasRun / awaitingRewardClaim / 领取与去完成分工）见 doc/flow/03_gold_coin.txt，改逻辑前先读该文档。
  */
 import { Record } from "../../../lib/logger";
 import {
@@ -66,22 +68,88 @@ export function runActivePopups() {
   }
 }
 
+/** 任务标题与右侧按钮（领取奖励/去完成）是否同一行：与 findMainPopupActionAligned 一致 */
+function isTitleAlignedWithActionBtn(taskTitleTop: number, actionBtnTop: number): boolean {
+  return taskTitleTop - actionBtnTop < 20;
+}
+
+/**
+ * 先与 taskList 标题做同行对比：仅对 awaitingRewardClaim 的任务做 strict 查找；对得上点击并 hasRun；对不上仍点领取。
+ */
 export function checkGetGold() {
-  setRunInfo('checkGetGold: 检查是否有可领取的奖励');
+  setRunInfo('checkGetGold: 检查领取奖励（仅对照 awaitingRewardClaim 任务；否则仍直接点）');
   sleep(1000);
-  const getGold = findTargetElementList("mainPopup", "领取奖励", 20);
-  if (getGold) {
-    setRunInfo(`checkGetGold: 找到 ${getGold.length} 个领取奖励按钮`);
-    Record.info(`checkGetGold, 找到${getGold.length}个领取奖励的按钮`);
-    for (let i = 0; i < getGold.length; i++) {
-      setRunInfo(`checkGetGold: 点击第 ${i + 1} 个领取奖励`);
-      Record.info(`checkGetGold, 点击领取奖励: ${getGold[i]}`);
-      getGold[i].click();
-      sleep(1000);
-    }
-  } else {
+  const rewards = findTargetElementList("mainPopup", "领取奖励", 20);
+  if (!rewards || rewards.length === 0) {
     setRunInfo('checkGetGold: 无可领取奖励');
+    return;
   }
+  setRunInfo(`checkGetGold: 共 ${rewards.length} 个[领取奖励]，同行仅扫 awaitingRewardClaim 任务`);
+  for (let i = 0; i < rewards.length; i++) {
+    const reward = rewards[i];
+    const rTop = reward.bounds().top;
+    const candidates = taskList.filter((t: any) => t.awaitingRewardClaim === true);
+    let matched: any = null;
+    if (candidates.length > 0) {
+      for (let j = 0; j < candidates.length; j++) {
+        const task: any = candidates[j];
+        const titleEl = findTargetElementWithCacheStrict("mainPopup", task.title);
+        if (!titleEl) continue;
+        const tTop = titleEl.bounds().top;
+        const dy = tTop - rTop;
+        if (isTitleAlignedWithActionBtn(tTop, rTop)) {
+          matched = task;
+          setRunInfo(`checkGetGold: 第${i + 1}个[领取奖励]与任务[${task.title}]同行，差值=${dy}`);
+          break;
+        }
+      }
+    }
+    if (matched) {
+      setRunInfo(`checkGetGold: 点击任务[${matched.title}]对应[领取奖励]并标记完成`);
+      Record.info(`checkGetGold: click reward for taskList ${matched.title}`);
+      reward.click();
+      matched.hasRun = true;
+      matched.awaitingRewardClaim = false;
+    } else {
+      setRunInfo(
+        candidates.length === 0
+          ? `checkGetGold: 第${i + 1}个[领取奖励]无待对照任务，直接点击领取`
+          : `checkGetGold: 第${i + 1}个[领取奖励]未对上候选标题，仍直接点击领取`
+      );
+      Record.info(`checkGetGold: click reward without row match #${i + 1}`);
+      reward.click();
+      if (candidates.length > 0) {
+        candidates.forEach((t: any) => {
+          t.awaitingRewardClaim = false;
+          t.hasRun = true;
+        });
+      }
+    }
+    sleep(1000);
+  }
+}
+
+/** 任务列表整表最多扫 3 轮；单轮内未完成的下轮再试 */
+const MAIN_POPUP_TASK_ROUNDS_MAX = 3;
+
+/**
+ * 与任务标题行纵向对齐的主弹框按钮（规则与原「去完成」一致：taskTop - btnTop < 20）
+ */
+function findMainPopupActionAligned(taskTitleTop: number, keyword: string): any {
+  const btns = findTargetElementList("mainPopup", keyword);
+  if (!btns || btns.length === 0) {
+    return null;
+  }
+  setRunInfo(`mainPopupFn: [${keyword}] 共 ${btns.length} 个候选，按任务行对齐`);
+  for (let i = 0; i < btns.length; i++) {
+    const react = btns[i].bounds();
+    const dy = taskTitleTop - react.top;
+    setRunInfo(`mainPopupFn: [${keyword}] 第${i + 1}个 top=${react.top}，任务 top=${taskTitleTop}，差值=${dy}`);
+    if (dy < 20) {
+      return btns[i];
+    }
+  }
+  return null;
 }
 
 /**
@@ -101,14 +169,14 @@ export function mainPopupFn(title: string, callback, task: any) {
     setRunInfo(`mainPopupFn: 未找到[${title}]，检查主弹框是否还在`);
     const jtBtn = findTargetElementWithCache("mainPopup", "今天", 40);
     if (jtBtn) {
-      setRunInfo(`mainPopupFn: 主弹框在但无[${title}]，标记任务已完成`);
-      task.hasRun = true;
-      Record.info(`没有找到${title}， 将当前任务改成已经运行`);
+      setRunInfo(`mainPopupFn: 主弹框在但无[${title}]，交由 checkGetGold 领奖励后再记 hasRun`);
+      task.awaitingRewardClaim = true;
+      Record.info(`没有找到${title}， awaitingRewardClaim`);
       return;
     } else {
-      setRunInfo(`mainPopupFn: 主弹框不在，执行 backMainPage 后重试[${title}]`);
+      setRunInfo(`mainPopupFn: 主弹框不在，执行 backMainPage，本任务下轮再试[${title}]`);
       backMainPage();
-      mainPopupFn(title, callback, task);
+      return;
     }
   }
 
@@ -153,42 +221,34 @@ export function mainPopupFn(title: string, callback, task: any) {
         swipe(10, 1259, 10, 2300, 500);
         findBtn();
       } else {
-        setRunInfo(`mainPopupFn: [${title}] 坐标在范围内，查找[去完成]按钮`);
-        const goBtns = findTargetElementList("mainPopup", "去完成");
-        setRunInfo(`mainPopupFn: 找到 ${goBtns ? goBtns.length : 0} 个[去完成]按钮`);
-        for (let i = 0; i < goBtns.length; i++) {
-          const btn = goBtns[i];
-          const react = btn.bounds();
-          setRunInfo(`mainPopupFn: 第${i+1}个[去完成] top=${react.top}，任务 top=${sysReact.top}，差值=${sysReact.top - react.top}`);
-          if (sysReact.top - react.top < 20) {
-            Record.info(`sysReact, x: ${react.left}, y: ${react.top}`);
-            setRunInfo(`mainPopupFn: 点击第${i+1}个[去完成]，进入[${title}]`);
-            btn.click();
-            sleep(1000);
-            Record.info(`运行++${title}`);
-            callback();
-            task.hasRun = true;
-            break;
-          }
+        setRunInfo(`mainPopupFn: [${title}] 坐标在范围内，按行查找[去完成]（领取奖励仅由 checkGetGold 处理）`);
+        const goBtn = findMainPopupActionAligned(sysReact.top, "去完成");
+        if (goBtn) {
+          Record.info(`sysReact, 去完成 bounds: ${goBtn.bounds()}`);
+          setRunInfo(`mainPopupFn: 本行[去完成]，进入[${title}]`);
+          goBtn.click();
+          sleep(1000);
+          Record.info(`运行++${title}`);
+          callback();
+          sleep(1500);
+          task.awaitingRewardClaim = true;
+          Record.info(`mainPopupFn ${title} 任务流已执行，hasRun 仅在 checkGetGold 领取后设置`);
+        } else {
+          setRunInfo(`mainPopupFn: 本行无对齐的[去完成]，保留到下轮列表循环`);
         }
-        if (!task.hasRun) {
-          setRunInfo(`mainPopupFn: 未匹配到[去完成]按钮，任务[${title}]标记为已完成`);
-        }
-        task.hasRun = true;
-        Record.info(`已经获取了对应的金币`);
       }
     };
     findBtn();
   } else {
-    setRunInfo(`mainPopupFn: sysBtn 或 scrollBox 不存在，任务[${title}]标记为已完成`);
-    task.hasRun = true;
+    setRunInfo(`mainPopupFn: sysBtn 或 scrollBox 不存在，任务[${title}]待 checkGetGold/下轮处理`);
+    // task.awaitingRewardClaim = true;
   }
 }
 
 // 弹框列表任务处理
-export function mainPopupTask() {
+export function mainPopupTask(round: number = 0) {
   try {
-    setRunInfo('mainPopupTask: 开始执行');
+    setRunInfo(`mainPopupTask: 开始执行（第 ${round + 1}/${MAIN_POPUP_TASK_ROUNDS_MAX} 轮）`);
     checkGetGold();
 
     const pendingTasks = taskList.filter((item: any) => !item.hasRun);
@@ -217,7 +277,9 @@ export function mainPopupTask() {
       // 获取列表, 并执行， 先执行命中缓存不循环方案
       for (let i = 0; i < taskList.length; i++) {
         const task: any = taskList[i];
-        if (!task.hasRun) {
+        if (task.awaitingRewardClaim && !task.hasRun) {
+          setRunInfo(`mainPopupTask: 跳过待领奖励任务[${task.title}]（已由本轮开头 checkGetGold 处理）`);
+        } else if (!task.hasRun) {
           setRunInfo(`mainPopupTask: 执行任务[${task.title}] (${i + 1}/${taskList.length})`);
           mainPopupFn(task.title, task.callBack, task);
         } else {
@@ -225,8 +287,24 @@ export function mainPopupTask() {
         }
       }
 
-      setRunInfo('mainPopupTask: 本轮结束，再次检查结果');
-      mainPopupTask();
+      const stillPending = taskList.filter((item: any) => !item.hasRun);
+      setRunInfo(`mainPopupTask: 本轮结束（第 ${round + 1}/${MAIN_POPUP_TASK_ROUNDS_MAX} 轮），仍剩 ${stillPending.length} 个`);
+      if (stillPending.length === 0) {
+        maxLoopMap.allTaskOver = true;
+        setRunInfo('mainPopupTask: 所有任务执行完毕');
+        Record.info(`所有任务执行完毕!!!`);
+        flushTraces('goldCoin');
+      } else if (round + 1 < MAIN_POPUP_TASK_ROUNDS_MAX) {
+        mainPopupTask(round + 1);
+      } else {
+        setRunInfo(`mainPopupTask: 已达 ${MAIN_POPUP_TASK_ROUNDS_MAX} 轮，剩余 ${stillPending.length} 个未完成，强制结束以免死循环`);
+        stillPending.forEach((t: any) => {
+          t.hasRun = true;
+          t.awaitingRewardClaim = false;
+        });
+        maxLoopMap.allTaskOver = true;
+        flushTraces('goldCoin');
+      }
     }
   } catch (error) {
     setRunInfo(`mainPopupTask: 异常 ${error}`);

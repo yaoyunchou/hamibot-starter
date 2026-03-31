@@ -486,6 +486,11 @@ export const taskList = [
   },
 ];
 
+/** 脚本刚跑完、顶栏可能出现「领取奖励」时置 true；checkGetGold 只对这些项做标题同行查找，避免扫全表 */
+(taskList as { awaitingRewardClaim?: boolean }[]).forEach((t) => {
+  if (t.awaitingRewardClaim === undefined) t.awaitingRewardClaim = false;
+});
+
 /**
  * 关闭主弹框的逻辑
  */

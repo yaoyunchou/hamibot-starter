@@ -1,0 +1,79 @@
+{
+  "id": "55d28f1b-05e1-4b7e-8e56-fa2b4ef087fc",
+  "type": "layout",
+  "params": {
+    "depth": 3
+  },
+  "status": "completed",
+  "created_at": "2026-03-30 17:01:27",
+  "completed_at": "2026-03-30 17:01:28",
+  "result": {
+    "package": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.webview.WebHybridActivity",
+    "tree": {
+      "cls": "android.widget.FrameLayout",
+      "bounds": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "children": [
+        {
+          "cls": "android.widget.LinearLayout",
+          "bounds": [
+            0,
+            0,
+            1080,
+            2358
+          ],
+          "children": [
+            {
+              "cls": "android.widget.FrameLayout",
+              "id": "android:id/content",
+              "bounds": [
+                0,
+                0,
+                1080,
+                2358
+              ],
+              "children": [
+                {
+                  "cls": "android.widget.FrameLayout",
+                  "id": "com.taobao.idlefish:id/fish_layer_container_id",
+                  "bounds": [
+                    0,
+                    0,
+                    1080,
+                    2358
+                  ]
+                },
+                {
+                  "cls": "android.widget.RelativeLayout",
+                  "id": "com.taobao.idlefish:id/web_root",
+                  "bounds": [
+                    0,
+                    0,
+                    1080,
+                    2358
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cls": "android.view.View",
+          "id": "android:id/navigationBarBackground",
+          "bounds": [
+            0,
+            2358,
+            1080,
+            2400
+          ]
+        }
+      ]
+    }
+  },
+  "error": null
+}
