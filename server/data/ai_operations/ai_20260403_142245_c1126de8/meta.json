@@ -1,0 +1,14 @@
+{
+  "task_id": "ai_20260403_142245_c1126de8",
+  "task_description": "快速进去到获取金币的页面",
+  "started_at": "2026-04-03 14:22:45",
+  "completed_at": "2026-04-03 14:25:54",
+  "total_steps": 2,
+  "result": "max_steps",
+  "device_info": {
+    "screen": [
+      1080,
+      2400
+    ]
+  }
+}

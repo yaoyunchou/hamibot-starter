@@ -22,7 +22,10 @@ const MAX_CACHED_INDICES = 3;
 
 // 兼容旧格式 { index, errorTime } → 新格式 { indices, errorTime }
 const migrateCache = (value: any): { indices: number[]; errorTime: number } => {
-    if (Array.isArray(value?.indices)) return value;
+    if (Array.isArray(value?.indices)) {
+        const idx = value.indices.slice(0, MAX_CACHED_INDICES);
+        return { indices: idx, errorTime: value.errorTime ?? 0 };
+    }
     return { indices: [value.index], errorTime: value.errorTime ?? 0 };
 };
 
@@ -160,6 +163,11 @@ export const findTargetElementWithCache = (taskName: string, title: string, erro
 
     Record.info(`[sel#${callN}] ${taskName}/${title} 串行全部✗ 串行${serialElapsed}ms 总${totalElapsed}ms`);
     setRunInfo(`findTargetElementWithCache:${taskName} [${title}] 全部策略未命中 总耗${totalElapsed}ms`);
+    // 串行仍失败：清掉该 key，避免 errorTime 已为负时下次仍带着失效索引反复跑满串行（约 12×findOne 超时）
+    if (elementCache.has(cacheKey)) {
+        elementCache.delete(cacheKey);
+        saveElementCache(elementCache);
+    }
     return null;
 };
 

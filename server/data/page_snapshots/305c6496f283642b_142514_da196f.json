@@ -1,0 +1,2246 @@
+{
+  "package": "com.hamibot.hamibot",
+  "activity": "android.widget.RelativeLayout",
+  "fingerprint": "305c6496f283642b5c7b09876d51faf90bfaa41fc0ff175e311efad3b1a37f11",
+  "compressed_tree": "[android.widget.FrameLayout] 0,0,1080,2400\n  [android.widget.LinearLayout] 0,0,1080,2358\n    [android.widget.FrameLayout] #android:id/content 0,0,1080,2358\n      [android.widget.FrameLayout] #com.taobao.idlefish:id/fish_layer_container_id 0,0,1080,2358\n      [android.widget.FrameLayout] 0,0,1080,2358\n        [android.widget.FrameLayout] #com.taobao.idlefish:id/id_pager 0,0,1080,2358\n          [android.widget.FrameLayout] 0,0,1080,2358\n            [android.widget.FrameLayout] #com.taobao.idlefish:id/home_container 0,0,1080,2227\n              [android.widget.FrameLayout] 0,0,1080,2227\n                [android.widget.FrameLayout] #com.taobao.idlefish:id/foreground_container 0,0,1080,2227\n                [android.widget.FrameLayout] #com.taobao.idlefish:id/background_container 0,0,1080,2227\n                [android.widget.LinearLayout] #com.taobao.idlefish:id/content_container 0,0,1080,2227\n            [android.widget.FrameLayout] #com.taobao.idlefish:id/pub_container 540,2227,540,2227\n        [android.widget.FrameLayout] #com.taobao.idlefish:id/id_indicator 0,2169,1080,2358\n          [android.widget.RelativeLayout] #com.taobao.idlefish:id/home_indicator_root 0,2169,1080,2358\n            [android.widget.FrameLayout] #com.taobao.idlefish:id/indicator_item_container 0,2227,1080,2358\n              [android.widget.ImageView] #com.taobao.idlefish:id/indicator_bg 0,2227,1080,2358\n              [android.widget.LinearLayout] #com.taobao.idlefish:id/indicator_itmes 0,2227,1080,2358\n                [android.widget.FrameLayout] desc=\"闲鱼，未读消息数0，选中状态\" 21,2227,218,2358 (clickable)\n                [android.widget.FrameLayout] desc=\"深圳，未选中状态\" 218,2227,415,2358 (clickable)\n                [android.widget.FrameLayout] desc=\"消息，未读消息数49，未选中状态\" 664,2227,861,2358 (clickable)\n                [android.widget.FrameLayout] desc=\"我的，未选中状态\" 861,2227,1059,2358 (clickable)\n            [android.widget.RelativeLayout] #com.taobao.idlefish:id/post_wrapper 432,2169,647,2358\n              [android.widget.FrameLayout] desc=\"卖闲置\" 432,2169,647,2358 (clickable)\n                [android.widget.ImageView] #com.taobao.idlefish:id/post_guide 432,2169,647,2358\n                [android.widget.RelativeLayout] #com.taobao.idlefish:id/post_container 432,2169,647,2358\n  [android.view.View] #android:id/navigationBarBackground 0,2358,1080,2400",
+  "actionable_elements": [
+    {
+      "ref": "C01",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "com.taobao.idlefish:id/icon_entry_lottie",
+      "bounds": [
+        32,
+        88,
+        126,
+        183
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container"
+    },
+    {
+      "ref": "C02",
+      "action_type": "click",
+      "text": "",
+      "desc": "扫一扫",
+      "element_id": "com.taobao.idlefish:id/scan_wrapper",
+      "bounds": [
+        148,
+        88,
+        238,
+        183
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+    },
+    {
+      "ref": "C03",
+      "action_type": "long_click",
+      "text": "",
+      "desc": "555雕像半身,搜索,点击跳转到搜索激活页",
+      "element_id": "com.taobao.idlefish:id/search_bar_layout",
+      "bounds": [
+        249,
+        88,
+        816,
+        183
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+    },
+    {
+      "ref": "C04",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "com.taobao.idlefish:id/photo_search",
+      "bounds": [
+        816,
+        93,
+        900,
+        177
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+    },
+    {
+      "ref": "C05",
+      "action_type": "click",
+      "text": "",
+      "desc": "555雕像半身,搜索,点击跳转到搜索激活页",
+      "element_id": "com.taobao.idlefish:id/search_btn",
+      "bounds": [
+        921,
+        98,
+        1037,
+        172
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+    },
+    {
+      "ref": "C06",
+      "action_type": "scroll",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        0,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：滚动列表或内容区",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C07",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        5,
+        194,
+        136,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C08",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        136,
+        194,
+        267,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C09",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        267,
+        194,
+        398,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C10",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        398,
+        194,
+        603,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C11",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        603,
+        194,
+        776,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C12",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        776,
+        194,
+        907,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C13",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        907,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C14",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1038,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C15",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1169,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C16",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1300,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C17",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1431,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C18",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1562,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C19",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1693,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C20",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1824,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C21",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        2039,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C22",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        2254,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C23",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        2385,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C24",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        2600,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C25",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        2815,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C26",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3030,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C27",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3161,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C28",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3376,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C29",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3591,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C30",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3722,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C31",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3853,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C32",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        3984,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C33",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        4199,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C34",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        4414,
+        194,
+        985,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C35",
+      "action_type": "click",
+      "text": "",
+      "desc": "展开Tab",
+      "element_id": "",
+      "bounds": [
+        985,
+        194,
+        1080,
+        310
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C36",
+      "action_type": "scroll",
+      "text": "",
+      "desc": "",
+      "element_id": "com.taobao.idlefish:id/view_pager",
+      "bounds": [
+        0,
+        310,
+        1080,
+        2227
+      ],
+      "predicted_effect": "可能：滚动列表或内容区",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C37",
+      "action_type": "scroll",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        0,
+        310,
+        1080,
+        2227
+      ],
+      "predicted_effect": "可能：滚动列表或内容区",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C38",
+      "action_type": "scroll",
+      "text": "",
+      "desc": "",
+      "element_id": "com.taobao.idlefish:id/nested_recycler_view",
+      "bounds": [
+        0,
+        310,
+        1080,
+        2227
+      ],
+      "predicted_effect": "可能：滚动列表或内容区",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C39",
+      "action_type": "scroll",
+      "text": "",
+      "desc": "",
+      "element_id": "com.taobao.idlefish:id/viewpager",
+      "bounds": [
+        0,
+        310,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：滚动列表或内容区",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C40",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        26,
+        310,
+        213,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C41",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        213,
+        310,
+        400,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C42",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        400,
+        310,
+        587,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C43",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        587,
+        310,
+        774,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C44",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        774,
+        310,
+        961,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C45",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        961,
+        310,
+        1080,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C46",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1177,
+        310,
+        1080,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C47",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1393,
+        310,
+        1080,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C48",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1609,
+        310,
+        1080,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C49",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1825,
+        310,
+        1080,
+        528
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C50",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        961,
+        539,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C51",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1177,
+        539,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C52",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1393,
+        539,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C53",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1609,
+        539,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C54",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1825,
+        539,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C55",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        961,
+        768,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C56",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1177,
+        768,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C57",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1393,
+        768,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C58",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1609,
+        768,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C59",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        1825,
+        768,
+        1080,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C60",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        514,
+        535,
+        533,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C61",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        533,
+        535,
+        565,
+        544
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C62",
+      "action_type": "long_click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        23,
+        565,
+        527,
+        1514
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C63",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        46,
+        1450,
+        504,
+        1502
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C64",
+      "action_type": "long_click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        551,
+        565,
+        1055,
+        1515
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C65",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        574,
+        1451,
+        1032,
+        1503
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C66",
+      "action_type": "long_click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        23,
+        1549,
+        527,
+        2227
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C67",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        46,
+        2439,
+        504,
+        2227
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C68",
+      "action_type": "long_click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        551,
+        1550,
+        1055,
+        2227
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+    },
+    {
+      "ref": "C69",
+      "action_type": "click",
+      "text": "",
+      "desc": "闲鱼，未读消息数0，选中状态",
+      "element_id": "",
+      "bounds": [
+        21,
+        2227,
+        218,
+        2358
+      ],
+      "predicted_effect": "可能：底部 Tab 切换（闲鱼，未读消息数0，选中状态）",
+      "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+    },
+    {
+      "ref": "C70",
+      "action_type": "click",
+      "text": "",
+      "desc": "深圳，未选中状态",
+      "element_id": "",
+      "bounds": [
+        218,
+        2227,
+        415,
+        2358
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+    },
+    {
+      "ref": "C71",
+      "action_type": "click",
+      "text": "",
+      "desc": "",
+      "element_id": "",
+      "bounds": [
+        415,
+        2227,
+        664,
+        2358
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+    },
+    {
+      "ref": "C72",
+      "action_type": "click",
+      "text": "",
+      "desc": "消息，未读消息数49，未选中状态",
+      "element_id": "",
+      "bounds": [
+        664,
+        2227,
+        861,
+        2358
+      ],
+      "predicted_effect": "可能：底部 Tab 切换（消息，未读消息数49，未选中状态）",
+      "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+    },
+    {
+      "ref": "C73",
+      "action_type": "click",
+      "text": "",
+      "desc": "我的，未选中状态",
+      "element_id": "",
+      "bounds": [
+        861,
+        2227,
+        1059,
+        2358
+      ],
+      "predicted_effect": "可能：底部 Tab 切换（我的，未选中状态）",
+      "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+    },
+    {
+      "ref": "C74",
+      "action_type": "click",
+      "text": "",
+      "desc": "卖闲置",
+      "element_id": "",
+      "bounds": [
+        432,
+        2169,
+        647,
+        2358
+      ],
+      "predicted_effect": "可能：点击触发界面变化",
+      "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/post_wrapper"
+    }
+  ],
+  "recognition": {
+    "page_type": "home",
+    "page_name": "闲鱼首页",
+    "confidence": 0.98,
+    "has_popup": false,
+    "popups": [],
+    "clickable_elements": [
+      {
+        "ref": "C01",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "com.taobao.idlefish:id/icon_entry_lottie",
+        "bounds": [
+          32,
+          88,
+          126,
+          183
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container"
+      },
+      {
+        "ref": "C02",
+        "action_type": "click",
+        "text": "",
+        "desc": "扫一扫",
+        "element_id": "com.taobao.idlefish:id/scan_wrapper",
+        "bounds": [
+          148,
+          88,
+          238,
+          183
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+      },
+      {
+        "ref": "C03",
+        "action_type": "long_click",
+        "text": "",
+        "desc": "555雕像半身,搜索,点击跳转到搜索激活页",
+        "element_id": "com.taobao.idlefish:id/search_bar_layout",
+        "bounds": [
+          249,
+          88,
+          816,
+          183
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+      },
+      {
+        "ref": "C04",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "com.taobao.idlefish:id/photo_search",
+        "bounds": [
+          816,
+          93,
+          900,
+          177
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+      },
+      {
+        "ref": "C05",
+        "action_type": "click",
+        "text": "",
+        "desc": "555雕像半身,搜索,点击跳转到搜索激活页",
+        "element_id": "com.taobao.idlefish:id/search_btn",
+        "bounds": [
+          921,
+          98,
+          1037,
+          172
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/fixed_top_container/com.taobao.idlefish:id/defa"
+      },
+      {
+        "ref": "C06",
+        "action_type": "scroll",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          0,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：滚动列表或内容区",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C07",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          5,
+          194,
+          136,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C08",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          136,
+          194,
+          267,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C09",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          267,
+          194,
+          398,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C10",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          398,
+          194,
+          603,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C11",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          603,
+          194,
+          776,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C12",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          776,
+          194,
+          907,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C13",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          907,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C14",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1038,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C15",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1169,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C16",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1300,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C17",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1431,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C18",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1562,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C19",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1693,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C20",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1824,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C21",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          2039,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C22",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          2254,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C23",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          2385,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C24",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          2600,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C25",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          2815,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C26",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3030,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C27",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3161,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C28",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3376,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C29",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3591,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C30",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3722,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C31",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3853,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C32",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          3984,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C33",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          4199,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C34",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          4414,
+          194,
+          985,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C35",
+        "action_type": "click",
+        "text": "",
+        "desc": "展开Tab",
+        "element_id": "",
+        "bounds": [
+          985,
+          194,
+          1080,
+          310
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C36",
+        "action_type": "scroll",
+        "text": "",
+        "desc": "",
+        "element_id": "com.taobao.idlefish:id/view_pager",
+        "bounds": [
+          0,
+          310,
+          1080,
+          2227
+        ],
+        "predicted_effect": "可能：滚动列表或内容区",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C37",
+        "action_type": "scroll",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          0,
+          310,
+          1080,
+          2227
+        ],
+        "predicted_effect": "可能：滚动列表或内容区",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C38",
+        "action_type": "scroll",
+        "text": "",
+        "desc": "",
+        "element_id": "com.taobao.idlefish:id/nested_recycler_view",
+        "bounds": [
+          0,
+          310,
+          1080,
+          2227
+        ],
+        "predicted_effect": "可能：滚动列表或内容区",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C39",
+        "action_type": "scroll",
+        "text": "",
+        "desc": "",
+        "element_id": "com.taobao.idlefish:id/viewpager",
+        "bounds": [
+          0,
+          310,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：滚动列表或内容区",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C40",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          26,
+          310,
+          213,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C41",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          213,
+          310,
+          400,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C42",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          400,
+          310,
+          587,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C43",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          587,
+          310,
+          774,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C44",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          774,
+          310,
+          961,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C45",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          961,
+          310,
+          1080,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C46",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1177,
+          310,
+          1080,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C47",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1393,
+          310,
+          1080,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C48",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1609,
+          310,
+          1080,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C49",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1825,
+          310,
+          1080,
+          528
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C50",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          961,
+          539,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C51",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1177,
+          539,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C52",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1393,
+          539,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C53",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1609,
+          539,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C54",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1825,
+          539,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C55",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          961,
+          768,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C56",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1177,
+          768,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C57",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1393,
+          768,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C58",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1609,
+          768,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C59",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          1825,
+          768,
+          1080,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C60",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          514,
+          535,
+          533,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C61",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          533,
+          535,
+          565,
+          544
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C62",
+        "action_type": "long_click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          23,
+          565,
+          527,
+          1514
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C63",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          46,
+          1450,
+          504,
+          1502
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C64",
+        "action_type": "long_click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          551,
+          565,
+          1055,
+          1515
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C65",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          574,
+          1451,
+          1032,
+          1503
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C66",
+        "action_type": "long_click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          23,
+          1549,
+          527,
+          2227
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C67",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          46,
+          2439,
+          504,
+          2227
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C68",
+        "action_type": "long_click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          551,
+          1550,
+          1055,
+          2227
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_pager/com.taobao.idlefish:id/home_container/com.taobao.idlefish:id/content_container/com.taobao.idlefish:id/outer_nested_scroll_view/com.taobao.idlefish:id"
+      },
+      {
+        "ref": "C69",
+        "action_type": "click",
+        "text": "",
+        "desc": "闲鱼，未读消息数0，选中状态",
+        "element_id": "",
+        "bounds": [
+          21,
+          2227,
+          218,
+          2358
+        ],
+        "predicted_effect": "可能：底部 Tab 切换（闲鱼，未读消息数0，选中状态）",
+        "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+      },
+      {
+        "ref": "C70",
+        "action_type": "click",
+        "text": "",
+        "desc": "深圳，未选中状态",
+        "element_id": "",
+        "bounds": [
+          218,
+          2227,
+          415,
+          2358
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+      },
+      {
+        "ref": "C71",
+        "action_type": "click",
+        "text": "",
+        "desc": "",
+        "element_id": "",
+        "bounds": [
+          415,
+          2227,
+          664,
+          2358
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+      },
+      {
+        "ref": "C72",
+        "action_type": "click",
+        "text": "",
+        "desc": "消息，未读消息数49，未选中状态",
+        "element_id": "",
+        "bounds": [
+          664,
+          2227,
+          861,
+          2358
+        ],
+        "predicted_effect": "可能：底部 Tab 切换（消息，未读消息数49，未选中状态）",
+        "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+      },
+      {
+        "ref": "C73",
+        "action_type": "click",
+        "text": "",
+        "desc": "我的，未选中状态",
+        "element_id": "",
+        "bounds": [
+          861,
+          2227,
+          1059,
+          2358
+        ],
+        "predicted_effect": "可能：底部 Tab 切换（我的，未选中状态）",
+        "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/indicator_item_container/com.taobao.idlefish:id/indicator_itmes"
+      },
+      {
+        "ref": "C74",
+        "action_type": "click",
+        "text": "",
+        "desc": "卖闲置",
+        "element_id": "",
+        "bounds": [
+          432,
+          2169,
+          647,
+          2358
+        ],
+        "predicted_effect": "可能：点击触发界面变化",
+        "context": "android:id/content/com.taobao.idlefish:id/id_indicator/com.taobao.idlefish:id/home_indicator_root/com.taobao.idlefish:id/post_wrapper"
+      }
+    ],
+    "fingerprint": "305c6496f283642b5c7b09876d51faf90bfaa41fc0ff175e311efad3b1a37f11",
+    "source": "ai",
+    "need_human_confirm": false,
+    "pending_review_id": null,
+    "reasoning": "布局存在home_container首页容器，底部Tab中「闲鱼」处于选中状态，具备首页的搜索栏、分类标签、内容流结构，符合闲鱼首页特征，未发现额外弹层元素",
+    "compressed_tree": "[android.widget.FrameLayout] 0,0,1080,2400\n  [android.widget.LinearLayout] 0,0,1080,2358\n    [android.widget.FrameLayout] #android:id/content 0,0,1080,2358\n      [android.widget.FrameLayout] #com.taobao.idlefish:id/fish_layer_container_id 0,0,1080,2358\n      [android.widget.FrameLayout] 0,0,1080,2358\n        [android.widget.FrameLayout] #com.taobao.idlefish:id/id_pager 0,0,1080,2358\n          [android.widget.FrameLayout] 0,0,1080,2358\n            [android.widget.FrameLayout] #com.taobao.idlefish:id/home_container 0,0,1080,2227\n              [android.widget.FrameLayout] 0,0,1080,2227\n                [android.widget.FrameLayout] #com.taobao.idlefish:id/foreground_container 0,0,1080,2227\n                [android.widget.FrameLayout] #com.taobao.idlefish:id/background_container 0,0,1080,2227\n                [android.widget.LinearLayout] #com.taobao.idlefish:id/content_container 0,0,1080,2227\n            [android.widget.FrameLayout] #com.taobao.idlefish:id/pub_container 540,2227,540,2227\n        [android.widget.FrameLayout] #com.taobao.idlefish:id/id_indicator 0,2169,1080,2358\n          [android.widget.RelativeLayout] #com.taobao.idlefish:id/home_indicator_root 0,2169,1080,2358\n            [android.widget.FrameLayout] #com.taobao.idlefish:id/indicator_item_container 0,2227,1080,2358\n              [android.widget.ImageView] #com.taobao.idlefish:id/indicator_bg 0,2227,1080,2358\n              [android.widget.LinearLayout] #com.taobao.idlefish:id/indicator_itmes 0,2227,1080,2358\n                [android.widget.FrameLayout] desc=\"闲鱼，未读消息数0，选中状态\" 21,2227,218,2358 (clickable)\n                [android.widget.FrameLayout] desc=\"深圳，未选中状态\" 218,2227,415,2358 (clickable)\n                [android.widget.FrameLayout] desc=\"消息，未读消息数49，未选中状态\" 664,2227,861,2358 (clickable)\n                [android.widget.FrameLayout] desc=\"我的，未选中状态\" 861,2227,1059,2358 (clickable)\n            [android.widget.RelativeLayout] #com.taobao.idlefish:id/post_wrapper 432,2169,647,2358\n              [android.widget.FrameLayout] desc=\"卖闲置\" 432,2169,647,2358 (clickable)\n                [android.widget.ImageView] #com.taobao.idlefish:id/post_guide 432,2169,647,2358\n                [android.widget.RelativeLayout] #com.taobao.idlefish:id/post_container 432,2169,647,2358\n  [android.view.View] #android:id/navigationBarBackground 0,2358,1080,2400",
+    "activity": "android.widget.RelativeLayout",
+    "package": "com.hamibot.hamibot"
+  },
+  "saved_at": "2026-04-03 14:25:14"
+}

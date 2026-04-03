@@ -3,8 +3,14 @@ import { findDom } from "./exposure";
 import { startAutoComment } from "./autoComment";
 import { getGoldEntryClickFn } from "../utils/getGold";
 import { closeApp, findByA11yId } from "../utils/common";
+import { dumpActiveWindowLayout, layoutDumpConfig } from "./layoutDump";
+import { startAiLoop } from "./aiExecutor";
 import { createLogs, fetchPendingTasks, claimTask, completeTask, reportAlert, pollDebugCommands, claimDebugCommand, reportDebugResult } from "../../../lib/service";
 import { getScreenWidth, getScreenHeight } from "../../../lib/screenSize";
+
+export { dumpActiveWindowLayout, layoutDumpConfig } from "./layoutDump";
+export type { ActiveWindowLayoutResult } from "./layoutDump";
+
 const { jobs=[] } = hamibot.env;
 
 export const APPNAME = 'com.taobao.idlefish'
@@ -308,6 +314,12 @@ const executeTask = (task: any) => {
             case 'goldCoin': findPage('goldCoin'); break;
             case 'comment':  findPage('comment');  break;
             case 'product':  findPage('product');  break;
+            case 'ai_task':
+                startAiLoop(task, () => {
+                    _currentTaskId = null;
+                    setRunInfo('taskPoller: AI 任务已结束，可接收新任务');
+                });
+                return;
             default:
                 setRunInfo(`未知任务类型: ${task.type}`);
                 completeTask(task.id, false, `未知任务类型: ${task.type}`);
@@ -324,7 +336,10 @@ const executeTask = (task: any) => {
             reportAlert('error', `任务「${task.type}」执行异常: ${msg}`, task.id);
         });
     } finally {
-        _currentTaskId = null;
+        // ai_task 在独立线程中执行，槽位由 startAiLoop 的 onFinished 释放
+        if (task.type !== 'ai_task') {
+            _currentTaskId = null;
+        }
     }
 };
 
@@ -506,94 +521,6 @@ const _runDebugScript = (params: any): any => {
     return { executed: true, result: result !== undefined ? String(result) : null };
 };
 
-/** layout 节点上安全读取无障碍布尔/数值属性（不同 ROM / Hamibot 版本 API 可能不全） */
-const _layoutNodeA11y = (node: any, treeDepth: number): any => {
-    const meta: any = {
-        depth: treeDepth,
-        childCount: typeof node.childCount === 'function' ? node.childCount() : 0,
-    };
-    const putBool = (key: string, method: string) => {
-        const fn = node[method];
-        if (typeof fn !== 'function') return;
-        try {
-            meta[key] = !!fn.call(node);
-        } catch {
-            /* skip */
-        }
-    };
-    putBool('clickable', 'clickable');
-    putBool('scrollable', 'scrollable');
-    putBool('longClickable', 'longClickable');
-    putBool('enabled', 'enabled');
-    putBool('selected', 'selected');
-    putBool('focusable', 'focusable');
-    putBool('editable', 'editable');
-    putBool('checkable', 'checkable');
-    if (typeof node.depth === 'function') {
-        try {
-            meta.winDepth = node.depth();
-        } catch {
-            /* skip */
-        }
-    }
-    return meta;
-};
-
-const _buildLayoutTree = (node: any, depth: number, maxDepth: number): any => {
-    if (!node || depth > maxDepth) return null;
-    const b = node.bounds();
-    const info: any = {
-        cls: node.className() || '',
-        text: node.text() || undefined,
-        desc: node.contentDescription || node.desc() || undefined,
-        id: node.id() || undefined,
-        bounds: b ? [b.left, b.top, b.right, b.bottom] : undefined,
-        ..._layoutNodeA11y(node, depth),
-    };
-    const childCount = typeof node.childCount === 'function' ? node.childCount() : 0;
-    if (childCount > 0 && depth < maxDepth) {
-        info.children = [];
-        for (let i = 0; i < childCount; i++) {
-            const child = node.child(i);
-            const childInfo = _buildLayoutTree(child, depth + 1, maxDepth);
-            if (childInfo) info.children.push(childInfo);
-        }
-    }
-    return info;
-};
-
-// ─────────────────────────── 无障碍布局树（单独可调）───────────────────────────
-
-/** 直接调用 `dumpActiveWindowLayout()` 时的默认参数；后续只改这里即可 */
-export const layoutDumpConfig = {
-    maxDepth: 30,
-};
-
-export type ActiveWindowLayoutResult = {
-    package: string;
-    activity: string;
-    tree: any;
-};
-
-/**
- * 抓取当前活动窗口的无障碍布局树（根节点 depth=0，子节点递增至 maxDepth）
- * @param override 临时覆盖，例如调试指令下发的 depth；不传则完全使用 layoutDumpConfig
- */
-export const dumpActiveWindowLayout = (override?: { maxDepth?: number }): ActiveWindowLayoutResult => {
-    const fromOverride =
-        override?.maxDepth !== undefined && override?.maxDepth !== null
-            ? Number(override.maxDepth)
-            : NaN;
-    const maxDepth = !Number.isNaN(fromOverride) ? fromOverride : layoutDumpConfig.maxDepth;
-    const root = (auto as any).rootInActiveWindow || (auto as any).root;
-    if (!root) throw new Error('无法获取根节点（无障碍服务未就绪）');
-    return {
-        package: currentPackage(),
-        activity: currentActivity(),
-        tree: _buildLayoutTree(root, 0, maxDepth),
-    };
-};
-
 const _runDebugLayout = (params: any): any => {
     let override: { maxDepth?: number } | undefined;
     if (params != null && params.depth != null && params.depth !== '') {
@@ -681,12 +608,19 @@ export const xyBaseRunWithLog = () => {
         }
     });
 
-    // 主线程申请截图权限（MIUI 上可能阻塞数十秒，但不影响已启动的子线程）
-    setRunInfo('主线程: 正在申请截图权限，请点击允许...');
-    try {
-        requestScreenCapture(false);
-        setRunInfo('截图权限已获取');
-    } catch (e) {
-        setRunInfo(`截图权限申请失败: ${e}，截图类调试将不可用`);
+    // 截图/投屏权限：系统常显示为「录制屏幕」类弹窗。默认不申请，避免无需要的打扰。
+    // 需要 AI 带图决策或控制台「调试 → 截图」时，在 Hamibot 配置里增加 _REQUEST_SCREEN_CAPTURE = true
+    const wantCapture = (hamibot.env as any)._REQUEST_SCREEN_CAPTURE === true
+        || String((hamibot.env as any)._REQUEST_SCREEN_CAPTURE || '').toLowerCase() === 'true';
+    if (wantCapture) {
+        setRunInfo('主线程: 正在申请截图权限，请点击允许...');
+        try {
+            requestScreenCapture(false);
+            setRunInfo('截图权限已获取');
+        } catch (e) {
+            setRunInfo(`截图权限申请失败: ${e}，截图类调试将不可用`);
+        }
+    } else {
+        setRunInfo('主线程: 已跳过截图权限申请（未设置 _REQUEST_SCREEN_CAPTURE）');
     }
 }

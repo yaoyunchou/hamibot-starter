@@ -8,11 +8,11 @@ const baseHeaders = { 'Content-Type': 'application/json' }
 
 type RequestOptions = { method?: string; headers?: object; body?: string }
 
-const request = (path: string, options: RequestOptions = {}) => {
+const request = (path: string, options: RequestOptions = {}, timeoutMs: number = 10000) => {
     return http.request(`${localHost}${path}`, {
         ...options,
         headers: { ...baseHeaders, ...(options.headers || {}) },
-        timeout: 10000,
+        timeout: timeoutMs,
     } as any)
 }
 
@@ -228,5 +228,99 @@ export const reportDebugResult = (cmdId: string, success: boolean, result?: any,
         })
     } catch (err) {
         Record.error('reportDebugResult error', err)
+    }
+}
+
+// ------------------------------------------------------------------ //
+// AI（页面识别 / 决策 / 操作日志）
+// ------------------------------------------------------------------ //
+
+/** AI 接口可能含多轮 LLM，超时单独放宽（毫秒） */
+const AI_HTTP_TIMEOUT_MS = 180000
+
+export const aiRecognize = (body: { [key: string]: unknown }): any => {
+    try {
+        const res = request(
+            '/api/ai/recognize',
+            {
+                method: 'POST',
+                body: JSON.stringify(body),
+            },
+            AI_HTTP_TIMEOUT_MS
+        )
+        return res.body.json() as any
+    } catch (e) {
+        Record.error('aiRecognize error', e)
+        return null
+    }
+}
+
+export const aiDecide = (body: { [key: string]: unknown }): any => {
+    try {
+        const res = request(
+            '/api/ai/decide',
+            {
+                method: 'POST',
+                body: JSON.stringify(body),
+            },
+            AI_HTTP_TIMEOUT_MS
+        )
+        return res.body.json() as any
+    } catch (e) {
+        Record.error('aiDecide error', e)
+        return null
+    }
+}
+
+export const aiReport = (
+    taskId: string,
+    step: number,
+    beforeState: { [key: string]: unknown },
+    decision: { [key: string]: unknown },
+    execution: { [key: string]: unknown },
+    afterState: { [key: string]: unknown },
+    evaluation?: { [key: string]: unknown }
+): void => {
+    try {
+        request('/api/ai/report', {
+            method: 'POST',
+            body: JSON.stringify({
+                task_id: taskId,
+                step,
+                before_state: beforeState,
+                decision,
+                execution,
+                after_state: afterState,
+                evaluation: evaluation ?? null,
+            }),
+        })
+    } catch (e) {
+        Record.error('aiReport error', e)
+    }
+}
+
+export const aiOperationStart = (taskDescription: string, deviceInfo?: { [key: string]: unknown }): any => {
+    try {
+        const res = request('/api/ai/operation/start', {
+            method: 'POST',
+            body: JSON.stringify({ task_description: taskDescription, device_info: deviceInfo ?? null }),
+        })
+        return res.body.json() as any
+    } catch (e) {
+        Record.error('aiOperationStart error', e)
+        return null
+    }
+}
+
+export const aiOperationComplete = (taskId: string, result: string): any => {
+    try {
+        const res = request('/api/ai/operation/complete', {
+            method: 'POST',
+            body: JSON.stringify({ task_id: taskId, result }),
+        })
+        return res.body.json() as any
+    } catch (e) {
+        Record.error('aiOperationComplete error', e)
+        return null
     }
 }

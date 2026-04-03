@@ -145,6 +145,24 @@
   }
   #toast.show { opacity: 1; }
 
+  /* ── Modal ── */
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,.55); align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    width: 100%; max-width: 520px; max-height: 90vh; overflow: auto;
+    padding: 22px 24px; box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  }
+  .modal h2 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .modal-hint { font-size: 12px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+  .modal .dbg-input-group label .req { color: var(--red); font-weight: 700; }
+  .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; flex-wrap: wrap; }
+  .field-error { font-size: 12px; color: var(--red); margin-top: 6px; display: none; }
+  .field-error.show { display: block; }
+
   .page { display: none; }
   .page.active { display: block; }
 
@@ -209,6 +227,9 @@
     <div class="nav-item" onclick="showPage('debug', this); fetchDebugHistory()">
       <span class="nav-icon">🛠️</span>调试工具
     </div>
+    <div class="nav-item" onclick="showPage('ai', this); loadAiPanel()">
+      <span class="nav-icon">🤖</span>AI 标注 / 日志
+    </div>
   </aside>
 
   <!-- Main -->
@@ -237,6 +258,7 @@
           <button class="btn btn-primary" onclick="addTask('goldCoin')">🪙 获取金币</button>
           <button class="btn btn-outline" onclick="addTask('comment')">💬 自动评论</button>
           <button class="btn btn-outline" onclick="addTask('product')">📦 商品曝光</button>
+          <button class="btn btn-outline" onclick="addTaskAi()">🤖 AI 自动任务</button>
         </div>
       </div>
 
@@ -259,10 +281,11 @@
       <div class="card">
         <div class="card-title">
           任务队列
-          <div style="display:flex;gap:8px">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
             <button class="btn btn-primary btn-sm" onclick="addTask('goldCoin')">+ 获取金币</button>
             <button class="btn btn-outline btn-sm" onclick="addTask('comment')">+ 自动评论</button>
             <button class="btn btn-outline btn-sm" onclick="addTask('product')">+ 商品曝光</button>
+            <button class="btn btn-outline btn-sm" onclick="addTaskAi()">+ AI 自动任务</button>
           </div>
         </div>
         <div class="tabs">
@@ -438,10 +461,78 @@
       </div>
     </div>
 
+    <!-- ── AI 标注 / 操作日志 ── -->
+    <div id="page-ai" class="page">
+      <div class="card">
+        <div class="card-title">页面标注（指纹匹配）</div>
+        <p style="color:var(--muted);font-size:13px;margin-bottom:12px">数据文件：<code style="font-size:12px">server/data/page_labels.json</code></p>
+        <button class="btn btn-outline btn-sm" onclick="aiRefreshLabels()">刷新列表</button>
+        <table class="tbl" style="margin-top:12px">
+          <thead><tr><th>page_type</th><th>名称</th><th>activity</th><th>指纹(前16)</th><th></th></tr></thead>
+          <tbody id="ai-labels-body"><tr><td colspan="5" class="empty-tip">加载中...</td></tr></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-title">手动添加标注</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px">
+          <div class="dbg-input-group"><label>page_type</label><input class="dbg-input" id="ai-in-type" placeholder="home" /></div>
+          <div class="dbg-input-group"><label>page_name</label><input class="dbg-input" id="ai-in-name" /></div>
+          <div class="dbg-input-group" style="grid-column:1/-1"><label>activity</label><input class="dbg-input" id="ai-in-act" placeholder="完整 Activity 类名" /></div>
+          <div class="dbg-input-group" style="grid-column:1/-1"><label>fingerprint</label><input class="dbg-input" id="ai-in-fp" placeholder="由识别接口返回的 fingerprint" /></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:12px" onclick="aiSaveLabel()">保存标注</button>
+      </div>
+      <div class="card">
+        <div class="card-title">待确认队列（低置信度识别）</div>
+        <button class="btn btn-outline btn-sm" onclick="aiRefreshPending()">刷新</button>
+        <table class="tbl" style="margin-top:12px">
+          <thead><tr><th>时间</th><th>activity</th><th>AI 猜测</th><th>id</th></tr></thead>
+          <tbody id="ai-pending-body"><tr><td colspan="4" class="empty-tip">暂无</td></tr></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-title">AI 操作日志（server/data/ai_operations/）</div>
+        <button class="btn btn-outline btn-sm" onclick="aiRefreshOps()">刷新</button>
+        <table class="tbl" style="margin-top:12px">
+          <thead><tr><th>task_id</th><th>描述</th><th>开始</th><th>结果</th></tr></thead>
+          <tbody id="ai-ops-body"><tr><td colspan="4" class="empty-tip">暂无</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
   </main>
 </div>
 
 <div id="toast"></div>
+
+<div id="modal-ai-task" class="modal-backdrop" onclick="if(event.target===this)closeAiTaskModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>派发 AI 自动任务</h2>
+    <p class="modal-hint">请用自然语言写清楚要设备<strong>自动完成什么</strong>（会发给模型作为决策依据）。不填描述则无法正确执行。</p>
+    <div class="dbg-input-group">
+      <label>任务描述 <span class="req">*</span></label>
+      <textarea class="dbg-textarea" id="ai-task-desc" rows="5" placeholder="示例：打开「我的」页面，找到设置入口并进入；或：在当前商品页面向下滑浏览详情，找到「立即购买」并点击"></textarea>
+      <div id="ai-task-desc-err" class="field-error">请填写任务描述</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px">
+      <div class="dbg-input-group" style="margin-bottom:0">
+        <label>最大步数（选填）</label>
+        <input class="dbg-input" type="number" id="ai-task-max-steps" min="1" max="50" value="25" />
+      </div>
+      <div class="dbg-input-group" style="margin-bottom:0">
+        <label style="text-transform:none;letter-spacing:0">每步附带截图</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400;text-transform:none;margin-top:6px">
+          <input type="checkbox" id="ai-task-screenshot" checked />
+          <span style="font-size:13px;color:var(--text)">开启（识别更准，耗流量）</span>
+        </label>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-outline" onclick="closeAiTaskModal()">取消</button>
+      <button type="button" class="btn btn-primary" onclick="submitAiTask()">加入队列</button>
+    </div>
+  </div>
+</div>
 
 <script>
 const BASE = '';
@@ -476,7 +567,7 @@ const STATUS_MAP = {
   error:     ['异常',    'badge-red'],
   timeout:   ['超时',    'badge-red'],
 };
-const TYPE_LABEL = { goldCoin: '🪙 获取金币', comment: '💬 自动评论', product: '📦 商品曝光' };
+const TYPE_LABEL = { goldCoin: '🪙 获取金币', comment: '💬 自动评论', product: '📦 商品曝光', ai_task: '🤖 AI 自动任务' };
 const ALERT_ICON = { warn: '⚠️', error: '🔴', info: 'ℹ️' };
 
 function statusBadge(s) {
@@ -509,6 +600,14 @@ async function fetchAlerts() {
 }
 
 // ── Render tasks ──
+function taskNote(t) {
+  if (t.message) return String(t.message);
+  const ex = t.extra;
+  if (ex && typeof ex === 'object' && ex.task_description != null && String(ex.task_description).trim())
+    return String(ex.task_description).trim();
+  return '-';
+}
+
 function filterTasks(status, el) {
   taskFilter = status;
   document.querySelectorAll('#page-tasks .tab').forEach(t => t.classList.remove('active'));
@@ -529,7 +628,7 @@ function renderTasks() {
       <td>${t.created_at || '-'}</td>
       <td>${t.started_at || '-'}</td>
       <td>${t.completed_at || '-'}</td>
-      <td style="color:var(--muted);font-size:12px;max-width:160px;overflow:hidden;text-overflow:ellipsis">${t.message || '-'}</td>
+      <td style="color:var(--muted);font-size:12px;max-width:220px;overflow:hidden;text-overflow:ellipsis" title="${escHtml(taskNote(t))}">${escHtml(taskNote(t))}</td>
       <td><button class="btn btn-danger btn-sm" onclick="deleteTask('${t.id}')">删除</button></td>
     </tr>`).join('');
 }
@@ -551,7 +650,7 @@ function renderDash() {
       <td>${statusBadge(t.status)}</td>
       <td>${t.created_at || '-'}</td>
       <td>${elapsed(t.started_at, t.completed_at)}</td>
-      <td style="color:var(--muted);font-size:12px">${t.message || '-'}</td>
+      <td style="color:var(--muted);font-size:12px;max-width:200px;overflow:hidden;text-overflow:ellipsis" title="${escHtml(taskNote(t))}">${escHtml(taskNote(t))}</td>
     </tr>`).join('');
 }
 
@@ -830,6 +929,147 @@ async function refresh() {
   await Promise.all([fetchTasks(), fetchAlerts()]);
   document.getElementById('last-refresh').textContent = new Date().toLocaleTimeString('zh-CN');
 }
+
+// ── AI 面板 ──
+async function loadAiPanel() {
+  await Promise.all([aiRefreshLabels(), aiRefreshPending(), aiRefreshOps()]);
+}
+
+async function aiRefreshLabels() {
+  const tbody = document.getElementById('ai-labels-body');
+  try {
+    const r = await fetch(`${BASE}/api/ai/labels`).then(r => r.json());
+    const rows = r.data || [];
+    if (!rows.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty-tip">暂无标注</td></tr>'; return; }
+    tbody.innerHTML = rows.map(x => `
+      <tr>
+        <td><code style="font-size:12px">${escHtml(x.page_type)}</code></td>
+        <td>${escHtml(x.page_name || '')}</td>
+        <td style="font-size:11px;word-break:break-all;color:var(--muted)">${escHtml((x.activity || '').slice(0, 48))}</td>
+        <td style="font-size:11px;font-family:monospace">${escHtml((x.fingerprint || '').slice(0, 16))}…</td>
+        <td><button class="btn btn-danger btn-sm" onclick="aiDeleteLabel('${x.id}')">删</button></td>
+      </tr>`).join('');
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="5" class="empty-tip" style="color:var(--red)">${escHtml(e.message)}</td></tr>`;
+  }
+}
+
+async function aiSaveLabel() {
+  const body = {
+    page_type: document.getElementById('ai-in-type').value.trim() || 'unknown',
+    page_name: document.getElementById('ai-in-name').value.trim(),
+    activity: document.getElementById('ai-in-act').value.trim(),
+    fingerprint: document.getElementById('ai-in-fp').value.trim(),
+    has_popup: false,
+    popups: [],
+  };
+  const r = await fetch(`${BASE}/api/ai/label`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  }).then(r => r.json());
+  if (r.code === 0) { toast('已保存', 'ok'); aiRefreshLabels(); }
+  else toast(r.message || '失败', 'error');
+}
+
+async function aiDeleteLabel(id) {
+  if (!confirm('删除该标注？')) return;
+  await fetch(`${BASE}/api/ai/label/${id}`, { method: 'DELETE' });
+  toast('已删除');
+  aiRefreshLabels();
+}
+
+async function aiRefreshPending() {
+  const tbody = document.getElementById('ai-pending-body');
+  try {
+    const r = await fetch(`${BASE}/api/ai/pending-reviews`).then(r => r.json());
+    const rows = r.data || [];
+    if (!rows.length) { tbody.innerHTML = '<tr><td colspan="4" class="empty-tip">暂无</td></tr>'; return; }
+    tbody.innerHTML = rows.map(x => {
+      const g = x.ai_guess || {};
+      return `<tr>
+        <td style="font-size:12px">${escHtml(x.timestamp || '')}</td>
+        <td style="font-size:11px;word-break:break-all">${escHtml((x.activity || '').slice(0, 40))}</td>
+        <td>${escHtml(g.page_type || '')} (${g.confidence != null ? g.confidence : '-'})</td>
+        <td style="font-size:11px;font-family:monospace">${escHtml(x.id || '')}</td>
+      </tr>`;
+    }).join('');
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-tip">${escHtml(e.message)}</td></tr>`;
+  }
+}
+
+async function aiRefreshOps() {
+  const tbody = document.getElementById('ai-ops-body');
+  try {
+    const r = await fetch(`${BASE}/api/ai/operations?limit=30`).then(r => r.json());
+    const rows = r.data || [];
+    if (!rows.length) { tbody.innerHTML = '<tr><td colspan="4" class="empty-tip">暂无</td></tr>'; return; }
+    tbody.innerHTML = rows.map(m => `
+      <tr>
+        <td style="font-size:11px;font-family:monospace;word-break:break-all">${escHtml(m.task_id || '')}</td>
+        <td>${escHtml(m.task_description || '')}</td>
+        <td style="font-size:12px">${escHtml(m.started_at || '')}</td>
+        <td>${escHtml(m.result || '-')}</td>
+      </tr>`).join('');
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-tip">${escHtml(e.message)}</td></tr>`;
+  }
+}
+
+function openAiTaskModal() {
+  document.getElementById('ai-task-desc').value = '';
+  document.getElementById('ai-task-max-steps').value = '25';
+  document.getElementById('ai-task-screenshot').checked = true;
+  document.getElementById('ai-task-desc-err').classList.remove('show');
+  document.getElementById('modal-ai-task').classList.add('show');
+  setTimeout(() => document.getElementById('ai-task-desc').focus(), 50);
+}
+
+function closeAiTaskModal() {
+  document.getElementById('modal-ai-task').classList.remove('show');
+}
+
+async function submitAiTask() {
+  const ta = document.getElementById('ai-task-desc');
+  const desc = (ta.value || '').trim();
+  const errEl = document.getElementById('ai-task-desc-err');
+  if (!desc) {
+    errEl.classList.add('show');
+    ta.focus();
+    return;
+  }
+  errEl.classList.remove('show');
+  let maxSteps = parseInt(String(document.getElementById('ai-task-max-steps').value || '25'), 10);
+  if (Number.isNaN(maxSteps) || maxSteps < 1) maxSteps = 25;
+  if (maxSteps > 50) maxSteps = 50;
+  const withScreenshot = document.getElementById('ai-task-screenshot').checked;
+  const r = await fetch(`${BASE}/api/control/task`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type: 'ai_task',
+      extra: { task_description: desc, max_steps: maxSteps, with_screenshot: withScreenshot },
+    }),
+  }).then(res => res.json());
+  if (r.code === 0) {
+    toast('AI 自动任务已加入队列', 'ok');
+    closeAiTaskModal();
+  } else {
+    toast(r.message || '失败', 'error');
+  }
+  refresh();
+}
+
+function addTaskAi() {
+  openAiTaskModal();
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('modal-ai-task').classList.contains('show')) {
+    closeAiTaskModal();
+  }
+});
 
 // Auto refresh every 10s
 refresh();

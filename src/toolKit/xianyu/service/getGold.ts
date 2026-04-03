@@ -15,7 +15,7 @@ import {
   findTargetElementWithCache,
   findTargetElementWithCacheStrict,
 } from "../utils/selector";
-import { APPNAME, findPage, flushTraces, setRunInfo } from "./base";
+import { APPNAME, findPage, flushTraces, goBackMyPage, setRunInfo } from "./base";
 import { backMainPage, closeMainPopup, taskList } from "./getMainPopup";
 
 // 当前页同一个逻辑的循环最大次数
@@ -23,9 +23,12 @@ let maxLoopMap: any = {
   scrollUp: 1, // 连续上划次数
   scrollDown: 1, // 连续下划次数
   pageTime: 1, // 连续页面次数
-  coinExchangeRunTime: 1, // 金币兑换执行次数
+  coinExchangeRunTime: 1, // 金币兑换执行次数（含自递归；进 mainPopupTask 成功会置 1）
   allTaskOver: false, // 所有任务是否执行完毕
 };
+
+/** 计数超过此值则回「我的」再 findPage 金币（首次进 coinExchange 后变为 2，每再入 +1；>6 ≈ 链上自调满 5 次后下一跳） */
+const COIN_EXCHANGE_SELF_CHAIN_MAX = 6;
 
 /**
  * 处理各种活动弹框，
@@ -341,6 +344,17 @@ export function coinExchange() {
     }
     maxLoopMap.coinExchangeRunTime++;
     setRunInfo(`coinExchange: 第 ${maxLoopMap.coinExchangeRunTime} 次执行`);
+
+    if (maxLoopMap.coinExchangeRunTime > COIN_EXCHANGE_SELF_CHAIN_MAX) {
+      setRunInfo(
+        `coinExchange: 已连续 ${COIN_EXCHANGE_SELF_CHAIN_MAX} 次仍卡住，先回「我的」再重新进入金币页`
+      );
+      maxLoopMap.coinExchangeRunTime = 1;
+      goBackMyPage();
+      sleep(1200);
+      findPage("goldCoin");
+      return;
+    }
 
     // 进入领取金币页面，判断是是否有领取， 领取金币, 是否有 攻略按钮
     const guideButton = findTargetElementWithCache("coinExchangeMain", "闲鱼币", 3);
