@@ -162,6 +162,22 @@ export const completeTask = (taskId: string, success: boolean, message?: string)
     }
 }
 
+/** 查询单条任务状态（POST，兼容 Hamibot） */
+export const fetchTaskStatus = (taskId: string): any => {
+    try {
+        const res = request('/api/control/task/status', {
+            method: 'POST',
+            body: JSON.stringify({ task_id: taskId }),
+        })
+        const raw = res.body.string()
+        if (!raw) return null
+        return JSON.parse(raw)
+    } catch (error) {
+        Record.error('fetchTaskStatus error', error)
+        return null
+    }
+}
+
 // ------------------------------------------------------------------ //
 // 控制面板 — 预警
 // ------------------------------------------------------------------ //

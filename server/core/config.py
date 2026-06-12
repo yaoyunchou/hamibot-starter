@@ -10,12 +10,11 @@ class Settings(BaseSettings):
 
     PORT: int = 3000
 
-    # AI（OpenAI 兼容接口）
-    AI_BASE_URL: str = "https://api.openai.com/v1"
-    AI_API_KEY: str = ""
-    AI_MODEL: str = "gpt-4o-mini"
-    AI_VISION_MODEL: str = ""
-    AI_RESPONSE_FORMAT: bool = False
+    # AI（Cursor Python SDK，文档：https://cursor.com/docs/sdk/python）
+    CURSOR_API_KEY: str = ""
+    CURSOR_MODEL: str = "composer-2.5"
+    # 本地 Agent 工作目录，默认项目根目录
+    CURSOR_WORKSPACE: str = ""
     OCR_WEAK_THRESHOLD: int = 3
     DEFAULT_TASK: str = "浏览当前页面，观察内容并汇报当前状态"
 

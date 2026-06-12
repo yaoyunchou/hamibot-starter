@@ -1,0 +1,98 @@
+{
+  "id": "689b8983-4f8a-4fb3-9709-f98b01341853",
+  "type": "layout",
+  "params": {
+    "depth": 3
+  },
+  "status": "completed",
+  "created_at": "2026-06-11 18:48:33",
+  "completed_at": "2026-06-11 18:51:50",
+  "result": {
+    "package": "com.miui.securitycenter",
+    "activity": "com.miui.wakepath.ui.ConfirmStartActivity",
+    "tree": {
+      "cls": "android.widget.FrameLayout",
+      "bounds": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "depth": 0,
+      "childCount": 1,
+      "clickable": false,
+      "scrollable": false,
+      "longClickable": false,
+      "enabled": true,
+      "selected": false,
+      "focusable": false,
+      "checkable": false,
+      "winDepth": 0,
+      "children": [
+        {
+          "cls": "android.widget.LinearLayout",
+          "bounds": [
+            0,
+            0,
+            1080,
+            2400
+          ],
+          "depth": 1,
+          "childCount": 1,
+          "clickable": false,
+          "scrollable": false,
+          "longClickable": false,
+          "enabled": true,
+          "selected": false,
+          "focusable": false,
+          "checkable": false,
+          "winDepth": 1,
+          "children": [
+            {
+              "cls": "android.widget.FrameLayout",
+              "bounds": [
+                0,
+                0,
+                1080,
+                2400
+              ],
+              "depth": 2,
+              "childCount": 1,
+              "clickable": false,
+              "scrollable": false,
+              "longClickable": false,
+              "enabled": true,
+              "selected": false,
+              "focusable": false,
+              "checkable": false,
+              "winDepth": 2,
+              "children": [
+                {
+                  "cls": "android.widget.LinearLayout",
+                  "id": "com.miui.securitycenter:id/action_bar_root",
+                  "bounds": [
+                    0,
+                    0,
+                    1080,
+                    2400
+                  ],
+                  "depth": 3,
+                  "childCount": 1,
+                  "clickable": false,
+                  "scrollable": false,
+                  "longClickable": false,
+                  "enabled": true,
+                  "selected": false,
+                  "focusable": false,
+                  "checkable": false,
+                  "winDepth": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "error": null
+}

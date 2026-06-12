@@ -282,6 +282,7 @@
         <div class="card-title">
           任务队列
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
+            <button class="btn btn-danger btn-sm" onclick="cancelAllRunning()">⏹ 停止执行中</button>
             <button class="btn btn-primary btn-sm" onclick="addTask('goldCoin')">+ 获取金币</button>
             <button class="btn btn-outline btn-sm" onclick="addTask('comment')">+ 自动评论</button>
             <button class="btn btn-outline btn-sm" onclick="addTask('product')">+ 商品曝光</button>
@@ -566,6 +567,7 @@ const STATUS_MAP = {
   completed: ['已完成',  'badge-green'],
   error:     ['异常',    'badge-red'],
   timeout:   ['超时',    'badge-red'],
+  cancelled: ['已取消',  'badge-muted'],
 };
 const TYPE_LABEL = { goldCoin: '🪙 获取金币', comment: '💬 自动评论', product: '📦 商品曝光', ai_task: '🤖 AI 自动任务' };
 const ALERT_ICON = { warn: '⚠️', error: '🔴', info: 'ℹ️' };
@@ -621,7 +623,13 @@ function renderTasks() {
     : allTasks;
   const tbody = document.getElementById('task-list');
   if (!list.length) { tbody.innerHTML = '<tr><td colspan="7" class="empty-tip">暂无任务</td></tr>'; return; }
-  tbody.innerHTML = list.map(t => `
+  tbody.innerHTML = list.map(t => {
+    const canStop = t.status === 'pending' || t.status === 'running';
+    const ops = canStop
+      ? `<button class="btn btn-danger btn-sm" onclick="cancelTask('${t.id}')">停止</button>
+         <button class="btn btn-outline btn-sm" onclick="deleteTask('${t.id}')">删除</button>`
+      : `<button class="btn btn-outline btn-sm" onclick="deleteTask('${t.id}')">删除</button>`;
+    return `
     <tr>
       <td><span class="type-tag">${TYPE_LABEL[t.type] || t.type}</span></td>
       <td>${statusBadge(t.status)}</td>
@@ -629,8 +637,9 @@ function renderTasks() {
       <td>${t.started_at || '-'}</td>
       <td>${t.completed_at || '-'}</td>
       <td style="color:var(--muted);font-size:12px;max-width:220px;overflow:hidden;text-overflow:ellipsis" title="${escHtml(taskNote(t))}">${escHtml(taskNote(t))}</td>
-      <td><button class="btn btn-danger btn-sm" onclick="deleteTask('${t.id}')">删除</button></td>
-    </tr>`).join('');
+      <td style="white-space:nowrap">${ops}</td>
+    </tr>`;
+  }).join('');
 }
 
 // ── Render dash ──
@@ -695,6 +704,23 @@ async function addTask(type) {
   }).then(r => r.json());
   if (r.code === 0) { toast('✅ 任务已加入队列', 'ok'); }
   else { toast('⚠️ ' + r.message, 'error'); }
+  refresh();
+}
+
+async function cancelTask(id) {
+  const r = await fetch(`${BASE}/api/control/task/${id}/cancel`, { method: 'POST' }).then(r => r.json());
+  if (r.code === 0) { toast('⏹ 已发送停止指令', 'ok'); }
+  else { toast('⚠️ ' + (r.message || '停止失败'), 'error'); }
+  refresh();
+}
+
+async function cancelAllRunning() {
+  const running = allTasks.filter(t => t.status === 'pending' || t.status === 'running');
+  if (!running.length) { toast('没有可停止的任务'); return; }
+  for (const t of running) {
+    await fetch(`${BASE}/api/control/task/${t.id}/cancel`, { method: 'POST' });
+  }
+  toast(`⏹ 已停止 ${running.length} 个任务`, 'ok');
   refresh();
 }
 

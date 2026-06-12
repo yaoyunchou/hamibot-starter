@@ -309,6 +309,11 @@ export const startAiLoop = (task: any, onFinished?: () => void) => {
                     );
                 }
             }
+            if (_stop) {
+                aiTrace("AI 结束: 用户取消");
+                if (opTaskId) aiOperationComplete(opTaskId, "cancelled");
+                return;
+            }
             if (decideFailed) {
                 aiTrace("AI 结束: 决策接口失败，任务标记为异常");
                 if (opTaskId) aiOperationComplete(opTaskId, "error");

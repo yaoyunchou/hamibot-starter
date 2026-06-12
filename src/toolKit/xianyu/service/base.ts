@@ -5,6 +5,12 @@ import { getGoldEntryClickFn } from "../utils/getGold";
 import { closeApp, findByA11yId } from "../utils/common";
 import { dumpActiveWindowLayout, layoutDumpConfig } from "./layoutDump";
 import { startAiLoop } from "./aiExecutor";
+import {
+    clearTaskStop,
+    shouldStopCurrentTask,
+    startCancelWatcher,
+    stopCancelWatcher,
+} from "./taskControl";
 import { createLogs, fetchPendingTasks, claimTask, completeTask, reportAlert, pollDebugCommands, claimDebugCommand, reportDebugResult } from "../../../lib/service";
 import { getScreenWidth, getScreenHeight } from "../../../lib/screenSize";
 
@@ -308,6 +314,7 @@ let _currentTaskStart: number = 0;
 const executeTask = (task: any) => {
     _currentTaskId = task.id;
     _currentTaskStart = Date.now();
+    startCancelWatcher(task.id);
     setRunInfo(`任务开始: ${task.type}`);
     try {
         switch (task.type) {
@@ -316,6 +323,8 @@ const executeTask = (task: any) => {
             case 'product':  findPage('product');  break;
             case 'ai_task':
                 startAiLoop(task, () => {
+                    stopCancelWatcher();
+                    clearTaskStop();
                     _currentTaskId = null;
                     setRunInfo('taskPoller: AI 任务已结束，可接收新任务');
                 });
@@ -325,18 +334,26 @@ const executeTask = (task: any) => {
                 completeTask(task.id, false, `未知任务类型: ${task.type}`);
                 return;
         }
+        if (shouldStopCurrentTask()) {
+            setRunInfo(`任务已取消: ${task.type}`);
+            return;
+        }
         setRunInfo(`任务完成: ${task.type}`);
         completeTask(task.id, true);
     } catch (e) {
+        if (shouldStopCurrentTask()) {
+            setRunInfo(`任务已取消: ${task.type}`);
+            return;
+        }
         const msg = String(e);
         setRunInfo(`任务异常: ${msg}`);
         completeTask(task.id, false, msg);
-        // 上报预警（后台线程，不阻塞）
         threads.start(function () {
             reportAlert('error', `任务「${task.type}」执行异常: ${msg}`, task.id);
         });
     } finally {
-        // ai_task 在独立线程中执行，槽位由 startAiLoop 的 onFinished 释放
+        stopCancelWatcher();
+        clearTaskStop();
         if (task.type !== 'ai_task') {
             _currentTaskId = null;
         }

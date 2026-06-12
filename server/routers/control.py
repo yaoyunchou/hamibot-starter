@@ -4,6 +4,9 @@
 任务 API:
   GET  /api/control/tasks              — 查询任务列表（?status=pending|running|completed|timeout|error）
   POST /api/control/task               — 新增任务（控制台/外部触发）
+  GET  /api/control/task/{task_id}     — 查询单条任务
+  POST /api/control/task/status          — 查询单条任务（客户端 POST）
+  POST /api/control/task/{task_id}/cancel — 停止任务（pending/running）
   PUT  /api/control/task/{task_id}     — 更新任务状态（客户端上报）
   DELETE /api/control/task/{task_id}   — 删除单个任务
 
@@ -99,10 +102,15 @@ class TaskBody(BaseModel):
 
 
 class TaskUpdateBody(BaseModel):
-    status: Optional[str] = None       # pending | running | completed | error | timeout
+    status: Optional[str] = None       # pending | running | completed | error | timeout | cancelled
     started_at: Optional[str] = None
     completed_at: Optional[str] = None
     message: Optional[str] = None
+    cancel_requested: Optional[bool] = None
+
+
+class TaskIdBody(BaseModel):
+    task_id: str
 
 
 # ─────────────────────────── Task Routes ───────────────────────────
@@ -159,6 +167,7 @@ async def create_task(body: TaskBody):
         "completed_at": None,
         "max_duration_minutes": body.max_duration_minutes,
         "timeout_alerted": False,
+        "cancel_requested": False,
         "message": None,
         "extra": body.extra,
     }
@@ -166,6 +175,51 @@ async def create_task(body: TaskBody):
     _write_tasks(tasks)
     logger.info("新增任务: %s (%s)", task["id"], task["type"])
     return {"code": 0, "message": "任务已加入队列", "data": task}
+
+
+@router.get("/control/task/{task_id}")
+async def get_task(task_id: str):
+    _check_timeouts()
+    for task in _read_tasks():
+        if task.get("id") == task_id:
+            return {"code": 0, "data": task}
+    raise HTTPException(status_code=404, detail="任务不存在")
+
+
+@router.post("/control/task/status")
+async def get_task_status(body: TaskIdBody):
+    """客户端查询单条任务（POST，兼容 Hamibot）"""
+    _check_timeouts()
+    for task in _read_tasks():
+        if task.get("id") == body.task_id:
+            return {"code": 0, "data": task}
+    return {"code": 1, "message": "任务不存在", "data": None}
+
+
+@router.post("/control/task/{task_id}/cancel")
+async def cancel_task(task_id: str):
+    """停止待执行或正在执行的任务"""
+    tasks = _read_tasks()
+    for task in tasks:
+        if task.get("id") != task_id:
+            continue
+        status = task.get("status")
+        if status in ("completed", "cancelled", "error", "timeout"):
+            return {"code": 1, "message": f"任务已结束（{status}），无法停止"}
+        if status == "pending":
+            task["status"] = "cancelled"
+            task["completed_at"] = _now()
+            task["message"] = "用户取消（未开始）"
+        else:
+            # running：标记取消，客户端轮询后中断并上报
+            task["cancel_requested"] = True
+            task["status"] = "cancelled"
+            task["completed_at"] = _now()
+            task["message"] = "用户取消"
+        _write_tasks(tasks)
+        logger.info("取消任务: %s (%s)", task_id, task.get("type"))
+        return {"code": 0, "message": "已发送停止指令", "data": task}
+    raise HTTPException(status_code=404, detail="任务不存在")
 
 
 @router.put("/control/task/{task_id}")
@@ -181,6 +235,8 @@ async def update_task(task_id: str, body: TaskUpdateBody):
                 task["completed_at"] = body.completed_at
             if body.message is not None:
                 task["message"] = body.message
+            if body.cancel_requested is not None:
+                task["cancel_requested"] = body.cancel_requested
             _write_tasks(tasks)
             return {"code": 0, "message": "已更新", "data": task}
     raise HTTPException(status_code=404, detail="任务不存在")

@@ -17,6 +17,7 @@ import {
 } from "../utils/selector";
 import { APPNAME, findPage, flushTraces, goBackMyPage, setRunInfo } from "./base";
 import { backMainPage, closeMainPopup, taskList } from "./getMainPopup";
+import { shouldStopCurrentTask } from "./taskControl";
 
 // 当前页同一个逻辑的循环最大次数
 let maxLoopMap: any = {
@@ -251,6 +252,10 @@ export function mainPopupFn(title: string, callback, task: any) {
 // 弹框列表任务处理
 export function mainPopupTask(round: number = 0) {
   try {
+    if (shouldStopCurrentTask()) {
+      setRunInfo('mainPopupTask: 任务已取消，停止执行');
+      return;
+    }
     setRunInfo(`mainPopupTask: 开始执行（第 ${round + 1}/${MAIN_POPUP_TASK_ROUNDS_MAX} 轮）`);
     checkGetGold();
 
@@ -279,6 +284,10 @@ export function mainPopupTask(round: number = 0) {
 
       // 获取列表, 并执行， 先执行命中缓存不循环方案
       for (let i = 0; i < taskList.length; i++) {
+        if (shouldStopCurrentTask()) {
+          setRunInfo('mainPopupTask: 任务已取消，停止执行');
+          return;
+        }
         const task: any = taskList[i];
         if (task.awaitingRewardClaim && !task.hasRun) {
           setRunInfo(`mainPopupTask: 跳过待领奖励任务[${task.title}]（已由本轮开头 checkGetGold 处理）`);

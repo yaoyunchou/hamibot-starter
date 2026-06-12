@@ -5,7 +5,7 @@
     "message": "任务「goldCoin」执行异常: JavaException: java.lang.IllegalArgumentException: Path bounds must not be negative",
     "timestamp": "2026-03-30 17:02:32",
     "task_id": "2f88b4ab-2d9c-4520-bd64-87a507504f9b",
-    "acknowledged": false,
+    "acknowledged": true,
     "extra": null
   }
 ]

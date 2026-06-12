@@ -1,0 +1,334 @@
+{
+  "id": "49430edf-30ce-4835-b62e-0deb5741cdde",
+  "type": "layout",
+  "params": {
+    "depth": 10
+  },
+  "status": "completed",
+  "created_at": "2026-06-11 18:48:45",
+  "completed_at": "2026-06-11 18:51:51",
+  "result": {
+    "package": "com.miui.securitycenter",
+    "activity": "com.miui.wakepath.ui.ConfirmStartActivity",
+    "tree": {
+      "cls": "android.widget.FrameLayout",
+      "bounds": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "depth": 0,
+      "childCount": 1,
+      "clickable": false,
+      "scrollable": false,
+      "longClickable": false,
+      "enabled": true,
+      "selected": false,
+      "focusable": false,
+      "checkable": false,
+      "winDepth": 0,
+      "children": [
+        {
+          "cls": "android.widget.LinearLayout",
+          "bounds": [
+            0,
+            0,
+            1080,
+            2400
+          ],
+          "depth": 1,
+          "childCount": 1,
+          "clickable": false,
+          "scrollable": false,
+          "longClickable": false,
+          "enabled": true,
+          "selected": false,
+          "focusable": false,
+          "checkable": false,
+          "winDepth": 1,
+          "children": [
+            {
+              "cls": "android.widget.FrameLayout",
+              "bounds": [
+                0,
+                0,
+                1080,
+                2400
+              ],
+              "depth": 2,
+              "childCount": 1,
+              "clickable": false,
+              "scrollable": false,
+              "longClickable": false,
+              "enabled": true,
+              "selected": false,
+              "focusable": false,
+              "checkable": false,
+              "winDepth": 2,
+              "children": [
+                {
+                  "cls": "android.widget.LinearLayout",
+                  "id": "com.miui.securitycenter:id/action_bar_root",
+                  "bounds": [
+                    0,
+                    0,
+                    1080,
+                    2400
+                  ],
+                  "depth": 3,
+                  "childCount": 1,
+                  "clickable": false,
+                  "scrollable": false,
+                  "longClickable": false,
+                  "enabled": true,
+                  "selected": false,
+                  "focusable": false,
+                  "checkable": false,
+                  "winDepth": 3,
+                  "children": [
+                    {
+                      "cls": "android.widget.FrameLayout",
+                      "id": "android:id/content",
+                      "bounds": [
+                        0,
+                        0,
+                        1080,
+                        2400
+                      ],
+                      "depth": 4,
+                      "childCount": 1,
+                      "clickable": false,
+                      "scrollable": false,
+                      "longClickable": false,
+                      "enabled": true,
+                      "selected": false,
+                      "focusable": false,
+                      "checkable": false,
+                      "winDepth": 4,
+                      "children": [
+                        {
+                          "cls": "android.widget.FrameLayout",
+                          "id": "com.miui.securitycenter:id/dialog_root_view",
+                          "bounds": [
+                            0,
+                            0,
+                            1080,
+                            2400
+                          ],
+                          "depth": 5,
+                          "childCount": 2,
+                          "clickable": false,
+                          "scrollable": false,
+                          "longClickable": false,
+                          "enabled": true,
+                          "selected": false,
+                          "focusable": false,
+                          "checkable": false,
+                          "winDepth": 5,
+                          "children": [
+                            {
+                              "cls": "android.view.View",
+                              "id": "com.miui.securitycenter:id/dialog_dim_bg",
+                              "bounds": [
+                                0,
+                                0,
+                                1080,
+                                2400
+                              ],
+                              "depth": 6,
+                              "childCount": 0,
+                              "clickable": true,
+                              "scrollable": false,
+                              "longClickable": false,
+                              "enabled": true,
+                              "selected": false,
+                              "focusable": false,
+                              "checkable": false,
+                              "winDepth": 6
+                            },
+                            {
+                              "cls": "android.widget.LinearLayout",
+                              "id": "com.miui.securitycenter:id/parentPanel",
+                              "bounds": [
+                                33,
+                                1686,
+                                1047,
+                                2325
+                              ],
+                              "depth": 6,
+                              "childCount": 2,
+                              "clickable": true,
+                              "scrollable": false,
+                              "longClickable": false,
+                              "enabled": true,
+                              "selected": false,
+                              "focusable": true,
+                              "checkable": false,
+                              "winDepth": 6,
+                              "children": [
+                                {
+                                  "cls": "android.widget.ScrollView",
+                                  "bounds": [
+                                    33,
+                                    1752,
+                                    1047,
+                                    2099
+                                  ],
+                                  "depth": 7,
+                                  "childCount": 1,
+                                  "clickable": false,
+                                  "scrollable": false,
+                                  "longClickable": false,
+                                  "enabled": true,
+                                  "selected": false,
+                                  "focusable": true,
+                                  "checkable": false,
+                                  "winDepth": 7,
+                                  "children": [
+                                    {
+                                      "cls": "android.view.ViewGroup",
+                                      "id": "com.miui.securitycenter:id/contentPanel",
+                                      "bounds": [
+                                        33,
+                                        1752,
+                                        1047,
+                                        2099
+                                      ],
+                                      "depth": 8,
+                                      "childCount": 1,
+                                      "clickable": false,
+                                      "scrollable": false,
+                                      "longClickable": false,
+                                      "enabled": true,
+                                      "selected": false,
+                                      "focusable": false,
+                                      "checkable": false,
+                                      "winDepth": 8,
+                                      "children": [
+                                        {
+                                          "cls": "android.widget.FrameLayout",
+                                          "id": "android:id/custom",
+                                          "bounds": [
+                                            33,
+                                            1752,
+                                            1047,
+                                            2099
+                                          ],
+                                          "depth": 9,
+                                          "childCount": 1,
+                                          "clickable": false,
+                                          "scrollable": false,
+                                          "longClickable": false,
+                                          "enabled": true,
+                                          "selected": false,
+                                          "focusable": false,
+                                          "checkable": false,
+                                          "winDepth": 9,
+                                          "children": [
+                                            {
+                                              "cls": "android.widget.ScrollView",
+                                              "bounds": [
+                                                33,
+                                                1752,
+                                                1047,
+                                                2099
+                                              ],
+                                              "depth": 10,
+                                              "childCount": 1,
+                                              "clickable": false,
+                                              "scrollable": false,
+                                              "longClickable": false,
+                                              "enabled": true,
+                                              "selected": false,
+                                              "focusable": true,
+                                              "checkable": false,
+                                              "winDepth": 10
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "cls": "android.widget.LinearLayout",
+                                  "id": "com.miui.securitycenter:id/buttonPanel",
+                                  "bounds": [
+                                    33,
+                                    2121,
+                                    1047,
+                                    2259
+                                  ],
+                                  "depth": 7,
+                                  "childCount": 2,
+                                  "clickable": false,
+                                  "scrollable": false,
+                                  "longClickable": false,
+                                  "enabled": true,
+                                  "selected": false,
+                                  "focusable": false,
+                                  "checkable": false,
+                                  "winDepth": 7,
+                                  "children": [
+                                    {
+                                      "cls": "android.widget.Button",
+                                      "text": "拒绝",
+                                      "id": "android:id/button2",
+                                      "bounds": [
+                                        99,
+                                        2121,
+                                        523,
+                                        2259
+                                      ],
+                                      "depth": 8,
+                                      "childCount": 0,
+                                      "clickable": true,
+                                      "scrollable": false,
+                                      "longClickable": false,
+                                      "enabled": true,
+                                      "selected": false,
+                                      "focusable": true,
+                                      "checkable": false,
+                                      "winDepth": 8
+                                    },
+                                    {
+                                      "cls": "android.widget.Button",
+                                      "text": "始终允许",
+                                      "id": "android:id/button1",
+                                      "bounds": [
+                                        556,
+                                        2121,
+                                        981,
+                                        2259
+                                      ],
+                                      "depth": 8,
+                                      "childCount": 0,
+                                      "clickable": true,
+                                      "scrollable": false,
+                                      "longClickable": false,
+                                      "enabled": true,
+                                      "selected": false,
+                                      "focusable": true,
+                                      "checkable": false,
+                                      "winDepth": 8
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "error": null
+}

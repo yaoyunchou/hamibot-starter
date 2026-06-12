@@ -14,7 +14,7 @@ description: Hamibot + FastAPI 双 Agent（页面识别 + 决策执行）、打�
 - 成熟的无障碍布局树抓取（`dumpActiveWindowLayout`，每个节点含 cls/text/desc/id/bounds/a11y属性）
 - 截图能力（`captureScreen()` 返回 base64 JPG）
 - 完整的调试系统（debug 指令队列 + Dashboard）
-- `.env` 中已预留 AI 配置（`AI_BASE_URL` / `AI_API_KEY` / `AI_MODEL` / `AI_VISION_MODEL`）
+- `.env` 中配置 Cursor SDK（`CURSOR_API_KEY` / `CURSOR_MODEL`）
 
 **尚未实现**：AI 调用代码、Agent 逻辑、页面识别、弹框检测、手动打标。
 
@@ -30,7 +30,7 @@ flowchart TB
 
     subgraph server [FastAPI 服务端]
         aiRouter["routers/ai.py\nAI 路由层"]
-        aiClient["services/ai_client.py\nOpenAI 兼容客户端"]
+        aiClient["services/ai_client.py\nCursor Python SDK 客户端"]
         treeAnalyzer["services/tree_analyzer.py\n压缩+可交互提取+指纹"]
         pageAgent["services/agents/page_recognizer.py\nAgent1 页面识别"]
         mainAgent["services/agents/main_agent.py\nAgent2 决策"]
@@ -45,16 +45,15 @@ flowchart TB
         replayUI["操作日志回放"]
     end
 
-    subgraph llm [AI 服务]
-        textModel["文本模型"]
-        visionModel["视觉模型"]
+    subgraph llm [Cursor Agent]
+        composer["composer-2.5\n文本 + 截图"]
     end
 
     capture -->|"1.采集状态"| aiExec
     aiExec -->|"2.请求决策"| aiRouter
     aiRouter --> treeAnalyzer --> pageAgent
     pageAgent -->|"指纹匹配"| labelStore
-    pageAgent -->|"AI分析"| aiClient --> textModel & visionModel
+    pageAgent -->|"AI分析"| aiClient --> composer
     pageAgent -->|"低置信度"| pendingQueue
     aiRouter --> mainAgent -->|"生成操作指令"| aiClient
     mainAgent -->|"读取历史步骤"| opLogger
@@ -75,7 +74,7 @@ flowchart TB
 - 操作日志：`operation_logger.py`、`data/ai_operations/`
 - Agent 2：`main_agent.py`（操作指令）
 - 客户端：`aiExecutor.ts` + `service.ts` + `base.ts` 中 `ai_task` 分支
-- 视觉：`screenshot_base64` + `AI_VISION_MODEL`
+- 视觉：`screenshot_base64` + Cursor SDK `UserMessage.images`
 
 ---
 
@@ -83,29 +82,27 @@ flowchart TB
 
 ### 1.1 扩展配置 ([server/core/config.py](server/core/config.py))
 
-在 `Settings` 类中新增 AI 相关字段，使 `.env` 中的变量正式接入 Python 代码：
+在 `Settings` 类中新增 Cursor SDK 相关字段：
 
 ```python
 class Settings(BaseSettings):
     PORT: int = 3000
-    AI_BASE_URL: str = "https://api.openai.com/v1"
-    AI_API_KEY: str = ""
-    AI_MODEL: str = "gpt-4o-mini"
-    AI_VISION_MODEL: str = ""       # 空则回退到 AI_MODEL
-    AI_RESPONSE_FORMAT: bool = False
+    CURSOR_API_KEY: str = ""
+    CURSOR_MODEL: str = "composer-2.5"
+    CURSOR_WORKSPACE: str = ""      # 空则回退到项目根目录
     OCR_WEAK_THRESHOLD: int = 3
     DEFAULT_TASK: str = "浏览当前页面，观察内容并汇报当前状态"
 ```
 
 ### 1.2 AI 客户端 (新建 `server/services/ai_client.py`)
 
-封装 OpenAI 兼容的 HTTP 调用，统一管理 text/vision 两种模型：
+封装 [Cursor Python SDK](https://cursor.com/docs/sdk/python) 调用，统一管理 text/vision 两种场景：
 
-- `chat(messages, model=None, json_mode=False)` -- 文本对话
-- `chat_with_image(messages, image_base64, model=None)` -- 带图片的视觉对话
-- 自动选择模型（vision 请求优先用 `AI_VISION_MODEL`）
-- 统一错误处理与日志
-- 依赖：`openai` Python SDK（需加入 `requirements.txt`）
+- `chat(messages, model=None, json_mode=False)` -- 文本对话（`Agent.prompt` 一次性调用）
+- `chat_with_image(messages, image_base64, model=None)` -- 带截图的视觉对话（`UserMessage` + `SDKImage.data_image`）
+- `chat_async` / `chat_with_image_async` -- FastAPI 异步路由可用
+- 统一错误处理与 JSON 解析（`parse_json_loose`）
+- 依赖：`cursor-sdk`（需加入 `requirements.txt`，Python 3.10+）
 
 ### 1.3 布局树分析器 (新建 `server/services/tree_analyzer.py`)
 
@@ -293,7 +290,7 @@ server/data/page_snapshots/
 - 附带 2-3 个 few-shot 示例（从标注数据中动态选取，优先选 activity 相同的）
 - 弹框判定规则：overlay 层级 + bounds 覆盖主内容区 + 含关闭按钮特征
 - 可交互元素效果推理：要求 AI 对每个可交互元素输出 `predicted_effect`，结合页面主题和元素语义
-- 输出格式强制 JSON（或根据 `AI_RESPONSE_FORMAT` 配置决定）
+- 输出格式强制 JSON（prompt 末尾追加 JSON 约束）
 
 ## 三、Agent 2：决策模块（含客户端执行 + 操作日志）
 
@@ -675,7 +672,7 @@ server/                                        (Python 服务端)
   core/config.py                    -- 修改：扩展 Settings 加入 AI_* 字段
   services/
     __init__.py                     -- 新建
-    ai_client.py                    -- 新建：OpenAI 兼容客户端(text + vision)
+    ai_client.py                    -- Cursor Python SDK 客户端(text + vision)
     tree_analyzer.py                -- 新建：布局树压缩 + 可交互元素提取 + 指纹生成
     operation_logger.py             -- 新建：操作日志读写管理（独立文件）
     agents/
@@ -689,7 +686,7 @@ server/                                        (Python 服务端)
     page_snapshots/                 -- 新建目录：历史页面快照
     ai_operations/                  -- 新建目录：操作日志（按 task_id 分子目录）
   main.py                           -- 修改：注册 ai router
-  requirements.txt                  -- 修改：添加 openai 依赖
+  requirements.txt                  -- 修改：添加 cursor-sdk 依赖
   static/dashboard.html             -- 修改：添加"AI 页面标注" Tab + 操作日志回放
 
 src/                                           (TypeScript 客户端)
