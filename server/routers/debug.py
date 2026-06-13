@@ -81,7 +81,7 @@ def _auto_clean(commands: list) -> list:
 
 # ─────────────────────────── Models ───────────────────────────
 
-VALID_TYPES = {"element", "script", "screenshot", "page_info", "layout"}
+VALID_TYPES = {"element", "script", "screenshot", "page_info", "layout", "page_capture"}
 
 
 class CommandBody(BaseModel):
@@ -101,17 +101,40 @@ class PollBody(BaseModel):
 
 # ─────────────────────────── Routes ───────────────────────────
 
-@router.post("/debug/command")
-async def create_command(body: CommandBody):
-    if body.type not in VALID_TYPES:
-        return {"code": 1, "message": f"不支持的指令类型: {body.type}，可选: {', '.join(sorted(VALID_TYPES))}"}
+def _expire_stale_running(commands: list, max_seconds: int = 120) -> list:
+    """将长时间停留在 running 的指令作废，避免阻塞队列。"""
+    changed = False
+    for cmd in commands:
+        if cmd.get("status") != "running":
+            continue
+        created = cmd.get("created_at")
+        if not created:
+            continue
+        try:
+            start = datetime.strptime(created, "%Y-%m-%d %H:%M:%S")
+            elapsed = (datetime.now() - start).total_seconds()
+            if elapsed >= max_seconds:
+                cmd["status"] = "error"
+                cmd["error"] = f"客户端执行超时({int(elapsed)}s)，已自动作废"
+                cmd["completed_at"] = _now()
+                changed = True
+                logger.warning("作废超时 running 指令: %s (%s)", cmd.get("id"), cmd.get("type"))
+        except Exception:
+            pass
+    if changed:
+        _write_commands(commands)
+    return commands
 
-    commands = _auto_clean(_read_commands())
 
+def create_command_internal(cmd_type: str, params: Optional[dict[str, Any]] = None) -> dict:
+    """内部创建调试指令（供 pages 采集等模块调用）。"""
+    if cmd_type not in VALID_TYPES:
+        raise ValueError(f"不支持的指令类型: {cmd_type}")
+    commands = _expire_stale_running(_auto_clean(_read_commands()))
     cmd = {
         "id": str(uuid.uuid4()),
-        "type": body.type,
-        "params": body.params or {},
+        "type": cmd_type,
+        "params": params or {},
         "status": "pending",
         "created_at": _now(),
         "completed_at": None,
@@ -121,6 +144,22 @@ async def create_command(body: CommandBody):
     commands.append(cmd)
     _write_commands(commands)
     logger.info("新调试指令: %s (%s)", cmd["id"], cmd["type"])
+    return cmd
+
+
+def get_command_by_id(cmd_id: str) -> Optional[dict]:
+    for cmd in _read_commands():
+        if cmd.get("id") == cmd_id:
+            return cmd
+    return None
+
+
+@router.post("/debug/command")
+async def create_command(body: CommandBody):
+    if body.type not in VALID_TYPES:
+        return {"code": 1, "message": f"不支持的指令类型: {body.type}，可选: {', '.join(sorted(VALID_TYPES))}"}
+
+    cmd = create_command_internal(body.type, body.params)
     return {"code": 0, "message": "指令已创建", "data": cmd}
 
 

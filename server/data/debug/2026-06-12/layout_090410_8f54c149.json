@@ -1,0 +1,77 @@
+{
+  "id": "8f54c149-4332-4ddc-88e9-2a8f827178c0",
+  "type": "layout",
+  "params": {
+    "depth": 3
+  },
+  "status": "completed",
+  "created_at": "2026-06-12 08:36:34",
+  "completed_at": "2026-06-12 09:04:10",
+  "result": {
+    "package": "com.taobao.idlefish",
+    "activity": "android.widget.FrameLayout",
+    "tree": {
+      "cls": "android.widget.FrameLayout",
+      "bounds": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "depth": 0,
+      "childCount": 1,
+      "clickable": false,
+      "scrollable": false,
+      "longClickable": false,
+      "enabled": true,
+      "selected": false,
+      "focusable": false,
+      "checkable": false,
+      "winDepth": 0,
+      "children": [
+        {
+          "cls": "android.widget.LinearLayout",
+          "bounds": [
+            0,
+            0,
+            1080,
+            2400
+          ],
+          "depth": 1,
+          "childCount": 1,
+          "clickable": false,
+          "scrollable": false,
+          "longClickable": false,
+          "enabled": true,
+          "selected": false,
+          "focusable": false,
+          "checkable": false,
+          "winDepth": 1,
+          "children": [
+            {
+              "cls": "android.widget.FrameLayout",
+              "id": "android:id/content",
+              "bounds": [
+                0,
+                0,
+                1080,
+                2400
+              ],
+              "depth": 2,
+              "childCount": 0,
+              "clickable": false,
+              "scrollable": false,
+              "longClickable": false,
+              "enabled": true,
+              "selected": false,
+              "focusable": false,
+              "checkable": false,
+              "winDepth": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "error": null
+}

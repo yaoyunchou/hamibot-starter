@@ -1,0 +1,384 @@
+{
+  "id": "f3be2ca2-f697-46e2-8c1f-d20452141bb7",
+  "type": "page_capture",
+  "params": {
+    "maxDepth": 30,
+    "quality": 70
+  },
+  "status": "completed",
+  "created_at": "2026-06-13 16:20:20",
+  "completed_at": "2026-06-13 16:20:22",
+  "result": {
+    "package": "com.hamibot.hamibot",
+    "activity": "android.widget.RelativeLayout",
+    "tree": {
+      "cls": "android.widget.FrameLayout",
+      "bounds": [
+        0,
+        21,
+        1080,
+        2379
+      ],
+      "depth": 0,
+      "childCount": 1,
+      "clickable": false,
+      "scrollable": false,
+      "longClickable": false,
+      "enabled": true,
+      "selected": false,
+      "focusable": false,
+      "checkable": false,
+      "winDepth": 0,
+      "children": [
+        {
+          "cls": "android.widget.LinearLayout",
+          "bounds": [
+            0,
+            21,
+            1080,
+            2379
+          ],
+          "depth": 1,
+          "childCount": 1,
+          "clickable": false,
+          "scrollable": false,
+          "longClickable": false,
+          "enabled": true,
+          "selected": false,
+          "focusable": false,
+          "checkable": false,
+          "winDepth": 1,
+          "children": [
+            {
+              "cls": "android.widget.FrameLayout",
+              "bounds": [
+                0,
+                21,
+                1080,
+                2379
+              ],
+              "depth": 2,
+              "childCount": 1,
+              "clickable": false,
+              "scrollable": false,
+              "longClickable": false,
+              "enabled": true,
+              "selected": false,
+              "focusable": false,
+              "checkable": false,
+              "winDepth": 2,
+              "children": [
+                {
+                  "cls": "android.widget.LinearLayout",
+                  "id": "com.android.systemui:id/action_bar_root",
+                  "bounds": [
+                    0,
+                    21,
+                    1080,
+                    2379
+                  ],
+                  "depth": 3,
+                  "childCount": 1,
+                  "clickable": false,
+                  "scrollable": false,
+                  "longClickable": false,
+                  "enabled": true,
+                  "selected": false,
+                  "focusable": false,
+                  "checkable": false,
+                  "winDepth": 3,
+                  "children": [
+                    {
+                      "cls": "android.widget.FrameLayout",
+                      "id": "android:id/content",
+                      "bounds": [
+                        0,
+                        21,
+                        1080,
+                        2379
+                      ],
+                      "depth": 4,
+                      "childCount": 1,
+                      "clickable": false,
+                      "scrollable": false,
+                      "longClickable": false,
+                      "enabled": true,
+                      "selected": false,
+                      "focusable": false,
+                      "checkable": false,
+                      "winDepth": 4,
+                      "children": [
+                        {
+                          "cls": "android.widget.FrameLayout",
+                          "id": "com.android.systemui:id/dialog_root_view",
+                          "bounds": [
+                            0,
+                            21,
+                            1080,
+                            2379
+                          ],
+                          "depth": 5,
+                          "childCount": 2,
+                          "clickable": false,
+                          "scrollable": false,
+                          "longClickable": false,
+                          "enabled": true,
+                          "selected": false,
+                          "focusable": false,
+                          "checkable": false,
+                          "winDepth": 5,
+                          "children": [
+                            {
+                              "cls": "android.view.View",
+                              "id": "com.android.systemui:id/dialog_dim_bg",
+                              "bounds": [
+                                0,
+                                21,
+                                1080,
+                                2379
+                              ],
+                              "depth": 6,
+                              "childCount": 0,
+                              "clickable": true,
+                              "scrollable": false,
+                              "longClickable": false,
+                              "enabled": true,
+                              "selected": false,
+                              "focusable": false,
+                              "checkable": false,
+                              "winDepth": 6
+                            },
+                            {
+                              "cls": "android.widget.LinearLayout",
+                              "id": "com.android.systemui:id/parentPanel",
+                              "bounds": [
+                                31,
+                                1572,
+                                1048,
+                                2325
+                              ],
+                              "depth": 6,
+                              "childCount": 3,
+                              "clickable": true,
+                              "scrollable": false,
+                              "longClickable": false,
+                              "enabled": true,
+                              "selected": false,
+                              "focusable": true,
+                              "checkable": false,
+                              "winDepth": 6,
+                              "children": [
+                                {
+                                  "cls": "android.widget.LinearLayout",
+                                  "id": "com.android.systemui:id/topPanel",
+                                  "bounds": [
+                                    31,
+                                    1638,
+                                    1048,
+                                    1813
+                                  ],
+                                  "depth": 7,
+                                  "childCount": 1,
+                                  "clickable": false,
+                                  "scrollable": false,
+                                  "longClickable": false,
+                                  "enabled": true,
+                                  "selected": false,
+                                  "focusable": false,
+                                  "checkable": false,
+                                  "winDepth": 7,
+                                  "children": [
+                                    {
+                                      "cls": "android.widget.TextView",
+                                      "text": "要开始使用Hamibot录制或投放内容吗？",
+                                      "id": "com.android.systemui:id/alertTitle",
+                                      "bounds": [
+                                        130,
+                                        1638,
+                                        949,
+                                        1769
+                                      ],
+                                      "depth": 8,
+                                      "childCount": 0,
+                                      "clickable": false,
+                                      "scrollable": false,
+                                      "longClickable": false,
+                                      "enabled": true,
+                                      "selected": false,
+                                      "focusable": true,
+                                      "checkable": false,
+                                      "winDepth": 8
+                                    }
+                                  ]
+                                },
+                                {
+                                  "cls": "android.widget.ScrollView",
+                                  "bounds": [
+                                    31,
+                                    1813,
+                                    1048,
+                                    2099
+                                  ],
+                                  "depth": 7,
+                                  "childCount": 1,
+                                  "clickable": false,
+                                  "scrollable": false,
+                                  "longClickable": false,
+                                  "enabled": true,
+                                  "selected": false,
+                                  "focusable": true,
+                                  "checkable": false,
+                                  "winDepth": 7,
+                                  "children": [
+                                    {
+                                      "cls": "android.view.ViewGroup",
+                                      "id": "com.android.systemui:id/contentPanel",
+                                      "bounds": [
+                                        31,
+                                        1813,
+                                        1048,
+                                        2099
+                                      ],
+                                      "depth": 8,
+                                      "childCount": 1,
+                                      "clickable": false,
+                                      "scrollable": false,
+                                      "longClickable": false,
+                                      "enabled": true,
+                                      "selected": false,
+                                      "focusable": false,
+                                      "checkable": false,
+                                      "winDepth": 8,
+                                      "children": [
+                                        {
+                                          "cls": "android.widget.LinearLayout",
+                                          "id": "com.android.systemui:id/contentView",
+                                          "bounds": [
+                                            108,
+                                            1813,
+                                            971,
+                                            2055
+                                          ],
+                                          "depth": 9,
+                                          "childCount": 1,
+                                          "clickable": false,
+                                          "scrollable": false,
+                                          "longClickable": false,
+                                          "enabled": true,
+                                          "selected": false,
+                                          "focusable": false,
+                                          "checkable": false,
+                                          "winDepth": 9,
+                                          "children": [
+                                            {
+                                              "cls": "android.widget.LinearLayout",
+                                              "id": "com.android.systemui:id/textAlign",
+                                              "bounds": [
+                                                108,
+                                                1813,
+                                                971,
+                                                2055
+                                              ],
+                                              "depth": 10,
+                                              "childCount": 1,
+                                              "clickable": false,
+                                              "scrollable": false,
+                                              "longClickable": false,
+                                              "enabled": true,
+                                              "selected": false,
+                                              "focusable": false,
+                                              "checkable": false,
+                                              "winDepth": 10,
+                                              "children": [
+                                                {
+                                                  "cls": "android.widget.TextView",
+                                                  "text": "在录制或投放内容时，Hamibot将可访问屏幕上显示或设备中播放的所有信息，其中包括密码、付款信息、照片、消息及播放的音频等信息。",
+                                                  "id": "com.android.systemui:id/message",
+                                                  "bounds": [
+                                                    108,
+                                                    1813,
+                                                    971,
+                                                    2055
+                                                  ],
+                                                  "depth": 11,
+                                                  "childCount": 0,
+                                                  "clickable": false,
+                                                  "scrollable": false,
+                                                  "longClickable": false,
+                                                  "enabled": true,
+                                                  "selected": false,
+                                                  "focusable": false,
+                                                  "checkable": false,
+                                                  "winDepth": 11
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "cls": "android.widget.LinearLayout",
+                                  "id": "com.android.systemui:id/buttonPanel",
+                                  "bounds": [
+                                    31,
+                                    2121,
+                                    1048,
+                                    2259
+                                  ],
+                                  "depth": 7,
+                                  "childCount": 1,
+                                  "clickable": false,
+                                  "scrollable": false,
+                                  "longClickable": false,
+                                  "enabled": true,
+                                  "selected": false,
+                                  "focusable": false,
+                                  "checkable": false,
+                                  "winDepth": 7,
+                                  "children": [
+                                    {
+                                      "cls": "android.widget.Button",
+                                      "text": "取消",
+                                      "id": "android:id/button3",
+                                      "bounds": [
+                                        97,
+                                        2121,
+                                        523,
+                                        2259
+                                      ],
+                                      "depth": 8,
+                                      "childCount": 0,
+                                      "clickable": true,
+                                      "scrollable": false,
+                                      "longClickable": false,
+                                      "enabled": true,
+                                      "selected": false,
+                                      "focusable": true,
+                                      "checkable": false,
+                                      "winDepth": 8
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "screenshot_base64": null,
+    "screenshot_error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission",
+    "max_depth": 30
+  },
+  "error": null
+}

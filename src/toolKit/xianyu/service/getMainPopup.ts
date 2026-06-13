@@ -6,53 +6,178 @@
  *
  */
 import { Record } from "../../../lib/logger";
-import { closeApp, tryClickNode } from "../utils/common";
+import { findByA11yId, tryClickNode } from "../utils/common";
 import {
   findTargetElementWithCache,
   findTargetElementWithCacheStrict,
 } from "../utils/selector";
 import { APPNAME, findPage, flushTraces, PageType, setRunInfo } from "./base";
+import { assertOnGoldCoinPage, isOnGoldCoinPage, probeGoldCoinPage } from "./goldPageDetect";
+
+function isGoldTaskPopupOpen(): boolean {
+  return !!(findByA11yId("taskWrap", 500) || findByA11yId("taskListWrap", 500));
+}
 
 /**
  * 各种活动完成后则回退到主坦克页面，
  *  各种操作之后必须回到主弹框就对了， 就做这一个事情
  *
  */
-let maxLoopTime = 5;
+const MAX_BACK_MAIN_PAGE_ATTEMPTS = 20;
+let maxLoopTime = 0;
+
+/** 新一轮「任务完成后回金币页」前重置，避免跨任务累积触发误判 */
+export function resetBackMainPageLoop() {
+  maxLoopTime = 0;
+}
+
+function backMainPageRetryDelayMs(): number {
+  if (maxLoopTime <= 0) return 0;
+  return Math.min(12000, maxLoopTime * 2000);
+}
+
+/**
+ * 从淘宝/支付宝等外部 App 拉回闲鱼前台。
+ * 注意：launchApp 只认应用名，包名必须用 launch()。
+ */
+export function returnToXianyuApp(maxRetry = 5): boolean {
+  const from = currentPackage();
+  if (from === APPNAME) return true;
+
+  setRunInfo(`returnToXianyu: 从 ${from} 切回闲鱼`);
+  Record.info(`returnToXianyu: start from ${from}`);
+
+  for (let i = 0; i < maxRetry; i++) {
+    const pkg = currentPackage();
+    if (pkg === APPNAME) {
+      setRunInfo("returnToXianyu: 已在闲鱼");
+      Record.info("returnToXianyu: ok already on xianyu");
+      return true;
+    }
+
+    setRunInfo(`returnToXianyu: 第 ${i + 1}/${maxRetry} 次，当前 ${pkg}`);
+    Record.info(`returnToXianyu: attempt ${i + 1}/${maxRetry} pkg=${pkg}`);
+
+    setRunInfo("returnToXianyu: 执行 back()");
+    Record.info("returnToXianyu: back()");
+    back();
+    sleep(2000);
+    let after = currentPackage();
+    Record.info(`returnToXianyu: after back pkg=${after}`);
+    if (after === APPNAME) {
+      setRunInfo("returnToXianyu: back() 已回闲鱼");
+      return true;
+    }
+
+    setRunInfo("returnToXianyu: 执行 launch(闲鱼包名)");
+    Record.info(`returnToXianyu: launch(${APPNAME})`);
+    launch(APPNAME);
+    sleep(4000);
+    after = currentPackage();
+    Record.info(`returnToXianyu: after launch pkg=${after}`);
+    if (after === APPNAME) {
+      setRunInfo("returnToXianyu: launch 已回闲鱼");
+      return true;
+    }
+
+    try {
+      setRunInfo("returnToXianyu: 执行 launchApp(闲鱼)");
+      Record.info("returnToXianyu: launchApp(闲鱼)");
+      launchApp("闲鱼");
+      sleep(4000);
+      after = currentPackage();
+      Record.info(`returnToXianyu: after launchApp pkg=${after}`);
+      if (after === APPNAME) {
+        setRunInfo("returnToXianyu: launchApp 已回闲鱼");
+        return true;
+      }
+    } catch (e) {
+      Record.warn(`returnToXianyu: launchApp error ${e}`);
+    }
+
+    setRunInfo("returnToXianyu: home + launch");
+    Record.info("returnToXianyu: home + launch");
+    home();
+    sleep(1200);
+    launch(APPNAME);
+    sleep(4000);
+    after = currentPackage();
+    Record.info(`returnToXianyu: after home+launch pkg=${after}`);
+    if (after === APPNAME) {
+      setRunInfo("returnToXianyu: home+launch 已回闲鱼");
+      return true;
+    }
+  }
+
+  const still = currentPackage();
+  setRunInfo(`returnToXianyu: 失败，仍在 ${still}`);
+  Record.warn(`returnToXianyu: failed still ${still}`);
+  return false;
+}
+
 export const backMainPage = () => {
-  if (maxLoopTime > 5) {
-    setRunInfo('backMainPage: 死循环，关闭闲鱼');
-    Record.error("死循环了， 关闭app");
-    closeApp("闲鱼");
+  if (maxLoopTime >= MAX_BACK_MAIN_PAGE_ATTEMPTS) {
+    setRunInfo(`backMainPage: 已达 ${MAX_BACK_MAIN_PAGE_ATTEMPTS} 次仍无法回到金币页，停止重试`);
+    Record.error(`backMainPage: 超过最大重试 ${MAX_BACK_MAIN_PAGE_ATTEMPTS}`);
     maxLoopTime = 0;
-    sleep(5000);
-    findPage("goldCoin");
+    return;
+  }
+
+  const delay = backMainPageRetryDelayMs();
+  if (delay > 0) {
+    setRunInfo(`backMainPage: 等待 ${delay}ms 后重试 (${maxLoopTime + 1}/${MAX_BACK_MAIN_PAGE_ATTEMPTS})`);
+    sleep(delay);
+  }
+
+  setRunInfo(`backMainPage: 尝试回到金币页 (${maxLoopTime + 1}/${MAX_BACK_MAIN_PAGE_ATTEMPTS})`);
+  const appName = currentPackage();
+
+  if (appName !== APPNAME) {
+    if (returnToXianyuApp(5)) {
+      maxLoopTime = 0;
+      sleep(2000);
+      if (isOnGoldCoinPage(1200)) {
+        assertOnGoldCoinPage("backMainPage", 300);
+        return;
+      }
+      if (currentActivity() === PageType.goldCoin) {
+        sleep(2000);
+        if (isOnGoldCoinPage(1200)) {
+          assertOnGoldCoinPage("backMainPage", 300);
+          return;
+        }
+      }
+      setRunInfo("backMainPage: 已回闲鱼但未在金币地图，导航到金币页");
+      findPage("goldCoin");
+      return;
+    }
+    maxLoopTime++;
     backMainPage();
     return;
   }
-  setRunInfo('backMainPage: 尝试回到主弹框页面');
-  // 去到其他app了
-  const appName = currentPackage();
+
+  // 新流程：任务弹框在金币 H5 内，已在金币页则不应 back() 退出
+  if (isOnGoldCoinPage(600)) {
+    maxLoopTime = 0;
+    assertOnGoldCoinPage("backMainPage", 200);
+    if (isGoldTaskPopupOpen()) {
+      setRunInfo('backMainPage: 任务弹框已打开');
+    }
+    return;
+  }
+
   const mainPopup = findTargetElementWithCache("mainPopup", "今天", 3);
   const guideButton = findTargetElementWithCache(
     "coinExchangeMain",
     "闲鱼币抵扣",
     20
   );
-  if (appName !== APPNAME) {
-    setRunInfo(`backMainPage: 当前非闲鱼(${appName})，切回`);
-    Record.info("当前app不是闲鱼，直接回退", appName);
-    back();
-    back();
-    launchApp(APPNAME);
-    maxLoopTime = maxLoopTime + 2;
-    backMainPage();
-  } else if (mainPopup) {
+  if (mainPopup || isGoldTaskPopupOpen()) {
     maxLoopTime = 0;
     setRunInfo('backMainPage: 已回到主弹框页面');
     Record.info("回到主弹框页面!");
   } else if (guideButton) {
-    setRunInfo('backMainPage: 在金币主页，执行返回');
+    setRunInfo('backMainPage: 有闲鱼币抵扣但不在金币 H5，执行返回');
     back();
     maxLoopTime++;
     backMainPage();
@@ -60,27 +185,21 @@ export const backMainPage = () => {
     const activity = currentActivity();
     setRunInfo(`backMainPage: 无主弹框/无金币按钮，当前 activity=${activity}，maxLoopTime=${maxLoopTime}`);
     if (activity === PageType.goldCoin) {
-      if (mainPopup) {
-        maxLoopTime = 0;
-        setRunInfo('backMainPage: goldCoin 页已有主弹框，继续');
-        backMainPage();
-      } else {
-        setRunInfo('backMainPage: goldCoin 页无主弹框，执行 back 后重试');
-        back();
-        sleep(1000);
-        maxLoopTime++;
-        backMainPage();
-      }
+      const probe = probeGoldCoinPage(800);
+      setRunInfo(`backMainPage: goldCoin activity 但未识别地图 (${probe.reason})`);
+      sleep(2500);
+      maxLoopTime++;
+      backMainPage();
     } else if (activity === PageType.home || activity === PageType.product) {
       setRunInfo(`backMainPage: 主页/商品页(${activity})，前往金币页`);
       maxLoopTime = 0;
       findPage("goldCoin");
-      backMainPage();
     } else {
-      setRunInfo(`backMainPage: 未知页面(${activity})，执行 back*2 后重试(第${maxLoopTime + 1}次)`);
+      setRunInfo(`backMainPage: 未知页面(${activity})，执行 back 后重试`);
       back();
+      sleep(2000);
       back();
-      sleep(1000);
+      sleep(2000);
       maxLoopTime++;
       backMainPage();
     }
@@ -122,8 +241,7 @@ const scrollPage = () => {
       }
     }
   }
-  setRunInfo('scrollPage: 浏览完成，返回');
-  backMainPage();
+  setRunInfo('scrollPage: 浏览完成');
 };
 
 // 100coin
@@ -187,14 +305,13 @@ const get100Coin = () => {
   }
 };
 
-// 去其他运用逛一逛
+// 去其他运用逛一逛（停留时间需覆盖外部 App 任务；不在此调 backMainPage，由 mainPopupFn 统一收口）
+const EXTERNAL_APP_DWELL_MS = 12000;
+
 const goOtherApp = () => {
-  setRunInfo('goOtherApp: 进入其他应用，等待6s');
-  sleep(6000);
-  setRunInfo('goOtherApp: 返回闲鱼');
-  back();
-  back();
-  backMainPage();
+  setRunInfo(`goOtherApp: 外部任务执行中，等待 ${EXTERNAL_APP_DWELL_MS / 1000}s`);
+  sleep(EXTERNAL_APP_DWELL_MS);
+  setRunInfo("goOtherApp: 外部任务结束，等待 mainPopupFn 拉回闲鱼");
 };
 
 // 搜一搜推荐商品

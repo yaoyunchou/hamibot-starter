@@ -230,6 +230,9 @@
     <div class="nav-item" onclick="showPage('ai', this); loadAiPanel()">
       <span class="nav-icon">🤖</span>AI 标注 / 日志
     </div>
+    <div class="nav-item" onclick="showPage('pages', this); loadPagesPanel()">
+      <span class="nav-icon">📄</span>页面采集
+    </div>
   </aside>
 
   <!-- Main -->
@@ -498,6 +501,66 @@
           <thead><tr><th>task_id</th><th>描述</th><th>开始</th><th>结果</th></tr></thead>
           <tbody id="ai-ops-body"><tr><td colspan="4" class="empty-tip">暂无</td></tr></tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- ── 页面采集 ── -->
+    <div id="page-pages" class="page">
+      <div class="card">
+        <div class="card-title">采集当前页面</div>
+        <p style="color:var(--muted);font-size:13px;margin-bottom:16px;line-height:1.6">
+          在手机上手动进入目标页面后，填写页面路径并点击采集。将抓取<strong>最大深度布局树</strong>与<strong>截图</strong>，保存至
+          <code style="font-size:12px">logs/device/闲鱼/pages/</code>。
+          脚本启动时会自动申请截图权限（弹窗点允许）。采集日志见
+          <code style="font-size:12px">logs/device/trace/</code> 与
+          <code style="font-size:12px">logs/device/闲鱼/pages/capture.log</code>
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;max-width:720px">
+          <div class="dbg-input-group" style="flex:1;min-width:200px;margin-bottom:0">
+            <label>页面路径</label>
+            <input class="dbg-input" id="pages-path-input" placeholder="例：首页、我的/我发布的" />
+          </div>
+          <button class="btn btn-primary" id="pages-capture-btn" onclick="pagesCapture()">采集当前页面</button>
+        </div>
+        <div id="pages-capture-status" style="margin-top:12px;font-size:12px;color:var(--muted);display:none"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          已采集页面
+          <button class="btn btn-outline btn-sm" onclick="loadPagesPanel()">刷新</button>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>页面路径</th>
+              <th>Activity</th>
+              <th>截图</th>
+              <th>节点数</th>
+              <th>采集时间</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="pages-list-body">
+            <tr><td colspan="6" class="empty-tip">加载中...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" id="pages-detail-card" style="display:none">
+        <div class="card-title">
+          页面详情 — <span id="pages-detail-title"></span>
+          <button class="btn btn-outline btn-sm" onclick="pagesCloseDetail()">关闭</button>
+        </div>
+        <div style="display:grid;grid-template-columns:280px 1fr;gap:20px">
+          <div>
+            <img id="pages-detail-screenshot" src="" alt="截图" style="max-width:100%;border-radius:8px;border:1px solid var(--border)" />
+          </div>
+          <div>
+            <div id="pages-detail-meta" style="font-size:13px;line-height:1.8;margin-bottom:12px"></div>
+            <a id="pages-detail-tree-link" class="btn btn-outline btn-sm" href="#" target="_blank">下载 tree.json</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1089,6 +1152,118 @@ async function submitAiTask() {
 
 function addTaskAi() {
   openAiTaskModal();
+}
+
+// ── 页面采集 ──
+let _pagesCapturing = false;
+
+async function loadPagesPanel() {
+  const tbody = document.getElementById('pages-list-body');
+  try {
+    const r = await fetch(`${BASE}/api/pages`).then(res => res.json());
+    const pages = (r.data && r.data.pages) || [];
+    if (!pages.length) {
+      tbody.innerHTML = '<tr><td colspan="6" class="empty-tip">暂无采集记录，请先采集一个页面</td></tr>';
+      return;
+    }
+    tbody.innerHTML = pages.map(p => `
+      <tr>
+        <td style="font-weight:600">${escHtml(p.page_path || '')}</td>
+        <td style="font-size:11px;word-break:break-all;max-width:280px">${escHtml((p.activity || '').slice(0, 48))}</td>
+        <td>${p.has_screenshot ? '✓' : '<span style="color:var(--yellow)">无</span>'}</td>
+        <td>${p.node_count != null ? p.node_count : '-'}</td>
+        <td style="font-size:12px">${escHtml(p.captured_at || '')}</td>
+        <td><button class="btn btn-outline btn-sm" data-dir="${escHtml(p.dir || '')}" onclick="pagesShowDetail(this.dataset.dir)">查看</button></td>
+      </tr>`).join('');
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="6" class="empty-tip" style="color:var(--red)">${escHtml(e.message)}</td></tr>`;
+  }
+}
+
+async function pagesCapture() {
+  if (_pagesCapturing) return;
+  const pathInput = document.getElementById('pages-path-input');
+  const pagePath = (pathInput.value || '').trim();
+  if (!pagePath) {
+    toast('请填写页面路径', 'error');
+    pathInput.focus();
+    return;
+  }
+  const btn = document.getElementById('pages-capture-btn');
+  const statusEl = document.getElementById('pages-capture-status');
+  _pagesCapturing = true;
+  btn.disabled = true;
+  btn.textContent = '采集中…';
+  statusEl.style.display = 'block';
+  statusEl.textContent = '已下发指令，等待客户端执行（最多 90 秒）…';
+  statusEl.style.color = 'var(--muted)';
+  try {
+    const res = await fetch(`${BASE}/api/pages/capture`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page_path: pagePath }),
+    });
+    const r = await res.json().catch(() => ({}));
+    const errMsg = r.message || r.detail || (!res.ok ? `HTTP ${res.status}` : '');
+    if (!res.ok || r.code !== 0) {
+      toast(errMsg || '采集失败', 'error');
+      statusEl.textContent = errMsg || '采集失败';
+      statusEl.style.color = 'var(--red)';
+      return;
+    }
+    const d = r.data || {};
+    toast(r.message || '采集成功', 'ok');
+    statusEl.textContent = `已保存：${d.storage_path || d.dir || ''} · ${d.node_count != null ? d.node_count + ' 节点' : ''}`;
+    statusEl.style.color = 'var(--green)';
+    loadPagesPanel();
+    if (d.dir) pagesShowDetail(d.dir);
+  } catch (e) {
+    toast('请求失败: ' + e.message, 'error');
+    statusEl.textContent = '请求失败: ' + e.message;
+    statusEl.style.color = 'var(--red)';
+  } finally {
+    _pagesCapturing = false;
+    btn.disabled = false;
+    btn.textContent = '采集当前页面';
+  }
+}
+
+async function pagesShowDetail(dir) {
+  try {
+    const r = await fetch(`${BASE}/api/pages/${encodeURIComponent(dir)}`).then(res => res.json());
+    if (r.code !== 0) { toast(r.message || '加载失败', 'error'); return; }
+    const m = r.data || {};
+    document.getElementById('pages-detail-card').style.display = '';
+    document.getElementById('pages-detail-title').textContent = m.page_path || dir;
+    const img = document.getElementById('pages-detail-screenshot');
+    if (m.has_screenshot) {
+      img.src = `${BASE}/api/pages/${encodeURIComponent(dir)}/screenshot?t=${Date.now()}`;
+      img.style.display = '';
+    } else {
+      img.src = '';
+      img.style.display = 'none';
+    }
+    document.getElementById('pages-detail-meta').innerHTML = `
+      <div><span style="color:var(--muted)">目录</span> ${escHtml(m.dir || dir)}</div>
+      <div><span style="color:var(--muted)">Activity</span> ${escHtml(m.activity || '-')}</div>
+      <div><span style="color:var(--muted)">Package</span> ${escHtml(m.package || '-')}</div>
+      <div><span style="color:var(--muted)">指纹</span> <code style="font-size:11px">${escHtml((m.fingerprint || '').slice(0, 24))}…</code></div>
+      <div><span style="color:var(--muted)">节点数</span> ${m.node_count != null ? m.node_count : '-'}</div>
+      <div><span style="color:var(--muted)">深度</span> ${m.max_depth != null ? m.max_depth : '-'}</div>
+      <div><span style="color:var(--muted)">采集时间</span> ${escHtml(m.captured_at || '-')}</div>
+      <div><span style="color:var(--muted)">截图</span> ${m.has_screenshot ? '已保存 screenshot.jpg' : '<span style="color:var(--yellow)">无</span>'}</div>
+      ${m.screenshot_error ? `<div style="color:var(--yellow);font-size:12px;margin-top:6px">截图失败: ${escHtml(m.screenshot_error)}</div>` : ''}`;
+    const treeLink = document.getElementById('pages-detail-tree-link');
+    treeLink.href = `${BASE}/api/pages/${encodeURIComponent(dir)}/tree`;
+    treeLink.style.display = m.has_tree ? '' : 'none';
+    document.getElementById('pages-detail-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } catch (e) {
+    toast('加载详情失败: ' + e.message, 'error');
+  }
+}
+
+function pagesCloseDetail() {
+  document.getElementById('pages-detail-card').style.display = 'none';
 }
 
 document.addEventListener('keydown', (e) => {

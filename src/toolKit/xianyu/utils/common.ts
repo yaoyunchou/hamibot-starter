@@ -427,6 +427,129 @@ const findBottomCloseButton = (timeout = 2500) => {
   return btn;
 };
 
+/** SystemUI 录屏/投放权限弹框（采集：pages/获取录屏权限） */
+const MEDIA_PROJECTION_TITLE_RE = /要开始使用.*录制或投放内容/;
+
+function hasMediaProjectionCancelButton(): boolean {
+  return !!(
+    id("android:id/button3").findOnce() ||
+    className("android.widget.Button").text("取消").findOnce()
+  );
+}
+
+/** 标题 + 取消钮同时存在才算弹框已就绪（避免正文文案先出现就误点） */
+export const isMediaProjectionDialogVisible = (): boolean => {
+  try {
+    const hasTitle = !!(
+      textMatches(MEDIA_PROJECTION_TITLE_RE).findOnce() ||
+      textContains("要开始使用").findOnce()
+    );
+    if (!hasTitle) return false;
+    return hasMediaProjectionCancelButton();
+  } catch {
+    return false;
+  }
+};
+
+/** 弹框连续可见若干次后再点，避免动画半程 / 树未刷完 */
+function isMediaProjectionDialogStable(stableChecks = 3, intervalMs = 350): boolean {
+  for (let i = 0; i < stableChecks; i++) {
+    if (!isMediaProjectionDialogVisible()) return false;
+    if (i < stableChecks - 1) sleep(intervalMs);
+  }
+  return true;
+}
+
+/** 点击录屏权限弹框右侧确认钮（与「取消」水平对齐；确认钮常不在 a11y 树中） */
+export const tryConfirmMediaProjectionDialog = (): boolean => {
+  if (!isMediaProjectionDialogStable(2, 300)) return false;
+
+  try {
+    const btn1 = id("android:id/button1").findOne(400);
+    if (btn1) {
+      const label = (btn1.text() || "").trim();
+      if (label && label !== "取消") {
+        Record.log(`mediaProjection: 点击 button1「${label}」`);
+        return !!tryClickNode(btn1);
+      }
+    }
+  } catch {
+    /* skip */
+  }
+
+  try {
+    const byText = textMatches(/^(立即开始|开始|允许|确定)$/).findOne(400);
+    if (byText) {
+      Record.log(`mediaProjection: 点击文案「${byText.text()}」`);
+      return !!tryClickNode(byText);
+    }
+  } catch {
+    /* skip */
+  }
+
+  try {
+    const cancel =
+      id("android:id/button3").findOne(500) ||
+      className("android.widget.Button").text("取消").findOne(500);
+    if (!cancel) {
+      Record.log("mediaProjection: 取消钮未就绪，跳过坐标点击");
+      return false;
+    }
+
+    const cancelBounds = cancel.bounds();
+    const panel =
+      id("com.android.systemui:id/buttonPanel").findOne(300) || cancel.parent();
+    if (!panel) return false;
+
+    const panelBounds = panel.bounds();
+    const confirmX = panelBounds.right - (cancelBounds.centerX() - panelBounds.left);
+    const confirmY = cancelBounds.centerY();
+    Record.log(`mediaProjection: 坐标确认 (${confirmX}, ${confirmY})`);
+    click(confirmX, confirmY);
+    return true;
+  } catch (e) {
+    Record.error(`mediaProjection: 确认失败 ${(e as any)?.message || e}`);
+    return false;
+  }
+};
+
+/**
+ * 在 requestScreenCapture 阻塞期间轮询并自动点确认（部分机型需连点两次）。
+ * 须在主线程调用 requestScreenCapture 之前启动。
+ */
+export const startMediaProjectionAutoConfirm = (durationMs = 35000) => {
+  threads.start(function () {
+    Record.log(`mediaProjection: 自动确认线程启动 ${durationMs}ms`);
+    // 等主线程走到 requestScreenCapture、系统弹框完成入场动画
+    sleep(1500);
+
+    const endAt = Date.now() + durationMs;
+    let confirmCount = 0;
+    const MAX_CONFIRMS = 3;
+
+    while (Date.now() < endAt && confirmCount < MAX_CONFIRMS) {
+      if (!isMediaProjectionDialogVisible()) {
+        sleep(500);
+        continue;
+      }
+      if (!isMediaProjectionDialogStable(3, 350)) {
+        Record.log("mediaProjection: 弹框未稳定，继续等待");
+        sleep(400);
+        continue;
+      }
+
+      if (tryConfirmMediaProjectionDialog()) {
+        confirmCount++;
+        Record.log(`mediaProjection: 已点击确认 (${confirmCount}/${MAX_CONFIRMS})，等待授权生效`);
+        sleep(2000);
+      } else {
+        sleep(500);
+      }
+    }
+    Record.log("mediaProjection: 自动确认线程结束");
+  });
+};
+
 export const closeRecentsByBottomButton = () => {
   try {
     recents();

@@ -1,0 +1,15 @@
+{
+  "id": "d14496e7-c3dd-4b56-90cc-e3ca0669313e",
+  "type": "page_info",
+  "params": {},
+  "status": "completed",
+  "created_at": "2026-06-13 16:55:22",
+  "completed_at": "2026-06-13 16:55:25",
+  "result": {
+    "package": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.maincontainer.activity.MainActivity",
+    "screenWidth": 1080,
+    "screenHeight": 2400
+  },
+  "error": null
+}

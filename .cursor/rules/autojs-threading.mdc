@@ -1,0 +1,73 @@
+---
+description: Hamibot/Auto.js 线程与截图权限核心规则，修改启动逻辑、截图、悬浮窗、调试轮询时必须遵守
+globs: src/**/*.ts
+alwaysApply: true
+---
+
+# Hamibot / Auto.js 线程核心规则
+
+> 本项目使用 Auto.js **Rhino 经典引擎**（非 Node.js 引擎）。下列规则违反任意一条都会导致悬浮窗消失、日志断链、截图失败。
+
+## 1. 启动顺序（绝对不能调换）
+
+```typescript
+// ✅ 正确：子线程先跑，主线程后申请权限
+threads.start(function () {
+    // 悬浮窗 + 任务轮询 + 调试轮询
+});
+sleep(800);                      // 让子线程初始化
+requestScreenCapture(false);     // 主线程同步阻塞，等用户点「允许」
+
+// ❌ 错误：requestScreenCapture 在 threads.start 之前
+requestScreenCapture(false);     // 主线程卡死 → 子线程永远不启动 → 日志全消失
+threads.start(function () { ... });
+```
+
+## 2. `requestScreenCapture` 三条禁令
+
+- ❌ **禁止**在 `ui.post` / `ui.run` 内调用（Android UI 线程）
+- ❌ **禁止**在 `threads.start` 内部调用（子线程）
+- ❌ **禁止**在 `threads.start` 调用之前调用
+- ✅ **只能**在主脚本线程、`threads.start` 之后调用
+
+## 3. 悬浮窗 View 操作必须用 `ui.post`
+
+```typescript
+// ✅ 正确：异步派发到 UI 线程
+ui.post(function () { window.runLog.setText(msg); });
+
+// ❌ 错误：子线程直接操作 View（无效）
+window.runLog.setText(msg);
+
+// ❌ 危险：ui.run 在子线程内会死锁
+ui.run(function () { window.runLog.setText(msg); });
+```
+
+## 4. debug 轮询每条指令必须独立线程
+
+```typescript
+// ✅ 正确：指令在独立线程执行，不阻塞轮询
+threads.start(function () {
+    executeDebugCommand(cmd);  // page_capture 可能耗时 60-120s
+});
+
+// ❌ 错误：同步执行 → 轮询卡住 → 服务端超时 → 指令堆积
+executeDebugCommand(cmd);
+```
+
+## 5. 日志必须用 `setRunInfo`
+
+- `setRunInfo(msg)` 同时写 `runInfo.log`（缓冲）、上报 trace、刷新悬浮窗
+- 不要只用 `console.log`，否则日志不进 trace、悬浮窗不更新
+
+## 6. 修改启动逻辑前的 Checklist
+
+- [ ] `threads.start` 在 `requestScreenCapture` **之前**
+- [ ] `requestScreenCapture` 在**主线程**（不在任何 `threads.start` 或 `ui.post` 内）
+- [ ] 所有 View 操作通过 `ui.post`，没有 `ui.run`
+- [ ] `page_capture` 等耗时指令在独立 `threads.start` 内执行
+- [ ] 截图失败时仍保存布局树，不整体报错
+
+## 参考文档
+
+完整说明见 `doc/ai/autojs-hamibot-threading-guide.md`

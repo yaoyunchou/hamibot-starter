@@ -1,8 +1,9 @@
 import { coinExchange } from "./getGold";
+import { assertOnGoldCoinPage } from "./goldPageDetect";
 import { findDom } from "./exposure";
 import { startAutoComment } from "./autoComment";
 import { getGoldEntryClickFn } from "../utils/getGold";
-import { closeApp, findByA11yId } from "../utils/common";
+import { closeApp, findByA11yId, startMediaProjectionAutoConfirm } from "../utils/common";
 import { dumpActiveWindowLayout, layoutDumpConfig } from "./layoutDump";
 import { startAiLoop } from "./aiExecutor";
 import {
@@ -37,6 +38,14 @@ export const runInfo = {
 
 export const initRunInfo = (logUI:any) =>{
     runInfo.page = logUI;
+    // 悬浮窗创建后，把启动阶段已积累的日志刷到 UI 上
+    if (runInfo.log) {
+        ui.post(function () {
+            try {
+                runInfo.page.runLog.setText(runInfo.log);
+            } catch (_) {}
+        });
+    }
 }
 
 // ---------------------- 操作轨迹 -------------------------
@@ -67,8 +76,11 @@ export const setRunInfo = (log: string) => {
     runInfo.log = log;
     reportTrace(log);
     if (runInfo.page) {
-        ui.run(function () {
-            runInfo.page.runLog.setText(runInfo.log);
+        // ui.post 异步更新，避免子线程 ui.run 阻塞导致悬浮窗卡死
+        ui.post(function () {
+            try {
+                runInfo.page.runLog.setText(runInfo.log);
+            } catch (_) {}
         });
     }
 }
@@ -205,8 +217,20 @@ export const findPage = (pageName: string) => {
         // 金币页面
         case 'goldCoin':
             if (activity === PageType.goldCoin) {
-                setRunInfo('findPage: 已在金币页面，执行兑换');
-                coinExchange();
+                if (assertOnGoldCoinPage('findPage', 1200)) {
+                    coinExchange();
+                } else {
+                    setRunInfo('findPage: WebHybrid 但未识别金币地图，等待加载');
+                    sleep(2500);
+                    if (assertOnGoldCoinPage('findPage', 1500)) {
+                        coinExchange();
+                    } else {
+                        setRunInfo('findPage: 仍非金币地图，从「我的」重进');
+                        goBackMyPage();
+                        sleep(1000);
+                        findPage(pageName);
+                    }
+                }
             } else if (activity === PageType.home) {
                 const goldButtons = isOnMyPage();
                 if (goldButtons.success) {
@@ -420,13 +444,37 @@ export const startTaskPoller = () => {
 
 // ─────────────────────────── 远程调试执行器 ───────────────────────────
 
+const _logCapture = (msg: string) => {
+    const line = `[capture] ${msg}`;
+    console.log(line);
+    setRunInfo(line);
+    try {
+        createLogs('trace', {
+            time: new Date().toLocaleTimeString('zh-CN'),
+            action: line,
+        });
+    } catch (_) {}
+};
+
+/** 截图权限：granted / denied / unknown */
+let _screenCaptureState = 'unknown';
+
 const _runDebugScreenshot = (params: any): any => {
+    _logCapture(`screenshot: begin state=${_screenCaptureState}`);
     sleep(300);
-    const img = captureScreen();
+    let img: any = null;
+    try {
+        img = captureScreen();
+    } catch (e) {
+        _logCapture(`screenshot: captureScreen error ${e}`);
+        throw new Error(`captureScreen 失败: ${e}`);
+    }
     if (!img) throw new Error('captureScreen 返回 null');
+    _screenCaptureState = 'granted';
     const quality = params.quality || 60;
     const base64 = (images as any).toBase64(img, 'jpg', quality);
     if (typeof (img as any).recycle === 'function') (img as any).recycle();
+    _logCapture(`screenshot: ok bytes=${base64 ? base64.length : 0}`);
     return {
         format: 'jpg',
         quality,
@@ -547,6 +595,32 @@ const _runDebugLayout = (params: any): any => {
     return dumpActiveWindowLayout(override);
 };
 
+const _runDebugPageCapture = (params: any): any => {
+    _logCapture('page_capture: 开始');
+    const depth = Number(params?.maxDepth) || layoutDumpConfig.maxDepth || 30;
+    _logCapture(`page_capture: dump layout depth=${depth}`);
+    const layout = dumpActiveWindowLayout({ maxDepth: depth });
+    _logCapture(`page_capture: layout ok package=${layout.package}`);
+    let screenshotBase64: string | null = null;
+    let screenshotError: string | null = null;
+    try {
+        const screenshot = _runDebugScreenshot({ quality: params?.quality ?? 70 });
+        screenshotBase64 = screenshot?.base64 ?? null;
+    } catch (e) {
+        screenshotError = String(e);
+        _logCapture(`page_capture: 截图失败 ${screenshotError}`);
+    }
+    _logCapture(`page_capture: 完成 tree=${!!layout.tree} screenshot=${!!screenshotBase64}`);
+    return {
+        package: layout.package,
+        activity: layout.activity,
+        tree: layout.tree,
+        screenshot_base64: screenshotBase64,
+        screenshot_error: screenshotError,
+        max_depth: depth,
+    };
+};
+
 const executeDebugCommand = (cmd: any) => {
     claimDebugCommand(cmd.id);
     try {
@@ -557,13 +631,16 @@ const executeDebugCommand = (cmd: any) => {
             case 'element':     result = _runDebugElement(cmd.params); break;
             case 'script':      result = _runDebugScript(cmd.params); break;
             case 'layout':      result = _runDebugLayout(cmd.params); break;
+            case 'page_capture': result = _runDebugPageCapture(cmd.params); break;
             default:
                 reportDebugResult(cmd.id, false, null, `不支持的指令类型: ${cmd.type}`);
                 return;
         }
         reportDebugResult(cmd.id, true, result);
     } catch (e) {
-        reportDebugResult(cmd.id, false, null, String(e));
+        const err = String(e);
+        _logCapture(`debug [${cmd.type}] 失败: ${err}`);
+        reportDebugResult(cmd.id, false, null, err);
     }
 };
 
@@ -580,12 +657,18 @@ export const startDebugPoller = () => {
                 if (result && result.data && result.data.length > 0) {
                     for (let i = 0; i < result.data.length; i++) {
                         const cmd = result.data[i];
-                        setRunInfo(`debugPoller: 执行调试指令 [${cmd.type}]`);
-                        executeDebugCommand(cmd);
+                        setRunInfo(`debugPoller: 收到指令 [${cmd.type}] id=${(cmd.id || '').slice(0, 8)}`);
+                        // 独立线程执行，避免大树 dump 阻塞轮询导致服务端超时
+                        threads.start(function () {
+                            setRunInfo(`debugPoller: 执行 [${cmd.type}] id=${(cmd.id || '').slice(0, 8)}`);
+                            executeDebugCommand(cmd);
+                        });
                     }
                 }
             } catch (e) {
-                // 调试轮询失败不影响主流程，静默跳过
+                const msg = `debugPoller 异常: ${e}`;
+                console.error(msg);
+                setRunInfo(msg);
             }
             sleep(3000);
         }
@@ -599,7 +682,7 @@ export const xyBaseRunWithLog = () => {
     sleep(1000);
     launchApp("闲鱼");
 
-    // 先启动子线程（悬浮窗 + 任务轮询），不等截图权限
+    // ① 先启动子线程（悬浮窗 + 轮询），保证 log 立刻可见——与改 page_capture 之前一致
     threads.start(function () {
         try {
             setRunInfo('子线程启动，开始初始化...');
@@ -613,9 +696,7 @@ export const xyBaseRunWithLog = () => {
             window.setPosition(window.getX(), window.getY());
             initRunInfo(window);
 
-            // 启动任务轮询，等待控制面板下发任务
             startTaskPoller();
-            // 启动调试指令轮询（独立线程，3 秒间隔）
             startDebugPoller();
         } catch (e) {
             const msg = 'xyBaseRunWithLog 子线程异常: ' + e;
@@ -625,19 +706,25 @@ export const xyBaseRunWithLog = () => {
         }
     });
 
-    // 截图/投屏权限：系统常显示为「录制屏幕」类弹窗。默认不申请，避免无需要的打扰。
-    // 需要 AI 带图决策或控制台「调试 → 截图」时，在 Hamibot 配置里增加 _REQUEST_SCREEN_CAPTURE = true
-    const wantCapture = (hamibot.env as any)._REQUEST_SCREEN_CAPTURE === true
-        || String((hamibot.env as any)._REQUEST_SCREEN_CAPTURE || '').toLowerCase() === 'true';
-    if (wantCapture) {
-        setRunInfo('主线程: 正在申请截图权限，请点击允许...');
-        try {
-            requestScreenCapture(false);
-            setRunInfo('截图权限已获取');
-        } catch (e) {
-            setRunInfo(`截图权限申请失败: ${e}，截图类调试将不可用`);
+    // ② 主线程稍后申请截图权限（不阻塞悬浮窗创建；与原先 _REQUEST_SCREEN_CAPTURE 时机相同）
+    sleep(800);
+    setRunInfo('主线程: 正在申请截图权限，等待系统弹框…');
+    startMediaProjectionAutoConfirm(35000);
+    sleep(300);
+    try {
+        if (requestScreenCapture(false)) {
+            _screenCaptureState = 'granted';
+            sleep(800);
+            setRunInfo('主线程: 截图权限已获取');
+            _logCapture('startup: requestScreenCapture ok');
+        } else {
+            _screenCaptureState = 'denied';
+            setRunInfo('主线程: 截图权限被拒绝，采集将只有布局树');
+            _logCapture('startup: requestScreenCapture false');
         }
-    } else {
-        setRunInfo('主线程: 已跳过截图权限申请（未设置 _REQUEST_SCREEN_CAPTURE）');
+    } catch (e) {
+        _screenCaptureState = 'denied';
+        setRunInfo(`主线程: 截图权限失败: ${e}`);
+        _logCapture(`startup: requestScreenCapture error ${e}`);
     }
-}
+};

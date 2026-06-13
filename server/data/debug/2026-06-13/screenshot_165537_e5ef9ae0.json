@@ -1,0 +1,12 @@
+{
+  "id": "e5ef9ae0-bbb1-46c2-a60b-3fb158d1f642",
+  "type": "screenshot",
+  "params": {
+    "quality": 60
+  },
+  "status": "error",
+  "created_at": "2026-06-13 16:55:36",
+  "completed_at": "2026-06-13 16:55:37",
+  "result": null,
+  "error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission"
+}

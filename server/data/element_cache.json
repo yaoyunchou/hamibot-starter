@@ -14,7 +14,7 @@
       "indices": [
         8
       ],
-      "errorTime": 33
+      "errorTime": 2
     }
   },
   {
@@ -23,7 +23,7 @@
       "indices": [
         2
       ],
-      "errorTime": 3
+      "errorTime": -1
     }
   },
   {
@@ -32,7 +32,7 @@
       "indices": [
         2
       ],
-      "errorTime": 2
+      "errorTime": 3
     }
   },
   {
@@ -42,7 +42,7 @@
         2,
         5
       ],
-      "errorTime": -19
+      "errorTime": 8
     }
   },
   {
@@ -51,17 +51,18 @@
       "indices": [
         2
       ],
-      "errorTime": 1
+      "errorTime": 0
     }
   },
   {
     "key": "scrollPage_滑动浏览",
     "value": {
       "indices": [
+        8,
         2,
         6
       ],
-      "errorTime": 0
+      "errorTime": 2
     }
   },
   {
@@ -124,7 +125,7 @@
       "indices": [
         2
       ],
-      "errorTime": 10
+      "errorTime": 20
     }
   },
   {
@@ -133,7 +134,7 @@
       "indices": [
         2
       ],
-      "errorTime": -26
+      "errorTime": -32
     }
   },
   {
