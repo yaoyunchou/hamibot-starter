@@ -2,7 +2,6 @@ node_modules
 build
 .VSCodeCounter
 regex.md
-server/venv
 server/.env
 index.dts
 *.code-workspace
@@ -10,10 +9,11 @@ dist
 dist/*
 
 # Python 本地服务器
-server/.env
 server/__pycache__/
 server/**/__pycache__/
 server/*.pyc
+# 虚拟环境（勿提交）
+server/venv/
 server/.venv/
 # 运行时日志（不提交）；device 采集/trace 数据需入库
 logs/*
