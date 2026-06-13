@@ -1,0 +1,13 @@
+{
+  "page_path": "金币页面-色子有点数的情况",
+  "dir": "金币页面-色子有点数的情况",
+  "activity": "android.widget.RelativeLayout",
+  "package": "com.hamibot.hamibot",
+  "fingerprint": "5431fa7ea3b34f2d69d8bb15fbac8efff873f079da53364fe29d5b111112479f",
+  "max_depth": 30,
+  "node_count": 17,
+  "captured_at": "2026-06-13 16:20:07",
+  "source": "dashboard_capture",
+  "has_screenshot": false,
+  "screenshot_error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission"
+}

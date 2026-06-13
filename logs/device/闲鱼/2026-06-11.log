@@ -1,0 +1,50 @@
+[2026-06-11 18:51:32] [hamibot] [ERROR]:[ERROR] [createLogs]: createLogs error { [JavaException: java.net.ConnectException: Failed to connect to /10.10.30.129:3000]
+  fileName: 'file:///android_asset/modules/__http__.js',
+  lineNumber: 49 }
+[2026-06-11 18:51:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"6723493b364a634dae6c9099","TIMESTAMP":"2026-06-11 18:50:36"}
+[2026-06-11 18:51:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-06-11 18:51:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-06-11 18:51:33] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 18 条 (第1次)
+[2026-06-11 18:51:33] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-06-11 18:51:33] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size: 2400 x 1080
+[2026-06-11 18:51:33] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-06-11 18:51:33] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-06-11 18:51:33] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-06-11 18:51:38] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a0b9; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-11 18:51:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a0b9; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-11 18:51:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-11 18:51:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-11 18:51:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-11 18:51:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-11 18:51:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: false
+[2026-06-11 18:51:46] [hamibot] [WARN]:[WARN] [closeApp]: 关闭应用未确认成功: com.taobao.idlefish
+[2026-06-11 18:51:48] [hamibot] [INFO]:[INFO] [Outer]: 开始查找商品详情
+[2026-06-11 18:51:50] [hamibot] [INFO]:[INFO] [Outer]: 找到商品数量: 0
+[2026-06-11 18:51:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[288]: {"code":0,"data":[{"id":"8bea71f3-34a3-420e-8c8c-6fb5e67db2a1","type":"goldCoin","status":"pending",
+[2026-06-11 18:52:33] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-06-11 18:52:33] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-06-11 18:52:33] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-06-11 18:52:38] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a0b9; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.8 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-11 18:52:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a0b9; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.8 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-11 18:52:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-11 18:52:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-11 18:52:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-11 18:52:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-11 18:52:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-11 18:52:39] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-06-11 19:03:15] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-06-11 19:03:15] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-06-11 19:03:15] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-06-11 19:03:34] [hamibot] [WARN]:[WARN] [closeApp]: 关闭应用未确认成功: com.taobao.idlefish

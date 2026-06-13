@@ -1,0 +1,13 @@
+{
+  "page_path": "金币页面-摇色子-继续寻宝",
+  "dir": "金币页面-摇色子-继续寻宝",
+  "activity": "com.taobao.idlefish.webview.WebHybridActivity",
+  "package": "com.taobao.idlefish",
+  "fingerprint": "157294d8ce1721f7a01894fc4a59f71cae819fe7ca63220b18abf7da08e182d2",
+  "max_depth": 30,
+  "node_count": 576,
+  "captured_at": "2026-06-13 16:43:22",
+  "source": "dashboard_capture",
+  "has_screenshot": false,
+  "screenshot_error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission"
+}

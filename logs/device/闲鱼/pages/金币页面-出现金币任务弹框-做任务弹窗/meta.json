@@ -1,0 +1,13 @@
+{
+  "page_path": "金币页面-出现金币任务弹框-做任务弹窗",
+  "dir": "金币页面-出现金币任务弹框-做任务弹窗",
+  "activity": "com.taobao.idlefish.webview.WebHybridActivity",
+  "package": "com.taobao.idlefish",
+  "fingerprint": "0f719c63f86ecc23439de18261a553cccc31a2a4c635c41bbc57c0c7b3df1f61",
+  "max_depth": 30,
+  "node_count": 530,
+  "captured_at": "2026-06-13 16:03:21",
+  "source": "dashboard_capture",
+  "has_screenshot": true,
+  "screenshot_error": null
+}

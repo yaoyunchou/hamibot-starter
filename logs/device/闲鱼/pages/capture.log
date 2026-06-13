@@ -1,0 +1,12 @@
+[2026-06-12 09:59:01] SAVE page_path=首页 dir=首页 nodes=351 screenshot=False screenshot_error=Error: 未获取截图权限，请重启脚本并在系统弹窗中点「允许」
+[2026-06-12 09:59:50] SAVE page_path=首页 dir=首页 nodes=350 screenshot=False screenshot_error=Error: 未获取截图权限，请重启脚本并在系统弹窗中点「允许」
+[2026-06-12 10:00:03] SAVE page_path=首页 dir=首页 nodes=351 screenshot=False screenshot_error=Error: 未获取截图权限，请重启脚本并在系统弹窗中点「允许」
+[2026-06-12 10:03:45] SAVE page_path=首页 dir=首页 nodes=351 screenshot=False screenshot_error=Error: 未获取截图权限，请重启脚本并在系统弹窗中点「允许」
+[2026-06-12 10:27:02] SAVE page_path=首页 dir=首页 nodes=351 screenshot=True
+[2026-06-13 16:03:21] SAVE page_path=金币页面-出现金币任务弹框-做任务弹窗 dir=金币页面-出现金币任务弹框-做任务弹窗 nodes=530 screenshot=True
+[2026-06-13 16:14:38] SAVE page_path=金币页面-色子有点数的情况 dir=金币页面-色子有点数的情况 nodes=546 screenshot=True
+[2026-06-13 16:20:07] SAVE page_path=金币页面-色子有点数的情况 dir=金币页面-色子有点数的情况 nodes=17 screenshot=False screenshot_error=Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission
+[2026-06-13 16:20:22] SAVE page_path=获取录屏权限 dir=获取录屏权限 nodes=17 screenshot=False screenshot_error=Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission
+[2026-06-13 16:32:32] SAVE page_path=金币页面-摇色子-活动弹框 dir=金币页面-摇色子-活动弹框 nodes=578 screenshot=True
+[2026-06-13 16:43:02] SAVE page_path=金币页面-摇色子-继续寻宝 dir=金币页面-摇色子-继续寻宝 nodes=576 screenshot=False screenshot_error=Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission
+[2026-06-13 16:43:22] SAVE page_path=金币页面-摇色子-继续寻宝 dir=金币页面-摇色子-继续寻宝 nodes=576 screenshot=False screenshot_error=Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission

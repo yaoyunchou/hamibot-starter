@@ -1,0 +1,13 @@
+{
+  "page_path": "首页",
+  "dir": "首页",
+  "activity": "com.taobao.idlefish.maincontainer.activity.MainActivity",
+  "package": "com.taobao.idlefish",
+  "fingerprint": "809ac4b431a80bc88bdcf17d8790fbce50ac5dc31ab9da69b2c7c7670274cc02",
+  "max_depth": 30,
+  "node_count": 351,
+  "captured_at": "2026-06-12 10:27:02",
+  "source": "dashboard_capture",
+  "has_screenshot": true,
+  "screenshot_error": null
+}

@@ -1,0 +1,117 @@
+{
+  "updated_at": "2026-06-13 16:43:22",
+  "total": 9,
+  "pages": [
+    {
+      "page_path": "金币页面-摇色子-继续寻宝",
+      "dir": "金币页面-摇色子-继续寻宝",
+      "activity": "com.taobao.idlefish.webview.WebHybridActivity",
+      "package": "com.taobao.idlefish",
+      "fingerprint": "157294d8ce1721f7a01894fc4a59f71cae819fe7ca63220b18abf7da08e182d2",
+      "node_count": 576,
+      "captured_at": "2026-06-13 16:43:22",
+      "tree_file": "tree.json",
+      "screenshot_file": null,
+      "has_screenshot": false,
+      "screenshot_error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission"
+    },
+    {
+      "page_path": "金币页面-摇色子-活动弹框",
+      "dir": "金币页面-摇色子-活动弹框",
+      "activity": "com.taobao.idlefish.webview.WebHybridActivity",
+      "package": "com.taobao.idlefish",
+      "fingerprint": "5081aa8cdf402c4dbaf605c235d964bbc63c8ceffa1e2c904e9dde3deec03b03",
+      "node_count": 578,
+      "captured_at": "2026-06-13 16:32:32",
+      "tree_file": "tree.json",
+      "screenshot_file": "screenshot.jpg",
+      "has_screenshot": true,
+      "screenshot_error": null
+    },
+    {
+      "page_path": "获取录屏权限",
+      "dir": "获取录屏权限",
+      "activity": "android.widget.RelativeLayout",
+      "package": "com.hamibot.hamibot",
+      "fingerprint": "5431fa7ea3b34f2d69d8bb15fbac8efff873f079da53364fe29d5b111112479f",
+      "node_count": 17,
+      "captured_at": "2026-06-13 16:20:22",
+      "tree_file": "tree.json",
+      "screenshot_file": null,
+      "has_screenshot": false,
+      "screenshot_error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission"
+    },
+    {
+      "page_path": "金币页面-色子有点数的情况",
+      "dir": "金币页面-色子有点数的情况",
+      "activity": "android.widget.RelativeLayout",
+      "package": "com.hamibot.hamibot",
+      "fingerprint": "5431fa7ea3b34f2d69d8bb15fbac8efff873f079da53364fe29d5b111112479f",
+      "node_count": 17,
+      "captured_at": "2026-06-13 16:20:07",
+      "tree_file": "tree.json",
+      "screenshot_file": null,
+      "has_screenshot": false,
+      "screenshot_error": "Error: captureScreen 失败: JavaException: java.lang.SecurityException: No screen capture permission"
+    },
+    {
+      "page_path": "金币页面-出现金币任务弹框-做任务弹窗",
+      "dir": "金币页面-出现金币任务弹框-做任务弹窗",
+      "activity": "com.taobao.idlefish.webview.WebHybridActivity",
+      "package": "com.taobao.idlefish",
+      "fingerprint": "0f719c63f86ecc23439de18261a553cccc31a2a4c635c41bbc57c0c7b3df1f61",
+      "node_count": 530,
+      "captured_at": "2026-06-13 16:03:21",
+      "tree_file": "tree.json",
+      "screenshot_file": "screenshot.jpg",
+      "has_screenshot": true,
+      "screenshot_error": null
+    },
+    {
+      "page_path": "首页",
+      "dir": "首页",
+      "activity": "com.taobao.idlefish.maincontainer.activity.MainActivity",
+      "package": "com.taobao.idlefish",
+      "fingerprint": "809ac4b431a80bc88bdcf17d8790fbce50ac5dc31ab9da69b2c7c7670274cc02",
+      "node_count": 351,
+      "captured_at": "2026-06-12 10:27:02",
+      "tree_file": "tree.json",
+      "screenshot_file": "screenshot.jpg",
+      "has_screenshot": true,
+      "screenshot_error": null
+    },
+    {
+      "page_path": "金币页面-出现金币任务弹框",
+      "dir": "金币页面-出现金币任务弹框",
+      "activity": "android.view.View",
+      "package": "com.miui.home",
+      "fingerprint": "89d06c916566098d72fb0319f6d5fc50bc3905f33191bcbcb144b2caa5701269",
+      "node_count": 811,
+      "captured_at": "2026-06-12 09:32:26",
+      "tree_file": "tree.json",
+      "screenshot_file": "screenshot.jpg"
+    },
+    {
+      "page_path": "金币页面",
+      "dir": "金币页面",
+      "activity": "android.view.View",
+      "package": "com.miui.home",
+      "fingerprint": "757a24b0733170c1b8447c1c477086c01a35a4a2a1a57a19d0d6419aaa573bf2",
+      "node_count": 516,
+      "captured_at": "2026-06-12 09:31:48",
+      "tree_file": "tree.json",
+      "screenshot_file": "screenshot.jpg"
+    },
+    {
+      "page_path": "我的",
+      "dir": "我的",
+      "activity": "android.view.View",
+      "package": "com.miui.home",
+      "fingerprint": "ef3a2879b56d064e1be1d0b518ea9663ad94d8c1f317d21aea4cdd7faa54cd93",
+      "node_count": 280,
+      "captured_at": "2026-06-12 09:31:02",
+      "tree_file": "tree.json",
+      "screenshot_file": "screenshot.jpg"
+    }
+  ]
+}

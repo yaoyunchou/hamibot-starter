@@ -1,0 +1,11 @@
+{
+  "page_path": "我的",
+  "dir": "我的",
+  "activity": "android.view.View",
+  "package": "com.miui.home",
+  "fingerprint": "ef3a2879b56d064e1be1d0b518ea9663ad94d8c1f317d21aea4cdd7faa54cd93",
+  "max_depth": 30,
+  "node_count": 280,
+  "captured_at": "2026-06-12 09:31:02",
+  "source": "dashboard_capture"
+}

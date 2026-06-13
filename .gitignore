@@ -15,7 +15,9 @@ server/__pycache__/
 server/**/__pycache__/
 server/*.pyc
 server/.venv/
-# 运行时日志（不提交）
-logs/
+# 运行时日志（不提交）；device 采集/trace 数据需入库
+logs/*
+!logs/device/
+!logs/device/**
 server/data/server*.log
 server/data/device_logs/

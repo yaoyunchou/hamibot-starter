@@ -1,0 +1,1589 @@
+[2026-06-11 18:51:48] [hamibot] {'time': '6:51:48 下午 GMT+08:00', 'action': '主线程: 已跳过截图权限申请（未设置 _REQUEST_SCREEN_CAPTURE）'}
+[2026-06-11 18:51:48] [hamibot] {'time': '6:51:48 下午 GMT+08:00', 'action': '子线程启动，开始初始化...'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:50 下午 GMT+08:00', 'action': 'findDom 完成，创建悬浮窗...'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'taskPoller: 任务轮询已启动'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'debugPoller: 调试轮询已启动'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'debugPoller: 执行调试指令 [layout]'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'taskPoller: 收到任务 [goldCoin]'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': '任务开始: goldCoin'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'debugPoller: 执行调试指令 [layout]'}
+[2026-06-11 18:51:50] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:51] [hamibot] {'time': '6:51:51 下午 GMT+08:00', 'action': 'debugPoller: 执行调试指令 [layout]'}
+[2026-06-11 18:51:51] [hamibot] {'time': '6:51:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+前台，重新启动'}
+[2026-06-11 18:51:53] [hamibot] {'time': '6:51:53 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:54] [hamibot] {'time': '6:51:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+前台，重新启动'}
+[2026-06-11 18:51:55] [hamibot] {'time': '6:51:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:51:55] [hamibot] {'time': '6:51:55 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:56] [hamibot] {'time': '6:51:56 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:56] [hamibot] {'time': '6:51:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:51:57] [hamibot] {'time': '6:51:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:51:57] [hamibot] {'time': '6:51:57 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:58] [hamibot] {'time': '6:51:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:51:58] [hamibot] {'time': '6:51:58 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:59] [hamibot] {'time': '6:51:59 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:51:59] [hamibot] {'time': '6:51:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:00] [hamibot] {'time': '6:52:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:00] [hamibot] {'time': '6:52:00 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:52:01] [hamibot] {'time': '6:52:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:01] [hamibot] {'time': '6:52:01 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:52:02] [hamibot] {'time': '6:52:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:02] [hamibot] {'time': '6:52:02 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:52:03] [hamibot] {'time': '6:52:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:05] [hamibot] {'time': '6:52:05 下午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-11 18:52:05] [hamibot] {'time': '6:52:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:06] [hamibot] {'time': '6:52:06 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:08] [hamibot] {'time': '6:52:08 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 18:52:08] [hamibot] {'time': '6:52:08 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 18:52:09] [hamibot] {'time': '6:52:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第2次)'}
+[2026-06-11 18:52:11] [hamibot] {'time': '6:52:11 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:13] [hamibot] {'time': '6:52:13 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 18:52:13] [hamibot] {'time': '6:52:13 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 18:52:14] [hamibot] {'time': '6:52:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第3次)'}
+[2026-06-11 18:52:16] [hamibot] {'time': '6:52:16 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:18] [hamibot] {'time': '6:52:18 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 18:52:18] [hamibot] {'time': '6:52:18 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 18:52:19] [hamibot] {'time': '6:52:19 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第4次)'}
+[2026-06-11 18:52:20] [hamibot] {'time': '6:52:21 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:22] [hamibot] {'time': '6:52:23 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 18:52:22] [hamibot] {'time': '6:52:23 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 18:52:23] [hamibot] {'time': '6:52:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第5次)'}
+[2026-06-11 18:52:25] [hamibot] {'time': '6:52:25 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:27] [hamibot] {'time': '6:52:28 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 18:52:27] [hamibot] {'time': '6:52:28 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 18:52:28] [hamibot] {'time': '6:52:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第6次)'}
+[2026-06-11 18:52:30] [hamibot] {'time': '6:52:30 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:32] [hamibot] {'time': '6:52:32 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 18:52:32] [hamibot] {'time': '6:52:32 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 18:52:33] [hamibot] {'time': '6:52:33 下午 GMT+08:00', 'action': 'goBackMyPage: 超过最大重试次数，重启闲鱼'}
+[2026-06-11 18:52:41] [hamibot] {'time': '6:52:41 下午 GMT+08:00', 'action': 'findPage: home'}
+[2026-06-11 18:52:41] [hamibot] {'time': '6:52:41 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 18:52:42] [hamibot] {'time': '6:52:42 下午 GMT+08:00', 'action': 'findPage: home'}
+[2026-06-11 18:52:44] [hamibot] {'time': '6:52:44 下午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-11 18:52:44] [hamibot] {'time': '6:52:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:45] [hamibot] {'time': '6:52:45 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 18:52:47] [hamibot] {'time': '6:52:47 下午 GMT+08:00', 'action': 'navigateToMyTab: 已在我的页面'}
+[2026-06-11 18:52:47] [hamibot] {'time': '6:52:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:47] [hamibot] {'time': '6:52:47 下午 GMT+08:00', 'action': 'findPage: home'}
+[2026-06-11 18:52:47] [hamibot] {'time': '6:52:47 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:47] [hamibot] {'time': '6:52:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:47] [hamibot] {'time': '6:52:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:48] [hamibot] {'time': '6:52:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:48] [hamibot] {'time': '6:52:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:48] [hamibot] {'time': '6:52:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:49] [hamibot] {'time': '6:52:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:49] [hamibot] {'time': '6:52:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:49] [hamibot] {'time': '6:52:49 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:50] [hamibot] {'time': '6:52:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:50] [hamibot] {'time': '6:52:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:50] [hamibot] {'time': '6:52:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:51] [hamibot] {'time': '6:52:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:51] [hamibot] {'time': '6:52:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:51] [hamibot] {'time': '6:52:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:52] [hamibot] {'time': '6:52:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:52] [hamibot] {'time': '6:52:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:52] [hamibot] {'time': '6:52:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:53] [hamibot] {'time': '6:52:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:53] [hamibot] {'time': '6:52:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:53] [hamibot] {'time': '6:52:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:54] [hamibot] {'time': '6:52:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:54] [hamibot] {'time': '6:52:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:54] [hamibot] {'time': '6:52:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:55] [hamibot] {'time': '6:52:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:55] [hamibot] {'time': '6:52:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:55] [hamibot] {'time': '6:52:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:56] [hamibot] {'time': '6:52:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:56] [hamibot] {'time': '6:52:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:56] [hamibot] {'time': '6:52:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:57] [hamibot] {'time': '6:52:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:57] [hamibot] {'time': '6:52:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:57] [hamibot] {'time': '6:52:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:52:58] [hamibot] {'time': '6:52:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:52:59] [hamibot] {'time': '6:52:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:52:59] [hamibot] {'time': '6:52:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:00] [hamibot] {'time': '6:53:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:00] [hamibot] {'time': '6:53:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:00] [hamibot] {'time': '6:53:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:01] [hamibot] {'time': '6:53:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:01] [hamibot] {'time': '6:53:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:01] [hamibot] {'time': '6:53:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:02] [hamibot] {'time': '6:53:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:02] [hamibot] {'time': '6:53:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:02] [hamibot] {'time': '6:53:02 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:03] [hamibot] {'time': '6:53:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:03] [hamibot] {'time': '6:53:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:03] [hamibot] {'time': '6:53:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:04] [hamibot] {'time': '6:53:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:04] [hamibot] {'time': '6:53:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:04] [hamibot] {'time': '6:53:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:05] [hamibot] {'time': '6:53:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:05] [hamibot] {'time': '6:53:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:05] [hamibot] {'time': '6:53:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:06] [hamibot] {'time': '6:53:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:06] [hamibot] {'time': '6:53:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:06] [hamibot] {'time': '6:53:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:07] [hamibot] {'time': '6:53:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:07] [hamibot] {'time': '6:53:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:07] [hamibot] {'time': '6:53:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:08] [hamibot] {'time': '6:53:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:08] [hamibot] {'time': '6:53:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:08] [hamibot] {'time': '6:53:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:09] [hamibot] {'time': '6:53:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:09] [hamibot] {'time': '6:53:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:10] [hamibot] {'time': '6:53:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:11] [hamibot] {'time': '6:53:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:11] [hamibot] {'time': '6:53:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:11] [hamibot] {'time': '6:53:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:12] [hamibot] {'time': '6:53:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:12] [hamibot] {'time': '6:53:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:12] [hamibot] {'time': '6:53:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:13] [hamibot] {'time': '6:53:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:13] [hamibot] {'time': '6:53:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:13] [hamibot] {'time': '6:53:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:14] [hamibot] {'time': '6:53:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:14] [hamibot] {'time': '6:53:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:14] [hamibot] {'time': '6:53:14 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:15] [hamibot] {'time': '6:53:15 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:15] [hamibot] {'time': '6:53:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:15] [hamibot] {'time': '6:53:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:16] [hamibot] {'time': '6:53:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:16] [hamibot] {'time': '6:53:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:16] [hamibot] {'time': '6:53:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:17] [hamibot] {'time': '6:53:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:17] [hamibot] {'time': '6:53:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:17] [hamibot] {'time': '6:53:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:18] [hamibot] {'time': '6:53:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:19] [hamibot] {'time': '6:53:19 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:19] [hamibot] {'time': '6:53:19 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:20] [hamibot] {'time': '6:53:20 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:20] [hamibot] {'time': '6:53:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:20] [hamibot] {'time': '6:53:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:21] [hamibot] {'time': '6:53:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:21] [hamibot] {'time': '6:53:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:21] [hamibot] {'time': '6:53:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:22] [hamibot] {'time': '6:53:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:22] [hamibot] {'time': '6:53:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:22] [hamibot] {'time': '6:53:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:23] [hamibot] {'time': '6:53:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:23] [hamibot] {'time': '6:53:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:23] [hamibot] {'time': '6:53:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:24] [hamibot] {'time': '6:53:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:24] [hamibot] {'time': '6:53:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:24] [hamibot] {'time': '6:53:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:25] [hamibot] {'time': '6:53:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:26] [hamibot] {'time': '6:53:26 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:26] [hamibot] {'time': '6:53:26 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:27] [hamibot] {'time': '6:53:27 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:27] [hamibot] {'time': '6:53:27 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:27] [hamibot] {'time': '6:53:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:28] [hamibot] {'time': '6:53:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:28] [hamibot] {'time': '6:53:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:28] [hamibot] {'time': '6:53:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:29] [hamibot] {'time': '6:53:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:30] [hamibot] {'time': '6:53:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:30] [hamibot] {'time': '6:53:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:31] [hamibot] {'time': '6:53:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:31] [hamibot] {'time': '6:53:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:31] [hamibot] {'time': '6:53:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:32] [hamibot] {'time': '6:53:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:32] [hamibot] {'time': '6:53:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:32] [hamibot] {'time': '6:53:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:33] [hamibot] {'time': '6:53:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:33] [hamibot] {'time': '6:53:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:33] [hamibot] {'time': '6:53:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:34] [hamibot] {'time': '6:53:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:34] [hamibot] {'time': '6:53:34 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:34] [hamibot] {'time': '6:53:34 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:35] [hamibot] {'time': '6:53:35 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:35] [hamibot] {'time': '6:53:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:35] [hamibot] {'time': '6:53:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:36] [hamibot] {'time': '6:53:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:36] [hamibot] {'time': '6:53:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:36] [hamibot] {'time': '6:53:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:37] [hamibot] {'time': '6:53:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:38] [hamibot] {'time': '6:53:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:38] [hamibot] {'time': '6:53:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:39] [hamibot] {'time': '6:53:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:39] [hamibot] {'time': '6:53:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:39] [hamibot] {'time': '6:53:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:40] [hamibot] {'time': '6:53:40 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:40] [hamibot] {'time': '6:53:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:40] [hamibot] {'time': '6:53:40 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:41] [hamibot] {'time': '6:53:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:41] [hamibot] {'time': '6:53:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:41] [hamibot] {'time': '6:53:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:42] [hamibot] {'time': '6:53:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:42] [hamibot] {'time': '6:53:42 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:42] [hamibot] {'time': '6:53:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:43] [hamibot] {'time': '6:53:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:44] [hamibot] {'time': '6:53:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:44] [hamibot] {'time': '6:53:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:45] [hamibot] {'time': '6:53:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:45] [hamibot] {'time': '6:53:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:45] [hamibot] {'time': '6:53:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:46] [hamibot] {'time': '6:53:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:46] [hamibot] {'time': '6:53:46 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:46] [hamibot] {'time': '6:53:46 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:47] [hamibot] {'time': '6:53:47 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:47] [hamibot] {'time': '6:53:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:47] [hamibot] {'time': '6:53:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:48] [hamibot] {'time': '6:53:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:48] [hamibot] {'time': '6:53:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:48] [hamibot] {'time': '6:53:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:49] [hamibot] {'time': '6:53:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:49] [hamibot] {'time': '6:53:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:50] [hamibot] {'time': '6:53:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:51] [hamibot] {'time': '6:53:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:51] [hamibot] {'time': '6:53:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:51] [hamibot] {'time': '6:53:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:52] [hamibot] {'time': '6:53:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:52] [hamibot] {'time': '6:53:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:52] [hamibot] {'time': '6:53:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:53] [hamibot] {'time': '6:53:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:53] [hamibot] {'time': '6:53:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:53] [hamibot] {'time': '6:53:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:54] [hamibot] {'time': '6:53:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:54] [hamibot] {'time': '6:53:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:54] [hamibot] {'time': '6:53:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:55] [hamibot] {'time': '6:53:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:55] [hamibot] {'time': '6:53:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:55] [hamibot] {'time': '6:53:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:56] [hamibot] {'time': '6:53:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:56] [hamibot] {'time': '6:53:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:56] [hamibot] {'time': '6:53:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:57] [hamibot] {'time': '6:53:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:58] [hamibot] {'time': '6:53:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:53:58] [hamibot] {'time': '6:53:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:53:59] [hamibot] {'time': '6:53:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:53:59] [hamibot] {'time': '6:53:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:00] [hamibot] {'time': '6:54:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:00] [hamibot] {'time': '6:54:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:00] [hamibot] {'time': '6:54:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:01] [hamibot] {'time': '6:54:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:01] [hamibot] {'time': '6:54:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:01] [hamibot] {'time': '6:54:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:02] [hamibot] {'time': '6:54:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:02] [hamibot] {'time': '6:54:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:03] [hamibot] {'time': '6:54:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:04] [hamibot] {'time': '6:54:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:04] [hamibot] {'time': '6:54:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:04] [hamibot] {'time': '6:54:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:05] [hamibot] {'time': '6:54:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:05] [hamibot] {'time': '6:54:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:05] [hamibot] {'time': '6:54:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:06] [hamibot] {'time': '6:54:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:06] [hamibot] {'time': '6:54:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:54:07] [hamibot] {'time': '6:54:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:07] [hamibot] {'time': '6:54:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:07] [hamibot] {'time': '6:54:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:08] [hamibot] {'time': '6:54:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:08] [hamibot] {'time': '6:54:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:08] [hamibot] {'time': '6:54:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:09] [hamibot] {'time': '6:54:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:10] [hamibot] {'time': '6:54:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:10] [hamibot] {'time': '6:54:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:11] [hamibot] {'time': '6:54:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:11] [hamibot] {'time': '6:54:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:11] [hamibot] {'time': '6:54:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:12] [hamibot] {'time': '6:54:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:12] [hamibot] {'time': '6:54:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:12] [hamibot] {'time': '6:54:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:13] [hamibot] {'time': '6:54:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:13] [hamibot] {'time': '6:54:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:13] [hamibot] {'time': '6:54:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:14] [hamibot] {'time': '6:54:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:14] [hamibot] {'time': '6:54:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:15] [hamibot] {'time': '6:54:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:16] [hamibot] {'time': '6:54:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:16] [hamibot] {'time': '6:54:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:16] [hamibot] {'time': '6:54:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:17] [hamibot] {'time': '6:54:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:17] [hamibot] {'time': '6:54:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:17] [hamibot] {'time': '6:54:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:18] [hamibot] {'time': '6:54:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:18] [hamibot] {'time': '6:54:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:18] [hamibot] {'time': '6:54:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:19] [hamibot] {'time': '6:54:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:19] [hamibot] {'time': '6:54:19 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:19] [hamibot] {'time': '6:54:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:20] [hamibot] {'time': '6:54:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:20] [hamibot] {'time': '6:54:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:20] [hamibot] {'time': '6:54:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:21] [hamibot] {'time': '6:54:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:22] [hamibot] {'time': '6:54:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:22] [hamibot] {'time': '6:54:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:23] [hamibot] {'time': '6:54:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:23] [hamibot] {'time': '6:54:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:23] [hamibot] {'time': '6:54:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:24] [hamibot] {'time': '6:54:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:24] [hamibot] {'time': '6:54:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:54:25] [hamibot] {'time': '6:54:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:25] [hamibot] {'time': '6:54:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:25] [hamibot] {'time': '6:54:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:26] [hamibot] {'time': '6:54:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:26] [hamibot] {'time': '6:54:27 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:27] [hamibot] {'time': '6:54:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:28] [hamibot] {'time': '6:54:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:28] [hamibot] {'time': '6:54:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:28] [hamibot] {'time': '6:54:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:29] [hamibot] {'time': '6:54:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:29] [hamibot] {'time': '6:54:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:30] [hamibot] {'time': '6:54:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:30] [hamibot] {'time': '6:54:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:30] [hamibot] {'time': '6:54:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:31] [hamibot] {'time': '6:54:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:31] [hamibot] {'time': '6:54:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:31] [hamibot] {'time': '6:54:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:32] [hamibot] {'time': '6:54:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:32] [hamibot] {'time': '6:54:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:32] [hamibot] {'time': '6:54:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:33] [hamibot] {'time': '6:54:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:34] [hamibot] {'time': '6:54:34 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:34] [hamibot] {'time': '6:54:34 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:35] [hamibot] {'time': '6:54:35 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:35] [hamibot] {'time': '6:54:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:35] [hamibot] {'time': '6:54:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:36] [hamibot] {'time': '6:54:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:36] [hamibot] {'time': '6:54:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:36] [hamibot] {'time': '6:54:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:37] [hamibot] {'time': '6:54:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:37] [hamibot] {'time': '6:54:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:37] [hamibot] {'time': '6:54:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:38] [hamibot] {'time': '6:54:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:38] [hamibot] {'time': '6:54:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:39] [hamibot] {'time': '6:54:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:40] [hamibot] {'time': '6:54:40 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:40] [hamibot] {'time': '6:54:40 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:54:41] [hamibot] {'time': '6:54:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:41] [hamibot] {'time': '6:54:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:41] [hamibot] {'time': '6:54:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:42] [hamibot] {'time': '6:54:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:42] [hamibot] {'time': '6:54:42 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:42] [hamibot] {'time': '6:54:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:43] [hamibot] {'time': '6:54:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:43] [hamibot] {'time': '6:54:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:43] [hamibot] {'time': '6:54:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:44] [hamibot] {'time': '6:54:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:44] [hamibot] {'time': '6:54:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:44] [hamibot] {'time': '6:54:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:45] [hamibot] {'time': '6:54:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:46] [hamibot] {'time': '6:54:46 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:46] [hamibot] {'time': '6:54:46 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:47] [hamibot] {'time': '6:54:47 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:47] [hamibot] {'time': '6:54:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:47] [hamibot] {'time': '6:54:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:48] [hamibot] {'time': '6:54:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:48] [hamibot] {'time': '6:54:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:48] [hamibot] {'time': '6:54:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:49] [hamibot] {'time': '6:54:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:50] [hamibot] {'time': '6:54:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:50] [hamibot] {'time': '6:54:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:51] [hamibot] {'time': '6:54:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:51] [hamibot] {'time': '6:54:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:51] [hamibot] {'time': '6:54:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:52] [hamibot] {'time': '6:54:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:52] [hamibot] {'time': '6:54:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:52] [hamibot] {'time': '6:54:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:53] [hamibot] {'time': '6:54:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:54] [hamibot] {'time': '6:54:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:54] [hamibot] {'time': '6:54:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:55] [hamibot] {'time': '6:54:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:55] [hamibot] {'time': '6:54:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:55] [hamibot] {'time': '6:54:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:56] [hamibot] {'time': '6:54:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:56] [hamibot] {'time': '6:54:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:56] [hamibot] {'time': '6:54:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:57] [hamibot] {'time': '6:54:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:57] [hamibot] {'time': '6:54:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:57] [hamibot] {'time': '6:54:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:54:58] [hamibot] {'time': '6:54:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:54:59] [hamibot] {'time': '6:54:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:54:59] [hamibot] {'time': '6:54:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:00] [hamibot] {'time': '6:55:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:00] [hamibot] {'time': '6:55:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:00] [hamibot] {'time': '6:55:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:01] [hamibot] {'time': '6:55:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:01] [hamibot] {'time': '6:55:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:01] [hamibot] {'time': '6:55:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:02] [hamibot] {'time': '6:55:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:02] [hamibot] {'time': '6:55:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:02] [hamibot] {'time': '6:55:02 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:03] [hamibot] {'time': '6:55:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:03] [hamibot] {'time': '6:55:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:03] [hamibot] {'time': '6:55:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:04] [hamibot] {'time': '6:55:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:04] [hamibot] {'time': '6:55:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:04] [hamibot] {'time': '6:55:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:05] [hamibot] {'time': '6:55:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:06] [hamibot] {'time': '6:55:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:06] [hamibot] {'time': '6:55:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:07] [hamibot] {'time': '6:55:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:07] [hamibot] {'time': '6:55:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:07] [hamibot] {'time': '6:55:07 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:08] [hamibot] {'time': '6:55:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:08] [hamibot] {'time': '6:55:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:08] [hamibot] {'time': '6:55:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:09] [hamibot] {'time': '6:55:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:09] [hamibot] {'time': '6:55:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:10] [hamibot] {'time': '6:55:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:10] [hamibot] {'time': '6:55:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:11] [hamibot] {'time': '6:55:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:12] [hamibot] {'time': '6:55:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:12] [hamibot] {'time': '6:55:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:12] [hamibot] {'time': '6:55:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:13] [hamibot] {'time': '6:55:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:13] [hamibot] {'time': '6:55:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:13] [hamibot] {'time': '6:55:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:14] [hamibot] {'time': '6:55:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:14] [hamibot] {'time': '6:55:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:15] [hamibot] {'time': '6:55:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:16] [hamibot] {'time': '6:55:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:16] [hamibot] {'time': '6:55:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:16] [hamibot] {'time': '6:55:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:17] [hamibot] {'time': '6:55:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:17] [hamibot] {'time': '6:55:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:17] [hamibot] {'time': '6:55:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:18] [hamibot] {'time': '6:55:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:18] [hamibot] {'time': '6:55:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:18] [hamibot] {'time': '6:55:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:19] [hamibot] {'time': '6:55:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:19] [hamibot] {'time': '6:55:19 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:55:20] [hamibot] {'time': '6:55:20 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:20] [hamibot] {'time': '6:55:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:20] [hamibot] {'time': '6:55:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:21] [hamibot] {'time': '6:55:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:22] [hamibot] {'time': '6:55:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:22] [hamibot] {'time': '6:55:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:23] [hamibot] {'time': '6:55:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:23] [hamibot] {'time': '6:55:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:23] [hamibot] {'time': '6:55:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:24] [hamibot] {'time': '6:55:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:24] [hamibot] {'time': '6:55:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:24] [hamibot] {'time': '6:55:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:25] [hamibot] {'time': '6:55:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:25] [hamibot] {'time': '6:55:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:25] [hamibot] {'time': '6:55:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:26] [hamibot] {'time': '6:55:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:26] [hamibot] {'time': '6:55:27 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:27] [hamibot] {'time': '6:55:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:28] [hamibot] {'time': '6:55:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:28] [hamibot] {'time': '6:55:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:28] [hamibot] {'time': '6:55:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:29] [hamibot] {'time': '6:55:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:29] [hamibot] {'time': '6:55:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:29] [hamibot] {'time': '6:55:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:30] [hamibot] {'time': '6:55:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:30] [hamibot] {'time': '6:55:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:30] [hamibot] {'time': '6:55:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:31] [hamibot] {'time': '6:55:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:31] [hamibot] {'time': '6:55:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:32] [hamibot] {'time': '6:55:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:32] [hamibot] {'time': '6:55:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:32] [hamibot] {'time': '6:55:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:33] [hamibot] {'time': '6:55:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:34] [hamibot] {'time': '6:55:34 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:34] [hamibot] {'time': '6:55:34 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:35] [hamibot] {'time': '6:55:35 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:35] [hamibot] {'time': '6:55:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:55:36] [hamibot] {'time': '6:55:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:36] [hamibot] {'time': '6:55:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:55:37] [hamibot] {'time': '6:55:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:37] [hamibot] {'time': '6:55:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:38] [hamibot] {'time': '6:55:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:38] [hamibot] {'time': '6:55:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:39] [hamibot] {'time': '6:55:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:40] [hamibot] {'time': '6:55:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:41] [hamibot] {'time': '6:55:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:41] [hamibot] {'time': '6:55:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:41] [hamibot] {'time': '6:55:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:42] [hamibot] {'time': '6:55:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:42] [hamibot] {'time': '6:55:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:55:43] [hamibot] {'time': '6:55:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:43] [hamibot] {'time': '6:55:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:43] [hamibot] {'time': '6:55:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:44] [hamibot] {'time': '6:55:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:44] [hamibot] {'time': '6:55:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:45] [hamibot] {'time': '6:55:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:46] [hamibot] {'time': '6:55:46 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:46] [hamibot] {'time': '6:55:46 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:47] [hamibot] {'time': '6:55:47 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:47] [hamibot] {'time': '6:55:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:47] [hamibot] {'time': '6:55:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:48] [hamibot] {'time': '6:55:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:48] [hamibot] {'time': '6:55:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:48] [hamibot] {'time': '6:55:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:49] [hamibot] {'time': '6:55:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:49] [hamibot] {'time': '6:55:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:50] [hamibot] {'time': '6:55:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:51] [hamibot] {'time': '6:55:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:51] [hamibot] {'time': '6:55:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:52] [hamibot] {'time': '6:55:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:52] [hamibot] {'time': '6:55:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:52] [hamibot] {'time': '6:55:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:53] [hamibot] {'time': '6:55:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:53] [hamibot] {'time': '6:55:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:53] [hamibot] {'time': '6:55:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:54] [hamibot] {'time': '6:55:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:54] [hamibot] {'time': '6:55:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:55] [hamibot] {'time': '6:55:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:55] [hamibot] {'time': '6:55:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:55] [hamibot] {'time': '6:55:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:56] [hamibot] {'time': '6:55:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:56] [hamibot] {'time': '6:55:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:56] [hamibot] {'time': '6:55:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:57] [hamibot] {'time': '6:55:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:58] [hamibot] {'time': '6:55:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:58] [hamibot] {'time': '6:55:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:55:59] [hamibot] {'time': '6:55:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:55:59] [hamibot] {'time': '6:55:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:55:59] [hamibot] {'time': '6:55:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:00] [hamibot] {'time': '6:56:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:00] [hamibot] {'time': '6:56:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:01] [hamibot] {'time': '6:56:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:01] [hamibot] {'time': '6:56:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:56:02] [hamibot] {'time': '6:56:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:02] [hamibot] {'time': '6:56:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:02] [hamibot] {'time': '6:56:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:03] [hamibot] {'time': '6:56:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:03] [hamibot] {'time': '6:56:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:03] [hamibot] {'time': '6:56:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:04] [hamibot] {'time': '6:56:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:04] [hamibot] {'time': '6:56:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:04] [hamibot] {'time': '6:56:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:05] [hamibot] {'time': '6:56:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:06] [hamibot] {'time': '6:56:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:06] [hamibot] {'time': '6:56:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:07] [hamibot] {'time': '6:56:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:07] [hamibot] {'time': '6:56:07 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:07] [hamibot] {'time': '6:56:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:08] [hamibot] {'time': '6:56:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:08] [hamibot] {'time': '6:56:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:08] [hamibot] {'time': '6:56:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:09] [hamibot] {'time': '6:56:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:09] [hamibot] {'time': '6:56:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:09] [hamibot] {'time': '6:56:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:10] [hamibot] {'time': '6:56:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:11] [hamibot] {'time': '6:56:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:11] [hamibot] {'time': '6:56:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:12] [hamibot] {'time': '6:56:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:12] [hamibot] {'time': '6:56:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:13] [hamibot] {'time': '6:56:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:13] [hamibot] {'time': '6:56:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:13] [hamibot] {'time': '6:56:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:14] [hamibot] {'time': '6:56:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:14] [hamibot] {'time': '6:56:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:14] [hamibot] {'time': '6:56:14 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:15] [hamibot] {'time': '6:56:15 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:15] [hamibot] {'time': '6:56:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:15] [hamibot] {'time': '6:56:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:16] [hamibot] {'time': '6:56:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:16] [hamibot] {'time': '6:56:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:16] [hamibot] {'time': '6:56:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:17] [hamibot] {'time': '6:56:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:18] [hamibot] {'time': '6:56:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:18] [hamibot] {'time': '6:56:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:19] [hamibot] {'time': '6:56:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:19] [hamibot] {'time': '6:56:19 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:19] [hamibot] {'time': '6:56:19 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:20] [hamibot] {'time': '6:56:20 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:20] [hamibot] {'time': '6:56:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:20] [hamibot] {'time': '6:56:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:21] [hamibot] {'time': '6:56:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:21] [hamibot] {'time': '6:56:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:21] [hamibot] {'time': '6:56:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:22] [hamibot] {'time': '6:56:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:22] [hamibot] {'time': '6:56:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:23] [hamibot] {'time': '6:56:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:24] [hamibot] {'time': '6:56:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:24] [hamibot] {'time': '6:56:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:24] [hamibot] {'time': '6:56:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:25] [hamibot] {'time': '6:56:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:25] [hamibot] {'time': '6:56:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:25] [hamibot] {'time': '6:56:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:26] [hamibot] {'time': '6:56:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:26] [hamibot] {'time': '6:56:26 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:26] [hamibot] {'time': '6:56:26 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:27] [hamibot] {'time': '6:56:27 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:27] [hamibot] {'time': '6:56:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:27] [hamibot] {'time': '6:56:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:28] [hamibot] {'time': '6:56:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:28] [hamibot] {'time': '6:56:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:28] [hamibot] {'time': '6:56:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:29] [hamibot] {'time': '6:56:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:30] [hamibot] {'time': '6:56:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:30] [hamibot] {'time': '6:56:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:31] [hamibot] {'time': '6:56:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:31] [hamibot] {'time': '6:56:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:31] [hamibot] {'time': '6:56:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:32] [hamibot] {'time': '6:56:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:32] [hamibot] {'time': '6:56:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:32] [hamibot] {'time': '6:56:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:33] [hamibot] {'time': '6:56:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:33] [hamibot] {'time': '6:56:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:33] [hamibot] {'time': '6:56:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:34] [hamibot] {'time': '6:56:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:34] [hamibot] {'time': '6:56:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:35] [hamibot] {'time': '6:56:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:36] [hamibot] {'time': '6:56:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:36] [hamibot] {'time': '6:56:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:36] [hamibot] {'time': '6:56:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:37] [hamibot] {'time': '6:56:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:37] [hamibot] {'time': '6:56:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:37] [hamibot] {'time': '6:56:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:38] [hamibot] {'time': '6:56:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:38] [hamibot] {'time': '6:56:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:38] [hamibot] {'time': '6:56:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:39] [hamibot] {'time': '6:56:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:39] [hamibot] {'time': '6:56:40 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:56:40] [hamibot] {'time': '6:56:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:40] [hamibot] {'time': '6:56:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:56:41] [hamibot] {'time': '6:56:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:42] [hamibot] {'time': '6:56:42 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:42] [hamibot] {'time': '6:56:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:43] [hamibot] {'time': '6:56:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:43] [hamibot] {'time': '6:56:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:44] [hamibot] {'time': '6:56:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:44] [hamibot] {'time': '6:56:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:44] [hamibot] {'time': '6:56:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:45] [hamibot] {'time': '6:56:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:45] [hamibot] {'time': '6:56:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:45] [hamibot] {'time': '6:56:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:46] [hamibot] {'time': '6:56:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:46] [hamibot] {'time': '6:56:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:47] [hamibot] {'time': '6:56:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:48] [hamibot] {'time': '6:56:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:48] [hamibot] {'time': '6:56:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:48] [hamibot] {'time': '6:56:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:49] [hamibot] {'time': '6:56:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:49] [hamibot] {'time': '6:56:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:49] [hamibot] {'time': '6:56:49 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:50] [hamibot] {'time': '6:56:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:50] [hamibot] {'time': '6:56:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:50] [hamibot] {'time': '6:56:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:51] [hamibot] {'time': '6:56:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:51] [hamibot] {'time': '6:56:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:51] [hamibot] {'time': '6:56:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:52] [hamibot] {'time': '6:56:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:52] [hamibot] {'time': '6:56:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:53] [hamibot] {'time': '6:56:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:54] [hamibot] {'time': '6:56:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:54] [hamibot] {'time': '6:56:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:55] [hamibot] {'time': '6:56:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:55] [hamibot] {'time': '6:56:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:55] [hamibot] {'time': '6:56:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:56] [hamibot] {'time': '6:56:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:56] [hamibot] {'time': '6:56:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:56] [hamibot] {'time': '6:56:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:57] [hamibot] {'time': '6:56:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:57] [hamibot] {'time': '6:56:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:57] [hamibot] {'time': '6:56:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:58] [hamibot] {'time': '6:56:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:56:58] [hamibot] {'time': '6:56:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:56:58] [hamibot] {'time': '6:56:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:56:59] [hamibot] {'time': '6:57:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:00] [hamibot] {'time': '6:57:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:01] [hamibot] {'time': '6:57:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:01] [hamibot] {'time': '6:57:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:01] [hamibot] {'time': '6:57:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:02] [hamibot] {'time': '6:57:02 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:02] [hamibot] {'time': '6:57:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:03] [hamibot] {'time': '6:57:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:03] [hamibot] {'time': '6:57:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:03] [hamibot] {'time': '6:57:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:03] [hamibot] {'time': '6:57:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:04] [hamibot] {'time': '6:57:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:04] [hamibot] {'time': '6:57:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:04] [hamibot] {'time': '6:57:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:06] [hamibot] {'time': '6:57:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:06] [hamibot] {'time': '6:57:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:06] [hamibot] {'time': '6:57:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:07] [hamibot] {'time': '6:57:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:07] [hamibot] {'time': '6:57:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:08] [hamibot] {'time': '6:57:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:08] [hamibot] {'time': '6:57:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:08] [hamibot] {'time': '6:57:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:09] [hamibot] {'time': '6:57:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:09] [hamibot] {'time': '6:57:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:09] [hamibot] {'time': '6:57:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:10] [hamibot] {'time': '6:57:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:10] [hamibot] {'time': '6:57:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:11] [hamibot] {'time': '6:57:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:12] [hamibot] {'time': '6:57:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:12] [hamibot] {'time': '6:57:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:12] [hamibot] {'time': '6:57:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:13] [hamibot] {'time': '6:57:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:13] [hamibot] {'time': '6:57:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:13] [hamibot] {'time': '6:57:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:14] [hamibot] {'time': '6:57:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:14] [hamibot] {'time': '6:57:14 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:14] [hamibot] {'time': '6:57:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:15] [hamibot] {'time': '6:57:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:15] [hamibot] {'time': '6:57:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:16] [hamibot] {'time': '6:57:15 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:16] [hamibot] {'time': '6:57:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:16] [hamibot] {'time': '6:57:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:16] [hamibot] {'time': '6:57:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:17] [hamibot] {'time': '6:57:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:18] [hamibot] {'time': '6:57:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:18] [hamibot] {'time': '6:57:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:19] [hamibot] {'time': '6:57:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:19] [hamibot] {'time': '6:57:19 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:57:20] [hamibot] {'time': '6:57:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:21] [hamibot] {'time': '6:57:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:21] [hamibot] {'time': '6:57:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:22] [hamibot] {'time': '6:57:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:23] [hamibot] {'time': '6:57:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:23] [hamibot] {'time': '6:57:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:57:24] [hamibot] {'time': '6:57:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+�到我的页面 (第1次)'}
+[2026-06-11 18:57:24] [hamibot] {'time': '6:57:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:25] [hamibot] {'time': '6:57:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:25] [hamibot] {'time': '6:57:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:25] [hamibot] {'time': '6:57:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:26] [hamibot] {'time': '6:57:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:26] [hamibot] {'time': '6:57:26 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:26] [hamibot] {'time': '6:57:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:27] [hamibot] {'time': '6:57:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:28] [hamibot] {'time': '6:57:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:57:29] [hamibot] {'time': '6:57:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:29] [hamibot] {'time': '6:57:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:29] [hamibot] {'time': '6:57:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:30] [hamibot] {'time': '6:57:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:30] [hamibot] {'time': '6:57:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:30] [hamibot] {'time': '6:57:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:31] [hamibot] {'time': '6:57:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:31] [hamibot] {'time': '6:57:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:31] [hamibot] {'time': '6:57:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:32] [hamibot] {'time': '6:57:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+�我的页面'}
+[2026-06-11 18:57:32] [hamibot] {'time': '6:57:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:33] [hamibot] {'time': '6:57:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:33] [hamibot] {'time': '6:57:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:33] [hamibot] {'time': '6:57:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:34] [hamibot] {'time': '6:57:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:34] [hamibot] {'time': '6:57:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:35] [hamibot] {'time': '6:57:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:36] [hamibot] {'time': '6:57:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:36] [hamibot] {'time': '6:57:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:36] [hamibot] {'time': '6:57:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:37] [hamibot] {'time': '6:57:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:37] [hamibot] {'time': '6:57:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:37] [hamibot] {'time': '6:57:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:38] [hamibot] {'time': '6:57:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:38] [hamibot] {'time': '6:57:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:38] [hamibot] {'time': '6:57:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:39] [hamibot] {'time': '6:57:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:39] [hamibot] {'time': '6:57:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:39] [hamibot] {'time': '6:57:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:40] [hamibot] {'time': '6:57:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:40] [hamibot] {'time': '6:57:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:41] [hamibot] {'time': '6:57:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:42] [hamibot] {'time': '6:57:42 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:42] [hamibot] {'time': '6:57:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:43] [hamibot] {'time': '6:57:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:43] [hamibot] {'time': '6:57:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:43] [hamibot] {'time': '6:57:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:44] [hamibot] {'time': '6:57:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+�到我的页面 (第1次)'}
+[2026-06-11 18:57:45] [hamibot] {'time': '6:57:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:45] [hamibot] {'time': '6:57:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:45] [hamibot] {'time': '6:57:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:46] [hamibot] {'time': '6:57:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:47] [hamibot] {'time': '6:57:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:47] [hamibot] {'time': '6:57:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:48] [hamibot] {'time': '6:57:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:48] [hamibot] {'time': '6:57:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:48] [hamibot] {'time': '6:57:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:49] [hamibot] {'time': '6:57:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:49] [hamibot] {'time': '6:57:49 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:50] [hamibot] {'time': '6:57:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:50] [hamibot] {'time': '6:57:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:50] [hamibot] {'time': '6:57:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:51] [hamibot] {'time': '6:57:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:51] [hamibot] {'time': '6:57:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:51] [hamibot] {'time': '6:57:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:52] [hamibot] {'time': '6:57:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:52] [hamibot] {'time': '6:57:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:52] [hamibot] {'time': '6:57:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:53] [hamibot] {'time': '6:57:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:54] [hamibot] {'time': '6:57:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:54] [hamibot] {'time': '6:57:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:55] [hamibot] {'time': '6:57:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:55] [hamibot] {'time': '6:57:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:55] [hamibot] {'time': '6:57:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:56] [hamibot] {'time': '6:57:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:56] [hamibot] {'time': '6:57:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:56] [hamibot] {'time': '6:57:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:57] [hamibot] {'time': '6:57:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:57] [hamibot] {'time': '6:57:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:58] [hamibot] {'time': '6:57:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:57:58] [hamibot] {'time': '6:57:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:57:58] [hamibot] {'time': '6:57:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:57:59] [hamibot] {'time': '6:58:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:00] [hamibot] {'time': '6:58:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:00] [hamibot] {'time': '6:58:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:00] [hamibot] {'time': '6:58:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:00] [hamibot] {'time': '6:58:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:00] [hamibot] {'time': '6:58:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:01] [hamibot] {'time': '6:58:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:02] [hamibot] {'time': '6:58:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:02] [hamibot] {'time': '6:58:02 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:03] [hamibot] {'time': '6:58:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:03] [hamibot] {'time': '6:58:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:03] [hamibot] {'time': '6:58:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:04] [hamibot] {'time': '6:58:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:04] [hamibot] {'time': '6:58:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:04] [hamibot] {'time': '6:58:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:05] [hamibot] {'time': '6:58:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:05] [hamibot] {'time': '6:58:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:05] [hamibot] {'time': '6:58:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:06] [hamibot] {'time': '6:58:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:06] [hamibot] {'time': '6:58:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:07] [hamibot] {'time': '6:58:07 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:08] [hamibot] {'time': '6:58:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:08] [hamibot] {'time': '6:58:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:08] [hamibot] {'time': '6:58:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:09] [hamibot] {'time': '6:58:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:09] [hamibot] {'time': '6:58:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:09] [hamibot] {'time': '6:58:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:10] [hamibot] {'time': '6:58:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:10] [hamibot] {'time': '6:58:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:10] [hamibot] {'time': '6:58:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:11] [hamibot] {'time': '6:58:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:11] [hamibot] {'time': '6:58:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:11] [hamibot] {'time': '6:58:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:12] [hamibot] {'time': '6:58:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:12] [hamibot] {'time': '6:58:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:12] [hamibot] {'time': '6:58:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:13] [hamibot] {'time': '6:58:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:14] [hamibot] {'time': '6:58:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:14] [hamibot] {'time': '6:58:14 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:15] [hamibot] {'time': '6:58:15 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:15] [hamibot] {'time': '6:58:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:15] [hamibot] {'time': '6:58:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:16] [hamibot] {'time': '6:58:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:16] [hamibot] {'time': '6:58:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:16] [hamibot] {'time': '6:58:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:17] [hamibot] {'time': '6:58:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:17] [hamibot] {'time': '6:58:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:17] [hamibot] {'time': '6:58:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:18] [hamibot] {'time': '6:58:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:18] [hamibot] {'time': '6:58:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:18] [hamibot] {'time': '6:58:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:19] [hamibot] {'time': '6:58:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:19] [hamibot] {'time': '6:58:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:19] [hamibot] {'time': '6:58:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:20] [hamibot] {'time': '6:58:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:20] [hamibot] {'time': '6:58:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:20] [hamibot] {'time': '6:58:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:21] [hamibot] {'time': '6:58:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:22] [hamibot] {'time': '6:58:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:22] [hamibot] {'time': '6:58:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:23] [hamibot] {'time': '6:58:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:23] [hamibot] {'time': '6:58:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:23] [hamibot] {'time': '6:58:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:24] [hamibot] {'time': '6:58:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:24] [hamibot] {'time': '6:58:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:24] [hamibot] {'time': '6:58:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:25] [hamibot] {'time': '6:58:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:25] [hamibot] {'time': '6:58:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:25] [hamibot] {'time': '6:58:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:26] [hamibot] {'time': '6:58:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:26] [hamibot] {'time': '6:58:27 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:27] [hamibot] {'time': '6:58:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:28] [hamibot] {'time': '6:58:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:28] [hamibot] {'time': '6:58:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:28] [hamibot] {'time': '6:58:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:29] [hamibot] {'time': '6:58:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:29] [hamibot] {'time': '6:58:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:29] [hamibot] {'time': '6:58:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:30] [hamibot] {'time': '6:58:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:30] [hamibot] {'time': '6:58:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:30] [hamibot] {'time': '6:58:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:31] [hamibot] {'time': '6:58:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:31] [hamibot] {'time': '6:58:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:31] [hamibot] {'time': '6:58:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:32] [hamibot] {'time': '6:58:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:32] [hamibot] {'time': '6:58:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:32] [hamibot] {'time': '6:58:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:33] [hamibot] {'time': '6:58:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:33] [hamibot] {'time': '6:58:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:33] [hamibot] {'time': '6:58:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:34] [hamibot] {'time': '6:58:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:34] [hamibot] {'time': '6:58:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:35] [hamibot] {'time': '6:58:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:36] [hamibot] {'time': '6:58:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:36] [hamibot] {'time': '6:58:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:36] [hamibot] {'time': '6:58:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:37] [hamibot] {'time': '6:58:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:37] [hamibot] {'time': '6:58:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:37] [hamibot] {'time': '6:58:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:38] [hamibot] {'time': '6:58:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:38] [hamibot] {'time': '6:58:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:38] [hamibot] {'time': '6:58:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:39] [hamibot] {'time': '6:58:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:39] [hamibot] {'time': '6:58:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:39] [hamibot] {'time': '6:58:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:40] [hamibot] {'time': '6:58:40 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:40] [hamibot] {'time': '6:58:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:40] [hamibot] {'time': '6:58:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:41] [hamibot] {'time': '6:58:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:42] [hamibot] {'time': '6:58:42 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:42] [hamibot] {'time': '6:58:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:43] [hamibot] {'time': '6:58:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:43] [hamibot] {'time': '6:58:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:43] [hamibot] {'time': '6:58:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:44] [hamibot] {'time': '6:58:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:44] [hamibot] {'time': '6:58:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:44] [hamibot] {'time': '6:58:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:45] [hamibot] {'time': '6:58:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:45] [hamibot] {'time': '6:58:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:45] [hamibot] {'time': '6:58:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:46] [hamibot] {'time': '6:58:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:46] [hamibot] {'time': '6:58:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:47] [hamibot] {'time': '6:58:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:48] [hamibot] {'time': '6:58:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:48] [hamibot] {'time': '6:58:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:48] [hamibot] {'time': '6:58:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:49] [hamibot] {'time': '6:58:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:49] [hamibot] {'time': '6:58:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:49] [hamibot] {'time': '6:58:49 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:50] [hamibot] {'time': '6:58:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:50] [hamibot] {'time': '6:58:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:50] [hamibot] {'time': '6:58:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:51] [hamibot] {'time': '6:58:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:51] [hamibot] {'time': '6:58:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:51] [hamibot] {'time': '6:58:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:52] [hamibot] {'time': '6:58:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:52] [hamibot] {'time': '6:58:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:52] [hamibot] {'time': '6:58:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:53] [hamibot] {'time': '6:58:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:54] [hamibot] {'time': '6:58:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:54] [hamibot] {'time': '6:58:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:55] [hamibot] {'time': '6:58:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:55] [hamibot] {'time': '6:58:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:55] [hamibot] {'time': '6:58:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:56] [hamibot] {'time': '6:58:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:56] [hamibot] {'time': '6:58:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:57] [hamibot] {'time': '6:58:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:57] [hamibot] {'time': '6:58:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:57] [hamibot] {'time': '6:58:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:58:58] [hamibot] {'time': '6:58:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:58:58] [hamibot] {'time': '6:58:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:58:59] [hamibot] {'time': '6:58:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:00] [hamibot] {'time': '6:59:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:00] [hamibot] {'time': '6:59:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:00] [hamibot] {'time': '6:59:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:01] [hamibot] {'time': '6:59:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:01] [hamibot] {'time': '6:59:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:01] [hamibot] {'time': '6:59:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:02] [hamibot] {'time': '6:59:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:02] [hamibot] {'time': '6:59:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:02] [hamibot] {'time': '6:59:02 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:03] [hamibot] {'time': '6:59:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:03] [hamibot] {'time': '6:59:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:03] [hamibot] {'time': '6:59:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:04] [hamibot] {'time': '6:59:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:04] [hamibot] {'time': '6:59:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:04] [hamibot] {'time': '6:59:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:05] [hamibot] {'time': '6:59:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:05] [hamibot] {'time': '6:59:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:05] [hamibot] {'time': '6:59:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:06] [hamibot] {'time': '6:59:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:07] [hamibot] {'time': '6:59:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:07] [hamibot] {'time': '6:59:07 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:08] [hamibot] {'time': '6:59:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:08] [hamibot] {'time': '6:59:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:08] [hamibot] {'time': '6:59:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:09] [hamibot] {'time': '6:59:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:09] [hamibot] {'time': '6:59:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:09] [hamibot] {'time': '6:59:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:10] [hamibot] {'time': '6:59:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:10] [hamibot] {'time': '6:59:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:10] [hamibot] {'time': '6:59:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:11] [hamibot] {'time': '6:59:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:11] [hamibot] {'time': '6:59:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:11] [hamibot] {'time': '6:59:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:12] [hamibot] {'time': '6:59:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:12] [hamibot] {'time': '6:59:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:12] [hamibot] {'time': '6:59:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:13] [hamibot] {'time': '6:59:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:14] [hamibot] {'time': '6:59:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:14] [hamibot] {'time': '6:59:14 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:15] [hamibot] {'time': '6:59:15 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:15] [hamibot] {'time': '6:59:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:15] [hamibot] {'time': '6:59:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:16] [hamibot] {'time': '6:59:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:16] [hamibot] {'time': '6:59:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:16] [hamibot] {'time': '6:59:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:17] [hamibot] {'time': '6:59:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:17] [hamibot] {'time': '6:59:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:17] [hamibot] {'time': '6:59:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:18] [hamibot] {'time': '6:59:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:18] [hamibot] {'time': '6:59:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:18] [hamibot] {'time': '6:59:19 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:19] [hamibot] {'time': '6:59:20 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:20] [hamibot] {'time': '6:59:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:21] [hamibot] {'time': '6:59:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:21] [hamibot] {'time': '6:59:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:21] [hamibot] {'time': '6:59:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:22] [hamibot] {'time': '6:59:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:22] [hamibot] {'time': '6:59:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:22] [hamibot] {'time': '6:59:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:23] [hamibot] {'time': '6:59:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:23] [hamibot] {'time': '6:59:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:23] [hamibot] {'time': '6:59:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:24] [hamibot] {'time': '6:59:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:24] [hamibot] {'time': '6:59:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:24] [hamibot] {'time': '6:59:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:25] [hamibot] {'time': '6:59:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:25] [hamibot] {'time': '6:59:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:25] [hamibot] {'time': '6:59:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:26] [hamibot] {'time': '6:59:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:26] [hamibot] {'time': '6:59:27 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:27] [hamibot] {'time': '6:59:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:28] [hamibot] {'time': '6:59:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:28] [hamibot] {'time': '6:59:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:28] [hamibot] {'time': '6:59:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:29] [hamibot] {'time': '6:59:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:29] [hamibot] {'time': '6:59:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:29] [hamibot] {'time': '6:59:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:30] [hamibot] {'time': '6:59:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:30] [hamibot] {'time': '6:59:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:30] [hamibot] {'time': '6:59:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:31] [hamibot] {'time': '6:59:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:31] [hamibot] {'time': '6:59:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:31] [hamibot] {'time': '6:59:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:32] [hamibot] {'time': '6:59:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:32] [hamibot] {'time': '6:59:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:33] [hamibot] {'time': '6:59:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:33] [hamibot] {'time': '6:59:34 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:34] [hamibot] {'time': '6:59:34 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:35] [hamibot] {'time': '6:59:35 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:35] [hamibot] {'time': '6:59:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:35] [hamibot] {'time': '6:59:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:36] [hamibot] {'time': '6:59:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+�到我的页面 (第1次)'}
+[2026-06-11 18:59:36] [hamibot] {'time': '6:59:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:37] [hamibot] {'time': '6:59:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:37] [hamibot] {'time': '6:59:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:37] [hamibot] {'time': '6:59:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:38] [hamibot] {'time': '6:59:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:38] [hamibot] {'time': '6:59:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:38] [hamibot] {'time': '6:59:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:39] [hamibot] {'time': '6:59:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:39] [hamibot] {'time': '6:59:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:40] [hamibot] {'time': '6:59:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:40] [hamibot] {'time': '6:59:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:40] [hamibot] {'time': '6:59:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:41] [hamibot] {'time': '6:59:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:42] [hamibot] {'time': '6:59:42 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:42] [hamibot] {'time': '6:59:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:43] [hamibot] {'time': '6:59:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:43] [hamibot] {'time': '6:59:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:43] [hamibot] {'time': '6:59:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:44] [hamibot] {'time': '6:59:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:44] [hamibot] {'time': '6:59:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:44] [hamibot] {'time': '6:59:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:45] [hamibot] {'time': '6:59:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:45] [hamibot] {'time': '6:59:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:45] [hamibot] {'time': '6:59:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:46] [hamibot] {'time': '6:59:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:46] [hamibot] {'time': '6:59:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:46] [hamibot] {'time': '6:59:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:47] [hamibot] {'time': '6:59:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:47] [hamibot] {'time': '6:59:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:47] [hamibot] {'time': '6:59:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:48] [hamibot] {'time': '6:59:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:48] [hamibot] {'time': '6:59:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:48] [hamibot] {'time': '6:59:49 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:50] [hamibot] {'time': '6:59:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:50] [hamibot] {'time': '6:59:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:50] [hamibot] {'time': '6:59:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:51] [hamibot] {'time': '6:59:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:51] [hamibot] {'time': '6:59:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:51] [hamibot] {'time': '6:59:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:52] [hamibot] {'time': '6:59:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:52] [hamibot] {'time': '6:59:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 18:59:53] [hamibot] {'time': '6:59:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:53] [hamibot] {'time': '6:59:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:54] [hamibot] {'time': '6:59:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:54] [hamibot] {'time': '6:59:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:55] [hamibot] {'time': '6:59:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:56] [hamibot] {'time': '6:59:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:56] [hamibot] {'time': '6:59:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:56] [hamibot] {'time': '6:59:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:57] [hamibot] {'time': '6:59:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:57] [hamibot] {'time': '6:59:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:57] [hamibot] {'time': '6:59:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:58] [hamibot] {'time': '6:59:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:58] [hamibot] {'time': '6:59:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:58] [hamibot] {'time': '6:59:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 18:59:59] [hamibot] {'time': '6:59:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 18:59:59] [hamibot] {'time': '6:59:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 18:59:59] [hamibot] {'time': '6:59:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:00] [hamibot] {'time': '7:00:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:00] [hamibot] {'time': '7:00:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:00] [hamibot] {'time': '7:00:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:01] [hamibot] {'time': '7:00:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:01] [hamibot] {'time': '7:00:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:02] [hamibot] {'time': '7:00:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:02] [hamibot] {'time': '7:00:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:03] [hamibot] {'time': '7:00:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:04] [hamibot] {'time': '7:00:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:04] [hamibot] {'time': '7:00:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:04] [hamibot] {'time': '7:00:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:05] [hamibot] {'time': '7:00:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:05] [hamibot] {'time': '7:00:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:05] [hamibot] {'time': '7:00:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:06] [hamibot] {'time': '7:00:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:06] [hamibot] {'time': '7:00:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:06] [hamibot] {'time': '7:00:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:07] [hamibot] {'time': '7:00:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:07] [hamibot] {'time': '7:00:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:07] [hamibot] {'time': '7:00:07 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:08] [hamibot] {'time': '7:00:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:08] [hamibot] {'time': '7:00:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:08] [hamibot] {'time': '7:00:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:09] [hamibot] {'time': '7:00:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:10] [hamibot] {'time': '7:00:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:10] [hamibot] {'time': '7:00:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:11] [hamibot] {'time': '7:00:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:11] [hamibot] {'time': '7:00:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:11] [hamibot] {'time': '7:00:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:12] [hamibot] {'time': '7:00:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:12] [hamibot] {'time': '7:00:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:12] [hamibot] {'time': '7:00:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:13] [hamibot] {'time': '7:00:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:13] [hamibot] {'time': '7:00:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:13] [hamibot] {'time': '7:00:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:14] [hamibot] {'time': '7:00:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:14] [hamibot] {'time': '7:00:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:15] [hamibot] {'time': '7:00:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:16] [hamibot] {'time': '7:00:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:16] [hamibot] {'time': '7:00:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:16] [hamibot] {'time': '7:00:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:17] [hamibot] {'time': '7:00:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:17] [hamibot] {'time': '7:00:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:17] [hamibot] {'time': '7:00:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:18] [hamibot] {'time': '7:00:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:18] [hamibot] {'time': '7:00:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:18] [hamibot] {'time': '7:00:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:19] [hamibot] {'time': '7:00:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:19] [hamibot] {'time': '7:00:19 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:19] [hamibot] {'time': '7:00:19 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:20] [hamibot] {'time': '7:00:20 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:20] [hamibot] {'time': '7:00:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:20] [hamibot] {'time': '7:00:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:21] [hamibot] {'time': '7:00:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:21] [hamibot] {'time': '7:00:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:22] [hamibot] {'time': '7:00:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:23] [hamibot] {'time': '7:00:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:23] [hamibot] {'time': '7:00:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:23] [hamibot] {'time': '7:00:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:24] [hamibot] {'time': '7:00:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:24] [hamibot] {'time': '7:00:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:24] [hamibot] {'time': '7:00:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:25] [hamibot] {'time': '7:00:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:25] [hamibot] {'time': '7:00:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:25] [hamibot] {'time': '7:00:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:26] [hamibot] {'time': '7:00:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:26] [hamibot] {'time': '7:00:27 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:27] [hamibot] {'time': '7:00:27 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:28] [hamibot] {'time': '7:00:28 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:28] [hamibot] {'time': '7:00:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 19:00:29] [hamibot] {'time': '7:00:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:29] [hamibot] {'time': '7:00:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:29] [hamibot] {'time': '7:00:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:30] [hamibot] {'time': '7:00:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:30] [hamibot] {'time': '7:00:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:30] [hamibot] {'time': '7:00:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:31] [hamibot] {'time': '7:00:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:31] [hamibot] {'time': '7:00:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:31] [hamibot] {'time': '7:00:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:32] [hamibot] {'time': '7:00:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:32] [hamibot] {'time': '7:00:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:32] [hamibot] {'time': '7:00:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:33] [hamibot] {'time': '7:00:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:33] [hamibot] {'time': '7:00:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:33] [hamibot] {'time': '7:00:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:34] [hamibot] {'time': '7:00:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:34] [hamibot] {'time': '7:00:34 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:34] [hamibot] {'time': '7:00:34 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:35] [hamibot] {'time': '7:00:35 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:35] [hamibot] {'time': '7:00:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:35] [hamibot] {'time': '7:00:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:36] [hamibot] {'time': '7:00:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:36] [hamibot] {'time': '7:00:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:36] [hamibot] {'time': '7:00:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:37] [hamibot] {'time': '7:00:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:38] [hamibot] {'time': '7:00:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:38] [hamibot] {'time': '7:00:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:39] [hamibot] {'time': '7:00:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:39] [hamibot] {'time': '7:00:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:39] [hamibot] {'time': '7:00:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:40] [hamibot] {'time': '7:00:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:40] [hamibot] {'time': '7:00:40 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:40] [hamibot] {'time': '7:00:40 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:41] [hamibot] {'time': '7:00:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:41] [hamibot] {'time': '7:00:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:42] [hamibot] {'time': '7:00:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:42] [hamibot] {'time': '7:00:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:43] [hamibot] {'time': '7:00:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:44] [hamibot] {'time': '7:00:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:44] [hamibot] {'time': '7:00:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:44] [hamibot] {'time': '7:00:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:45] [hamibot] {'time': '7:00:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:45] [hamibot] {'time': '7:00:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:45] [hamibot] {'time': '7:00:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:46] [hamibot] {'time': '7:00:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:46] [hamibot] {'time': '7:00:46 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:46] [hamibot] {'time': '7:00:46 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:47] [hamibot] {'time': '7:00:47 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:47] [hamibot] {'time': '7:00:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:47] [hamibot] {'time': '7:00:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:48] [hamibot] {'time': '7:00:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:48] [hamibot] {'time': '7:00:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:48] [hamibot] {'time': '7:00:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:49] [hamibot] {'time': '7:00:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:49] [hamibot] {'time': '7:00:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:50] [hamibot] {'time': '7:00:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:51] [hamibot] {'time': '7:00:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:51] [hamibot] {'time': '7:00:51 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:51] [hamibot] {'time': '7:00:51 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:52] [hamibot] {'time': '7:00:52 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:52] [hamibot] {'time': '7:00:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:52] [hamibot] {'time': '7:00:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:53] [hamibot] {'time': '7:00:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:53] [hamibot] {'time': '7:00:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:53] [hamibot] {'time': '7:00:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:54] [hamibot] {'time': '7:00:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:54] [hamibot] {'time': '7:00:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:54] [hamibot] {'time': '7:00:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:55] [hamibot] {'time': '7:00:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:55] [hamibot] {'time': '7:00:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:55] [hamibot] {'time': '7:00:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:56] [hamibot] {'time': '7:00:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:56] [hamibot] {'time': '7:00:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:56] [hamibot] {'time': '7:00:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:57] [hamibot] {'time': '7:00:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:58] [hamibot] {'time': '7:00:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:58] [hamibot] {'time': '7:00:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:00:59] [hamibot] {'time': '7:00:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:00:59] [hamibot] {'time': '7:00:59 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:00:59] [hamibot] {'time': '7:00:59 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:00] [hamibot] {'time': '7:01:00 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:00] [hamibot] {'time': '7:01:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:00] [hamibot] {'time': '7:01:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:01] [hamibot] {'time': '7:01:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:01] [hamibot] {'time': '7:01:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:02] [hamibot] {'time': '7:01:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:02] [hamibot] {'time': '7:01:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:03] [hamibot] {'time': '7:01:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:04] [hamibot] {'time': '7:01:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:04] [hamibot] {'time': '7:01:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:04] [hamibot] {'time': '7:01:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:05] [hamibot] {'time': '7:01:05 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:05] [hamibot] {'time': '7:01:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:05] [hamibot] {'time': '7:01:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:06] [hamibot] {'time': '7:01:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:06] [hamibot] {'time': '7:01:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:06] [hamibot] {'time': '7:01:06 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:07] [hamibot] {'time': '7:01:07 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:07] [hamibot] {'time': '7:01:08 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:07] [hamibot] {'time': '7:01:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:08] [hamibot] {'time': '7:01:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:08] [hamibot] {'time': '7:01:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:08] [hamibot] {'time': '7:01:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:09] [hamibot] {'time': '7:01:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:10] [hamibot] {'time': '7:01:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:10] [hamibot] {'time': '7:01:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:11] [hamibot] {'time': '7:01:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:11] [hamibot] {'time': '7:01:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:11] [hamibot] {'time': '7:01:11 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:12] [hamibot] {'time': '7:01:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:12] [hamibot] {'time': '7:01:12 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:12] [hamibot] {'time': '7:01:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:13] [hamibot] {'time': '7:01:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:13] [hamibot] {'time': '7:01:13 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:13] [hamibot] {'time': '7:01:13 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:14] [hamibot] {'time': '7:01:14 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:14] [hamibot] {'time': '7:01:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:15] [hamibot] {'time': '7:01:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:16] [hamibot] {'time': '7:01:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:16] [hamibot] {'time': '7:01:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:16] [hamibot] {'time': '7:01:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:17] [hamibot] {'time': '7:01:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:17] [hamibot] {'time': '7:01:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:17] [hamibot] {'time': '7:01:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:18] [hamibot] {'time': '7:01:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:18] [hamibot] {'time': '7:01:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:18] [hamibot] {'time': '7:01:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:19] [hamibot] {'time': '7:01:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:19] [hamibot] {'time': '7:01:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:19] [hamibot] {'time': '7:01:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:20] [hamibot] {'time': '7:01:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:20] [hamibot] {'time': '7:01:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:20] [hamibot] {'time': '7:01:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:21] [hamibot] {'time': '7:01:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:21] [hamibot] {'time': '7:01:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:22] [hamibot] {'time': '7:01:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:23] [hamibot] {'time': '7:01:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:23] [hamibot] {'time': '7:01:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:23] [hamibot] {'time': '7:01:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:24] [hamibot] {'time': '7:01:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:24] [hamibot] {'time': '7:01:24 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:24] [hamibot] {'time': '7:01:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:25] [hamibot] {'time': '7:01:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:25] [hamibot] {'time': '7:01:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:25] [hamibot] {'time': '7:01:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:26] [hamibot] {'time': '7:01:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:26] [hamibot] {'time': '7:01:26 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:26] [hamibot] {'time': '7:01:26 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:27] [hamibot] {'time': '7:01:27 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:27] [hamibot] {'time': '7:01:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:27] [hamibot] {'time': '7:01:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:28] [hamibot] {'time': '7:01:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:28] [hamibot] {'time': '7:01:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:28] [hamibot] {'time': '7:01:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:29] [hamibot] {'time': '7:01:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:30] [hamibot] {'time': '7:01:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:30] [hamibot] {'time': '7:01:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:31] [hamibot] {'time': '7:01:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:31] [hamibot] {'time': '7:01:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:31] [hamibot] {'time': '7:01:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:32] [hamibot] {'time': '7:01:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:32] [hamibot] {'time': '7:01:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:32] [hamibot] {'time': '7:01:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:33] [hamibot] {'time': '7:01:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:33] [hamibot] {'time': '7:01:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:33] [hamibot] {'time': '7:01:33 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:34] [hamibot] {'time': '7:01:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:34] [hamibot] {'time': '7:01:34 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:34] [hamibot] {'time': '7:01:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:35] [hamibot] {'time': '7:01:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:36] [hamibot] {'time': '7:01:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:36] [hamibot] {'time': '7:01:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:37] [hamibot] {'time': '7:01:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:37] [hamibot] {'time': '7:01:37 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:37] [hamibot] {'time': '7:01:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:38] [hamibot] {'time': '7:01:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:38] [hamibot] {'time': '7:01:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:38] [hamibot] {'time': '7:01:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:39] [hamibot] {'time': '7:01:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:39] [hamibot] {'time': '7:01:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:39] [hamibot] {'time': '7:01:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:40] [hamibot] {'time': '7:01:40 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:40] [hamibot] {'time': '7:01:40 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:40] [hamibot] {'time': '7:01:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:41] [hamibot] {'time': '7:01:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:41] [hamibot] {'time': '7:01:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:41] [hamibot] {'time': '7:01:41 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:42] [hamibot] {'time': '7:01:42 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:42] [hamibot] {'time': '7:01:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:42] [hamibot] {'time': '7:01:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:43] [hamibot] {'time': '7:01:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:44] [hamibot] {'time': '7:01:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:44] [hamibot] {'time': '7:01:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:45] [hamibot] {'time': '7:01:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:45] [hamibot] {'time': '7:01:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:45] [hamibot] {'time': '7:01:45 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:46] [hamibot] {'time': '7:01:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:46] [hamibot] {'time': '7:01:46 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:46] [hamibot] {'time': '7:01:46 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:47] [hamibot] {'time': '7:01:47 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:47] [hamibot] {'time': '7:01:47 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:47] [hamibot] {'time': '7:01:47 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:48] [hamibot] {'time': '7:01:48 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:48] [hamibot] {'time': '7:01:48 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:48] [hamibot] {'time': '7:01:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:49] [hamibot] {'time': '7:01:49 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:49] [hamibot] {'time': '7:01:49 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:49] [hamibot] {'time': '7:01:49 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:50] [hamibot] {'time': '7:01:50 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:50] [hamibot] {'time': '7:01:50 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:50] [hamibot] {'time': '7:01:50 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:51] [hamibot] {'time': '7:01:51 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:51] [hamibot] {'time': '7:01:52 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:51] [hamibot] {'time': '7:01:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:52] [hamibot] {'time': '7:01:53 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:52] [hamibot] {'time': '7:01:53 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:52] [hamibot] {'time': '7:01:53 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:53] [hamibot] {'time': '7:01:54 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:54] [hamibot] {'time': '7:01:54 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:54] [hamibot] {'time': '7:01:54 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:55] [hamibot] {'time': '7:01:55 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:55] [hamibot] {'time': '7:01:55 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:55] [hamibot] {'time': '7:01:55 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:56] [hamibot] {'time': '7:01:56 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:56] [hamibot] {'time': '7:01:56 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:56] [hamibot] {'time': '7:01:56 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:57] [hamibot] {'time': '7:01:57 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:57] [hamibot] {'time': '7:01:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:57] [hamibot] {'time': '7:01:57 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:58] [hamibot] {'time': '7:01:58 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:58] [hamibot] {'time': '7:01:58 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:58] [hamibot] {'time': '7:01:58 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:01:59] [hamibot] {'time': '7:01:59 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:01:59] [hamibot] {'time': '7:02:00 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:01:59] [hamibot] {'time': '7:02:00 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:00] [hamibot] {'time': '7:02:01 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:00] [hamibot] {'time': '7:02:01 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:00] [hamibot] {'time': '7:02:01 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:01] [hamibot] {'time': '7:02:02 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:02] [hamibot] {'time': '7:02:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:02] [hamibot] {'time': '7:02:02 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:03] [hamibot] {'time': '7:02:03 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:03] [hamibot] {'time': '7:02:03 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:03] [hamibot] {'time': '7:02:03 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:04] [hamibot] {'time': '7:02:04 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:04] [hamibot] {'time': '7:02:04 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:04] [hamibot] {'time': '7:02:04 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:05] [hamibot] {'time': '7:02:05 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:05] [hamibot] {'time': '7:02:05 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:06] [hamibot] {'time': '7:02:06 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:06] [hamibot] {'time': '7:02:07 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:07] [hamibot] {'time': '7:02:07 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:08] [hamibot] {'time': '7:02:08 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:08] [hamibot] {'time': '7:02:08 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 19:02:09] [hamibot] {'time': '7:02:09 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:09] [hamibot] {'time': '7:02:09 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:09] [hamibot] {'time': '7:02:09 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:10] [hamibot] {'time': '7:02:10 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:10] [hamibot] {'time': '7:02:10 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:10] [hamibot] {'time': '7:02:10 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:11] [hamibot] {'time': '7:02:11 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:11] [hamibot] {'time': '7:02:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:12] [hamibot] {'time': '7:02:12 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:12] [hamibot] {'time': '7:02:12 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 19:02:13] [hamibot] {'time': '7:02:13 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:13] [hamibot] {'time': '7:02:14 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:14] [hamibot] {'time': '7:02:14 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:15] [hamibot] {'time': '7:02:15 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:15] [hamibot] {'time': '7:02:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:15] [hamibot] {'time': '7:02:15 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:16] [hamibot] {'time': '7:02:16 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:16] [hamibot] {'time': '7:02:16 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:16] [hamibot] {'time': '7:02:16 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:17] [hamibot] {'time': '7:02:17 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:17] [hamibot] {'time': '7:02:17 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:17] [hamibot] {'time': '7:02:17 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:18] [hamibot] {'time': '7:02:18 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:18] [hamibot] {'time': '7:02:18 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:18] [hamibot] {'time': '7:02:18 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:19] [hamibot] {'time': '7:02:19 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:19] [hamibot] {'time': '7:02:20 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:19] [hamibot] {'time': '7:02:20 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:20] [hamibot] {'time': '7:02:21 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:20] [hamibot] {'time': '7:02:21 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:20] [hamibot] {'time': '7:02:21 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:21] [hamibot] {'time': '7:02:22 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:22] [hamibot] {'time': '7:02:22 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:22] [hamibot] {'time': '7:02:22 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:23] [hamibot] {'time': '7:02:23 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:23] [hamibot] {'time': '7:02:23 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:23] [hamibot] {'time': '7:02:23 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:24] [hamibot] {'time': '7:02:24 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+�到我的页面 (第1次)'}
+[2026-06-11 19:02:24] [hamibot] {'time': '7:02:24 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:25] [hamibot] {'time': '7:02:25 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:25] [hamibot] {'time': '7:02:25 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:25] [hamibot] {'time': '7:02:25 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:26] [hamibot] {'time': '7:02:26 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:26] [hamibot] {'time': '7:02:26 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:26] [hamibot] {'time': '7:02:26 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:27] [hamibot] {'time': '7:02:27 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:27] [hamibot] {'time': '7:02:28 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:27] [hamibot] {'time': '7:02:28 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:28] [hamibot] {'time': '7:02:29 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:28] [hamibot] {'time': '7:02:29 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:28] [hamibot] {'time': '7:02:29 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:29] [hamibot] {'time': '7:02:30 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:30] [hamibot] {'time': '7:02:30 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:30] [hamibot] {'time': '7:02:30 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:31] [hamibot] {'time': '7:02:31 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:31] [hamibot] {'time': '7:02:31 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:31] [hamibot] {'time': '7:02:31 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:32] [hamibot] {'time': '7:02:32 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:32] [hamibot] {'time': '7:02:32 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:32] [hamibot] {'time': '7:02:32 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:33] [hamibot] {'time': '7:02:33 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:33] [hamibot] {'time': '7:02:33 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:34] [hamibot] {'time': '7:02:34 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:34] [hamibot] {'time': '7:02:35 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:35] [hamibot] {'time': '7:02:35 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:36] [hamibot] {'time': '7:02:36 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:36] [hamibot] {'time': '7:02:36 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:36] [hamibot] {'time': '7:02:36 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:37] [hamibot] {'time': '7:02:37 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:37] [hamibot] {'time': '7:02:37 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+(第1次)'}
+[2026-06-11 19:02:38] [hamibot] {'time': '7:02:38 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:38] [hamibot] {'time': '7:02:38 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:38] [hamibot] {'time': '7:02:38 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:39] [hamibot] {'time': '7:02:39 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:39] [hamibot] {'time': '7:02:39 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:39] [hamibot] {'time': '7:02:39 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:40] [hamibot] {'time': '7:02:40 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:40] [hamibot] {'time': '7:02:40 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:40] [hamibot] {'time': '7:02:40 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:41] [hamibot] {'time': '7:02:41 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:41] [hamibot] {'time': '7:02:41 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:41] [hamibot] {'time': '7:02:42 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:42] [hamibot] {'time': '7:02:43 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:43] [hamibot] {'time': '7:02:43 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:43] [hamibot] {'time': '7:02:43 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:44] [hamibot] {'time': '7:02:44 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:44] [hamibot] {'time': '7:02:44 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:44] [hamibot] {'time': '7:02:44 下午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-11 19:02:45] [hamibot] {'time': '7:02:45 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:45] [hamibot] {'time': '7:02:45 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:46] [hamibot] {'time': '7:02:46 下午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-11 19:02:47] [hamibot] {'time': '7:02:48 下午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-11 19:02:47] [hamibot] {'time': '7:02:48 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-11 19:02:49] [hamibot] {'time': '7:02:49 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 19:02:51] [hamibot] {'time': '7:02:51 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 19:02:51] [hamibot] {'time': '7:02:51 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 19:02:52] [hamibot] {'time': '7:02:52 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第2次)'}
+[2026-06-11 19:02:54] [hamibot] {'time': '7:02:54 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 19:02:56] [hamibot] {'time': '7:02:56 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 19:02:56] [hamibot] {'time': '7:02:56 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 19:02:57] [hamibot] {'time': '7:02:57 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第3次)'}
+[2026-06-11 19:02:58] [hamibot] {'time': '7:02:58 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 19:03:00] [hamibot] {'time': '7:03:01 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 19:03:00] [hamibot] {'time': '7:03:01 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 19:03:01] [hamibot] {'time': '7:03:02 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第4次)'}
+[2026-06-11 19:03:03] [hamibot] {'time': '7:03:03 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 19:03:05] [hamibot] {'time': '7:03:05 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 19:03:05] [hamibot] {'time': '7:03:05 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 19:03:06] [hamibot] {'time': '7:03:06 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第5次)'}
+[2026-06-11 19:03:08] [hamibot] {'time': '7:03:08 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 19:03:09] [hamibot] {'time': '7:03:10 下午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-11 19:03:09] [hamibot] {'time': '7:03:10 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 19:03:11] [hamibot] {'time': '7:03:11 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第6次)'}
+[2026-06-11 19:03:12] [hamibot] {'time': '7:03:12 下午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-11 19:03:14] [hamibot] {'time': '7:03:14 下午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-11 19:03:15] [hamibot] {'time': '7:03:15 下午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第7次)'}
+[2026-06-11 19:03:15] [hamibot] {'time': '7:03:15 下午 GMT+08:00', 'action': 'goBackMyPage: 超过最大重试次数，重启闲鱼'}
+[2026-06-11 19:03:36] [hamibot] {'time': '7:03:36 下午 GMT+08:00', 'action': 'findPage: home'}
+[2026-06-11 19:03:36] [hamibot] {'time': '7:03:36 下午 GMT+08:00', 'action': 'findPage: 闲鱼未在前台，重新启动'}
+[2026-06-11 19:08:38] [hamibot] {'time': '7:08:38 下午 GMT+08:00', 'action': 'findPage: home'}

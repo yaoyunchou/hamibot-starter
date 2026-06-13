@@ -1,0 +1,1315 @@
+[2026-03-31 09:22:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 09:22:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 09:22:15"}
+[2026-03-31 09:22:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 09:22:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 09:22:15] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 15 条 (第1次)
+[2026-03-31 09:22:15] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 09:22:15] [hamibot] [ERROR]:[ERROR] [BaseException]: Error: Failed to get the screen size. Please try restarting the service or re-installing Hamibot
+[2026-03-31 09:22:15] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 09:22:28] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 09:22:28] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 09:22:28"}
+[2026-03-31 09:22:28] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 09:22:28] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 09:22:29] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 15 条 (第1次)
+[2026-03-31 09:22:29] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 09:22:29] [hamibot] [ERROR]:[ERROR] [BaseException]: Error: Failed to get the screen size. Please try restarting the service or re-installing Hamibot
+[2026-03-31 09:22:29] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 09:25:19] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 09:25:19] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 09:25:18"}
+[2026-03-31 09:25:19] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 09:25:19] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 09:25:19] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 15 条 (第1次)
+[2026-03-31 09:25:19] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 09:25:19] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #1: 0 x 0
+[2026-03-31 09:25:20] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #2: 0 x 0
+[2026-03-31 09:25:20] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #3: 0 x 0
+[2026-03-31 09:25:20] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #4: 0 x 0
+[2026-03-31 09:25:21] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #5: 0 x 0
+[2026-03-31 09:25:21] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #6: 0 x 0
+[2026-03-31 09:25:21] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #7: 0 x 0
+[2026-03-31 09:25:22] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #8: 0 x 0
+[2026-03-31 09:25:22] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #9: 0 x 0
+[2026-03-31 09:25:23] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #10: 0 x 0
+[2026-03-31 09:25:23] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #11: 0 x 0
+[2026-03-31 09:25:23] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #12: 0 x 0
+[2026-03-31 09:25:24] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #13: 0 x 0
+[2026-03-31 09:25:24] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #14: 0 x 0
+[2026-03-31 09:25:25] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #15: 0 x 0
+[2026-03-31 09:25:25] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #16: 0 x 0
+[2026-03-31 09:25:25] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #17: 0 x 0
+[2026-03-31 09:25:26] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #18: 0 x 0
+[2026-03-31 09:25:26] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #19: 0 x 0
+[2026-03-31 09:25:26] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #20: 0 x 0
+[2026-03-31 09:25:26] [hamibot] [ERROR]:[ERROR] [BaseException]: Error: Failed to get the screen size. Please try restarting the service or re-installing Hamibot
+[2026-03-31 09:25:27] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 09:26:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 09:26:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 09:26:17"}
+[2026-03-31 09:26:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 09:26:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 09:26:17] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 15 条 (第1次)
+[2026-03-31 09:26:17] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 09:26:17] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #1: 0 x 0
+[2026-03-31 09:26:18] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #2: 0 x 0
+[2026-03-31 09:26:18] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #3: 0 x 0
+[2026-03-31 09:26:18] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #4: 0 x 0
+[2026-03-31 09:26:19] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #5: 0 x 0
+[2026-03-31 09:26:19] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #6: 0 x 0
+[2026-03-31 09:26:19] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #7: 0 x 0
+[2026-03-31 09:26:20] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #8: 0 x 0
+[2026-03-31 09:26:20] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #9: 0 x 0
+[2026-03-31 09:26:21] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #10: 0 x 0
+[2026-03-31 09:26:21] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #11: 0 x 0
+[2026-03-31 09:26:21] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #12: 0 x 0
+[2026-03-31 09:26:22] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #13: 0 x 0
+[2026-03-31 09:26:22] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #14: 0 x 0
+[2026-03-31 09:26:23] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #15: 0 x 0
+[2026-03-31 09:26:23] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #16: 0 x 0
+[2026-03-31 09:26:23] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #17: 0 x 0
+[2026-03-31 09:26:24] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #18: 0 x 0
+[2026-03-31 09:26:24] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #19: 0 x 0
+[2026-03-31 09:26:25] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #20: 0 x 0
+[2026-03-31 09:26:25] [hamibot] [ERROR]:[ERROR] [BaseException]: Error: Failed to get the screen size. Please try restarting the service or re-installing Hamibot
+[2026-03-31 09:26:25] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 09:28:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 09:28:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 09:28:42"}
+[2026-03-31 09:28:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 09:28:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 09:28:42] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 15 条 (第1次)
+[2026-03-31 09:28:42] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 09:28:42] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #1: 0 x 0
+[2026-03-31 09:28:43] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #2: 0 x 0
+[2026-03-31 09:28:43] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #3: 0 x 0
+[2026-03-31 09:28:43] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #4: 0 x 0
+[2026-03-31 09:28:44] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #5: 0 x 0
+[2026-03-31 09:28:44] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #6: 0 x 0
+[2026-03-31 09:28:45] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #7: 0 x 0
+[2026-03-31 09:28:45] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #8: 0 x 0
+[2026-03-31 09:28:45] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #9: 0 x 0
+[2026-03-31 09:28:46] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #10: 0 x 0
+[2026-03-31 09:28:46] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #11: 0 x 0
+[2026-03-31 09:28:47] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #12: 0 x 0
+[2026-03-31 09:28:47] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #13: 0 x 0
+[2026-03-31 09:28:47] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #14: 0 x 0
+[2026-03-31 09:28:48] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #15: 0 x 0
+[2026-03-31 09:28:48] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #16: 0 x 0
+[2026-03-31 09:28:48] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #17: 0 x 0
+[2026-03-31 09:28:49] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #18: 0 x 0
+[2026-03-31 09:28:49] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #19: 0 x 0
+[2026-03-31 09:28:50] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size probe #20: 0 x 0
+[2026-03-31 09:28:50] [hamibot] [ERROR]:[ERROR] [BaseException]: Error: Failed to get the screen size. Please try restarting the service or re-installing Hamibot
+[2026-03-31 09:28:50] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 09:31:36] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 09:31:36] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 09:31:36"}
+[2026-03-31 09:31:36] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 09:31:36] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 09:31:36] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 15 条 (第1次)
+[2026-03-31 09:31:36] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 09:31:39] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size: 2280 x 1080 (DisplayMetrics 或默认 1080×2400)
+[2026-03-31 09:31:39] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 15 条 (本次新增/更新 15 条)
+[2026-03-31 09:31:39] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 09:31:39] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 09:31:43] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.2 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:31:43] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.2 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:31:43] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:31:43] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:31:43] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 09:31:43] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 09:31:43] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 09:31:43] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 09:31:45] [hamibot] [INFO]:[INFO] [Outer]: 开始查找商品详情
+[2026-03-31 09:31:47] [hamibot] [INFO]:[INFO] [Outer]: 找到商品数量: 0
+[2026-03-31 09:31:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 09:32:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 09:32:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 09:32:32] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 09:32:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 09:33:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[263]: {"code":0,"data":[{"id":"ef5fa359-0d5b-459a-ba41-c550172fd0d6","type":"goldCoin","status":"pending",
+[2026-03-31 09:33:12] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 109ms
+[2026-03-31 09:33:13] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=34 1103ms
+[2026-03-31 09:33:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 446ms
+[2026-03-31 09:33:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] mainPopup/今天 缓存#9(1/1) ✓ 6012ms
+[2026-03-31 09:33:43] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#1] mainPopup/领取奖励 缓存#3(1/1) ✓ 1个 14521ms
+[2026-03-31 09:33:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/浏览指定频道好物 缓存#3(1/1) ✓ 5864ms
+[2026-03-31 09:33:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/搜一搜喜欢的商品 串行启动 12 条策略
+[2026-03-31 09:35:15] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/搜一搜喜欢的商品 串行全部✗ 串行86614ms 总86614ms
+[2026-03-31 09:35:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去浏览全新好物 缓存#3(1/1) ✓ 8267ms
+[2026-03-31 09:35:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 7558ms
+[2026-03-31 09:35:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去蚂蚁森林逛一逛 缓存[3] 全部✗ 剩余errorTime=0 7380ms
+[2026-03-31 09:35:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去支付宝农场领水果 串行启动 12 条策略
+[2026-03-31 09:35:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去支付宝农场领水果 串行#3 ✓ 串行18513ms 总18513ms
+[2026-03-31 09:35:57] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 16 条 (本次新增/更新 16 条)
+[2026-03-31 09:36:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去淘宝签到领红包 缓存#3(1/1) ✓ 8155ms
+[2026-03-31 09:36:12] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/去蚂蚁森林逛一逛 缓存[3] 全部✗ 剩余errorTime=-1 6822ms
+[2026-03-31 09:36:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去蚂蚁庄园逛一逛 缓存#3(1/1) ✓ 7639ms
+[2026-03-31 09:36:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去支付宝领积分 串行启动 12 条策略
+[2026-03-31 09:36:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去支付宝领积分 串行#3 ✓ 串行21616ms 总21616ms
+[2026-03-31 09:36:42] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 17 条 (本次新增/更新 17 条)
+[2026-03-31 09:36:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/浏览鱼小铺工作台 缓存#3(1/1) ✓ 6698ms
+[2026-03-31 09:36:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/搜一搜推荐商品 串行启动 12 条策略
+[2026-03-31 09:38:07] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/搜一搜推荐商品 串行全部✗ 串行78528ms 总78529ms
+[2026-03-31 09:38:07] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/领至高20元外卖红包 串行启动 12 条策略
+[2026-03-31 09:39:34] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/领至高20元外卖红包 串行全部✗ 串行87248ms 总87248ms
+[2026-03-31 09:39:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/看视频奖励100币 缓存#9(1/1) ✓ 15562ms
+[2026-03-31 09:40:05] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/看视频奖励100币 缓存#9(1/1) ✓ 14772ms
+[2026-03-31 09:40:19] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/看视频奖励100币 缓存#9(1/1) ✓ 14458ms
+[2026-03-31 09:40:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/看视频奖励100币 缓存#9(1/1) ✓ 14700ms
+[2026-03-31 09:40:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/发布一件新宝贝 串行启动 12 条策略
+[2026-03-31 09:40:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/发布一件新宝贝 串行#3 ✓ 串行23545ms 总23545ms
+[2026-03-31 09:40:57] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 09:40:57] [hamibot] [INFO]:[INFO] [checkGetGold]: checkGetGold: click reward without taskList match #1
+[2026-03-31 09:40:58] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=false
+[2026-03-31 09:40:58] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=false
+[2026-03-31 09:40:58] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:40:59] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 09:41:07] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 7820ms
+[2026-03-31 09:41:07] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 09:42:39] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/签到 串行全部✗ 串行92314ms 总100153ms
+[2026-03-31 09:42:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/浏览指定频道好物 缓存#3(1/1) ✓ 7553ms
+[2026-03-31 09:42:56] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/浏览指定频道好物 缓存#3(1/1) ✓ 8412ms
+[2026-03-31 09:43:04] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#2] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=19 8362ms
+[2026-03-31 09:43:19] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#1] mainPopup/去完成 缓存#3(1/1) ✓ 23个 14816ms
+[2026-03-31 09:43:19] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 2089 - 973, 2139)
+[2026-03-31 09:43:20] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览指定频道好物
+[2026-03-31 09:43:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/点击领取 串行启动 12 条策略
+[2026-03-31 09:43:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/点击领取 串行全部✗ 串行1636ms 总1636ms
+[2026-03-31 09:43:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-03-31 09:43:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1577ms 总1577ms
+[2026-03-31 09:43:51] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-03-31 09:43:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1718ms 总1718ms
+[2026-03-31 09:43:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-03-31 09:43:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1406ms 总1406ms
+[2026-03-31 09:43:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-03-31 09:43:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1635ms 总1635ms
+[2026-03-31 09:44:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/浏览指定频道好物 缓存[3] 全部✗ 剩余errorTime=2 349ms
+[2026-03-31 09:44:00] [hamibot] [INFO]:[INFO] [findBtn_1]: mainPopupFn 浏览指定频道好物 任务流已执行
+[2026-03-31 09:44:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/搜一搜喜欢的商品 串行启动 12 条策略
+[2026-03-31 09:44:01] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/搜一搜喜欢的商品 串行全部✗ 串行837ms 总837ms
+[2026-03-31 09:44:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 116ms
+[2026-03-31 09:44:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 103ms
+[2026-03-31 09:44:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] coinExchangeMain/闲鱼币抵扣 缓存#3(1/2) ✓ 16ms
+[2026-03-31 09:44:02] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 09:44:02] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 09:44:02] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 09:44:02] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 09:44:05] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:44:05] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:44:05] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:44:05] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:44:05] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 09:44:05] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 09:44:05] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 09:44:06] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 09:44:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 110ms
+[2026-03-31 09:44:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] mainPopup/今天 缓存#9(1/1) ✓ 4803ms
+[2026-03-31 09:44:49] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#3] mainPopup/领取奖励 缓存#3(1/1) ✓ 2个 14324ms
+[2026-03-31 09:44:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/浏览指定频道好物 缓存#3(1/1) ✓ 6885ms
+[2026-03-31 09:44:56] [hamibot] [INFO]:[INFO] [checkGetGold]: checkGetGold: click reward for taskList 浏览指定频道好物
+[2026-03-31 09:45:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#6] mainPopup/浏览指定频道好物 缓存[3] 全部✗ 剩余errorTime=2 4578ms
+[2026-03-31 09:45:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/搜一搜喜欢的商品 串行启动 12 条策略
+[2026-03-31 09:46:22] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/搜一搜喜欢的商品 串行全部✗ 串行80829ms 总80829ms
+[2026-03-31 09:46:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/去浏览全新好物 缓存#3(1/1) ✓ 6758ms
+[2026-03-31 09:46:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6224ms
+[2026-03-31 09:46:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/去蚂蚁森林逛一逛 缓存[3] errorTime耗尽，降级串行 5960ms
+[2026-03-31 09:46:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/去蚂蚁森林逛一逛 串行启动 12 条策略
+[2026-03-31 09:48:03] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/去蚂蚁森林逛一逛 串行全部✗ 串行82020ms 总88003ms
+[2026-03-31 09:48:04] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/去支付宝农场领水果 缓存#3(1/1) ✓ 1347ms
+[2026-03-31 09:48:05] [hamibot] [INFO]:[INFO] [checkGetGold]: checkGetGold: click reward for taskList 去支付宝农场领水果
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=true
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=true
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:48:06] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 09:48:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 3408ms
+[2026-03-31 09:48:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 09:49:41] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/签到 串行全部✗ 串行91296ms 总94748ms
+[2026-03-31 09:49:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/搜一搜喜欢的商品 串行启动 12 条策略
+[2026-03-31 09:51:10] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/搜一搜喜欢的商品 串行全部✗ 串行89279ms 总89279ms
+[2026-03-31 09:51:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] mainPopup/今天 缓存#9(1/1) ✓ 3741ms
+[2026-03-31 09:51:14] [hamibot] [INFO]:[INFO] [mainPopupFn]: 没有找到搜一搜喜欢的商品， 将当前任务改成已经运行
+[2026-03-31 09:51:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/去浏览全新好物 缓存#3(1/1) ✓ 7544ms
+[2026-03-31 09:51:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/去浏览全新好物 缓存#3(1/1) ✓ 7953ms
+[2026-03-31 09:51:34] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#4] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=19 3784ms
+[2026-03-31 09:51:45] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#2] mainPopup/去完成 缓存#3(1/1) ✓ 22个 11440ms
+[2026-03-31 09:51:45] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 2089 - 973, 2139)
+[2026-03-31 09:51:46] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++去浏览全新好物
+[2026-03-31 09:51:46] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] scrollPage/滑动浏览 缓存#3(1/2) ✓ 21ms
+[2026-03-31 09:52:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 缓存[3,7] 全部✗ 剩余errorTime=2 531ms
+[2026-03-31 09:52:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 242ms
+[2026-03-31 09:52:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=19 213ms
+[2026-03-31 09:52:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 251ms
+[2026-03-31 09:52:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=18 329ms
+[2026-03-31 09:52:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=37 510ms
+[2026-03-31 09:52:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=17 1024ms
+[2026-03-31 09:52:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=36 440ms
+[2026-03-31 09:52:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=16 838ms
+[2026-03-31 09:52:32] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=35 571ms
+[2026-03-31 09:52:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=15 603ms
+[2026-03-31 09:52:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=34 437ms
+[2026-03-31 09:52:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=14 637ms
+[2026-03-31 09:52:36] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 09:52:36] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 09:52:36] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 09:52:36] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 09:52:39] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 09:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 09:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 09:52:39] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 09:52:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 209ms
+[2026-03-31 09:52:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=33 3720ms
+[2026-03-31 09:53:13] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 529ms
+[2026-03-31 09:53:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] mainPopup/今天 缓存#9(1/1) ✓ 4368ms
+[2026-03-31 09:53:32] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#5] mainPopup/领取奖励 缓存#3(1/1) ✓ 1个 12835ms
+[2026-03-31 09:53:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#7] mainPopup/浏览指定频道好物 缓存[3] 全部✗ 剩余errorTime=1 7224ms
+[2026-03-31 09:53:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/搜一搜喜欢的商品 串行启动 12 条策略
+[2026-03-31 09:55:00] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/搜一搜喜欢的商品 串行全部✗ 串行80717ms 总80717ms
+[2026-03-31 09:55:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/去浏览全新好物 缓存#3(1/1) ✓ 6583ms
+[2026-03-31 09:55:06] [hamibot] [INFO]:[INFO] [checkGetGold]: checkGetGold: click reward for taskList 去浏览全新好物
+[2026-03-31 09:55:07] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=true
+[2026-03-31 09:55:07] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=true
+[2026-03-31 09:55:07] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=true
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=true
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:55:08] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 09:55:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 7014ms
+[2026-03-31 09:55:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 09:56:53] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/签到 串行全部✗ 串行97632ms 总104676ms
+[2026-03-31 09:56:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 5381ms
+[2026-03-31 09:57:04] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 5715ms
+[2026-03-31 09:57:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 9505ms
+[2026-03-31 09:57:21] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#6] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=19 7193ms
+[2026-03-31 09:57:37] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#3] mainPopup/去完成 缓存#3(1/1) ✓ 22个 15082ms
+[2026-03-31 09:57:37] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 1480 - 973, 1530)
+[2026-03-31 09:57:38] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览推荐的国补商品
+[2026-03-31 09:57:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 缓存[3,7] 全部✗ 剩余errorTime=1 167ms
+[2026-03-31 09:57:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 100ms
+[2026-03-31 09:57:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=13 304ms
+[2026-03-31 09:57:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 87ms
+[2026-03-31 09:57:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=12 205ms
+[2026-03-31 09:57:40] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 09:57:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=37 201ms
+[2026-03-31 09:57:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=11 229ms
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=36 161ms
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=10 161ms
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 09:57:42] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 09:57:42] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 09:57:45] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:57:45] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 09:57:45] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:57:45] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 09:57:45] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 09:57:45] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 09:57:45] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 09:57:46] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 09:58:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 582ms
+[2026-03-31 09:58:12] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#19] mainPopup/今天 缓存#9(1/1) ✓ 5266ms
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#7] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=18 2938ms
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=true
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=true
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=true
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=true
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 09:58:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 09:58:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 1571ms
+[2026-03-31 09:58:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 09:59:37] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/签到 串行全部✗ 串行79252ms 总80861ms
+[2026-03-31 09:59:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#6] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 5764ms
+[2026-03-31 09:59:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#7] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 8064ms
+[2026-03-31 10:00:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#8] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 7161ms
+[2026-03-31 10:00:06] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#8] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=17 6518ms
+[2026-03-31 10:00:19] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#4] mainPopup/去完成 缓存#3(1/1) ✓ 22个 12518ms
+[2026-03-31 10:00:19] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 1480 - 973, 1530)
+[2026-03-31 10:00:20] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览推荐的国补商品
+[2026-03-31 10:00:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 缓存[3,7] 全部✗ 剩余errorTime=0 162ms
+[2026-03-31 10:00:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#20] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 89ms
+[2026-03-31 10:00:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=9 205ms
+[2026-03-31 10:00:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#21] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 152ms
+[2026-03-31 10:00:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=8 146ms
+[2026-03-31 10:00:23] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:00:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#22] mainPopup/今天 缓存#9(1/1) ✓ 546ms
+[2026-03-31 10:00:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] coinExchangeMain/闲鱼币抵扣 缓存#3(1/2) ✓ 127ms
+[2026-03-31 10:00:24] [hamibot] [INFO]:[INFO] [backMainPage]: 回到主弹框页面!
+[2026-03-31 10:00:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#9] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 1265ms
+[2026-03-31 10:00:29] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#9] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=16 1677ms
+[2026-03-31 10:00:29] [hamibot] [INFO]:[INFO] [findBtn_1]: mainPopupFn 浏览推荐的国补商品 任务流已执行
+[2026-03-31 10:00:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/去蚂蚁森林逛一逛 缓存[3] errorTime耗尽，降级串行 1707ms
+[2026-03-31 10:00:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/去蚂蚁森林逛一逛 串行启动 12 条策略
+[2026-03-31 10:01:20] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/去蚂蚁森林逛一逛 串行全部✗ 串行49413ms 总51146ms
+[2026-03-31 10:01:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#23] mainPopup/今天 缓存#9(1/1) ✓ 4335ms
+[2026-03-31 10:01:24] [hamibot] [INFO]:[INFO] [mainPopupFn]: 没有找到去蚂蚁森林逛一逛， 将当前任务改成已经运行
+[2026-03-31 10:01:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/去淘宝签到领红包 缓存#3(1/1) ✓ 5804ms
+[2026-03-31 10:01:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/去淘宝签到领红包 缓存#3(1/1) ✓ 6777ms
+[2026-03-31 10:01:46] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/去淘宝签到领红包 缓存#3(1/1) ✓ 8487ms
+[2026-03-31 10:01:55] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#10] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=15 8580ms
+[2026-03-31 10:02:10] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#5] mainPopup/去完成 缓存#3(1/1) ✓ 22个 15112ms
+[2026-03-31 10:02:11] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 2163 - 973, 2212)
+[2026-03-31 10:02:12] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++去淘宝签到领红包
+[2026-03-31 10:02:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#24] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 218ms
+[2026-03-31 10:02:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=19 107ms
+[2026-03-31 10:02:18] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:02:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#25] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 189ms
+[2026-03-31 10:02:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=18 236ms
+[2026-03-31 10:02:20] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:02:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#26] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=37 124ms
+[2026-03-31 10:02:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] coinExchangeMain/闲鱼币抵扣 缓存#3(1/2) ✓ 115ms
+[2026-03-31 10:02:21] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:02:21] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 10:02:21] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:02:21] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:02:21] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:02:24] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.0 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:02:24] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.0 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:02:24] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:02:24] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:02:24] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:02:24] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:02:24] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:02:25] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:02:44] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 165ms
+[2026-03-31 10:02:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#27] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=36 4088ms
+[2026-03-31 10:02:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] coinExchangeMain/闲鱼币 缓存[3] 全部✗ 剩余errorTime=2 795ms
+[2026-03-31 10:02:52] [hamibot] [ERROR]:[ERROR] [coinExchange]: coinExchange, 金币页面未找到闲鱼币
+[2026-03-31 10:02:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#28] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=35 364ms
+[2026-03-31 10:02:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=19 671ms
+[2026-03-31 10:02:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#29] mainPopup/今天 缓存#9(1/1) ✓ 2547ms
+[2026-03-31 10:02:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#19] coinExchangeMain/闲鱼币抵扣 缓存#3(1/2) ✓ 211ms
+[2026-03-31 10:02:57] [hamibot] [INFO]:[INFO] [backMainPage]: 回到主弹框页面!
+[2026-03-31 10:03:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#30] mainPopup/今天 缓存#9(1/1) ✓ 4113ms
+[2026-03-31 10:03:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#20] coinExchangeMain/闲鱼币抵扣 缓存#3(1/2) ✓ 267ms
+[2026-03-31 10:03:02] [hamibot] [INFO]:[INFO] [backMainPage]: 回到主弹框页面!
+[2026-03-31 10:03:10] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/去淘宝签到领红包 缓存#3(1/1) ✓ 6673ms
+[2026-03-31 10:03:23] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#11] mainPopup/领取奖励 缓存#3(1/1) ✓ 1个 13222ms
+[2026-03-31 10:03:24] [hamibot] [INFO]:[INFO] [findBtn_1]: mainPopupFn 去淘宝签到领红包 任务流已执行
+[2026-03-31 10:03:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/去蚂蚁森林逛一逛 缓存[3] errorTime耗尽，降级串行 1920ms
+[2026-03-31 10:03:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/去蚂蚁森林逛一逛 串行启动 12 条策略
+[2026-03-31 10:04:33] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 10:04:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 10:04:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 10:04:31"}
+[2026-03-31 10:04:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 10:04:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 10:04:33] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 18 条 (第1次)
+[2026-03-31 10:04:33] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 10:04:36] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size: 2280 x 1080 (DisplayMetrics 或默认 1080×2400)
+[2026-03-31 10:04:36] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:04:36] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:04:36] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:04:39] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.0 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:04:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前5.0 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:04:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:04:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:04:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:04:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:04:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:04:39] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:04:41] [hamibot] [INFO]:[INFO] [Outer]: 开始查找商品详情
+[2026-03-31 10:04:43] [hamibot] [INFO]:[INFO] [Outer]: 找到商品数量: 0
+[2026-03-31 10:04:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:04:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:05:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:05:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:05:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:05:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:06:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:06:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:06:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:07:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[263]: {"code":0,"data":[{"id":"ad9a8f80-2175-482e-93c3-1d226b5d3d3f","type":"goldCoin","status":"pending",
+[2026-03-31 10:07:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 254ms
+[2026-03-31 10:07:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=36 4753ms
+[2026-03-31 10:07:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 481ms
+[2026-03-31 10:07:36] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] mainPopup/今天 缓存#9(1/1) ✓ 4605ms
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#1] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=14 4491ms
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:07:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 10:07:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 7668ms
+[2026-03-31 10:07:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 10:09:13] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/签到 串行全部✗ 串行82918ms 总90639ms
+[2026-03-31 10:09:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/浏览指定频道好物 缓存[3] 全部✗ 剩余errorTime=0 6516ms
+[2026-03-31 10:09:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] mainPopup/今天 缓存#9(1/1) ✓ 4150ms
+[2026-03-31 10:09:24] [hamibot] [INFO]:[INFO] [mainPopupFn]: 没有找到浏览指定频道好物， awaitingRewardClaim
+[2026-03-31 10:09:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/搜一搜喜欢的商品 串行启动 12 条策略
+[2026-03-31 10:10:37] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/搜一搜喜欢的商品 串行全部✗ 串行73234ms 总73234ms
+[2026-03-31 10:10:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] mainPopup/今天 缓存#9(1/1) ✓ 3944ms
+[2026-03-31 10:10:41] [hamibot] [INFO]:[INFO] [mainPopupFn]: 没有找到搜一搜喜欢的商品， awaitingRewardClaim
+[2026-03-31 10:10:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/去浏览全新好物 缓存[3] 全部✗ 剩余errorTime=2 7110ms
+[2026-03-31 10:10:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] mainPopup/今天 缓存#9(1/1) ✓ 4998ms
+[2026-03-31 10:10:53] [hamibot] [INFO]:[INFO] [mainPopupFn]: 没有找到去浏览全新好物， awaitingRewardClaim
+[2026-03-31 10:11:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#1] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6381ms
+[2026-03-31 10:11:07] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6497ms
+[2026-03-31 10:11:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 7461ms
+[2026-03-31 10:11:30] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#1] mainPopup/去完成 缓存#3(1/1) ✓ 22个 14760ms
+[2026-03-31 10:11:30] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 1480 - 973, 1530)
+[2026-03-31 10:11:31] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览推荐的国补商品
+[2026-03-31 10:11:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] scrollPage/滑动浏览 缓存[3,7] 全部✗ 剩余errorTime=-1 147ms
+[2026-03-31 10:11:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 87ms
+[2026-03-31 10:11:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=19 106ms
+[2026-03-31 10:11:32] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 10:11:33] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:11:33] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:11:34] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:11:38] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:11:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:11:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:11:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:11:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:11:40] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:11:40] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:11:40] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:12:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 618ms
+[2026-03-31 10:12:05] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] mainPopup/今天 缓存#9(1/1) ✓ 4833ms
+[2026-03-31 10:12:13] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#2] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=13 6687ms
+[2026-03-31 10:12:13] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=false
+[2026-03-31 10:12:13] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:12:14] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 10:12:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 7954ms
+[2026-03-31 10:12:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 10:13:30] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#2] mainPopup/签到 串行全部✗ 串行67569ms 总75629ms
+[2026-03-31 10:13:36] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 5740ms
+[2026-03-31 10:13:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#5] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6330ms
+[2026-03-31 10:13:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#6] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6042ms
+[2026-03-31 10:13:53] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#2] mainPopup/去完成 缓存#3(1/1) ✓ 22个 4504ms
+[2026-03-31 10:13:54] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 1480 - 973, 1530)
+[2026-03-31 10:13:55] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览推荐的国补商品
+[2026-03-31 10:13:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 缓存[3,7] errorTime耗尽，降级串行 187ms
+[2026-03-31 10:13:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-03-31 10:13:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 串行全部✗ 串行1476ms 总1803ms
+[2026-03-31 10:13:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 409ms
+[2026-03-31 10:13:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=18 178ms
+[2026-03-31 10:13:58] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:13:59] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 474ms
+[2026-03-31 10:14:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=17 828ms
+[2026-03-31 10:14:00] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:14:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=37 705ms
+[2026-03-31 10:14:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=16 267ms
+[2026-03-31 10:14:01] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:14:01] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 10:14:02] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:14:02] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:14:02] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:14:04] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.5 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.5 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:14:05] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:14:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 606ms
+[2026-03-31 10:14:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] mainPopup/今天 缓存#9(1/1) ✓ 2416ms
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#3] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=12 8153ms
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:14:32] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:14:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 10:14:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 6587ms
+[2026-03-31 10:14:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 10:16:02] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#3] mainPopup/签到 串行全部✗ 串行83290ms 总89896ms
+[2026-03-31 10:16:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#7] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6695ms
+[2026-03-31 10:16:17] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#8] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6692ms
+[2026-03-31 10:16:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#9] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 8066ms
+[2026-03-31 10:16:37] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#3] mainPopup/去完成 缓存#3(1/1) ✓ 22个 11370ms
+[2026-03-31 10:16:37] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 1480 - 973, 1530)
+[2026-03-31 10:16:38] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览推荐的国补商品
+[2026-03-31 10:16:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 缓存[3,7] errorTime耗尽，降级串行 214ms
+[2026-03-31 10:16:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-03-31 10:16:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 串行全部✗ 串行1276ms 总1518ms
+[2026-03-31 10:16:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 184ms
+[2026-03-31 10:16:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=15 118ms
+[2026-03-31 10:16:41] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:16:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 102ms
+[2026-03-31 10:16:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=14 183ms
+[2026-03-31 10:16:41] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:16:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=37 1043ms
+[2026-03-31 10:16:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=13 282ms
+[2026-03-31 10:16:43] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:16:43] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 10:16:43] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:16:43] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:16:43] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:16:46] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:16:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:16:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:16:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:16:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:16:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:16:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:16:46] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:17:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] coinExchangeMain/闲鱼币 缓存#3(1/1) ✓ 580ms
+[2026-03-31 10:17:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] mainPopup/今天 缓存#9(1/1) ✓ 2190ms
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#4] mainPopup/领取奖励 缓存[3] 全部✗ 剩余errorTime=11 5464ms
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览指定频道好物: hasRun=false
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜喜欢的商品: hasRun=false
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去浏览全新好物: hasRun=false
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览推荐的国补商品: hasRun=false
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=undefined
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝农场领水果: hasRun=false
+[2026-03-31 10:17:15] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去淘宝签到领红包: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁森林逛一逛: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去蚂蚁庄园逛一逛: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 去支付宝领积分: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 浏览鱼小铺工作台: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 搜一搜推荐商品: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 领至高20元外卖红包: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 看视频奖励100币: hasRun=false
+[2026-03-31 10:17:16] [hamibot] [INFO]:[INFO] [Anonymous functions]: 发布一件新宝贝: hasRun=false
+[2026-03-31 10:17:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/签到 缓存[3] errorTime耗尽，降级串行 6882ms
+[2026-03-31 10:17:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/签到 串行启动 12 条策略
+[2026-03-31 10:18:50] [hamibot] [ERROR]:[ERROR] [findTargetElementWithCacheStrict]: [sel-strict#4] mainPopup/签到 串行全部✗ 串行87389ms 总94310ms
+[2026-03-31 10:18:56] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#10] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 5874ms
+[2026-03-31 10:19:03] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#11] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 6151ms
+[2026-03-31 10:19:11] [hamibot] [INFO]:[INFO] [findTargetElementWithCacheStrict]: [sel-strict#12] mainPopup/浏览推荐的国补商品 缓存#3(1/1) ✓ 7063ms
+[2026-03-31 10:19:25] [hamibot] [INFO]:[INFO] [findTargetElementList]: [sel-list#4] mainPopup/去完成 缓存#3(1/1) ✓ 22个 14205ms
+[2026-03-31 10:19:25] [hamibot] [INFO]:[INFO] [findBtn_1]: sysReact, 去完成 bounds: Rect(866, 1480 - 973, 1530)
+[2026-03-31 10:19:26] [hamibot] [INFO]:[INFO] [findBtn_1]: 运行++浏览推荐的国补商品
+[2026-03-31 10:19:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 缓存[3,7] errorTime耗尽，降级串行 191ms
+[2026-03-31 10:19:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-03-31 10:19:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 串行全部✗ 串行1321ms 总1559ms
+[2026-03-31 10:19:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=39 73ms
+[2026-03-31 10:19:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=12 137ms
+[2026-03-31 10:19:28] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:19:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=38 68ms
+[2026-03-31 10:19:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=11 151ms
+[2026-03-31 10:19:29] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:19:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] mainPopup/今天 缓存[9] 全部✗ 剩余errorTime=37 830ms
+[2026-03-31 10:19:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] coinExchangeMain/闲鱼币抵扣 缓存[3,6] 全部✗ 剩余errorTime=10 358ms
+[2026-03-31 10:19:31] [hamibot] [INFO]:[INFO] [backMainPage]: 当前app不是闲鱼，直接回退 com.taobao.taobao
+[2026-03-31 10:19:31] [hamibot] [ERROR]:[ERROR] [backMainPage]: 死循环了， 关闭app
+[2026-03-31 10:19:31] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:19:31] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:19:31] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:19:33] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:19:33] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.4 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:19:33] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:19:33] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:19:33] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:19:33] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:19:33] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:19:34] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:19:39] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-03-31 10:19:41] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-03-31 10:19:41] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"69c892b6992c1948e94a51a6","TIMESTAMP":"2026-03-31 10:19:41"}
+[2026-03-31 10:19:41] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-03-31 10:19:42] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-03-31 10:19:42] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 18 条 (第1次)
+[2026-03-31 10:19:42] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-03-31 10:19:45] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size: 2280 x 1080 (DisplayMetrics 或默认 1080×2400)
+[2026-03-31 10:19:45] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-03-31 10:19:45] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-03-31 10:19:45] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-03-31 10:19:47] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.5 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:19:47] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a72a; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.5 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-03-31 10:19:47] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:19:47] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-03-31 10:19:48] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-03-31 10:19:48] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-03-31 10:19:48] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-03-31 10:19:48] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-03-31 10:19:51] [hamibot] [INFO]:[INFO] [Outer]: 开始查找商品详情
+[2026-03-31 10:19:54] [hamibot] [INFO]:[INFO] [Outer]: 找到商品数量: 0
+[2026-03-31 10:19:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:20:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:20:25] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:20:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:20:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:21:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:21:25] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:21:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:21:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:22:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:22:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:22:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:22:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:23:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:23:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:23:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:23:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:24:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:24:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:24:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:24:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:25:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:25:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:25:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:25:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:26:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:26:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:26:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:26:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:27:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:27:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:27:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:28:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:28:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:28:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:28:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:29:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:29:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:29:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:29:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:30:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:30:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:30:32] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:31:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:32:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:32:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:32:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:33:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:33:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:33:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:33:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:34:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:34:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:34:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:34:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:35:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:35:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:35:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:35:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:36:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:36:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:36:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:36:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:37:09] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:37:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:37:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:37:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:38:09] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:38:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:38:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:38:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:39:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:39:25] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:39:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:39:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:40:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:40:25] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:40:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:40:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:41:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:41:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:41:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:41:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:42:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:42:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:42:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:43:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:43:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:43:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:43:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:44:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:44:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:44:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:44:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:45:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:45:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:45:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:45:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:46:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:46:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:46:36] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:46:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:47:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:47:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:47:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:47:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:48:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:48:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:48:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:48:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:49:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:49:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:49:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:49:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:50:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:50:25] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:50:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:50:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:51:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:51:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:51:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:51:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:52:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:52:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:52:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:52:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:53:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:53:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:53:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:53:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:54:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:54:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:54:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:54:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:55:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:55:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:55:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:56:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:56:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:56:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:56:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:57:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:57:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:57:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:57:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:58:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:58:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:58:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:58:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:59:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:59:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:59:32] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 10:59:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:00:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:00:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:00:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:00:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:01:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:01:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:01:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:01:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:02:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:02:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:02:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:02:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:03:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:03:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:03:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:03:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:04:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:04:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:04:36] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:04:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:05:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:05:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:05:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:05:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:06:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:06:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:06:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:06:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:07:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:07:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:07:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:07:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:08:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:08:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:08:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:09:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:09:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:09:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:09:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:10:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:10:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:10:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:10:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:11:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:11:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:11:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:11:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:12:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:12:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:12:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:12:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:13:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:13:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:13:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:13:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:14:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:14:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:14:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:14:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:15:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:15:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:15:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:15:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:16:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:16:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:16:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:16:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:17:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:17:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:17:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:18:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:18:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:18:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:18:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:19:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:19:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:19:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:19:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:20:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:20:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:20:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:20:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:21:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:21:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:21:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:21:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:22:09] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:22:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:22:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:22:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:23:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:23:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:23:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:23:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:24:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:24:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:24:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:25:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:25:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:25:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:25:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:26:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:26:32] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:26:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:27:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:27:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:27:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:27:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:28:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:28:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:28:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:28:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:29:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:29:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:29:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:29:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:30:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:30:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:30:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:30:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:31:09] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:31:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:31:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:31:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:32:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:33:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:33:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:33:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:34:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:34:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:34:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:35:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:35:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:35:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:35:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:36:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:36:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:36:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:36:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:37:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:37:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:37:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:38:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:38:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:38:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:38:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:39:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:39:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:39:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:39:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:40:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:40:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:40:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:40:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:41:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:41:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:41:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:41:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:42:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:42:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:42:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:43:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:43:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:43:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:43:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:44:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:44:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:44:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:44:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:45:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:45:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:45:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:45:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:46:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:46:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:47:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:47:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:47:36] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:48:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:48:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:48:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:48:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:49:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:49:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:49:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:50:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:50:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:50:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:51:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:51:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:51:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:52:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:52:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:52:36] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:52:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:53:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:53:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:53:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:53:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:54:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:54:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:54:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:54:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:55:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:55:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:55:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:56:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:56:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:56:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:56:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:57:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:57:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:57:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:57:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:58:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:58:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:58:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:58:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:59:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:59:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 11:59:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:00:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:00:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:00:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:00:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:01:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:01:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:01:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:01:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:02:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:02:22] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:02:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:02:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:03:10] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:03:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:03:41] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:03:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:04:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:04:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:04:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:05:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:05:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:05:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:05:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:06:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:06:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:06:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:06:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:07:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:07:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:07:39] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:07:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:08:09] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:08:25] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:08:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:08:55] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:09:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:09:26] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:09:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:09:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:10:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:10:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:10:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:10:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:11:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:11:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:11:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:11:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:12:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:12:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:12:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:13:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:13:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:13:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:13:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:14:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:14:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:14:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:14:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:15:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:15:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:15:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:15:52] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:16:07] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:16:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:16:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:16:54] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:17:09] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:17:24] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:17:40] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:17:56] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:18:11] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:18:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:18:42] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:18:57] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:19:12] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:19:27] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:19:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:19:58] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:20:13] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:20:28] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:20:43] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:20:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:21:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:21:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:21:45] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:22:00] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:22:15] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:22:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:22:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:23:01] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:23:16] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:23:31] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:23:46] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:24:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:24:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:24:32] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:24:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:25:02] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:25:17] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:25:32] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:25:47] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:26:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:26:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:26:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:26:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:27:03] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:27:18] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:27:33] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:27:48] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:28:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:28:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:28:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:28:49] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:29:04] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:29:19] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:29:34] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:29:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:30:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:30:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:30:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:30:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:31:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:31:20] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:31:35] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:31:50] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:32:05] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:32:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:32:36] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:32:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:33:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:33:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:33:37] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:33:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:34:08] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:34:23] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:34:38] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:34:53] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-03-31 12:35:08] [hamibot] [INFO]:[INFO] [Outer]: Exit...

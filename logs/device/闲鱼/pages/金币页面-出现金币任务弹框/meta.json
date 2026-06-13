@@ -1,0 +1,11 @@
+{
+  "page_path": "金币页面-出现金币任务弹框",
+  "dir": "金币页面-出现金币任务弹框",
+  "activity": "android.view.View",
+  "package": "com.miui.home",
+  "fingerprint": "89d06c916566098d72fb0319f6d5fc50bc3905f33191bcbcb144b2caa5701269",
+  "max_depth": 30,
+  "node_count": 811,
+  "captured_at": "2026-06-12 09:32:26",
+  "source": "dashboard_capture"
+}

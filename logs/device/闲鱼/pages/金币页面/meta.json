@@ -1,0 +1,11 @@
+{
+  "page_path": "金币页面",
+  "dir": "金币页面",
+  "activity": "android.view.View",
+  "package": "com.miui.home",
+  "fingerprint": "757a24b0733170c1b8447c1c477086c01a35a4a2a1a57a19d0d6419aaa573bf2",
+  "max_depth": 30,
+  "node_count": 516,
+  "captured_at": "2026-06-12 09:31:48",
+  "source": "dashboard_capture"
+}
