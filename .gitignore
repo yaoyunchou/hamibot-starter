@@ -1,6 +1,9 @@
 node_modules
 build
 .VSCodeCounter
+# 本地 IDE 配置（含 token、解释器路径，勿提交）
+.vscode/
+server/.vscode/
 regex.md
 server/.env
 index.dts
