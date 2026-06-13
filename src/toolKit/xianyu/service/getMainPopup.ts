@@ -166,44 +166,29 @@ export const backMainPage = () => {
     return;
   }
 
-  const mainPopup = findTargetElementWithCache("mainPopup", "今天", 3);
-  const guideButton = findTargetElementWithCache(
-    "coinExchangeMain",
-    "闲鱼币抵扣",
-    20
-  );
-  if (mainPopup || isGoldTaskPopupOpen()) {
-    maxLoopTime = 0;
-    setRunInfo('backMainPage: 已回到主弹框页面');
-    Record.info("回到主弹框页面!");
-  } else if (guideButton) {
-    setRunInfo('backMainPage: 有闲鱼币抵扣但不在金币 H5，执行返回');
-    back();
-    maxLoopTime++;
-    backMainPage();
-  } else {
-    const activity = currentActivity();
-    setRunInfo(`backMainPage: 无主弹框/无金币按钮，当前 activity=${activity}，maxLoopTime=${maxLoopTime}`);
-    if (activity === PageType.goldCoin) {
-      const probe = probeGoldCoinPage(800);
-      setRunInfo(`backMainPage: goldCoin activity 但未识别地图 (${probe.reason})`);
-      sleep(2500);
-      maxLoopTime++;
-      backMainPage();
-    } else if (activity === PageType.home || activity === PageType.product) {
-      setRunInfo(`backMainPage: 主页/商品页(${activity})，前往金币页`);
-      maxLoopTime = 0;
-      findPage("goldCoin");
-    } else {
-      setRunInfo(`backMainPage: 未知页面(${activity})，执行 back 后重试`);
-      back();
-      sleep(2000);
-      back();
-      sleep(2000);
-      maxLoopTime++;
-      backMainPage();
+  // 已在闲鱼包内但不在金币地图 — 直接导航，勿再用「今天」旧检测空转
+  const activity = currentActivity();
+  setRunInfo(`backMainPage: 已在闲鱼 activity=${activity}，导航金币页`);
+  Record.info(`backMainPage: on xianyu activity=${activity}, goto goldCoin`);
+
+  if (activity === PageType.goldCoin) {
+    sleep(2000);
+    if (isOnGoldCoinPage(1000)) {
+      assertOnGoldCoinPage("backMainPage", 200);
+      return;
+    }
+    const probe = probeGoldCoinPage(800);
+    setRunInfo(`backMainPage: WebHybrid 未就绪 (${probe.reason})，等待`);
+    Record.info(`backMainPage: goldCoin wait ${probe.reason}`);
+    sleep(2500);
+    if (isOnGoldCoinPage(1000)) {
+      assertOnGoldCoinPage("backMainPage", 200);
+      return;
     }
   }
+
+  maxLoopTime = 0;
+  findPage("goldCoin");
 };
 
 // 搜一搜喜欢的商品
@@ -225,23 +210,75 @@ const searchForLikedGoods = () => {
   }
 };
 
-const scrollPage = () => {
-  setRunInfo('scrollPage: 开始滑动浏览');
-  let progressBar = findTargetElementWithCache("scrollPage", "滑动浏览");
+/** 浏览类任务：页面上常见「滑动浏览」进度或 ProgressBar，至少滑满此次数（约 15s） */
+const SCROLL_BROWSE_MIN_SWIPES = 15;
+const SCROLL_BROWSE_MAX_SWIPES = 40;
+const SCROLL_LANDING_WAIT_MS = 2500;
+const SCROLL_POLL_INTERVAL_MS = 600;
 
-  let max_loop = 40;
-  while (progressBar && max_loop > 0) {
-    const result = swipe(200, 2200, 200, 1700, 1000);
-    if (result) {
-      sleep(1000);
-      max_loop--;
-      setRunInfo(`scrollPage: 滑动中，剩余 ${max_loop} 次`);
-      if (max_loop < 23) {
-        progressBar = findTargetElementWithCache("scrollPage", "滑动浏览");
-      }
+/** 淘宝/闲鱼浏览落地页上的进度提示（不走 scrollPage 缓存，避免 WebView 换页后缓存全 miss 直接跳过滑动） */
+function findScrollBrowseHint(): UiObject | null {
+  try {
+    const tv = className("android.widget.TextView").textContains("滑动浏览").findOne(400);
+    if (tv) return tv;
+  } catch {
+    /* skip */
+  }
+  try {
+    const pb = className("android.widget.ProgressBar").findOne(400);
+    if (pb) return pb;
+  } catch {
+    /* skip */
+  }
+  return findTargetElementWithCache("scrollPage", "滑动浏览", -1);
+}
+
+function waitScrollBrowseHint(maxWaitMs: number): UiObject | null {
+  const deadline = Date.now() + maxWaitMs;
+  while (Date.now() < deadline) {
+    const hint = findScrollBrowseHint();
+    if (hint) {
+      setRunInfo("scrollPage: 检测到浏览进度指示");
+      return hint;
+    }
+    sleep(SCROLL_POLL_INTERVAL_MS);
+  }
+  setRunInfo("scrollPage: 未检测到进度指示，将至少滑动 15 次");
+  return null;
+}
+
+const scrollPage = () => {
+  setRunInfo("scrollPage: 开始滑动浏览，等待落地页");
+  sleep(SCROLL_LANDING_WAIT_MS);
+
+  let hint = waitScrollBrowseHint(8000);
+  let swipeCount = 0;
+
+  while (swipeCount < SCROLL_BROWSE_MAX_SWIPES) {
+    if (swipeCount >= SCROLL_BROWSE_MIN_SWIPES && !hint) break;
+
+    const ok = swipe(200, 2200, 200, 1700, 1000);
+    if (!ok) {
+      sleep(500);
+      continue;
+    }
+    sleep(1000);
+    swipeCount++;
+    const remain = Math.max(0, SCROLL_BROWSE_MIN_SWIPES - swipeCount);
+    if (remain > 0) {
+      setRunInfo(`scrollPage: 第 ${swipeCount} 次滑动，至少还需 ${remain} 次`);
+    } else if (hint) {
+      setRunInfo(`scrollPage: 第 ${swipeCount} 次滑动，进度条仍在`);
+    } else {
+      setRunInfo(`scrollPage: 第 ${swipeCount} 次滑动`);
+    }
+
+    if (swipeCount % 3 === 0 || swipeCount === SCROLL_BROWSE_MIN_SWIPES) {
+      hint = findScrollBrowseHint();
     }
   }
-  setRunInfo('scrollPage: 浏览完成');
+
+  setRunInfo(`scrollPage: 浏览完成，共滑动 ${swipeCount} 次`);
 };
 
 // 100coin

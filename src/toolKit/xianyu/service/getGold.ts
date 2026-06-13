@@ -8,11 +8,6 @@
  */
 import { Record } from "../../../lib/logger";
 import { createLogs } from "../../../lib/service";
-import {
-  findTargetElementList,
-  findTargetElementWithCache,
-  findTargetElementWithCacheStrict,
-} from "../utils/selector";
 import { findByA11yId, tryClickNode } from "../utils/common";
 import { APPNAME, flushTraces, PageType, setRunInfo } from "./base";
 import { dumpActiveWindowLayout } from "./layoutDump";
@@ -23,6 +18,11 @@ import {
   isOnGoldCoinPage,
   probeGoldCoinPage,
 } from "./goldPageDetect";
+import {
+  findAllInTaskList,
+  findTaskPopupSignIn,
+  findTaskTitleStrict,
+} from "./taskPopupQuery";
 import { requestTaskStop, shouldStopCurrentTask } from "./taskControl";
 
 const TASK_LIST_VISIBLE_TOP = 1100;
@@ -266,10 +266,15 @@ function isTitleAlignedWithActionBtn(taskTitleTop: number, actionBtnTop: number)
 
 export function checkGetGold() {
   if (!assertGoldFlowContinue()) return;
+  const pending = taskList.filter((t: any) => t.awaitingRewardClaim === true);
+  if (pending.length === 0) {
+    setRunInfo("checkGetGold: 无待领取任务，跳过");
+    return;
+  }
   setRunInfo("checkGetGold: 检查领取奖励");
-  sleep(800);
-  const rewards = findTargetElementList("mainPopup", "领取奖励", 20);
-  if (!rewards || rewards.length === 0) {
+  sleep(400);
+  const rewards = findAllInTaskList("领取奖励");
+  if (rewards.length === 0) {
     setRunInfo("checkGetGold: 无可领取奖励");
     return;
   }
@@ -278,11 +283,10 @@ export function checkGetGold() {
     if (!assertGoldFlowContinue()) return;
     const reward = rewards[i];
     const rTop = reward.bounds().top;
-    const candidates = taskList.filter((t: any) => t.awaitingRewardClaim === true);
     let matched: any = null;
-    for (let j = 0; j < candidates.length; j++) {
-      const task: any = candidates[j];
-      const titleEl = findTargetElementWithCacheStrict("mainPopup", task.title);
+    for (let j = 0; j < pending.length; j++) {
+      const task: any = pending[j];
+      const titleEl = findTaskTitleStrict(task.title);
       if (!titleEl) continue;
       const tTop = titleEl.bounds().top;
       if (isTitleAlignedWithActionBtn(tTop, rTop)) {
@@ -297,20 +301,18 @@ export function checkGetGold() {
       matched.awaitingRewardClaim = false;
     } else {
       reward.click();
-      if (candidates.length > 0) {
-        candidates.forEach((t: any) => {
-          t.awaitingRewardClaim = false;
-          t.hasRun = true;
-        });
-      }
+      pending.forEach((t: any) => {
+        t.awaitingRewardClaim = false;
+        t.hasRun = true;
+      });
     }
     sleep(800);
   }
 }
 
 function findMainPopupActionAligned(taskTitleTop: number, keyword: string): any {
-  const btns = findTargetElementList("mainPopup", keyword);
-  if (!btns || btns.length === 0) return null;
+  const btns = findAllInTaskList(keyword);
+  if (btns.length === 0) return null;
   for (let i = 0; i < btns.length; i++) {
     const react = btns[i].bounds();
     if (taskTitleTop - react.top < 20) return btns[i];
@@ -362,7 +364,7 @@ export function mainPopupFn(title: string, callback: () => void, task: any) {
   while (scrollAttempts <= TASK_SCROLL_MAX) {
     if (!assertGoldFlowContinue()) return;
 
-    const titleEl = findTargetElementWithCacheStrict("mainPopup", title);
+    const titleEl = findTaskTitleStrict(title);
     if (!titleEl) {
       if (isTaskPopupOpen()) {
         task.awaitingRewardClaim = true;
@@ -446,11 +448,7 @@ export function mainPopupTask(round: number = 0) {
       return;
     }
 
-    const qdBtn = findTargetElementWithCacheStrict("mainPopup", "签到", {
-      excludeContains: ["提醒", "收益"],
-      timeoutEach: 100,
-      errorTime: 15,
-    });
+    const qdBtn = findTaskPopupSignIn();
     if (qdBtn) {
       qdBtn.click();
       sleep(800);

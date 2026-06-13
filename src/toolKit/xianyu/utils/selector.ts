@@ -1,6 +1,11 @@
 import { Record } from "../../../lib/logger";
 import { getElementCache, saveElementCache } from "../../../lib/service";
 import { setRunInfo } from "../service/base";
+import {
+  findAllInTaskList,
+  findTaskTitleStrict,
+  isTaskPopupVisible,
+} from "../service/taskPopupQuery";
 
 
 
@@ -174,6 +179,11 @@ export const findTargetElementWithCache = (taskName: string, title: string, erro
 
 // 使用多种策略查找元素列表
 export const findTargetElementList = ( taskName: string,title: string, errorTime:number = 3) => {
+    if (taskName === "mainPopup" && isTaskPopupVisible()) {
+        const scoped = findAllInTaskList(title);
+        return scoped.length > 0 ? (scoped as any) : null;
+    }
+
     const startTs = Date.now();
     const cacheKey = `${taskName}_${title}`;
     const callN = _incCall(cacheKey + '_list');
@@ -254,8 +264,12 @@ export const findTargetElementWithCacheStrict = (
     options: StrictFindOptions = {}
 ) => {
     const { excludeContains = ["下单"], timeoutEach = 100 , errorTime = 3} = options;
-    const cacheKey = `${taskName}_${title}_strict`;
 
+    if (taskName === "mainPopup" && isTaskPopupVisible()) {
+        return findTaskTitleStrict(title, { excludeContains });
+    }
+
+    const cacheKey = `${taskName}_${title}_strict`;
     const exactRegex = new RegExp(`^\\s*${escapeRegExp(title)}\\s*$`);
     const isExcluded = (txt: string) => {
         const t = (txt || "").trim();
