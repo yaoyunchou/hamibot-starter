@@ -587,6 +587,7 @@
           <button class="btn btn-primary btn-sm" onclick="goldAddTask()">＋ 添加任务</button>
           <button class="btn btn-outline btn-sm" onclick="loadGoldPanel()">↻ 刷新</button>
           <button class="btn btn-danger btn-sm" onclick="goldResetAll()">重置全部</button>
+          <button class="btn btn-outline btn-sm" onclick="goldReinit()" title="用内置默认列表覆盖今日任务（保留自定义项）">↺ 重新初始化</button>
           <span id="gold-date-badge" style="font-size:12px;color:var(--muted);margin-left:auto"></span>
         </div>
       </div>
@@ -1419,6 +1420,17 @@ async function goldResetAll() {
       method: 'POST',
     }).then(res => res.json());
     toast(r.message || (r.code === 0 ? '已重置' : '失败'), r.code === 0 ? 'ok' : 'error');
+    loadGoldPanel();
+  } catch (e) { toast('请求失败: ' + e.message, 'error'); }
+}
+
+async function goldReinit() {
+  if (!confirm('用内置默认任务列表覆盖今日数据？（自定义任务会保留）')) return;
+  try {
+    const r = await fetch(`${BASE}/api/gold/tasks/reinit`, {
+      method: 'POST',
+    }).then(res => res.json());
+    toast(r.message || (r.code === 0 ? '已重新初始化' : '失败'), r.code === 0 ? 'ok' : 'error');
     loadGoldPanel();
   } catch (e) { toast('请求失败: ' + e.message, 'error'); }
 }

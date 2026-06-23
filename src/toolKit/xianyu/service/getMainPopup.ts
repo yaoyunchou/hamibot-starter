@@ -205,8 +205,8 @@ const searchForLikedGoods = () => {
         progressBar = className("android.widget.ProgressBar").findOne(1000);
       }
     }
-    setRunInfo('searchForLikedGoods: 浏览完成，返回');
-    backMainPage();
+    setRunInfo('searchForLikedGoods: 浏览完成');
+    // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
   }
 };
 
@@ -312,8 +312,8 @@ const get100Coin = () => {
       Record.info(`找到按钮: ${buttonText}`, foundButton);
       tryClickNode(foundButton);
       sleep(4000);
-      setRunInfo('get100Coin: 点击完成，返回主弹框');
-      backMainPage();
+      setRunInfo('get100Coin: 点击完成');
+      // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
     } else {
       const scrollPageBtn = findTargetElementWithCache("get100Coin", "滑动浏览");
       if (scrollPageBtn) {
@@ -321,19 +321,19 @@ const get100Coin = () => {
         Record.info("找到滑动浏览按钮，执行滚动策略");
         scrollPage();
       } else {
-        setRunInfo('get100Coin: 未找到可用按钮，直接返回');
-        Record.info("没有找到任何可用按钮，直接返回");
-        backMainPage();
+        setRunInfo('get100Coin: 未找到可用按钮');
+        Record.info("没有找到任何可用按钮");
+        // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
       }
     }
 
     const overBut = findTargetElementWithCache("get100Coin", "奖励已领取");
     if (overBut) {
-      setRunInfo('get100Coin: 奖励已领取，点击后返回');
-      Record.info("找到奖励已领取按钮，点击后返回");
+      setRunInfo('get100Coin: 奖励已领取，点击');
+      Record.info("找到奖励已领取按钮，点击");
       tryClickNode(overBut);
       sleep(1000);
-      backMainPage();
+      // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
     }
 
   } catch (error) {
@@ -388,10 +388,10 @@ export const searchForRecommendedGoods = () => {
         break;
       }
     }
-    setRunInfo('searchForRecommendedGoods: 完成，返回');
-    backMainPage();
+    setRunInfo('searchForRecommendedGoods: 完成');
+    // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
   } else {
-    setRunInfo('searchForRecommendedGoods: 未找到搜索页面，返回');
+    setRunInfo('searchForRecommendedGoods: 未找到搜索页面');
     back();
   }
 };

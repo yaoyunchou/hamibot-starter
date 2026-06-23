@@ -1,0 +1,17 @@
+{
+  "task_id": "ai_20260623_142916_491f66f3",
+  "task_description": "【金币任务失败现场分析】\n失败场景：haltGoldFlow: mainPopupTask: 任务弹框不可见（taskWrap/taskListWrap 均缺失）\n请分析：①当前页面是什么？②任务为何失败？③推荐如何恢复？",
+  "started_at": "2026-06-23 14:29:16",
+  "completed_at": "2026-06-23 14:29:18",
+  "total_steps": 0,
+  "result": "analysis_done",
+  "device_info": {
+    "screen": [
+      1080,
+      2400
+    ],
+    "trigger": "gold_flow_failure",
+    "pkg": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.webview.WebHybridActivity"
+  }
+}

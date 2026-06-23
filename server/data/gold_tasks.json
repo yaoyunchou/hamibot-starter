@@ -1,0 +1,309 @@
+{
+  "2026-06-23": {
+    "initialized": true,
+    "tasks": [
+      {
+        "uid": "浏览指定频道好物",
+        "title": "浏览指定频道好物",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[浏览指定频道好物]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:35 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "搜一搜喜欢的商品",
+        "title": "搜一搜喜欢的商品",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[搜一搜喜欢的商品]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:35 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去浏览全新好物",
+        "title": "去浏览全新好物",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去浏览全新好物]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:35 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "浏览推荐的国补商品",
+        "title": "浏览推荐的国补商品",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[浏览推荐的国补商品]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:36 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去蚂蚁森林逛一逛",
+        "title": "去蚂蚁森林逛一逛",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去蚂蚁森林逛一逛]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:36 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去支付宝农场领水果",
+        "title": "去支付宝农场领水果",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去支付宝农场领水果]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:37 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去淘宝签到领红包",
+        "title": "去淘宝签到领红包",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去淘宝签到领红包]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:37 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去蚂蚁庄园逛一逛",
+        "title": "去蚂蚁庄园逛一逛",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去蚂蚁庄园逛一逛]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:37 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去支付宝领积分",
+        "title": "去支付宝领积分",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去支付宝领积分]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:37 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "浏览鱼小铺工作台",
+        "title": "浏览鱼小铺工作台",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[浏览鱼小铺工作台]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:38 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "搜一搜推荐商品",
+        "title": "搜一搜推荐商品",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[搜一搜推荐商品]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:38 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "领至高20元外卖红包",
+        "title": "领至高20元外卖红包",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[领至高20元外卖红包]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:38 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "看视频奖励100币",
+        "title": "看视频奖励100币",
+        "hasRun": true,
+        "rewardVerified": null,
+        "failCount": 0,
+        "lastResult": "done",
+        "failRecords": [],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "看视频奖励100币__1",
+        "title": "看视频奖励100币",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 0,
+        "lastResult": null,
+        "failRecords": [],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "看视频奖励100币__2",
+        "title": "看视频奖励100币",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 0,
+        "lastResult": null,
+        "failRecords": [],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "看视频奖励100币__3",
+        "title": "看视频奖励100币",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 0,
+        "lastResult": null,
+        "failRecords": [],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "发布一件新宝贝",
+        "title": "发布一件新宝贝",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 0,
+        "lastResult": null,
+        "failRecords": [],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      },
+      {
+        "uid": "去蚂蚁森林逛一逛__1",
+        "title": "去蚂蚁森林逛一逛",
+        "hasRun": false,
+        "rewardVerified": null,
+        "failCount": 1,
+        "lastResult": "failed",
+        "failRecords": [
+          {
+            "round": 1,
+            "failedStep": "找到任务标题",
+            "failHint": "taskListWrap 内未找到文本[去蚂蚁森林逛一逛]",
+            "ruleAnalysis": "任务标题不在列表，可能已完成或本轮不可用",
+            "timestamp": "2:28:37 下午 GMT+08:00"
+          }
+        ],
+        "lastUpdated": "14:28:52",
+        "custom": false
+      }
+    ]
+  }
+}

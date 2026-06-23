@@ -1,0 +1,17 @@
+{
+  "task_id": "ai_20260623_111740_b46c2d70",
+  "task_description": "【金币任务失败现场分析】\n失败场景：haltGoldFlow: 在金币页但无法打开任务弹框(taskWrap)。若出现新拦截弹框请采集 pages 后补充 goldBlockers 规则\n请分析：①当前页面是什么？②任务为何失败？③推荐如何恢复？",
+  "started_at": "2026-06-23 11:17:40",
+  "completed_at": "2026-06-23 11:17:42",
+  "total_steps": 0,
+  "result": "analysis_done",
+  "device_info": {
+    "screen": [
+      1080,
+      2400
+    ],
+    "trigger": "gold_flow_failure",
+    "pkg": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.webview.WebHybridActivity"
+  }
+}

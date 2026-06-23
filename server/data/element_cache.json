@@ -163,5 +163,23 @@
       ],
       "errorTime": 3
     }
+  },
+  {
+    "key": "searchForRecommendedGoods_搜索有福利",
+    "value": {
+      "indices": [
+        0
+      ],
+      "errorTime": 3
+    }
+  },
+  {
+    "key": "searchForRecommendedGoods_任务完成",
+    "value": {
+      "indices": [
+        8
+      ],
+      "errorTime": 3
+    }
   }
 ]

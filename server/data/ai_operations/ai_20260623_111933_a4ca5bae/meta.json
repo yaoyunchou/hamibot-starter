@@ -1,0 +1,17 @@
+{
+  "task_id": "ai_20260623_111933_a4ca5bae",
+  "task_description": "【金币任务失败现场分析】\n失败场景：路径失败: 去淘宝签到领红包 / __halted__\n失败步骤：__halted__\n规则初判：在金币页但任务弹框已关闭；步骤[__halted__]：弹框可能被手势关闭或重新加载\n请分析：①当前页面是什么？②任务为何失败？③推荐如何恢复？",
+  "started_at": "2026-06-23 11:19:33",
+  "completed_at": "2026-06-23 11:19:36",
+  "total_steps": 0,
+  "result": "analysis_done",
+  "device_info": {
+    "screen": [
+      1080,
+      2400
+    ],
+    "trigger": "gold_flow_failure",
+    "pkg": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.webview.WebHybridActivity"
+  }
+}

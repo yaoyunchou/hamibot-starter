@@ -1,0 +1,17 @@
+{
+  "task_id": "ai_20260623_124640_55cb24a0",
+  "task_description": "【金币任务失败现场分析】\n失败场景：路径失败: 去浏览全新好物 / 找到任务标题\n失败步骤：找到任务标题\n步骤提示：taskListWrap 内未找到文本[去浏览全新好物]，任务可能已完成或不在本轮列表\n规则初判：弹框已开，步骤[找到任务标题]失败：taskListWrap 内未找到文本[去浏览全新好物]，任务可能已完成或不在本轮列表\n请分析：①当前页面是什么？②任务为何失败？③推荐如何恢复？",
+  "started_at": "2026-06-23 12:46:40",
+  "completed_at": "2026-06-23 12:46:42",
+  "total_steps": 0,
+  "result": "analysis_done",
+  "device_info": {
+    "screen": [
+      1080,
+      2400
+    ],
+    "trigger": "gold_flow_failure",
+    "pkg": "com.taobao.idlefish",
+    "activity": "com.taobao.idlefish.webview.WebHybridActivity"
+  }
+}

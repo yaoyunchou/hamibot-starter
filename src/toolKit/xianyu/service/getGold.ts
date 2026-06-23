@@ -28,16 +28,16 @@ import { Record } from "../../../lib/logger";
 import { aiDecide, aiOperationComplete, aiOperationStart, createLogs, syncGoldTasks } from "../../../lib/service";
 import { getScreenWidth, getScreenHeight } from "../../../lib/screenSize";
 import { findByA11yId, tryClickNode } from "../utils/common";
-import { APPNAME, clearTaskContext, flushTraces, PageType, setRunInfo, setTaskContext } from "./base";
+import { APPNAME, clearTaskContext, flushTraces, goBackMyPage, isOnMyPage, PageType, setRunInfo, setTaskContext } from "./base";
 import { dumpActiveWindowLayout } from "./layoutDump";
 import { captureCurrentState } from "./aiExecutor";
 import { dismissGoldPageBlockers, resetGoldBlockerRunState } from "./goldBlockers";
 import {
-  backMainPage,
   resetBackMainPageLoop,
   returnToXianyuApp,
   taskList,
 } from "./getMainPopup";
+import { getGoldEntryClickFn } from "../utils/getGold";
 import {
   assertOnGoldCoinPage,
   isOnGoldCoinPage,
@@ -438,11 +438,23 @@ function runAiFailureAnalysis(context: string, snapshot?: FailureSnapshot): void
  * 使用 quickIsOnGoldPage（双轨）而非 probeGoldCoinPage（bounds敏感），
  * 避免因 mapDiceBtn bounds 反转导致误判"不在金币页"。
  */
+/**
+ * 回到金币页面（Checkpoint）。
+ *
+ * ⚠️ 重要：此函数绝对不能调用 coinExchange() / mainPopupTask()，
+ *    否则会造成 mainPopupTask 嵌套重入，导致 taskList 轮次重置、
+ *    failCount 叠加、后续任务永远执行不到。
+ *
+ * 策略：
+ *   1. 已在金币页 → 直接返回
+ *   2. 不在闲鱼 → returnToXianyuApp → 检查是否在金币页
+ *   3. 在闲鱼但不在金币页 → goBackMyPage → 从「我的」页点金币入口
+ */
 function backToGoldCheckpoint(maxRetry = 3): boolean {
   for (let attempt = 0; attempt < maxRetry; attempt++) {
     setRunInfo(`backToGoldCheckpoint: 第${attempt + 1}/${maxRetry}次`);
 
-    if (quickIsOnGoldPage(600)) {
+    if (quickIsOnGoldPage(800)) {
       setRunInfo("backToGoldCheckpoint: ✓ 已在金币页");
       return true;
     }
@@ -455,13 +467,26 @@ function backToGoldCheckpoint(maxRetry = 3): boolean {
         continue;
       }
       sleep(2000);
+      if (quickIsOnGoldPage(1000)) {
+        setRunInfo("backToGoldCheckpoint: ✓ 已回金币页（拉回后）");
+        return true;
+      }
     }
 
-    resetBackMainPageLoop();
-    backMainPage();
-    sleep(1500);
+    // 在闲鱼包内但不在金币页 → 回到「我的」页面，再点击金币入口
+    goBackMyPage();
+    sleep(800);
+    const myPage = isOnMyPage();
+    if (myPage.success && myPage.element) {
+      setRunInfo("backToGoldCheckpoint: 已在「我的」页，点击金币入口");
+      getGoldEntryClickFn(myPage.element);
+      sleep(3000); // 等待金币页加载
+    } else {
+      setRunInfo("backToGoldCheckpoint: 未能回到「我的」页");
+      sleep(1500);
+    }
 
-    if (quickIsOnGoldPage(800)) {
+    if (quickIsOnGoldPage(1200)) {
       setRunInfo("backToGoldCheckpoint: ✓ 已回金币页");
       return true;
     }
@@ -688,41 +713,42 @@ function findRewardBtnAligned(taskTitleTop: number): UiObject | null {
 /** 领取所有 awaitingRewardClaim 任务的奖励 */
 export function checkGetGold() {
   if (!assertGoldFlowContinue()) return;
-  const pending = taskList.filter((t: any) => t.awaitingRewardClaim === true);
-  if (pending.length === 0) {
-    setRunInfo("checkGetGold: 无待领取任务，跳过");
-    return;
-  }
   sleep(400);
+
+  // 无条件扫描屏幕上所有「领取奖励」按钮（不依赖内存标记）
   const rewards = findAllInTaskList("领取奖励");
   if (!rewards || !(rewards as any).length) {
-    setRunInfo("checkGetGold: 无可领取奖励");
+    setRunInfo("checkGetGold: 无可领取奖励，跳过");
     return;
   }
-  setRunInfo(`checkGetGold: ${(rewards as any).length} 个[领取奖励]`);
+  setRunInfo(`checkGetGold: 发现 ${(rewards as any).length} 个[领取奖励]`);
+
+  // 找出内存中标记为等待领取的任务，用于匹配行
+  const pending = taskList.filter((t: any) => t.awaitingRewardClaim === true);
 
   for (let i = 0; i < (rewards as any).length; i++) {
     if (!assertGoldFlowContinue()) return;
     const reward = (rewards as any)[i];
     const rTop = reward.bounds().top;
 
+    // 尝试按行位置匹配内存中的待领取任务
     let matched: any = null;
     for (let j = 0; j < pending.length; j++) {
       const task: any = pending[j];
       const titleEl = findTaskTitleStrict(task.title);
       if (!titleEl) continue;
-      if (titleEl.bounds().top - rTop < 20) { matched = task; break; }
+      const tTop = titleEl.bounds().top;
+      if (Math.abs(tTop - rTop) < 40) { matched = task; break; }
     }
 
+    reward.click();
     if (matched) {
-      reward.click();
       matched.hasRun = true;
       matched.awaitingRewardClaim = false;
       setRunInfo(`checkGetGold: 已领[${matched.title}]奖励`);
     } else {
-      reward.click();
-      pending.forEach((t: any) => { t.awaitingRewardClaim = false; t.hasRun = true; });
-      setRunInfo("checkGetGold: 无同行匹配，点击领取");
+      // 屏幕上有按钮但内存中没有记录（上次运行遗留），也点掉
+      setRunInfo("checkGetGold: 点击遗留[领取奖励]");
     }
     sleep(800);
   }
@@ -763,7 +789,6 @@ type TaskFailRecord = {
 function runSingleTask(task: any, round: number = 1): TaskRunResult {
   const title: string = task.title;
 
-  // 设置任务上下文：此后所有 setRunInfo 调用（含回调内部）的 trace 日志都会带上 task 字段
   setTaskContext(title);
 
   const steps: PathStep[] = [
@@ -774,8 +799,13 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
     },
     {
       label: "找到任务标题",
-      action: () => !!findTaskTitleStrict(title),
-      failHint: `taskListWrap 内未找到文本[${title}]，任务可能已完成或不在本轮列表`,
+      action: () => {
+        if (findTaskTitleStrict(title)) return true;
+        // 标题不在列表：本槽位本轮无法执行，标记失败，轻量处理
+        setRunInfo(`[${title}] 标题不在列表，本轮失败`);
+        return false;
+      },
+      failHint: `taskListWrap 内未找到文本[${title}]`,
     },
     {
       label: "滚动到可视区",
@@ -810,18 +840,8 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
     },
     {
       label: "归位-返回金币页",
-      action: () => {
-        if (currentPackage() !== APPNAME) {
-          setRunInfo(`[${title}] 归位: 在外部 App(${currentPackage()})，拉回闲鱼`);
-          if (!returnToXianyuApp(4)) return false;
-          sleep(2000);
-        }
-        resetBackMainPageLoop();
-        backMainPage();
-        sleep(1500);
-        return quickIsOnGoldPage(1000);
-      },
-      failHint: "无法回到金币页，可能卡在外部 App 或 backMainPage 超时",
+      action: () => backToGoldCheckpoint(2),
+      failHint: "无法回到金币页（backToGoldCheckpoint 超时）",
     },
     {
       label: "归位-重新打开弹框",
@@ -833,7 +853,6 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
       },
     },
     {
-      // 验证任务是否真正被服务端计数：任务行右侧出现「领取奖励」按钮是铁证
       label: "验证完成-领取奖励",
       required: false,
       action: () => {
@@ -845,7 +864,7 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
         const el = findTaskTitleStrict(title);
         if (!el) {
           setRunInfo(`[${title}] 验证: 任务标题消失（可能已自动完成）`);
-          task.rewardVerified = true; // 任务行消失通常意味着已完成
+          task.rewardVerified = true;
           return true;
         }
         const titleTop = el.bounds().top;
@@ -858,7 +877,6 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
           task.hasRun = true;
           return true;
         }
-        // 未见领取按钮：可能任务未计数，也可能自动领取了，保守记录
         setRunInfo(`[${title}] 验证: ⚠ 未见「领取奖励」按钮（任务可能未计数，或已自动领取）`);
         task.rewardVerified = false;
         return false;
@@ -866,7 +884,6 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
     },
   ];
 
-  // 路径名即任务名，日志里 [任务名] 会自动放最前
   const result = runPath(title, steps);
 
   if (result.ok) {
@@ -881,10 +898,25 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
   }
 
   // ── 失败处理 ──────────────────────────────────────────────
-  // 1. 记录失败快照（规则分析 + AI 异步分析）
-  logPathFailure(result);
+  // 标题不在列表：轻量失败，不触发 AI 分析，不做 Checkpoint 恢复
+  if (result.failedStep === "找到任务标题") {
+    task.failCount = (task.failCount || 0) + 1;
+    task.lastResult = "failed";
+    if (!task.failRecords) task.failRecords = [];
+    (task.failRecords as TaskFailRecord[]).push({
+      round,
+      failedStep: "找到任务标题",
+      failHint: result.failHint || `标题[${title}]不在列表`,
+      ruleAnalysis: "任务标题不在列表，可能已完成或本轮不可用",
+      timestamp: new Date().toLocaleTimeString("zh-CN"),
+    });
+    setRunInfo(`[${title}] ✗ 标题不在列表，标记失败`);
+    clearTaskContext();
+    return "failed";
+  }
 
-  // 2. 将本轮失败记录追加到任务对象，供结束时生成 error 日志
+  // 其他失败：记录快照 + AI 异步分析 + Checkpoint 恢复
+  logPathFailure(result);
   const snap = captureFailureSnapshot(result.pathName, result);
   const ruleAnalysis = analyzeFailure(snap);
   task.failCount = (task.failCount || 0) + 1;
@@ -896,9 +928,6 @@ function runSingleTask(task: any, round: number = 1): TaskRunResult {
     ruleAnalysis,
     timestamp: new Date().toLocaleTimeString("zh-CN"),
   });
-
-  // 3. 无论何种失败，都尝试退回 Checkpoint + 恢复弹框
-  //    保证调用方循环可以继续执行下一个任务（不级联卡死）
   task.lastResult = "failed";
   setRunInfo(`[${title}] ✗ failed，退回 Checkpoint 准备执行下一任务`);
   backToGoldCheckpoint();
@@ -1109,8 +1138,10 @@ export function xianyuBack(retry = 0) {
 
 export function coinExchange() {
   try {
-    if (!assertGoldFlowContinue()) return;
+    // 每次新任务进入时先重置上一次遗留的 halt 状态，
+    // 再检查外部取消信号（shouldStopCurrentTask 由 startCancelWatcher 管理）
     resetGoldFlowState();
+    if (!assertGoldFlowContinue()) return;
     setRunInfo("coinExchange: 开始");
 
     dismissGoldPageBlockers();
@@ -1157,10 +1188,59 @@ export function coinExchange() {
     }
 
     mainPopupTask();
+
+    // ── 收尾检查（执行两次，确保新增骰子和遗留奖励都被处理）────
+    for (let i = 0; i < 2; i++) {
+      if (!assertGoldFlowContinue()) break;
+      postTaskCheck();
+    }
   } catch (error) {
     haltGoldFlow(`coinExchange 异常: ${error}`);
     Record.error(`coinExchange: ${error}`);
   }
+}
+
+/**
+ * 所有任务完成后的收尾检查：
+ *   1. 清遮罩
+ *   2. 回到金币页（任务可能把页面带走了）
+ *   3. 领取遗留的「领取奖励」按钮
+ *   4. 摇剩余骰子（任务完成后可能新增次数）
+ */
+function postTaskCheck() {
+  setRunInfo("postTaskCheck: 开始收尾检查");
+
+  // 1. 先清遮罩
+  dismissGoldPageBlockers();
+
+  // 2. 确认回到金币页
+  if (!quickIsOnGoldPage(600)) {
+    setRunInfo("postTaskCheck: 不在金币页，尝试返回");
+    backToGoldCheckpoint(1);
+    if (!quickIsOnGoldPage(800)) {
+      setRunInfo("postTaskCheck: 无法回到金币页，跳过收尾");
+      return;
+    }
+  }
+
+  dismissGoldPageBlockers();
+
+  // 3. 领取遗留奖励（弹框若已打开则扫一遍）
+  if (isTaskPopupOpen()) {
+    checkGetGold();
+  }
+
+  // 4. 摇剩余骰子
+  if (!assertGoldFlowContinue()) return;
+  const diceState = getDiceBtnState();
+  if (diceState.kind === "rolls" && diceState.count > 0) {
+    setRunInfo(`postTaskCheck: 发现剩余骰子 ×${diceState.count}，补摇`);
+    rollAvailableDice();
+  } else {
+    setRunInfo(`postTaskCheck: 骰子状态 ${diceState.kind}，无需补摇`);
+  }
+
+  setRunInfo("postTaskCheck: 收尾完成");
 }
 
 // ═══════════════════════════════════════════════════════════
