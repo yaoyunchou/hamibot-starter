@@ -1,0 +1,888 @@
+[2026-06-23 08:45:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-06-23 08:45:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"6723493b364a634dae6c9099","TIMESTAMP":"2026-06-23 08:46:20"}
+[2026-06-23 08:45:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-06-23 08:45:17] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-06-23 08:45:17] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 18 条 (第1次)
+[2026-06-23 08:45:33] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-06-23 08:45:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-06-23 08:45:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"6723493b364a634dae6c9099","TIMESTAMP":"2026-06-23 08:46:36"}
+[2026-06-23 08:45:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-06-23 08:45:33] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-06-23 08:45:33] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 18 条 (第1次)
+[2026-06-23 08:45:50] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size: 2400 x 1080
+[2026-06-23 08:45:50] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-06-23 08:45:50] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-06-23 08:45:50] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-06-23 08:45:54] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a022; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.8 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-23 08:45:54] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a022; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.8 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-23 08:45:54] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:45:54] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:45:54] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:45:55] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:45:55] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:45:55] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-06-23 08:45:57] [hamibot] [INFO]:[INFO] [Outer]: 开始查找商品详情
+[2026-06-23 08:45:57] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 自动确认线程启动 35000ms
+[2026-06-23 08:45:59] [hamibot] [INFO]:[INFO] [Outer]: 找到商品数量: 0
+[2026-06-23 08:45:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:46:01] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 坐标确认 (769, 2190)
+[2026-06-23 08:46:01] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 已点击确认 (1/3)，等待授权生效
+[2026-06-23 08:46:05] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 坐标确认 (769, 2190)
+[2026-06-23 08:46:05] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 已点击确认 (2/3)，等待授权生效
+[2026-06-23 08:46:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:46:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:46:34] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 自动确认线程结束
+[2026-06-23 08:46:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:46:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:47:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:47:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:47:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:47:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:48:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:48:29] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:48:44] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:48:59] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:49:14] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 08:49:30] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[288]: {"code":0,"data":[{"id":"38131c40-25ac-495b-9857-27c929c7b6fb","type":"goldCoin","status":"pending",
+[2026-06-23 08:49:55] [hamibot] [INFO]:[INFO] [dismissGoldPageBlockers]: goldBlocker detect: task_nudge_modal
+[2026-06-23 08:49:57] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@11d08d; boundsInParent: Rect(124, 301 - 290, 354); boundsInScreen: Rect(325, 1344 - 761, 1483); packageName: com.taobao.idlefish; className: android.widget.TextView; text: ; contentDescription: null; viewId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:49:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@11d08d; boundsInParent: Rect(124, 301 - 290, 354); boundsInScreen: Rect(325, 1344 - 761, 1483); packageName: com.taobao.idlefish; className: android.widget.TextView; text: ; contentDescription: null; viewId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:49:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:49:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:49:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:49:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:49:58] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:50:20] [hamibot] [INFO]:[INFO] [findTaskPopupSignIn]: [taskPopup] 签到 clickable 1ms
+[2026-06-23 08:50:26] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」exact 3ms
+[2026-06-23 08:50:26] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」24个 4ms
+[2026-06-23 08:50:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/点击领取 串行启动 12 条策略
+[2026-06-23 08:50:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/点击领取 串行全部✗ 串行16165ms 总16166ms
+[2026-06-23 08:51:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:51:19] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行9323ms 总9323ms
+[2026-06-23 08:51:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:51:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行14804ms 总14804ms
+[2026-06-23 08:51:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:51:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行15785ms 总15785ms
+[2026-06-23 08:51:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:52:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行14844ms 总14845ms
+[2026-06-23 08:52:10] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 08:52:13] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait mapDiceBtn 坐标 (536,-75) 偏离金币地图圆点区域
+[2026-06-23 08:52:39] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1471f5; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1471f5; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:52:39] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:53:09] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1471f5; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 0 - 700, -149); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:53:09] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1471f5; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 0 - 700, -149); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:53:09] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:53:09] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:53:09] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:53:09] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:53:09] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:53:13] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」exact 2ms
+[2026-06-23 08:53:13] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 4ms
+[2026-06-23 08:53:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] browseGoodsInSpecifiedChannel/点击领取 串行启动 12 条策略
+[2026-06-23 08:53:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] browseGoodsInSpecifiedChannel/点击领取 串行全部✗ 串行1136ms 总1136ms
+[2026-06-23 08:53:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:53:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1626ms 总1626ms
+[2026-06-23 08:53:44] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:53:45] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1474ms 总1474ms
+[2026-06-23 08:53:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:53:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1713ms 总1713ms
+[2026-06-23 08:53:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:53:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行1829ms 总1829ms
+[2026-06-23 08:53:54] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 08:53:57] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait mapDiceBtn 坐标 (536,-9865) 偏离金币地图圆点区域
+[2026-06-23 08:54:46] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@18e87b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:54:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@18e87b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:54:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:54:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:54:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:54:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:54:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:55:00] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」exact 1ms
+[2026-06-23 08:55:00] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」22个 4ms
+[2026-06-23 08:55:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] browseGoodsInSpecifiedChannel/点击领取 串行启动 12 条策略
+[2026-06-23 08:55:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] browseGoodsInSpecifiedChannel/点击领取 串行全部✗ 串行777ms 总777ms
+[2026-06-23 08:55:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:55:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行820ms 总820ms
+[2026-06-23 08:55:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:55:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行795ms 总795ms
+[2026-06-23 08:55:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:55:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行937ms 总938ms
+[2026-06-23 08:55:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] browseGoodsInSpecifiedChannel/任务完成 串行启动 12 条策略
+[2026-06-23 08:55:36] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] browseGoodsInSpecifiedChannel/任务完成 串行全部✗ 串行867ms 总867ms
+[2026-06-23 08:55:37] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.miui.securitycenter
+[2026-06-23 08:55:37] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.miui.securitycenter
+[2026-06-23 08:55:37] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 08:55:39] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.idlefish
+[2026-06-23 08:55:57] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「搜一搜喜欢的商品」miss 18ms
+[2026-06-23 08:55:57] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「去浏览全新好物」exact 1ms
+[2026-06-23 08:55:57] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」22个 3ms
+[2026-06-23 08:56:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] scrollPage/滑动浏览 缓存[9,3,7] 全部✗ 剩余errorTime=0 2377ms
+[2026-06-23 08:56:45] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 08:56:50] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait 缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）
+[2026-06-23 08:57:30] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-06-23 08:57:30] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-06-23 08:57:30] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-06-23 08:57:35] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a022; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-23 08:57:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a022; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前6.3 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-23 08:57:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:57:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:57:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:57:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:57:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:57:35] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-06-23 08:58:20] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1016db; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:58:20] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1016db; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 08:58:20] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:58:20] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 08:58:20] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 08:58:20] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 08:58:20] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 08:58:35] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「领取奖励」3个 1ms
+[2026-06-23 08:58:35] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」exact 0ms
+[2026-06-23 08:58:40] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」miss 47ms
+[2026-06-23 08:58:44] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「搜一搜喜欢的商品」miss 20ms
+[2026-06-23 08:58:48] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」miss 567ms
+[2026-06-23 08:58:52] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「搜一搜喜欢的商品」miss 14ms
+[2026-06-23 08:59:04] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「去浏览全新好物」miss 9ms
+[2026-06-23 08:59:04] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 08:59:04] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 2ms
+[2026-06-23 08:59:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 缓存[9,3,7] 全部✗ 剩余errorTime=-1 406ms
+[2026-06-23 08:59:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 缓存[9,3,7] errorTime耗尽，降级串行 476ms
+[2026-06-23 08:59:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 08:59:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 串行全部✗ 串行990ms 总1497ms
+[2026-06-23 08:59:38] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 17 条)
+[2026-06-23 08:59:46] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 08:59:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 串行全部✗ 串行988ms 总988ms
+[2026-06-23 08:59:48] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 08:59:48] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 08:59:48] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 08:59:50] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 08:59:50] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 08:59:54] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 08:59:56] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:00:35] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:00:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:00:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:00:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:00:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:00:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:00:35] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:00:42] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:00:42] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:00:42] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:00:42] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:00:42] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:00:42] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:00:42] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:00:48] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:00:48] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:00:49] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:00:49] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:00:49] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:00:49] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:00:49] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:01:02] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:01:02] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1401cb; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:01:02] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:01:02] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:01:02] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:01:02] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:01:02] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:01:16] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「领取奖励」1个 1ms
+[2026-06-23 09:01:16] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「去浏览全新好物」miss 12ms
+[2026-06-23 09:01:25] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:01:25] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:01:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:01:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] scrollPage/滑动浏览 串行全部✗ 串行898ms 总898ms
+[2026-06-23 09:01:32] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:01:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] scrollPage/滑动浏览 串行全部✗ 串行855ms 总856ms
+[2026-06-23 09:01:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:01:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] scrollPage/滑动浏览 串行全部✗ 串行846ms 总846ms
+[2026-06-23 09:01:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:01:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] scrollPage/滑动浏览 串行全部✗ 串行874ms 总875ms
+[2026-06-23 09:01:46] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:01:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] scrollPage/滑动浏览 串行全部✗ 串行912ms 总912ms
+[2026-06-23 09:01:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:01:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] scrollPage/滑动浏览 串行全部✗ 串行1010ms 总1011ms
+[2026-06-23 09:02:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:02:03] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] scrollPage/滑动浏览 串行全部✗ 串行1024ms 总1024ms
+[2026-06-23 09:02:10] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:02:11] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] scrollPage/滑动浏览 串行全部✗ 串行1000ms 总1000ms
+[2026-06-23 09:02:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:02:19] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] scrollPage/滑动浏览 串行全部✗ 串行1072ms 总1072ms
+[2026-06-23 09:02:21] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:02:21] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:02:21] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:02:23] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:02:23] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:02:27] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:02:29] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:03:17] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@17e85b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:03:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@17e85b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:03:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:03:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:03:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:03:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:03:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:03:32] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@17e85b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:03:32] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@17e85b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:03:32] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:03:32] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:03:32] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:03:32] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:03:32] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:03:45] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:03:45] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:03:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:03:51] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] scrollPage/滑动浏览 串行全部✗ 串行928ms 总928ms
+[2026-06-23 09:03:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:03:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] scrollPage/滑动浏览 串行全部✗ 串行844ms 总844ms
+[2026-06-23 09:03:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:03:56] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] scrollPage/滑动浏览 串行全部✗ 串行861ms 总861ms
+[2026-06-23 09:03:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:03:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] scrollPage/滑动浏览 串行全部✗ 串行857ms 总857ms
+[2026-06-23 09:04:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:04:07] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] scrollPage/滑动浏览 串行全部✗ 串行909ms 总910ms
+[2026-06-23 09:04:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#19] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:04:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#19] scrollPage/滑动浏览 串行全部✗ 串行875ms 总875ms
+[2026-06-23 09:04:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#20] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:04:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#20] scrollPage/滑动浏览 串行全部✗ 串行876ms 总876ms
+[2026-06-23 09:04:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#21] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:04:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#21] scrollPage/滑动浏览 串行全部✗ 串行873ms 总874ms
+[2026-06-23 09:04:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#22] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:04:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#22] scrollPage/滑动浏览 串行全部✗ 串行1187ms 总1187ms
+[2026-06-23 09:04:41] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:04:41] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:04:41] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:04:43] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:04:43] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:04:47] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:04:49] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:05:17] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1b3f8b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:05:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1b3f8b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:05:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:05:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:05:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:05:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:05:17] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:05:48] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:05:48] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:05:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#23] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:05:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#23] scrollPage/滑动浏览 串行全部✗ 串行808ms 总808ms
+[2026-06-23 09:05:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#24] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:05:56] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#24] scrollPage/滑动浏览 串行全部✗ 串行804ms 总805ms
+[2026-06-23 09:05:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#25] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:05:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#25] scrollPage/滑动浏览 串行全部✗ 串行846ms 总846ms
+[2026-06-23 09:06:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#26] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:06:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#26] scrollPage/滑动浏览 串行全部✗ 串行882ms 总882ms
+[2026-06-23 09:06:08] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#27] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:06:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#27] scrollPage/滑动浏览 串行全部✗ 串行867ms 总868ms
+[2026-06-23 09:06:16] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#28] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:06:17] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#28] scrollPage/滑动浏览 串行全部✗ 串行924ms 总924ms
+[2026-06-23 09:06:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#29] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:06:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#29] scrollPage/滑动浏览 串行全部✗ 串行1333ms 总1333ms
+[2026-06-23 09:06:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#30] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:06:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#30] scrollPage/滑动浏览 串行全部✗ 串行870ms 总870ms
+[2026-06-23 09:06:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#31] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:06:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#31] scrollPage/滑动浏览 串行全部✗ 串行889ms 总889ms
+[2026-06-23 09:06:43] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:06:43] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:06:43] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:06:45] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:06:45] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:06:49] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:06:52] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:07:38] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1e267a; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:07:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1e267a; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:07:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:07:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:07:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:07:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:07:38] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:07:53] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:07:53] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:07:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#32] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:07:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#32] scrollPage/滑动浏览 串行全部✗ 串行878ms 总878ms
+[2026-06-23 09:08:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#33] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#33] scrollPage/滑动浏览 串行全部✗ 串行768ms 总768ms
+[2026-06-23 09:08:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#34] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:03] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#34] scrollPage/滑动浏览 串行全部✗ 串行775ms 总776ms
+[2026-06-23 09:08:04] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#35] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#35] scrollPage/滑动浏览 串行全部✗ 串行767ms 总767ms
+[2026-06-23 09:08:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#36] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#36] scrollPage/滑动浏览 串行全部✗ 串行978ms 总978ms
+[2026-06-23 09:08:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#37] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#37] scrollPage/滑动浏览 串行全部✗ 串行954ms 总954ms
+[2026-06-23 09:08:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#38] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#38] scrollPage/滑动浏览 串行全部✗ 串行1005ms 总1005ms
+[2026-06-23 09:08:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#39] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#39] scrollPage/滑动浏览 串行全部✗ 串行986ms 总986ms
+[2026-06-23 09:08:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#40] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:08:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#40] scrollPage/滑动浏览 串行全部✗ 串行1717ms 总1717ms
+[2026-06-23 09:08:49] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:08:49] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:08:49] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:08:52] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:08:52] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:08:56] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:08:58] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:09:52] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@211222; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:09:52] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@211222; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:09:52] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:09:52] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:09:52] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:09:52] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:09:52] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:10:06] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:10:06] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:10:10] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#41] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:11] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#41] scrollPage/滑动浏览 串行全部✗ 串行900ms 总901ms
+[2026-06-23 09:10:13] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#42] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#42] scrollPage/滑动浏览 串行全部✗ 串行855ms 总856ms
+[2026-06-23 09:10:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#43] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:16] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#43] scrollPage/滑动浏览 串行全部✗ 串行844ms 总844ms
+[2026-06-23 09:10:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#44] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:19] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#44] scrollPage/滑动浏览 串行全部✗ 串行835ms 总835ms
+[2026-06-23 09:10:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#45] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#45] scrollPage/滑动浏览 串行全部✗ 串行974ms 总975ms
+[2026-06-23 09:10:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#46] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:35] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#46] scrollPage/滑动浏览 串行全部✗ 串行917ms 总917ms
+[2026-06-23 09:10:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#47] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#47] scrollPage/滑动浏览 串行全部✗ 串行931ms 总931ms
+[2026-06-23 09:10:51] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#48] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:10:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#48] scrollPage/滑动浏览 串行全部✗ 串行993ms 总993ms
+[2026-06-23 09:10:59] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#49] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:11:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#49] scrollPage/滑动浏览 串行全部✗ 串行1027ms 总1027ms
+[2026-06-23 09:11:01] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:11:01] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:11:01] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:11:03] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:11:03] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:11:07] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:11:09] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:12:04] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@248206; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:12:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@248206; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:12:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:12:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:12:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:12:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:12:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:12:18] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:12:18] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:12:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#50] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#50] scrollPage/滑动浏览 串行全部✗ 串行855ms 总855ms
+[2026-06-23 09:12:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#51] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#51] scrollPage/滑动浏览 串行全部✗ 串行852ms 总852ms
+[2026-06-23 09:12:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#52] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#52] scrollPage/滑动浏览 串行全部✗ 串行861ms 总861ms
+[2026-06-23 09:12:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#53] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#53] scrollPage/滑动浏览 串行全部✗ 串行823ms 总824ms
+[2026-06-23 09:12:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#54] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#54] scrollPage/滑动浏览 串行全部✗ 串行902ms 总903ms
+[2026-06-23 09:12:46] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#55] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#55] scrollPage/滑动浏览 串行全部✗ 串行924ms 总924ms
+[2026-06-23 09:12:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#56] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:12:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#56] scrollPage/滑动浏览 串行全部✗ 串行925ms 总926ms
+[2026-06-23 09:13:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#57] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:13:03] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#57] scrollPage/滑动浏览 串行全部✗ 串行905ms 总906ms
+[2026-06-23 09:13:10] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#58] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:13:11] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#58] scrollPage/滑动浏览 串行全部✗ 串行1062ms 总1062ms
+[2026-06-23 09:13:13] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:13:13] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:13:13] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:13:15] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:13:15] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:13:19] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:13:21] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:14:04] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2736f2; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2736f2; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:14:04] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:14:20] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:14:20] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:14:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#59] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#59] scrollPage/滑动浏览 串行全部✗ 串行1025ms 总1025ms
+[2026-06-23 09:14:27] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#60] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#60] scrollPage/滑动浏览 串行全部✗ 串行1042ms 总1042ms
+[2026-06-23 09:14:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#61] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#61] scrollPage/滑动浏览 串行全部✗ 串行875ms 总876ms
+[2026-06-23 09:14:32] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#62] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#62] scrollPage/滑动浏览 串行全部✗ 串行895ms 总895ms
+[2026-06-23 09:14:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#63] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#63] scrollPage/滑动浏览 串行全部✗ 串行950ms 总950ms
+[2026-06-23 09:14:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#64] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#64] scrollPage/滑动浏览 串行全部✗ 串行962ms 总962ms
+[2026-06-23 09:14:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#65] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:14:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#65] scrollPage/滑动浏览 串行全部✗ 串行952ms 总953ms
+[2026-06-23 09:15:05] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#66] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:15:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#66] scrollPage/滑动浏览 串行全部✗ 串行920ms 总920ms
+[2026-06-23 09:15:13] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#67] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:15:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#67] scrollPage/滑动浏览 串行全部✗ 串行956ms 总956ms
+[2026-06-23 09:15:16] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:15:16] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:15:16] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:15:18] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:15:18] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:15:22] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:15:24] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 09:15:28] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait 缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）
+[2026-06-23 09:16:28] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a2c69; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:16:28] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a2c69; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:16:28] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:16:28] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:16:28] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:16:29] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:16:29] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:16:45] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 0ms
+[2026-06-23 09:16:45] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:16:49] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#68] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:16:50] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#68] scrollPage/滑动浏览 串行全部✗ 串行860ms 总860ms
+[2026-06-23 09:16:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#69] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:16:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#69] scrollPage/滑动浏览 串行全部✗ 串行859ms 总859ms
+[2026-06-23 09:16:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#70] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:16:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#70] scrollPage/滑动浏览 串行全部✗ 串行864ms 总864ms
+[2026-06-23 09:16:57] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#71] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:16:58] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#71] scrollPage/滑动浏览 串行全部✗ 串行922ms 总922ms
+[2026-06-23 09:17:05] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#72] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:17:06] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#72] scrollPage/滑动浏览 串行全部✗ 串行940ms 总940ms
+[2026-06-23 09:17:13] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#73] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:17:14] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#73] scrollPage/滑动浏览 串行全部✗ 串行919ms 总919ms
+[2026-06-23 09:17:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#74] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:17:22] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#74] scrollPage/滑动浏览 串行全部✗ 串行926ms 总926ms
+[2026-06-23 09:17:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#75] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:17:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#75] scrollPage/滑动浏览 串行全部✗ 串行1027ms 总1028ms
+[2026-06-23 09:17:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#76] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:17:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#76] scrollPage/滑动浏览 串行全部✗ 串行992ms 总992ms
+[2026-06-23 09:17:40] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:17:40] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:17:40] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:17:42] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:17:42] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:17:46] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.taobao
+[2026-06-23 09:17:46] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launchApp(闲鱼)
+[2026-06-23 09:17:53] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launchApp pkg=com.taobao.idlefish
+[2026-06-23 09:17:56] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 09:17:59] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait 缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）
+[2026-06-23 09:18:57] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2d7495; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:18:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2d7495; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:18:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:18:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:18:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:18:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:18:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:19:11] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:19:11] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:19:15] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#77] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:16] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#77] scrollPage/滑动浏览 串行全部✗ 串行766ms 总766ms
+[2026-06-23 09:19:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#78] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:19] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#78] scrollPage/滑动浏览 串行全部✗ 串行803ms 总803ms
+[2026-06-23 09:19:20] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#79] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:21] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#79] scrollPage/滑动浏览 串行全部✗ 串行852ms 总852ms
+[2026-06-23 09:19:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#80] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:23] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#80] scrollPage/滑动浏览 串行全部✗ 串行831ms 总831ms
+[2026-06-23 09:19:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#81] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:32] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#81] scrollPage/滑动浏览 串行全部✗ 串行859ms 总859ms
+[2026-06-23 09:19:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#82] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#82] scrollPage/滑动浏览 串行全部✗ 串行924ms 总924ms
+[2026-06-23 09:19:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#83] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#83] scrollPage/滑动浏览 串行全部✗ 串行942ms 总942ms
+[2026-06-23 09:19:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#84] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:19:56] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#84] scrollPage/滑动浏览 串行全部✗ 串行919ms 总919ms
+[2026-06-23 09:20:03] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#85] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:20:04] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#85] scrollPage/滑动浏览 串行全部✗ 串行938ms 总938ms
+[2026-06-23 09:20:06] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:20:06] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:20:06] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:20:08] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:20:08] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:20:12] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:20:14] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:21:10] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@306a88; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:21:10] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@306a88; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:21:10] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:21:10] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:21:10] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:21:10] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:21:10] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:21:24] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:21:24] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 2ms
+[2026-06-23 09:21:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#86] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:21:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#86] scrollPage/滑动浏览 串行全部✗ 串行774ms 总774ms
+[2026-06-23 09:21:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#87] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:21:32] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#87] scrollPage/滑动浏览 串行全部✗ 串行810ms 总811ms
+[2026-06-23 09:21:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#88] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:21:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#88] scrollPage/滑动浏览 串行全部✗ 串行810ms 总811ms
+[2026-06-23 09:21:36] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#89] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:21:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#89] scrollPage/滑动浏览 串行全部✗ 串行812ms 总812ms
+[2026-06-23 09:21:44] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#90] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:21:45] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#90] scrollPage/滑动浏览 串行全部✗ 串行913ms 总913ms
+[2026-06-23 09:21:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#91] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:21:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#91] scrollPage/滑动浏览 串行全部✗ 串行928ms 总928ms
+[2026-06-23 09:22:00] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#92] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:22:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#92] scrollPage/滑动浏览 串行全部✗ 串行990ms 总990ms
+[2026-06-23 09:22:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#93] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:22:10] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#93] scrollPage/滑动浏览 串行全部✗ 串行940ms 总940ms
+[2026-06-23 09:22:17] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#94] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:22:17] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#94] scrollPage/滑动浏览 串行全部✗ 串行933ms 总933ms
+[2026-06-23 09:22:19] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:22:19] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:22:19] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:22:21] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:22:21] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:22:25] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:22:27] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:23:22] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@3341f7; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:23:22] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@3341f7; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:23:22] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:23:22] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:23:22] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:23:22] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:23:22] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:23:26] [hamibot] [INFO]:[INFO] [Outer]: Exit...
+[2026-06-23 09:23:26] [hamibot] [INFO]:[INFO] [Anonymous functions]: Launching...
+
+	Current script version: 1.0.4
+
+[2026-06-23 09:23:26] [hamibot] [INFO]:[INFO] [Anonymous functions]: Configuration loaded {"APP_ENV":"development","USER_ID":"6723480da777ba4dbbb4bfe9","ROBOT_ID":"67242f26e2fed0e6e3d11b91","SCRIPT_ID":"6723493b364a634dae6c9099","TIMESTAMP":"2026-06-23 09:24:29"}
+[2026-06-23 09:23:27] [hamibot] [INFO]:[INFO] [Anonymous functions]: Verifying configurations
+[2026-06-23 09:23:27] [hamibot] [INFO]:[INFO] [Anonymous functions]: Start running script
+[2026-06-23 09:23:27] [hamibot] [INFO]:[INFO] [getElementCache]: getElementCache 加载成功，共 18 条 (第1次)
+[2026-06-23 09:23:27] [hamibot] [DEBUG]:[DEBUG] [init]: Accessibility permissions enabled
+[2026-06-23 09:23:27] [hamibot] [DEBUG]:[DEBUG] [init]: Screen size: 2400 x 1080
+[2026-06-23 09:23:27] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 18 条)
+[2026-06-23 09:23:27] [hamibot] [INFO]:[INFO] [flushElementCache]: 已触发异步刷新元素查找缓存
+[2026-06-23 09:23:27] [hamibot] [INFO]:[INFO] [closeApp]: openHamibot true
+[2026-06-23 09:23:31] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@2a022; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.8 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-23 09:23:31] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@2a022; boundsInParent: Rect(0, 0 - 240, 240); boundsInScreen: Rect(420, 2057 - 660, 2297); packageName: com.miui.home; className: android.view.View; text: null; contentDescription: 本机共有12.0 G内存，当前4.8 G可用，双击清理全部任务; viewId: com.miui.home:id/clearAnimView; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+[2026-06-23 09:23:31] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:23:31] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:23:31] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:23:31] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:23:31] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:23:32] [hamibot] [INFO]:[INFO] [closeApp]: 已通过最近任务页‘关闭全部’关闭应用
+[2026-06-23 09:23:33] [hamibot] [INFO]:[INFO] [Outer]: 开始查找商品详情
+[2026-06-23 09:23:34] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 自动确认线程启动 35000ms
+[2026-06-23 09:23:35] [hamibot] [INFO]:[INFO] [Outer]: 找到商品数量: 0
+[2026-06-23 09:23:36] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 09:23:37] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 坐标确认 (769, 2190)
+[2026-06-23 09:23:38] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 已点击确认 (1/3)，等待授权生效
+[2026-06-23 09:23:42] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 坐标确认 (769, 2190)
+[2026-06-23 09:23:42] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 已点击确认 (2/3)，等待授权生效
+[2026-06-23 09:23:51] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 09:24:06] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[30]: {"code":0,"data":[],"total":0}
+[2026-06-23 09:24:11] [hamibot] [ LOG ]:[ LOG ] [Outer]: mediaProjection: 自动确认线程结束
+[2026-06-23 09:24:21] [hamibot] [INFO]:[INFO] [fetchPendingTasks]: fetchPendingTasks raw[288]: {"code":0,"data":[{"id":"06a3e690-1ed5-498c-b5c3-f7060c1f97ff","type":"goldCoin","status":"pending",
+[2026-06-23 09:25:03] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1061c5; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:25:03] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1061c5; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:25:03] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:25:03] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:25:03] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:25:03] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:25:03] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:25:17] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览指定频道好物」miss 9ms
+[2026-06-23 09:25:17] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「搜一搜喜欢的商品」miss 9ms
+[2026-06-23 09:25:18] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「去浏览全新好物」miss 11ms
+[2026-06-23 09:25:19] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:25:19] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:25:24] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#1] scrollPage/滑动浏览 缓存[9,3,7] 全部✗ 剩余errorTime=-1 244ms
+[2026-06-23 09:25:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 缓存[9,3,7] errorTime耗尽，降级串行 201ms
+[2026-06-23 09:25:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:25:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#2] scrollPage/滑动浏览 串行全部✗ 串行856ms 总1085ms
+[2026-06-23 09:25:26] [hamibot] [INFO]:[INFO] [saveElementCache]: saveElementCache 服务端共 18 条 (本次新增/更新 17 条)
+[2026-06-23 09:25:28] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:25:29] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#3] scrollPage/滑动浏览 串行全部✗ 串行862ms 总863ms
+[2026-06-23 09:25:30] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:25:31] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#4] scrollPage/滑动浏览 串行全部✗ 串行814ms 总814ms
+[2026-06-23 09:25:39] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:25:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#5] scrollPage/滑动浏览 串行全部✗ 串行905ms 总906ms
+[2026-06-23 09:25:47] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:25:48] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#6] scrollPage/滑动浏览 串行全部✗ 串行882ms 总882ms
+[2026-06-23 09:25:55] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:25:56] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#7] scrollPage/滑动浏览 串行全部✗ 串行906ms 总907ms
+[2026-06-23 09:26:03] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:26:04] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#8] scrollPage/滑动浏览 串行全部✗ 串行954ms 总955ms
+[2026-06-23 09:26:11] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:26:12] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#9] scrollPage/滑动浏览 串行全部✗ 串行924ms 总924ms
+[2026-06-23 09:26:14] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:26:14] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:26:14] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:26:16] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:26:16] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:26:20] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:26:22] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=android.widget.FrameLayout, goto goldCoin
+[2026-06-23 09:27:18] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@137a9b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:27:18] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@137a9b; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:27:18] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:27:18] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:27:18] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:27:18] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:27:18] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:27:33] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:27:33] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 2ms
+[2026-06-23 09:27:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:27:38] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#10] scrollPage/滑动浏览 串行全部✗ 串行864ms 总865ms
+[2026-06-23 09:27:40] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:27:41] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#11] scrollPage/滑动浏览 串行全部✗ 串行775ms 总776ms
+[2026-06-23 09:27:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:27:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#12] scrollPage/滑动浏览 串行全部✗ 串行897ms 总897ms
+[2026-06-23 09:27:45] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:27:45] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#13] scrollPage/滑动浏览 串行全部✗ 串行870ms 总871ms
+[2026-06-23 09:27:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:27:54] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#14] scrollPage/滑动浏览 串行全部✗ 串行897ms 总898ms
+[2026-06-23 09:28:01] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:28:02] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#15] scrollPage/滑动浏览 串行全部✗ 串行857ms 总857ms
+[2026-06-23 09:28:09] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:28:10] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#16] scrollPage/滑动浏览 串行全部✗ 串行867ms 总867ms
+[2026-06-23 09:28:17] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:28:18] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#17] scrollPage/滑动浏览 串行全部✗ 串行916ms 总916ms
+[2026-06-23 09:28:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:28:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#18] scrollPage/滑动浏览 串行全部✗ 串行938ms 总939ms
+[2026-06-23 09:28:27] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:28:27] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:28:27] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:28:29] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:28:29] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:28:33] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.taobao
+[2026-06-23 09:28:33] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launchApp(闲鱼)
+[2026-06-23 09:28:40] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launchApp pkg=com.taobao.idlefish
+[2026-06-23 09:28:43] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 09:28:46] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait 缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）
+[2026-06-23 09:29:46] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@167f92; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:29:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@167f92; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:29:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:29:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:29:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:29:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:29:46] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:30:01] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:30:01] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 4ms
+[2026-06-23 09:30:25] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#19] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:30:26] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#19] scrollPage/滑动浏览 串行全部✗ 串行904ms 总904ms
+[2026-06-23 09:30:33] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#20] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:30:34] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#20] scrollPage/滑动浏览 串行全部✗ 串行998ms 总998ms
+[2026-06-23 09:30:42] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#21] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:30:43] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#21] scrollPage/滑动浏览 串行全部✗ 串行958ms 总959ms
+[2026-06-23 09:30:44] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:30:44] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:30:44] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:30:46] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:30:46] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:30:50] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:30:53] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 09:30:57] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait 缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）
+[2026-06-23 09:31:57] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@194a69; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:31:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@194a69; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:31:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:31:57] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:31:58] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:31:58] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:31:58] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:32:11] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 1ms
+[2026-06-23 09:32:11] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:32:36] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#22] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:32:37] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#22] scrollPage/滑动浏览 串行全部✗ 串行916ms 总917ms
+[2026-06-23 09:32:44] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#23] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:32:45] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#23] scrollPage/滑动浏览 串行全部✗ 串行1059ms 总1060ms
+[2026-06-23 09:32:52] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#24] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:32:53] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#24] scrollPage/滑动浏览 串行全部✗ 串行981ms 总981ms
+[2026-06-23 09:32:55] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: start from com.taobao.taobao
+[2026-06-23 09:32:55] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: attempt 1/6 pkg=com.taobao.taobao
+[2026-06-23 09:32:55] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: back()
+[2026-06-23 09:32:57] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after back pkg=com.taobao.taobao
+[2026-06-23 09:32:57] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: launch(com.taobao.idlefish)
+[2026-06-23 09:33:01] [hamibot] [INFO]:[INFO] [returnToXianyuApp]: returnToXianyu: after launch pkg=com.taobao.idlefish
+[2026-06-23 09:33:04] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: on xianyu activity=com.taobao.idlefish.webview.WebHybridActivity, goto goldCoin
+[2026-06-23 09:33:07] [hamibot] [INFO]:[INFO] [backMainPage]: backMainPage: goldCoin wait 缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）
+[2026-06-23 09:34:06] [hamibot] [INFO]:[INFO] [tryClickNode]: tryClickNode com.stardust.automator.UiObject@1c9bc9; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:34:06] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 开始尝试点击节点 com.stardust.automator.UiObject@1c9bc9; boundsInParent: Rect(142, -9 - 267, 116); boundsInScreen: Rect(372, 1244 - 700, 1572); packageName: com.taobao.idlefish; className: android.view.View; text: ; contentDescription: null; viewId: mapDiceBtn; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_HTML_ELEMENT, ACTION_PREVIOUS_HTML_ELEMENT]
+[2026-06-23 09:34:07] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable值: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:34:07] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点clickable toString: function clickable() {/*
+boolean clickable()
+*/}
+
+[2026-06-23 09:34:07] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 解析后的clickable值: true
+[2026-06-23 09:34:07] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 节点本身可点击，执行直接点击
+[2026-06-23 09:34:07] [hamibot] [ LOG ]:[ LOG ] [tryClickNode]: tryClickNode: 直接点击结果: true
+[2026-06-23 09:34:21] [hamibot] [INFO]:[INFO] [findTaskTitleStrict]: [taskPopup] strict「浏览推荐的国补商品」exact 0ms
+[2026-06-23 09:34:21] [hamibot] [INFO]:[INFO] [findAllInTaskList]: [taskPopup] findAll「去完成」23个 3ms
+[2026-06-23 09:34:45] [hamibot] [INFO]:[INFO] [findTargetElementWithCache]: [sel#25] scrollPage/滑动浏览 串行启动 12 条策略
+[2026-06-23 09:34:45] [hamibot] [INFO]:[INFO] [Outer]: Exit...

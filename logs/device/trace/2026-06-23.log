@@ -1,0 +1,253 @@
+[2026-06-23 09:24:06] [hamibot] {'time': '9:25:10 上午 GMT+08:00', 'action': 'taskPoller: 无待执行任务，等待下次轮询'}
+[2026-06-23 09:24:21] [hamibot] {'time': '9:25:25 上午 GMT+08:00', 'action': 'taskPoller: 收到任务 [goldCoin]'}
+[2026-06-23 09:24:21] [hamibot] {'time': '9:25:25 上午 GMT+08:00', 'action': '任务开始: goldCoin'}
+[2026-06-23 09:24:21] [hamibot] {'time': '9:25:25 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:24:23] [hamibot] {'time': '9:25:27 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-23 09:24:23] [hamibot] {'time': '9:25:27 上午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-23 09:24:25] [hamibot] {'time': '9:25:29 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:24:26] [hamibot] {'time': '9:25:30 上午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-23 09:24:26] [hamibot] {'time': '9:25:30 上午 GMT+08:00', 'action': 'navigateToMyTab: 已在我的页面'}
+[2026-06-23 09:24:26] [hamibot] {'time': '9:25:30 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:24:27] [hamibot] {'time': '9:25:30 上午 GMT+08:00', 'action': 'findPage: 点击进入金币页面'}
+[2026-06-23 09:24:30] [hamibot] {'time': '9:25:33 上午 GMT+08:00', 'action': 'coinExchange: 开始'}
+[2026-06-23 09:24:30] [hamibot] {'time': '9:25:34 上午 GMT+08:00', 'action': 'coinExchange: 金币页✓ 金币页铁证：独占 id 三连 + 结构 + 圆点 圆点(536,1408) [pkg+activity+newGameContainer+contentWrap+game_canvas+struct:canvas⊂ngc+gameWrap+mapDiceBtn]'}
+[2026-06-23 09:24:32] [hamibot] {'time': '9:25:36 上午 GMT+08:00', 'action': 'coinExchange: 色子显示「赚」，跳过摇骰子，进入任务流程'}
+[2026-06-23 09:25:03] [hamibot] {'time': '9:26:07 上午 GMT+08:00', 'action': 'openTaskPopup: 色子显示「赚」，点击 mapDiceBtn 引导做任务'}
+[2026-06-23 09:25:11] [hamibot] {'time': '9:26:15 上午 GMT+08:00', 'action': 'mainPopupTask: 第 1/3 轮'}
+[2026-06-23 09:25:17] [hamibot] {'time': '9:26:20 上午 GMT+08:00', 'action': 'checkGetGold: 无待领取任务，跳过'}
+[2026-06-23 09:25:17] [hamibot] {'time': '9:26:20 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[浏览指定频道好物]'}
+[2026-06-23 09:25:17] [hamibot] {'time': '9:26:21 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[搜一搜喜欢的商品]'}
+[2026-06-23 09:25:17] [hamibot] {'time': '9:26:21 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[去浏览全新好物]'}
+[2026-06-23 09:25:18] [hamibot] {'time': '9:26:22 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[浏览推荐的国补商品]'}
+[2026-06-23 09:25:20] [hamibot] {'time': '9:26:24 上午 GMT+08:00', 'action': 'scrollPage: 开始滑动浏览，等待落地页'}
+[2026-06-23 09:25:24] [hamibot] {'time': '9:26:27 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 缓存候选9,3,7 errorTime=0'}
+[2026-06-23 09:25:25] [hamibot] {'time': '9:26:29 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 缓存候选9,3,7 errorTime=-1'}
+[2026-06-23 09:25:26] [hamibot] {'time': '9:26:30 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗1085ms'}
+[2026-06-23 09:25:29] [hamibot] {'time': '9:26:33 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗863ms'}
+[2026-06-23 09:25:31] [hamibot] {'time': '9:26:35 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗814ms'}
+[2026-06-23 09:25:32] [hamibot] {'time': '9:26:36 上午 GMT+08:00', 'action': 'scrollPage: 未检测到进度指示，将至少滑动 15 次'}
+[2026-06-23 09:25:34] [hamibot] {'time': '9:26:38 上午 GMT+08:00', 'action': 'scrollPage: 第 1 次滑动，至少还需 14 次'}
+[2026-06-23 09:25:36] [hamibot] {'time': '9:26:40 上午 GMT+08:00', 'action': 'scrollPage: 第 2 次滑动，至少还需 13 次'}
+[2026-06-23 09:25:38] [hamibot] {'time': '9:26:42 上午 GMT+08:00', 'action': 'scrollPage: 第 3 次滑动，至少还需 12 次'}
+[2026-06-23 09:25:40] [hamibot] {'time': '9:26:44 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗906ms'}
+[2026-06-23 09:25:42] [hamibot] {'time': '9:26:46 上午 GMT+08:00', 'action': 'scrollPage: 第 4 次滑动，至少还需 11 次'}
+[2026-06-23 09:25:44] [hamibot] {'time': '9:26:48 上午 GMT+08:00', 'action': 'scrollPage: 第 5 次滑动，至少还需 10 次'}
+[2026-06-23 09:25:46] [hamibot] {'time': '9:26:50 上午 GMT+08:00', 'action': 'scrollPage: 第 6 次滑动，至少还需 9 次'}
+[2026-06-23 09:25:48] [hamibot] {'time': '9:26:52 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗882ms'}
+[2026-06-23 09:25:50] [hamibot] {'time': '9:26:54 上午 GMT+08:00', 'action': 'scrollPage: 第 7 次滑动，至少还需 8 次'}
+[2026-06-23 09:25:52] [hamibot] {'time': '9:26:56 上午 GMT+08:00', 'action': 'scrollPage: 第 8 次滑动，至少还需 7 次'}
+[2026-06-23 09:25:54] [hamibot] {'time': '9:26:58 上午 GMT+08:00', 'action': 'scrollPage: 第 9 次滑动，至少还需 6 次'}
+[2026-06-23 09:25:56] [hamibot] {'time': '9:27:00 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗907ms'}
+[2026-06-23 09:25:58] [hamibot] {'time': '9:27:02 上午 GMT+08:00', 'action': 'scrollPage: 第 10 次滑动，至少还需 5 次'}
+[2026-06-23 09:26:00] [hamibot] {'time': '9:27:04 上午 GMT+08:00', 'action': 'scrollPage: 第 11 次滑动，至少还需 4 次'}
+[2026-06-23 09:26:02] [hamibot] {'time': '9:27:06 上午 GMT+08:00', 'action': 'scrollPage: 第 12 次滑动，至少还需 3 次'}
+[2026-06-23 09:26:04] [hamibot] {'time': '9:27:08 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗955ms'}
+[2026-06-23 09:26:06] [hamibot] {'time': '9:27:10 上午 GMT+08:00', 'action': 'scrollPage: 第 13 次滑动，至少还需 2 次'}
+[2026-06-23 09:26:08] [hamibot] {'time': '9:27:12 上午 GMT+08:00', 'action': 'scrollPage: 第 14 次滑动，至少还需 1 次'}
+[2026-06-23 09:26:10] [hamibot] {'time': '9:27:14 上午 GMT+08:00', 'action': 'scrollPage: 第 15 次滑动'}
+[2026-06-23 09:26:12] [hamibot] {'time': '9:27:16 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗924ms'}
+[2026-06-23 09:26:12] [hamibot] {'time': '9:27:16 上午 GMT+08:00', 'action': 'scrollPage: 浏览完成，共滑动 15 次'}
+[2026-06-23 09:26:14] [hamibot] {'time': '9:27:17 上午 GMT+08:00', 'action': 'mainPopupFn[浏览推荐的国补商品]: 任务在外部 App(com.taobao.taobao)，拉回闲鱼…'}
+[2026-06-23 09:26:14] [hamibot] {'time': '9:27:17 上午 GMT+08:00', 'action': 'returnToXianyu: 从 com.taobao.taobao 切回闲鱼'}
+[2026-06-23 09:26:14] [hamibot] {'time': '9:27:17 上午 GMT+08:00', 'action': 'returnToXianyu: 第 1/6 次，当前 com.taobao.taobao'}
+[2026-06-23 09:26:14] [hamibot] {'time': '9:27:17 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 back()'}
+[2026-06-23 09:26:16] [hamibot] {'time': '9:27:19 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 launch(闲鱼包名)'}
+[2026-06-23 09:26:20] [hamibot] {'time': '9:27:24 上午 GMT+08:00', 'action': 'returnToXianyu: launch 已回闲鱼'}
+[2026-06-23 09:26:22] [hamibot] {'time': '9:27:26 上午 GMT+08:00', 'action': 'backMainPage: 尝试回到金币页 (1/20)'}
+[2026-06-23 09:26:22] [hamibot] {'time': '9:27:26 上午 GMT+08:00', 'action': 'backMainPage: 已在闲鱼 activity=android.widget.FrameLayout，导航金币页'}
+[2026-06-23 09:26:22] [hamibot] {'time': '9:27:26 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:26:23] [hamibot] {'time': '9:27:27 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-23 09:26:23] [hamibot] {'time': '9:27:27 上午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-23 09:26:25] [hamibot] {'time': '9:27:29 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:26:27] [hamibot] {'time': '9:27:31 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:26:28] [hamibot] {'time': '9:27:32 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第2次)'}
+[2026-06-23 09:26:36] [hamibot] {'time': '9:27:39 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:26:38] [hamibot] {'time': '9:27:41 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:26:38] [hamibot] {'time': '9:27:41 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:26:39] [hamibot] {'time': '9:27:42 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第3次)'}
+[2026-06-23 09:26:39] [hamibot] {'time': '9:27:42 上午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-23 09:26:39] [hamibot] {'time': '9:27:42 上午 GMT+08:00', 'action': 'findPage: 点击进入金币页面'}
+[2026-06-23 09:26:39] [hamibot] {'time': '9:27:42 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:26:42] [hamibot] {'time': '9:27:46 上午 GMT+08:00', 'action': 'coinExchange: 开始'}
+[2026-06-23 09:26:48] [hamibot] {'time': '9:27:52 上午 GMT+08:00', 'action': 'coinExchange: 金币页✓ 金币页铁证：独占 id 三连 + 结构 + 圆点 圆点(536,1408) [pkg+activity+newGameContainer+contentWrap+game_canvas+struct:canvas⊂ngc+gameWrap+mapDiceBtn]'}
+[2026-06-23 09:26:55] [hamibot] {'time': '9:27:58 上午 GMT+08:00', 'action': 'coinExchange: 色子显示「赚」，跳过摇骰子，进入任务流程'}
+[2026-06-23 09:27:18] [hamibot] {'time': '9:28:22 上午 GMT+08:00', 'action': 'openTaskPopup: 色子显示「赚」，点击 mapDiceBtn 引导做任务'}
+[2026-06-23 09:27:25] [hamibot] {'time': '9:28:29 上午 GMT+08:00', 'action': 'mainPopupTask: 第 1/3 轮'}
+[2026-06-23 09:27:26] [hamibot] {'time': '9:28:29 上午 GMT+08:00', 'action': 'checkGetGold: 检查领取奖励'}
+[2026-06-23 09:27:32] [hamibot] {'time': '9:28:36 上午 GMT+08:00', 'action': 'checkGetGold: 无可领取奖励'}
+[2026-06-23 09:27:33] [hamibot] {'time': '9:28:36 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[浏览推荐的国补商品]'}
+[2026-06-23 09:27:34] [hamibot] {'time': '9:28:38 上午 GMT+08:00', 'action': 'scrollPage: 开始滑动浏览，等待落地页'}
+[2026-06-23 09:27:38] [hamibot] {'time': '9:28:42 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗865ms'}
+[2026-06-23 09:27:41] [hamibot] {'time': '9:28:44 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗776ms'}
+[2026-06-23 09:27:43] [hamibot] {'time': '9:28:47 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗897ms'}
+[2026-06-23 09:27:45] [hamibot] {'time': '9:28:49 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗871ms'}
+[2026-06-23 09:27:46] [hamibot] {'time': '9:28:50 上午 GMT+08:00', 'action': 'scrollPage: 未检测到进度指示，将至少滑动 15 次'}
+[2026-06-23 09:27:48] [hamibot] {'time': '9:28:52 上午 GMT+08:00', 'action': 'scrollPage: 第 1 次滑动，至少还需 14 次'}
+[2026-06-23 09:27:50] [hamibot] {'time': '9:28:54 上午 GMT+08:00', 'action': 'scrollPage: 第 2 次滑动，至少还需 13 次'}
+[2026-06-23 09:27:52] [hamibot] {'time': '9:28:56 上午 GMT+08:00', 'action': 'scrollPage: 第 3 次滑动，至少还需 12 次'}
+[2026-06-23 09:27:54] [hamibot] {'time': '9:28:58 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗898ms'}
+[2026-06-23 09:27:56] [hamibot] {'time': '9:29:00 上午 GMT+08:00', 'action': 'scrollPage: 第 4 次滑动，至少还需 11 次'}
+[2026-06-23 09:27:58] [hamibot] {'time': '9:29:02 上午 GMT+08:00', 'action': 'scrollPage: 第 5 次滑动，至少还需 10 次'}
+[2026-06-23 09:28:00] [hamibot] {'time': '9:29:04 上午 GMT+08:00', 'action': 'scrollPage: 第 6 次滑动，至少还需 9 次'}
+[2026-06-23 09:28:02] [hamibot] {'time': '9:29:06 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗857ms'}
+[2026-06-23 09:28:04] [hamibot] {'time': '9:29:08 上午 GMT+08:00', 'action': 'scrollPage: 第 7 次滑动，至少还需 8 次'}
+[2026-06-23 09:28:06] [hamibot] {'time': '9:29:10 上午 GMT+08:00', 'action': 'scrollPage: 第 8 次滑动，至少还需 7 次'}
+[2026-06-23 09:28:08] [hamibot] {'time': '9:29:12 上午 GMT+08:00', 'action': 'scrollPage: 第 9 次滑动，至少还需 6 次'}
+[2026-06-23 09:28:10] [hamibot] {'time': '9:29:14 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗867ms'}
+[2026-06-23 09:28:12] [hamibot] {'time': '9:29:16 上午 GMT+08:00', 'action': 'scrollPage: 第 10 次滑动，至少还需 5 次'}
+[2026-06-23 09:28:14] [hamibot] {'time': '9:29:18 上午 GMT+08:00', 'action': 'scrollPage: 第 11 次滑动，至少还需 4 次'}
+[2026-06-23 09:28:16] [hamibot] {'time': '9:29:20 上午 GMT+08:00', 'action': 'scrollPage: 第 12 次滑动，至少还需 3 次'}
+[2026-06-23 09:28:18] [hamibot] {'time': '9:29:22 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗916ms'}
+[2026-06-23 09:28:20] [hamibot] {'time': '9:29:24 上午 GMT+08:00', 'action': 'scrollPage: 第 13 次滑动，至少还需 2 次'}
+[2026-06-23 09:28:22] [hamibot] {'time': '9:29:26 上午 GMT+08:00', 'action': 'scrollPage: 第 14 次滑动，至少还需 1 次'}
+[2026-06-23 09:28:24] [hamibot] {'time': '9:29:28 上午 GMT+08:00', 'action': 'scrollPage: 第 15 次滑动'}
+[2026-06-23 09:28:26] [hamibot] {'time': '9:29:30 上午 GMT+08:00', 'action': 'scrollPage: 浏览完成，共滑动 15 次'}
+[2026-06-23 09:28:26] [hamibot] {'time': '9:29:30 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗939ms'}
+[2026-06-23 09:28:27] [hamibot] {'time': '9:29:31 上午 GMT+08:00', 'action': 'mainPopupFn[浏览推荐的国补商品]: 任务在外部 App(com.taobao.taobao)，拉回闲鱼…'}
+[2026-06-23 09:28:27] [hamibot] {'time': '9:29:31 上午 GMT+08:00', 'action': 'returnToXianyu: 从 com.taobao.taobao 切回闲鱼'}
+[2026-06-23 09:28:27] [hamibot] {'time': '9:29:31 上午 GMT+08:00', 'action': 'returnToXianyu: 第 1/6 次，当前 com.taobao.taobao'}
+[2026-06-23 09:28:27] [hamibot] {'time': '9:29:31 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 back()'}
+[2026-06-23 09:28:29] [hamibot] {'time': '9:29:33 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 launch(闲鱼包名)'}
+[2026-06-23 09:28:33] [hamibot] {'time': '9:29:37 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 launchApp(闲鱼)'}
+[2026-06-23 09:28:40] [hamibot] {'time': '9:29:44 上午 GMT+08:00', 'action': 'returnToXianyu: launchApp 已回闲鱼'}
+[2026-06-23 09:28:42] [hamibot] {'time': '9:29:46 上午 GMT+08:00', 'action': 'backMainPage: 尝试回到金币页 (1/20)'}
+[2026-06-23 09:28:43] [hamibot] {'time': '9:29:46 上午 GMT+08:00', 'action': 'backMainPage: 已在闲鱼 activity=com.taobao.idlefish.webview.WebHybridActivity，导航金币页'}
+[2026-06-23 09:28:46] [hamibot] {'time': '9:29:50 上午 GMT+08:00', 'action': 'backMainPage: WebHybrid 未就绪 (缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）)，等待'}
+[2026-06-23 09:28:50] [hamibot] {'time': '9:29:54 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:28:52] [hamibot] {'time': '9:29:55 上午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-23 09:28:52] [hamibot] {'time': '9:29:55 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-23 09:28:53] [hamibot] {'time': '9:29:57 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:28:55] [hamibot] {'time': '9:29:59 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:28:55] [hamibot] {'time': '9:29:59 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:28:56] [hamibot] {'time': '9:30:00 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第2次)'}
+[2026-06-23 09:29:03] [hamibot] {'time': '9:30:06 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:29:05] [hamibot] {'time': '9:30:08 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:29:05] [hamibot] {'time': '9:30:08 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:29:06] [hamibot] {'time': '9:30:09 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第3次)'}
+[2026-06-23 09:29:06] [hamibot] {'time': '9:30:10 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:29:06] [hamibot] {'time': '9:30:10 上午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-23 09:29:06] [hamibot] {'time': '9:30:10 上午 GMT+08:00', 'action': 'findPage: 点击进入金币页面'}
+[2026-06-23 09:29:09] [hamibot] {'time': '9:30:13 上午 GMT+08:00', 'action': 'coinExchange: 开始'}
+[2026-06-23 09:29:21] [hamibot] {'time': '9:30:25 上午 GMT+08:00', 'action': 'coinExchange: 金币页✓ 金币页铁证：独占 id 三连 + 结构 + 圆点 圆点(536,1408) [pkg+activity+newGameContainer+contentWrap+game_canvas+struct:canvas⊂ngc+gameWrap+mapDiceBtn]'}
+[2026-06-23 09:29:38] [hamibot] {'time': '9:30:42 上午 GMT+08:00', 'action': 'coinExchange: 色子显示「赚」，跳过摇骰子，进入任务流程'}
+[2026-06-23 09:29:46] [hamibot] {'time': '9:30:50 上午 GMT+08:00', 'action': 'openTaskPopup: 色子显示「赚」，点击 mapDiceBtn 引导做任务'}
+[2026-06-23 09:29:54] [hamibot] {'time': '9:30:58 上午 GMT+08:00', 'action': 'mainPopupTask: 第 1/3 轮'}
+[2026-06-23 09:30:00] [hamibot] {'time': '9:31:04 上午 GMT+08:00', 'action': 'checkGetGold: 检查领取奖励'}
+[2026-06-23 09:30:00] [hamibot] {'time': '9:31:04 上午 GMT+08:00', 'action': 'checkGetGold: 无可领取奖励'}
+[2026-06-23 09:30:00] [hamibot] {'time': '9:31:04 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[浏览推荐的国补商品]'}
+[2026-06-23 09:30:02] [hamibot] {'time': '9:31:06 上午 GMT+08:00', 'action': 'scrollPage: 开始滑动浏览，等待落地页'}
+[2026-06-23 09:30:04] [hamibot] {'time': '9:31:08 上午 GMT+08:00', 'action': 'scrollPage: 检测到浏览进度指示'}
+[2026-06-23 09:30:06] [hamibot] {'time': '9:31:10 上午 GMT+08:00', 'action': 'scrollPage: 第 1 次滑动，至少还需 14 次'}
+[2026-06-23 09:30:08] [hamibot] {'time': '9:31:12 上午 GMT+08:00', 'action': 'scrollPage: 第 2 次滑动，至少还需 13 次'}
+[2026-06-23 09:30:10] [hamibot] {'time': '9:31:14 上午 GMT+08:00', 'action': 'scrollPage: 第 3 次滑动，至少还需 12 次'}
+[2026-06-23 09:30:13] [hamibot] {'time': '9:31:17 上午 GMT+08:00', 'action': 'scrollPage: 第 4 次滑动，至少还需 11 次'}
+[2026-06-23 09:30:15] [hamibot] {'time': '9:31:19 上午 GMT+08:00', 'action': 'scrollPage: 第 5 次滑动，至少还需 10 次'}
+[2026-06-23 09:30:17] [hamibot] {'time': '9:31:21 上午 GMT+08:00', 'action': 'scrollPage: 第 6 次滑动，至少还需 9 次'}
+[2026-06-23 09:30:20] [hamibot] {'time': '9:31:24 上午 GMT+08:00', 'action': 'scrollPage: 第 7 次滑动，至少还需 8 次'}
+[2026-06-23 09:30:22] [hamibot] {'time': '9:31:26 上午 GMT+08:00', 'action': 'scrollPage: 第 8 次滑动，至少还需 7 次'}
+[2026-06-23 09:30:24] [hamibot] {'time': '9:31:28 上午 GMT+08:00', 'action': 'scrollPage: 第 9 次滑动，至少还需 6 次'}
+[2026-06-23 09:30:26] [hamibot] {'time': '9:31:30 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗904ms'}
+[2026-06-23 09:30:28] [hamibot] {'time': '9:31:32 上午 GMT+08:00', 'action': 'scrollPage: 第 10 次滑动，至少还需 5 次'}
+[2026-06-23 09:30:30] [hamibot] {'time': '9:31:34 上午 GMT+08:00', 'action': 'scrollPage: 第 11 次滑动，至少还需 4 次'}
+[2026-06-23 09:30:32] [hamibot] {'time': '9:31:36 上午 GMT+08:00', 'action': 'scrollPage: 第 12 次滑动，至少还需 3 次'}
+[2026-06-23 09:30:35] [hamibot] {'time': '9:31:38 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗998ms'}
+[2026-06-23 09:30:37] [hamibot] {'time': '9:31:40 上午 GMT+08:00', 'action': 'scrollPage: 第 13 次滑动，至少还需 2 次'}
+[2026-06-23 09:30:39] [hamibot] {'time': '9:31:42 上午 GMT+08:00', 'action': 'scrollPage: 第 14 次滑动，至少还需 1 次'}
+[2026-06-23 09:30:41] [hamibot] {'time': '9:31:44 上午 GMT+08:00', 'action': 'scrollPage: 第 15 次滑动'}
+[2026-06-23 09:30:43] [hamibot] {'time': '9:31:46 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗959ms'}
+[2026-06-23 09:30:43] [hamibot] {'time': '9:31:46 上午 GMT+08:00', 'action': 'scrollPage: 浏览完成，共滑动 15 次'}
+[2026-06-23 09:30:44] [hamibot] {'time': '9:31:48 上午 GMT+08:00', 'action': 'mainPopupFn[浏览推荐的国补商品]: 任务在外部 App(com.taobao.taobao)，拉回闲鱼…'}
+[2026-06-23 09:30:44] [hamibot] {'time': '9:31:48 上午 GMT+08:00', 'action': 'returnToXianyu: 从 com.taobao.taobao 切回闲鱼'}
+[2026-06-23 09:30:44] [hamibot] {'time': '9:31:48 上午 GMT+08:00', 'action': 'returnToXianyu: 第 1/6 次，当前 com.taobao.taobao'}
+[2026-06-23 09:30:44] [hamibot] {'time': '9:31:48 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 back()'}
+[2026-06-23 09:30:46] [hamibot] {'time': '9:31:50 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 launch(闲鱼包名)'}
+[2026-06-23 09:30:50] [hamibot] {'time': '9:31:54 上午 GMT+08:00', 'action': 'returnToXianyu: launch 已回闲鱼'}
+[2026-06-23 09:30:52] [hamibot] {'time': '9:31:56 上午 GMT+08:00', 'action': 'backMainPage: 尝试回到金币页 (1/20)'}
+[2026-06-23 09:30:53] [hamibot] {'time': '9:31:56 上午 GMT+08:00', 'action': 'backMainPage: 已在闲鱼 activity=com.taobao.idlefish.webview.WebHybridActivity，导航金币页'}
+[2026-06-23 09:30:57] [hamibot] {'time': '9:32:00 上午 GMT+08:00', 'action': 'backMainPage: WebHybrid 未就绪 (缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）)，等待'}
+[2026-06-23 09:31:00] [hamibot] {'time': '9:32:04 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:31:02] [hamibot] {'time': '9:32:05 上午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-23 09:31:02] [hamibot] {'time': '9:32:05 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-23 09:31:03] [hamibot] {'time': '9:32:07 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:31:05] [hamibot] {'time': '9:32:09 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:31:05] [hamibot] {'time': '9:32:09 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:31:06] [hamibot] {'time': '9:32:10 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第2次)'}
+[2026-06-23 09:31:14] [hamibot] {'time': '9:32:17 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:31:16] [hamibot] {'time': '9:32:20 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:31:16] [hamibot] {'time': '9:32:20 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:31:17] [hamibot] {'time': '9:32:21 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第3次)'}
+[2026-06-23 09:31:17] [hamibot] {'time': '9:32:21 上午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-23 09:31:17] [hamibot] {'time': '9:32:21 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:31:17] [hamibot] {'time': '9:32:21 上午 GMT+08:00', 'action': 'findPage: 点击进入金币页面'}
+[2026-06-23 09:31:20] [hamibot] {'time': '9:32:24 上午 GMT+08:00', 'action': 'coinExchange: 开始'}
+[2026-06-23 09:31:32] [hamibot] {'time': '9:32:36 上午 GMT+08:00', 'action': 'coinExchange: 金币页✓ 金币页铁证：独占 id 三连 + 结构 + 圆点 圆点(536,1408) [pkg+activity+newGameContainer+contentWrap+game_canvas+struct:canvas⊂ngc+gameWrap+mapDiceBtn]'}
+[2026-06-23 09:31:43] [hamibot] {'time': '9:32:46 上午 GMT+08:00', 'action': 'coinExchange: 色子显示「赚」，跳过摇骰子，进入任务流程'}
+[2026-06-23 09:31:57] [hamibot] {'time': '9:33:01 上午 GMT+08:00', 'action': 'openTaskPopup: 色子显示「赚」，点击 mapDiceBtn 引导做任务'}
+[2026-06-23 09:32:05] [hamibot] {'time': '9:33:09 上午 GMT+08:00', 'action': 'mainPopupTask: 第 1/3 轮'}
+[2026-06-23 09:32:10] [hamibot] {'time': '9:33:14 上午 GMT+08:00', 'action': 'checkGetGold: 检查领取奖励'}
+[2026-06-23 09:32:11] [hamibot] {'time': '9:33:14 上午 GMT+08:00', 'action': 'checkGetGold: 无可领取奖励'}
+[2026-06-23 09:32:11] [hamibot] {'time': '9:33:14 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[浏览推荐的国补商品]'}
+[2026-06-23 09:32:12] [hamibot] {'time': '9:33:16 上午 GMT+08:00', 'action': 'scrollPage: 开始滑动浏览，等待落地页'}
+[2026-06-23 09:32:14] [hamibot] {'time': '9:33:18 上午 GMT+08:00', 'action': 'scrollPage: 检测到浏览进度指示'}
+[2026-06-23 09:32:16] [hamibot] {'time': '9:33:20 上午 GMT+08:00', 'action': 'scrollPage: 第 1 次滑动，至少还需 14 次'}
+[2026-06-23 09:32:18] [hamibot] {'time': '9:33:22 上午 GMT+08:00', 'action': 'scrollPage: 第 2 次滑动，至少还需 13 次'}
+[2026-06-23 09:32:21] [hamibot] {'time': '9:33:24 上午 GMT+08:00', 'action': 'scrollPage: 第 3 次滑动，至少还需 12 次'}
+[2026-06-23 09:32:24] [hamibot] {'time': '9:33:27 上午 GMT+08:00', 'action': 'scrollPage: 第 4 次滑动，至少还需 11 次'}
+[2026-06-23 09:32:26] [hamibot] {'time': '9:33:29 上午 GMT+08:00', 'action': 'scrollPage: 第 5 次滑动，至少还需 10 次'}
+[2026-06-23 09:32:28] [hamibot] {'time': '9:33:31 上午 GMT+08:00', 'action': 'scrollPage: 第 6 次滑动，至少还需 9 次'}
+[2026-06-23 09:32:31] [hamibot] {'time': '9:33:35 上午 GMT+08:00', 'action': 'scrollPage: 第 7 次滑动，至少还需 8 次'}
+[2026-06-23 09:32:33] [hamibot] {'time': '9:33:37 上午 GMT+08:00', 'action': 'scrollPage: 第 8 次滑动，至少还需 7 次'}
+[2026-06-23 09:32:35] [hamibot] {'time': '9:33:39 上午 GMT+08:00', 'action': 'scrollPage: 第 9 次滑动，至少还需 6 次'}
+[2026-06-23 09:32:37] [hamibot] {'time': '9:33:41 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗917ms'}
+[2026-06-23 09:32:39] [hamibot] {'time': '9:33:43 上午 GMT+08:00', 'action': 'scrollPage: 第 10 次滑动，至少还需 5 次'}
+[2026-06-23 09:32:41] [hamibot] {'time': '9:33:45 上午 GMT+08:00', 'action': 'scrollPage: 第 11 次滑动，至少还需 4 次'}
+[2026-06-23 09:32:43] [hamibot] {'time': '9:33:47 上午 GMT+08:00', 'action': 'scrollPage: 第 12 次滑动，至少还需 3 次'}
+[2026-06-23 09:32:45] [hamibot] {'time': '9:33:49 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗1060ms'}
+[2026-06-23 09:32:47] [hamibot] {'time': '9:33:51 上午 GMT+08:00', 'action': 'scrollPage: 第 13 次滑动，至少还需 2 次'}
+[2026-06-23 09:32:49] [hamibot] {'time': '9:33:53 上午 GMT+08:00', 'action': 'scrollPage: 第 14 次滑动，至少还需 1 次'}
+[2026-06-23 09:32:51] [hamibot] {'time': '9:33:55 上午 GMT+08:00', 'action': 'scrollPage: 第 15 次滑动'}
+[2026-06-23 09:32:53] [hamibot] {'time': '9:33:57 上午 GMT+08:00', 'action': 'findTargetElementWithCache:scrollPage [滑动浏览] 全部策略未命中 总耗981ms'}
+[2026-06-23 09:32:53] [hamibot] {'time': '9:33:57 上午 GMT+08:00', 'action': 'scrollPage: 浏览完成，共滑动 15 次'}
+[2026-06-23 09:32:55] [hamibot] {'time': '9:33:58 上午 GMT+08:00', 'action': 'returnToXianyu: 从 com.taobao.taobao 切回闲鱼'}
+[2026-06-23 09:32:55] [hamibot] {'time': '9:33:58 上午 GMT+08:00', 'action': 'mainPopupFn[浏览推荐的国补商品]: 任务在外部 App(com.taobao.taobao)，拉回闲鱼…'}
+[2026-06-23 09:32:55] [hamibot] {'time': '9:33:59 上午 GMT+08:00', 'action': 'returnToXianyu: 第 1/6 次，当前 com.taobao.taobao'}
+[2026-06-23 09:32:55] [hamibot] {'time': '9:33:59 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 back()'}
+[2026-06-23 09:32:57] [hamibot] {'time': '9:34:01 上午 GMT+08:00', 'action': 'returnToXianyu: 执行 launch(闲鱼包名)'}
+[2026-06-23 09:33:01] [hamibot] {'time': '9:34:05 上午 GMT+08:00', 'action': 'returnToXianyu: launch 已回闲鱼'}
+[2026-06-23 09:33:03] [hamibot] {'time': '9:34:07 上午 GMT+08:00', 'action': 'backMainPage: 尝试回到金币页 (1/20)'}
+[2026-06-23 09:33:04] [hamibot] {'time': '9:34:07 上午 GMT+08:00', 'action': 'backMainPage: 已在闲鱼 activity=com.taobao.idlefish.webview.WebHybridActivity，导航金币页'}
+[2026-06-23 09:33:07] [hamibot] {'time': '9:34:11 上午 GMT+08:00', 'action': 'backMainPage: WebHybrid 未就绪 (缺少 newGameContainer（金币页独占 id，其他 H5/首页均无）)，等待'}
+[2026-06-23 09:33:11] [hamibot] {'time': '9:34:15 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:33:13] [hamibot] {'time': '9:34:16 上午 GMT+08:00', 'action': 'findPage: 不在我的页面，先回退'}
+[2026-06-23 09:33:13] [hamibot] {'time': '9:34:16 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第1次)'}
+[2026-06-23 09:33:14] [hamibot] {'time': '9:34:18 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:33:16] [hamibot] {'time': '9:34:20 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:33:16] [hamibot] {'time': '9:34:20 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:33:17] [hamibot] {'time': '9:34:21 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第2次)'}
+[2026-06-23 09:33:24] [hamibot] {'time': '9:34:28 上午 GMT+08:00', 'action': 'navigateToMyTab: 点击我的 Tab'}
+[2026-06-23 09:33:26] [hamibot] {'time': '9:34:30 上午 GMT+08:00', 'action': 'navigateToMyTab: 未找到我的 Tab 按钮'}
+[2026-06-23 09:33:26] [hamibot] {'time': '9:34:30 上午 GMT+08:00', 'action': 'goBackMyPage: 未能进入我的页面，执行返回'}
+[2026-06-23 09:33:27] [hamibot] {'time': '9:34:31 上午 GMT+08:00', 'action': 'goBackMyPage: 尝试回到我的页面 (第3次)'}
+[2026-06-23 09:33:27] [hamibot] {'time': '9:34:31 上午 GMT+08:00', 'action': 'findPage: goldCoin'}
+[2026-06-23 09:33:27] [hamibot] {'time': '9:34:31 上午 GMT+08:00', 'action': 'goBackMyPage: 已回到我的页面'}
+[2026-06-23 09:33:27] [hamibot] {'time': '9:34:31 上午 GMT+08:00', 'action': 'findPage: 点击进入金币页面'}
+[2026-06-23 09:33:30] [hamibot] {'time': '9:34:34 上午 GMT+08:00', 'action': 'coinExchange: 开始'}
+[2026-06-23 09:33:43] [hamibot] {'time': '9:34:46 上午 GMT+08:00', 'action': 'coinExchange: 金币页✓ 金币页铁证：独占 id 三连 + 结构 + 圆点 圆点(536,1408) [pkg+activity+newGameContainer+contentWrap+game_canvas+struct:canvas⊂ngc+gameWrap+mapDiceBtn]'}
+[2026-06-23 09:33:46] [hamibot] {'time': '9:34:50 上午 GMT+08:00', 'action': 'coinExchange: 色子显示「赚」，跳过摇骰子，进入任务流程'}
+[2026-06-23 09:34:06] [hamibot] {'time': '9:35:10 上午 GMT+08:00', 'action': 'openTaskPopup: 色子显示「赚」，点击 mapDiceBtn 引导做任务'}
+[2026-06-23 09:34:15] [hamibot] {'time': '9:35:19 上午 GMT+08:00', 'action': 'mainPopupTask: 第 1/3 轮'}
+[2026-06-23 09:34:20] [hamibot] {'time': '9:35:24 上午 GMT+08:00', 'action': 'checkGetGold: 检查领取奖励'}
+[2026-06-23 09:34:20] [hamibot] {'time': '9:35:24 上午 GMT+08:00', 'action': 'checkGetGold: 无可领取奖励'}
+[2026-06-23 09:34:20] [hamibot] {'time': '9:35:24 上午 GMT+08:00', 'action': 'mainPopupFn: 开始[浏览推荐的国补商品]'}
+[2026-06-23 09:34:22] [hamibot] {'time': '9:35:25 上午 GMT+08:00', 'action': 'scrollPage: 开始滑动浏览，等待落地页'}
+[2026-06-23 09:34:24] [hamibot] {'time': '9:35:28 上午 GMT+08:00', 'action': 'scrollPage: 检测到浏览进度指示'}
+[2026-06-23 09:34:26] [hamibot] {'time': '9:35:30 上午 GMT+08:00', 'action': 'scrollPage: 第 1 次滑动，至少还需 14 次'}
+[2026-06-23 09:34:29] [hamibot] {'time': '9:35:32 上午 GMT+08:00', 'action': 'scrollPage: 第 2 次滑动，至少还需 13 次'}
+[2026-06-23 09:34:31] [hamibot] {'time': '9:35:34 上午 GMT+08:00', 'action': 'scrollPage: 第 3 次滑动，至少还需 12 次'}
+[2026-06-23 09:34:33] [hamibot] {'time': '9:35:37 上午 GMT+08:00', 'action': 'scrollPage: 第 4 次滑动，至少还需 11 次'}
+[2026-06-23 09:34:35] [hamibot] {'time': '9:35:39 上午 GMT+08:00', 'action': 'scrollPage: 第 5 次滑动，至少还需 10 次'}
+[2026-06-23 09:34:37] [hamibot] {'time': '9:35:41 上午 GMT+08:00', 'action': 'scrollPage: 第 6 次滑动，至少还需 9 次'}
+[2026-06-23 09:34:40] [hamibot] {'time': '9:35:43 上午 GMT+08:00', 'action': 'scrollPage: 第 7 次滑动，至少还需 8 次'}
+[2026-06-23 09:34:42] [hamibot] {'time': '9:35:45 上午 GMT+08:00', 'action': 'scrollPage: 第 8 次滑动，至少还需 7 次'}
+[2026-06-23 09:34:44] [hamibot] {'time': '9:35:47 上午 GMT+08:00', 'action': 'scrollPage: 第 9 次滑动，至少还需 6 次'}
+[2026-06-23 09:34:45] [hamibot] {'time': '9:35:49 上午 GMT+08:00', 'action': '【金币任务停止】任务[浏览推荐的国补商品] callback 异常: JavaException: com.stardust.autojs.runtime.exception.ScriptInterruptedException: null'}

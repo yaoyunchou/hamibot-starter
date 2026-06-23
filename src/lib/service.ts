@@ -41,6 +41,34 @@ export const createLogs = (name: string, data: unknown): void => {
 }
 
 // ------------------------------------------------------------------ //
+// 金币任务状态同步
+// ------------------------------------------------------------------ //
+
+export type GoldTaskSyncItem = {
+    title: string;
+    hasRun: boolean;
+    rewardVerified?: boolean | null;
+    failCount?: number;
+    lastResult?: string | null;
+    failRecords?: any[];
+};
+
+/**
+ * 将金币任务列表状态同步到服务器，用于 Web 端实时查看。
+ * 在后台线程中静默执行，不阻塞主流程。
+ */
+export const syncGoldTasks = (tasks: GoldTaskSyncItem[]): void => {
+    try {
+        request('/api/gold/tasks/sync', {
+            method: 'POST',
+            body: JSON.stringify({ tasks }),
+        }, 6000);
+    } catch (error) {
+        // 同步失败不影响主流程，静默忽略
+    }
+};
+
+// ------------------------------------------------------------------ //
 // 订单查询
 // ------------------------------------------------------------------ //
 

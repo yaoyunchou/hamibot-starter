@@ -51,13 +51,28 @@ export const initRunInfo = (logUI:any) =>{
 // ---------------------- 操作轨迹 -------------------------
 
 /**
+ * 当前正在执行的金币子任务名称。
+ * 由 setTaskContext / clearTaskContext 维护，所有 reportTrace 自动带上。
+ * 默认值 'main' 表示不在任何子任务上下文中。
+ */
+let _taskContext: string = 'main';
+
+/** 进入某个子任务时调用，之后所有 trace 日志都会携带该任务名 */
+export const setTaskContext = (name: string) => { _taskContext = name; };
+/** 子任务结束时调用，恢复为 'main' */
+export const clearTaskContext = () => { _taskContext = 'main'; };
+/** 读取当前任务上下文（用于调试） */
+export const getTaskContext = () => _taskContext;
+
+/**
  * 上报一条操作轨迹到服务器（后台线程，不阻塞主流程）
- * name 固定为 "trace"，data 为操作内容
+ * name 固定为 "trace"，data 含 time / action / task 三个字段
  */
 const reportTrace = (action: string) => {
     const entry = {
         time: new Date().toLocaleTimeString('zh-CN'),
-        action
+        action,
+        task: _taskContext,
     };
     threads.start(function () {
         try {

@@ -233,6 +233,9 @@
     <div class="nav-item" onclick="showPage('pages', this); loadPagesPanel()">
       <span class="nav-icon">📄</span>页面采集
     </div>
+    <div class="nav-item" onclick="showPage('gold', this); loadGoldPanel()">
+      <span class="nav-icon">🪙</span>金币任务
+    </div>
   </aside>
 
   <!-- Main -->
@@ -562,6 +565,54 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- ── 金币任务 ── -->
+    <div id="page-gold" class="page">
+
+      <!-- 统计栏 -->
+      <div class="stat-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div class="stat"><div class="stat-val" id="gold-s-total">-</div><div class="stat-label">任务总数</div></div>
+        <div class="stat"><div class="stat-val" style="color:var(--green)" id="gold-s-done">-</div><div class="stat-label">已完成</div></div>
+        <div class="stat"><div class="stat-val" style="color:var(--red)" id="gold-s-failed">-</div><div class="stat-label">失败</div></div>
+        <div class="stat"><div class="stat-val" style="color:var(--muted)" id="gold-s-pending">-</div><div class="stat-label">未执行</div></div>
+      </div>
+
+      <!-- 操作栏 -->
+      <div class="card" style="padding:16px 20px">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <input class="dbg-input" id="gold-add-input"
+            placeholder="输入任务名称，如：浏览指定频道好物"
+            style="flex:1;min-width:220px;margin-bottom:0" />
+          <button class="btn btn-primary btn-sm" onclick="goldAddTask()">＋ 添加任务</button>
+          <button class="btn btn-outline btn-sm" onclick="loadGoldPanel()">↻ 刷新</button>
+          <button class="btn btn-danger btn-sm" onclick="goldResetAll()">重置全部</button>
+          <span id="gold-date-badge" style="font-size:12px;color:var(--muted);margin-left:auto"></span>
+        </div>
+      </div>
+
+      <!-- 任务列表 -->
+      <div class="card">
+        <div class="card-title">今日金币任务执行列表</div>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th style="width:32px">#</th>
+              <th>任务名称</th>
+              <th>状态</th>
+              <th>奖励验证</th>
+              <th>失败次数</th>
+              <th>最后结果</th>
+              <th>更新时间</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="gold-task-body">
+            <tr><td colspan="8" class="empty-tip">加载中...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
   </main>
@@ -1271,6 +1322,106 @@ document.addEventListener('keydown', (e) => {
     closeAiTaskModal();
   }
 });
+
+// ── 金币任务面板 ──────────────────────────────────────────────
+
+async function loadGoldPanel() {
+  try {
+    const r = await fetch(`${BASE}/api/gold/tasks`).then(res => res.json());
+    if (r.code !== 0) { toast(r.message || '加载失败', 'error'); return; }
+
+    // 统计卡
+    const st = r.stats || {};
+    document.getElementById('gold-s-total').textContent   = st.total   ?? '-';
+    document.getElementById('gold-s-done').textContent    = st.done    ?? '-';
+    document.getElementById('gold-s-failed').textContent  = st.failed  ?? '-';
+    document.getElementById('gold-s-pending').textContent = st.pending ?? '-';
+    document.getElementById('gold-date-badge').textContent = r.date ? `日期：${r.date}` : '';
+
+    // 任务表格
+    const tbody = document.getElementById('gold-task-body');
+    const tasks = r.data || [];
+    if (!tasks.length) {
+      tbody.innerHTML = `<tr><td colspan="8" class="empty-tip">今日暂无任务记录，运行脚本后自动同步</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = tasks.map((t, i) => {
+      const statusHtml = t.hasRun
+        ? `<span class="badge badge-green">✓ 已完成</span>`
+        : t.failCount > 0
+          ? `<span class="badge badge-red">✗ 失败</span>`
+          : `<span class="badge badge-muted">— 未执行</span>`;
+
+      const verifyHtml = t.rewardVerified === true
+        ? `<span style="color:var(--green);font-size:13px">✓ 已验证</span>`
+        : t.rewardVerified === false
+          ? `<span style="color:var(--yellow);font-size:13px">⚠ 未验证</span>`
+          : `<span style="color:var(--muted);font-size:13px">—</span>`;
+
+      const resultHtml = t.lastResult === 'done'
+        ? `<span style="color:var(--green)">done</span>`
+        : t.lastResult === 'failed'
+          ? `<span style="color:var(--red)">failed</span>`
+          : `<span style="color:var(--muted)">—</span>`;
+
+      const customTag = t.custom ? `<span style="font-size:10px;color:var(--muted);margin-left:4px">[自定义]</span>` : '';
+
+      return `<tr>
+        <td style="color:var(--muted)">${i + 1}</td>
+        <td>${escHtml(t.title)}${customTag}</td>
+        <td>${statusHtml}</td>
+        <td>${verifyHtml}</td>
+        <td style="color:${t.failCount > 0 ? 'var(--red)' : 'var(--muted)'}">${t.failCount || 0}</td>
+        <td>${resultHtml}</td>
+        <td style="color:var(--muted);font-size:12px">${escHtml(t.lastUpdated || '—')}</td>
+        <td>
+          <button class="btn btn-outline btn-sm" onclick="goldResetOne(${JSON.stringify(t.title)})">重置</button>
+        </td>
+      </tr>`;
+    }).join('');
+  } catch (e) {
+    toast('加载失败: ' + e.message, 'error');
+  }
+}
+
+async function goldAddTask() {
+  const input = document.getElementById('gold-add-input');
+  const title = (input.value || '').trim();
+  if (!title) { toast('请输入任务名称', 'error'); return; }
+  try {
+    const r = await fetch(`${BASE}/api/gold/tasks/add`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title }),
+    }).then(res => res.json());
+    if (r.code !== 0) { toast(r.message || '添加失败', 'error'); return; }
+    input.value = '';
+    toast('已添加：' + title, 'ok');
+    loadGoldPanel();
+  } catch (e) { toast('请求失败: ' + e.message, 'error'); }
+}
+
+async function goldResetOne(title) {
+  if (!confirm(`确认重置任务「${title}」的执行状态？`)) return;
+  try {
+    const r = await fetch(`${BASE}/api/gold/task/${encodeURIComponent(title)}/reset`, {
+      method: 'PATCH',
+    }).then(res => res.json());
+    toast(r.code === 0 ? '已重置' : (r.message || '失败'), r.code === 0 ? 'ok' : 'error');
+    loadGoldPanel();
+  } catch (e) { toast('请求失败: ' + e.message, 'error'); }
+}
+
+async function goldResetAll() {
+  if (!confirm('确认重置今日全部任务的执行状态？')) return;
+  try {
+    const r = await fetch(`${BASE}/api/gold/tasks/reset-all`, {
+      method: 'POST',
+    }).then(res => res.json());
+    toast(r.message || (r.code === 0 ? '已重置' : '失败'), r.code === 0 ? 'ok' : 'error');
+    loadGoldPanel();
+  } catch (e) { toast('请求失败: ' + e.message, 'error'); }
+}
 
 // Auto refresh every 10s
 refresh();
