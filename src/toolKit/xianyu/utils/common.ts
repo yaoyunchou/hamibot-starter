@@ -1,575 +1,353 @@
-import { Record } from "../../../lib/logger";
-import { getScreenWidth, getScreenHeight } from "../../../lib/screenSize";
-import { flushElementCache } from "./selector";
+import {
+    back, click, home, longClick, select, swipe,
+} from 'accessibility';
+import { launch as appLaunch, getPackageName, openAppSettings } from 'app';
+import { Record } from '../../../lib/logger';
+import { sleep } from '../../../lib/sleep';
+import { flushElementCache } from './selector';
+import { getScreenWidth, getScreenHeight } from '../../../lib/screenSize';
+
+// ─────────────────────── UiSelector helpers ─────────────────────────
 
 /**
- * 按无障碍节点上的 id 字符串查找（与 layout 导出里 node.id() 一致）。
- * WebView/H5 里 DOM 的 id 往往不能用于 id() 选择器，需 DFS 当前窗口根。
- * @param occurrenceIndex 同一 id 出现多次时取第几个（0 起，按深度优先顺序）
+ * 按无障碍节点 id 深度优先查找（WebView/H5 场景）。
  */
-export const findByA11yId = (targetId: string, timeoutMs = 3000, occurrenceIndex = 0): UiObject | null => {
-  const endAt = Date.now() + timeoutMs;
-  const collect = (node: UiObject | null, out: UiObject[]) => {
-    if (!node) return;
-    try {
-      if (node.id() === targetId) out.push(node);
-    } catch {
-      /* skip */
+/**
+ * 按 a11y id 深度优先查找（同步，v7 中 select().findOne() 是阻塞调用）
+ */
+export const findByA11yId = (
+    targetId: string,
+    timeoutMs = 3000,
+    occurrenceIndex = 0
+): Autox.UiObject | null => {
+    const endAt = Date.now() + timeoutMs;
+    const collect = (node: Autox.UiObject | null, out: Autox.UiObject[]) => {
+        if (!node) return;
+        try { if (node.id() === targetId) out.push(node); } catch {}
+        const n = typeof node.childCount === 'function' ? node.childCount() : 0;
+        for (let i = 0; i < n; i++) {
+            try { collect(node.child(i), out); } catch {}
+        }
+    };
+    while (Date.now() < endAt) {
+        try {
+            let root: Autox.UiObject | null = select().className('android.widget.FrameLayout').depth(0).findOnce();
+            if (!root) root = select().findOnce();
+            if (root) {
+                const hits: Autox.UiObject[] = [];
+                collect(root, hits);
+                if (hits.length > occurrenceIndex) return hits[occurrenceIndex];
+            }
+        } catch {}
+        // 短暂 busy-wait（不用 await，保持同步）
+        const pollEnd = Date.now() + 80;
+        while (Date.now() < pollEnd) {}
     }
-    const n = typeof node.childCount === "function" ? node.childCount() : 0;
-    for (let i = 0; i < n; i++) {
-      try {
-        collect(node.child(i), out);
-      } catch {
-        /* skip */
-      }
-    }
-  };
-  const rootGetter = (auto as any).rootInActiveWindow || (auto as any).root;
-  while (Date.now() < endAt) {
-    try {
-      const root = typeof rootGetter === "function" ? rootGetter() : rootGetter;
-      if (root) {
-        const hits: UiObject[] = [];
-        collect(root, hits);
-        if (hits.length > occurrenceIndex) return hits[occurrenceIndex];
-      }
-    } catch {
-      /* skip */
-    }
-    sleep(100);
-  }
-  return null;
-};
-
-// 尝试点击节点（含父节点），失败则坐标点击
-export const tryClickNode = (node: UiObject | null | undefined) => {
-  Record.info('tryClickNode', node)
-  if (!node) {
-    Record.error('tryClickNode: 传入的节点为空');
-    return false;
-  }
-  
-  try {
-    Record.log('tryClickNode: 开始尝试点击节点', node);
-    
-    // 调试：检查clickable的类型和行为
-    Record.log(`tryClickNode: 节点clickable值: ${node.clickable}`);
-    Record.log(`tryClickNode: 节点clickable toString: ${node.clickable?.toString?.() || '无toString方法'}`);
-    
-    // 获取clickable的实际值（如果是函数则调用，否则直接使用）
-    const isClickable = typeof node.clickable === 'function' ? (node.clickable as any)() : node.clickable;
-    Record.log(`tryClickNode: 解析后的clickable值: ${isClickable}`);
-    
-    // 尝试直接点击节点
-    if (isClickable) {
-      Record.log('tryClickNode: 节点本身可点击，执行直接点击');
-      const result = node.click();
-      Record.log(`tryClickNode: 直接点击结果: ${result}`);
-      return result;
-    }
-    
-    Record.log('tryClickNode: 节点本身不可点击，跳过直接点击，开始查找父级可点击节点');
-    
-    // 尝试查找父级可点击节点
-    let parent: UiObject | null = node.parent();
-    for (let i = 0; i < 4 && parent; i++) {
-      // 同样处理父节点的clickable
-      const parentClickable = typeof parent.clickable === 'function' ? (parent.clickable as any)() : parent.clickable;
-      Record.log(`tryClickNode: 检查第${i + 1}级父节点，clickable: ${parentClickable}`);
-      
-      if (parentClickable) {
-        Record.log(`tryClickNode: 找到第${i + 1}级父节点可点击，执行父节点点击`);
-        const result = parent.click();
-        Record.log(`tryClickNode: 父节点点击结果: ${result}`);
-        return result;
-      }
-      
-      Record.log(`tryClickNode: 第${i + 1}级父节点不可点击，继续向上查找`);
-      parent = parent.parent();
-    }
-    
-    Record.log('tryClickNode: 所有父级节点都不可点击，开始尝试坐标点击');
-    
-    // 尝试坐标点击
-    const b = node.bounds();
-    const centerX = b.centerX();
-    const centerY = b.centerY();
-    
-    Record.log(`tryClickNode: 获取节点边界，中心坐标: (${centerX}, ${centerY})`);
-    
-    const result = click(centerX, centerY);
-    Record.log(`tryClickNode: 坐标点击结果: ${result}`);
-    
-    return result;
-    
-  } catch (e) {
-    const errorMsg = (e as any)?.message || e;
-    Record.error(`tryClickNode 执行异常: ${errorMsg}`);
-    return false;
-  }
-};
-
-
-// 在弹窗场景下，选择“最右侧”的按钮作为确认兜底
-const pickRightMostButton = (buttons: UiCollection | null | undefined) => {
-  if (!buttons || buttons.length === 0) return null;
-  let candidate: UiObject | null = null;
-  let maxRight = -1;
-  for (let i = 0; i < buttons.length; i++) {
-    const btn = buttons[i];
-    try {
-      const b = btn.bounds();
-      if (b.right > maxRight) {
-        maxRight = b.right;
-        candidate = btn;
-      }
-    } catch {}
-  }
-  return candidate;
-};
-
-// 多策略查找确认按钮（优先资源ID，其次文案，最后结构兜底）
-const findConfirmButton = (timeout = 3500) => {
-  const endAt = Date.now() + timeout;
-  const confirmRegex = /(确定|强制停止|强行停止|停止|结束|允许|是|Yes|OK|好|确定停止|结束运行|关闭应用)/i;
-  const confirmIds = [
-    "android:id/button1",
-    "miui:id/button1",
-    "com.android.settings:id/left_button",
-    "com.android.settings:id/confirm_button",
-    "com.miui.securitycenter:id/accept",
-    "com.huawei.systemmanager:id/btn_right",
-    "com.coloros.oppoguardelf:id/btn_ok",
-    "com.oplus.securitycenter:id/btn_ok",
-    "com.vivo.permissionmanager:id/btn_right",
-  ];
-
-  const tryFind = () => {
-    // 1) 资源ID直查
-    for (const rid of confirmIds) {
-      try {
-        const byId = id(rid).findOne(200);
-        if (byId) return byId;
-      } catch {}
-    }
-    // 2) 文案匹配
-    const byText =
-      textMatches(confirmRegex).findOne(200) ||
-      descMatches(confirmRegex).findOne(200) ||
-      className("android.widget.Button").textMatches(confirmRegex).findOne(200) ||
-      className("android.widget.Button").descMatches(confirmRegex).findOne(200);
-    if (byText) return byText;
-    // 3) 兜底：取对话框中最右侧按钮
-    const buttons = className("android.widget.Button").find();
-    const rightMost = pickRightMostButton(buttons);
-    if (rightMost) return rightMost;
     return null;
-  };
-
-  let btn = tryFind();
-  while (!btn && Date.now() < endAt) {
-    sleep(150);
-    btn = tryFind();
-  }
-  return btn;
 };
 
-// 关闭应用（优先：最近任务页关闭 → 设置页强制停止）
-export const closeApp = (appNameOrPackage: string) => {
-  try {
-    try { flushElementCache(); } catch {}
-    //激活hamibot应用, 小米手机老是关闭不了当前运行的应用， 所以让当前应用变成hamibot应用,再执行关闭相关逻辑
-    const openHamibot =  app.launch('com.hamibot.hamibot');
-    Record.info('openHamibot', openHamibot)
-    sleep(1000)
-    const packageName = appNameOrPackage.includes(".")
-      ? appNameOrPackage
-      : getPackageName(appNameOrPackage);
+// ─────────────────────── 点击工具 ─────────────────────────
 
-    if (!packageName) {
-      Record.error(`未找到应用包名: ${appNameOrPackage}`);
-      return false;
+/** 尝试点击节点（含父节点），失败则坐标点击 */
+export const tryClickNode = async (node: Autox.UiObject | null | undefined): Promise<boolean> => {
+    if (!node) {
+        Record.error('tryClickNode: 传入的节点为空');
+        return false;
     }
-
-    // 方式一：通过最近任务页关闭（你已设置不需要关闭的应用为“锁定”）
     try {
-      recents();
-      sleep(500);
-      // 先找到desc 
-      // 优先点击“关闭全部/清理全部”
-      const closeAllBtn = findCloseAllButton(2000);
-      if (closeAllBtn && tryClickNode(closeAllBtn)) {
-        sleep(600);
-        Record.info("已通过最近任务页‘关闭全部’关闭应用");
-        sleep(200);
-        return true;
-      }
-      // 找不到“关闭全部”则尝试定向滑动卡片（尽量少滑，避免误伤锁定）
-      const card = textMatches(new RegExp(appNameOrPackage.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))).findOne(800) ||
-                   textMatches(new RegExp(packageName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))).findOne(800);
-      if (card) {
-        const b = card.bounds();
-        swipe(b.centerX(), b.centerY(), b.centerX(), Math.max(0, b.centerY() - getScreenHeight() * 0.6), 250);
-        sleep(300);
-        Record.info("已通过最近任务页卡片滑动关闭应用");
+        const isClickable = typeof node.clickable === 'function'
+            ? (node.clickable as any)()
+            : node.clickable;
+
+        if (isClickable) {
+            const result = node.click();
+            return !!result;
+        }
+
+        // 查找父级可点击节点
+        let parent: Autox.UiObject | null = node.parent();
+        for (let i = 0; i < 4 && parent; i++) {
+            const parentClickable = typeof parent.clickable === 'function'
+                ? (parent.clickable as any)()
+                : parent.clickable;
+            if (parentClickable) {
+                return !!parent.click();
+            }
+            parent = parent.parent();
+        }
+
+        // 坐标点击兜底
+        const b = node.bounds();
+        return await click(b.centerX(), b.centerY());
+    } catch (e) {
+        Record.error(`tryClickNode 异常: ${(e as any)?.message || e}`);
+        return false;
+    }
+};
+
+// ─────────────────────── 弹窗工具 ─────────────────────────
+
+const pickRightMostButton = (buttons: Autox.UiCollection | null | undefined): Autox.UiObject | null => {
+    if (!buttons || buttons.length === 0) return null;
+    let candidate: Autox.UiObject | null = null;
+    let maxRight = -1;
+    for (let i = 0; i < buttons.length; i++) {
+        const btn = buttons[i];
+        try {
+            const b = btn.bounds();
+            if (b.right > maxRight) { maxRight = b.right; candidate = btn; }
+        } catch {}
+    }
+    return candidate;
+};
+
+const confirmRegex = /(确定|强制停止|强行停止|停止|结束|允许|是|Yes|OK|好|确定停止|结束运行|关闭应用)/i;
+const confirmIds = [
+    'android:id/button1', 'miui:id/button1',
+    'com.android.settings:id/left_button', 'com.android.settings:id/confirm_button',
+    'com.miui.securitycenter:id/accept', 'com.huawei.systemmanager:id/btn_right',
+    'com.coloros.oppoguardelf:id/btn_ok', 'com.oplus.securitycenter:id/btn_ok',
+    'com.vivo.permissionmanager:id/btn_right',
+];
+
+const findConfirmButton = async (timeout = 3500): Promise<Autox.UiObject | null> => {
+    const endAt = Date.now() + timeout;
+    const tryFind = (): Autox.UiObject | null => {
+        for (const rid of confirmIds) {
+            try { const w = select().id(rid).findOne(200); if (w) return w; } catch {}
+        }
+        const byText = select().textMatches(confirmRegex).findOne(200)
+            || select().descMatches(confirmRegex).findOne(200)
+            || select().className('android.widget.Button').textMatches(confirmRegex).findOne(200);
+        if (byText) return byText;
+        const buttons = select().className('android.widget.Button').find();
+        return pickRightMostButton(buttons);
+    };
+    let btn = tryFind();
+    while (!btn && Date.now() < endAt) { await sleep(150); btn = tryFind(); }
+    return btn;
+};
+
+// ─────────────────────── 关闭应用 ─────────────────────────
+
+const findCloseAllButton = async (timeout = 200): Promise<Autox.UiObject | null> => {
+    const endAt = Date.now() + timeout;
+    const textRegex = /^(清除全部|全部清除|一键清理|全部关闭|关闭全部|清理全部|全部移除|关闭所有|全部结束|全部清理|全部清除|Clear\s*all|Close\s*all|Dismiss\s*all|Remove\s*all)$/i;
+    const ids = [
+        'com.huawei.android.launcher:id/clear_all_recents_image_button',
+        'com.android.systemui:id/clear_all', 'com.android.systemui:id/dismiss_text',
+        'com.android.launcher3:id/clear_all', 'com.miui.home:id/clearAnimView',
+        'com.miui.systemui:id/clear_all', 'com.huawei.android.launcher:id/clear_all',
+        'com.huawei.android.launcher:id/clearbox', 'com.samsung.android.recents:id/recents_clear_all_button',
+        'com.coloros.recents:id/clear_all', 'com.oplus.systemui:id/clear_all',
+        'com.vivo.recents:id/clear', 'com.transsion.phonemanager:id/clear_all', 'clearbox',
+    ];
+    const tryFind = (): Autox.UiObject | null => {
+        for (const rid of ids) {
+            try { const w = select().id(rid).findOne(150); if (w) return w; } catch {}
+        }
+        return select().textMatches(textRegex).findOne(200)
+            || select().descMatches(textRegex).findOne(200)
+            || select().className('android.widget.Button').textMatches(textRegex).findOne(200)
+            || null;
+    };
+    let btn = tryFind();
+    while (!btn && Date.now() < endAt) { await sleep(150); btn = tryFind(); }
+    return btn;
+};
+
+export const closeApp = async (appNameOrPackage: string): Promise<boolean> => {
+    try {
         try { flushElementCache(); } catch {}
-        return true;
-      }
-      home();
-    } catch {}
 
-    // 方式二：打开应用设置点击“强制停止/停止运行/结束运行”
-    app.openAppSetting(packageName);
-    sleep(1500);
+        // 激活 AutoX.js 自身（使当前前台切换）
+        appLaunch('org.autojs.autoxjs') || appLaunch('org.autojs.autojs');
+        await sleep(1000);
 
+        const packageName = appNameOrPackage.includes('.')
+            ? appNameOrPackage
+            : getPackageName(appNameOrPackage);
 
-
-    const stopBtn = findCloseAllButton( 4000);
-    if (stopBtn) {
-      // 某些系统上需要确保按钮是可用状态
-      if (stopBtn.enabled || true) {
-        tryClickNode(stopBtn);
-        sleep(600);
-        const confirmBtn = findConfirmButton(3500);
-        if (confirmBtn) {
-          tryClickNode(confirmBtn);
-          sleep(600);
-          Record.info(`已通过设置页强制停止: ${packageName}`);
-          back();
-          sleep(300);
-          return true;
+        if (!packageName) {
+            Record.error(`未找到应用包名: ${appNameOrPackage}`);
+            return false;
         }
-      }
-    }
-    Record.warn(`关闭应用未确认成功: ${packageName}`);
-    return false;
-  } catch (err) {
-    Record.error(`closeApp 异常: ${(err as any)?.message || err}`);
-    return false;
-  }
-};
 
-// -----------------------------
-// 关闭最近任务中的所有应用（保留被系统“锁定”的应用）
-// -----------------------------
-// 查找“关闭全部/清除全部”等按钮（优先资源ID，再文案匹配）
-const findCloseAllButton = (timeout = 200) => {
-  const endAt = Date.now() + timeout;
-  const textRegex = /^(清除全部|全部清除|一键清理|全部关闭|关闭全部|清理全部|全部移除|关闭所有|全部结束|全部清理|全部清除|Clear\s*all|Close\s*all|Dismiss\s*all|Remove\s*all)$/i;
-  const ids = [
-    // SystemUI / Launcher 常见
-    "com.huawei.android.launcher:id/clear_all_recents_image_button",
-    "com.android.systemui:id/clear_all",
-    "com.android.systemui:id/dismiss_text",
-    "com.android.launcher3:id/clear_all",
-    "com.miui.home:id/clearAnimView",
-    "com.miui.systemui:id/clear_all",
-    "com.huawei.android.launcher:id/clear_all",
-    "com.huawei.android.launcher:id/clearbox",
-    "com.samsung.android.recents:id/recents_clear_all_button",
-    "com.coloros.recents:id/clear_all",
-    "com.oplus.systemui:id/clear_all",
-    "com.vivo.recents:id/clear",
-    "com.transsion.phonemanager:id/clear_all",
-    // 用户补充的有效 ID
-    "com.taobao.taobao:id/close_all_btn",
-    "com.taobao.taobao:id/clear_all_btn",
-    "com.taobao.taobao:id/remove_all_btn",
-    "clearbox",
-  ];
-  const tryFind = () => {
-    // 1) 资源ID直查
-    for (const rid of ids) {
-      try {
-        const w = id(rid).findOne(150);
-        if (w) return w;
-      } catch {}
-    }
-    // 2) 文案匹配
-    return (
-      textMatches(textRegex).findOne(200) ||
-      descMatches(textRegex).findOne(200) ||
-      className("android.widget.Button").textMatches(textRegex).findOne(200) ||
-      className("android.widget.Button").descMatches(textRegex).findOne(200)
-    );
-  };
+        // 方式一：最近任务页关闭
+        try {
+            // @ts-ignore — recents() 是 AutoX.js 全局
+            (globalThis as any).recents?.();
+            await sleep(500);
+            const closeAllBtn = await findCloseAllButton(2000);
+            if (closeAllBtn && await tryClickNode(closeAllBtn)) {
+                await sleep(600);
+                Record.info("已通过最近任务页'关闭全部'关闭应用");
+                return true;
+            }
+            const card = select().textMatches(new RegExp(appNameOrPackage.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))).findOne(800)
+                || select().textMatches(new RegExp(packageName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))).findOne(800);
+            if (card) {
+                const b = card.bounds();
+                await swipe(b.centerX(), b.centerY(), b.centerX(), Math.max(0, b.centerY() - getScreenHeight() * 0.6), 250);
+                await sleep(300);
+                Record.info('已通过最近任务页卡片滑动关闭应用');
+                try { flushElementCache(); } catch {}
+                return true;
+            }
+            await home();
+        } catch {}
 
-  let btn = tryFind();
-  while (!btn && Date.now() < endAt) {
-    sleep(150);
-    btn = tryFind();
-  }
-  return btn;
-};
-
-export const closeAllRecentApps = (options?: { preferButton?: boolean; maxSwipes?: number }) => {
-  const preferButton = options?.preferButton !== false; // 默认优先按钮
-  const maxSwipes = Math.max(3, Math.min(options?.maxSwipes ?? 12, 30));
-  try {
-    // 打开最近任务
-    recents();
-    sleep(500);
-
-    // 方式1：点击“关闭全部/清除全部”按钮
-    if (preferButton) {
-      const closeAllBtn = findCloseAllButton(2500);
-      if (closeAllBtn) {
-        if (tryClickNode(closeAllBtn)) {
-          sleep(600);
-          Record.info("已点击‘关闭全部’按钮");
-          home();
-          sleep(200);
-          return true;
+        // 方式二：设置页强制停止
+        openAppSettings(packageName);
+        await sleep(1500);
+        const stopBtn = await findCloseAllButton(4000);
+        if (stopBtn) {
+            await tryClickNode(stopBtn);
+            await sleep(600);
+            const confirmBtn = await findConfirmButton(3500);
+            if (confirmBtn) {
+                await tryClickNode(confirmBtn);
+                await sleep(600);
+                Record.info(`已通过设置页强制停止: ${packageName}`);
+                await back();
+                await sleep(300);
+                return true;
+            }
         }
-      }
+        Record.warn(`关闭应用未确认成功: ${packageName}`);
+        return false;
+    } catch (err) {
+        Record.error(`closeApp 异常: ${(err as any)?.message || err}`);
+        return false;
     }
-
-    // 方式2：兜底 - 通过滑动卡片关闭（各列多次上滑）
-    const columns = [
-      Math.floor(getScreenWidth() * 0.33),
-      Math.floor(getScreenWidth() * 0.5),
-      Math.floor(getScreenWidth() * 0.67),
-    ];
-    const startY = Math.floor(getScreenHeight() * 0.6);
-    const endY = Math.floor(getScreenHeight() * 0.15);
-    let swiped = 0;
-    for (let i = 0; i < maxSwipes; i++) {
-      const x = columns[i % columns.length];
-      if (swipe(x, startY, x, endY, 250)) {
-        swiped++;
-        sleep(150);
-      }
-    }
-    Record.info(`已尝试通过滑动关闭最近任务卡片，次数: ${swiped}`);
-    home();
-    sleep(200);
-    return swiped > 0;
-  } catch (err) {
-    Record.error(`closeAllRecentApps 异常: ${(err as any)?.message || err}`);
-    return false;
-  }
 };
 
-// 只通过最近任务页“底部关闭按钮”关闭最近应用（不做滑动兜底）
-// 在最近任务页底部查找关闭按钮（优先资源ID，再文案匹配）
-const findBottomCloseButton = (timeout = 2500) => {
-  const endAt = Date.now() + timeout;
-  const bottomThreshold = Math.floor(getScreenHeight() * 0.75);
-  const textRegex = /(关闭|清理|清除|一键清理|关闭全部|清理全部|全部清除|全部关闭|结束全部|清除全部|Clear\s*all|Close\s*all|Dismiss\s*all|Remove\s*all|Close)/i;
-  const ids = [
-    // 与 findCloseAllButton 同步的 ID 集
-    "com.android.systemui:id/clear_all",
-    "com.android.systemui:id/dismiss_text",
-    "com.android.launcher3:id/clear_all",
-    "com.miui.home:id/clearAnimView",
-    "com.miui.systemui:id/clear_all",
-    "com.huawei.android.launcher:id/clear_all",
-    "com.samsung.android.recents:id/recents_clear_all_button",
-    "com.coloros.recents:id/clear_all",
-    "com.oplus.systemui:id/clear_all",
-    "com.vivo.recents:id/clear",
-    "com.transsion.phonemanager:id/clear_all",
-    // 用户补充
-    "com.taobao.taobao:id/close_all_btn",
-    "com.taobao.taobao:id/clear_all_btn",
-    "com.taobao.taobao:id/remove_all_btn",
-    "clearbox",
-  ];
-
-  const isBottom = (w: UiObject) => {
+export const closeAllRecentApps = async (options?: { preferButton?: boolean; maxSwipes?: number }): Promise<boolean> => {
+    const preferButton = options?.preferButton !== false;
+    const maxSwipes = Math.max(3, Math.min(options?.maxSwipes ?? 12, 30));
     try {
-      const b = w.bounds();
-      return b.top >= bottomThreshold;
-    } catch { return false; }
-  };
-
-  const tryFind = () => {
-    // 1) 资源ID直查 + 底部过滤
-    for (const rid of ids) {
-      try {
-        const w = id(rid).findOne(150);
-        if (w && isBottom(w)) return w;
-      } catch {}
-    }
-    // 2) 文案匹配，过滤底部
-    const candidates: (UiObject | null)[] = [
-      textMatches(textRegex).findOne(200),
-      descMatches(textRegex).findOne(200),
-      className("android.widget.Button").textMatches(textRegex).findOne(200),
-      className("android.widget.Button").descMatches(textRegex).findOne(200),
-    ];
-    for (const c of candidates) {
-      if (c && isBottom(c)) return c;
-    }
-    // 3) 兜底：在底部区域找任意可点击的控件
-    const allButtons = className("android.widget.Button").find();
-    let bottomMost: UiObject | null = null;
-    let maxBottom = -1;
-    for (let i = 0; i < allButtons.length; i++) {
-      const btn = allButtons[i];
-      try {
-        const b = btn.bounds();
-        if (b.top >= bottomThreshold && b.bottom > maxBottom) {
-          bottomMost = btn;
-          maxBottom = b.bottom;
+        (globalThis as any).recents?.();
+        await sleep(500);
+        if (preferButton) {
+            const closeAllBtn = await findCloseAllButton(2500);
+            if (closeAllBtn && await tryClickNode(closeAllBtn)) {
+                await sleep(600);
+                Record.info("已点击'关闭全部'按钮");
+                await home();
+                return true;
+            }
         }
-      } catch {}
+        const columns = [
+            Math.floor(getScreenWidth() * 0.33),
+            Math.floor(getScreenWidth() * 0.5),
+            Math.floor(getScreenWidth() * 0.67),
+        ];
+        const startY = Math.floor(getScreenHeight() * 0.6);
+        const endY = Math.floor(getScreenHeight() * 0.15);
+        let swiped = 0;
+        for (let i = 0; i < maxSwipes; i++) {
+            if (await swipe(columns[i % columns.length], startY, columns[i % columns.length], endY, 250)) {
+                swiped++;
+                await sleep(150);
+            }
+        }
+        Record.info(`已通过滑动关闭最近任务卡片，次数: ${swiped}`);
+        await home();
+        return swiped > 0;
+    } catch (err) {
+        Record.error(`closeAllRecentApps 异常: ${(err as any)?.message || err}`);
+        return false;
     }
-    return bottomMost;
-  };
-
-  let btn = tryFind();
-  while (!btn && Date.now() < endAt) {
-    sleep(150);
-    btn = tryFind();
-  }
-  return btn;
 };
 
-/** SystemUI 录屏/投放权限弹框（采集：pages/获取录屏权限） */
+// ─────────────────────── 截图权限弹框 ─────────────────────────
+
 const MEDIA_PROJECTION_TITLE_RE = /要开始使用.*录制或投放内容/;
 
-function hasMediaProjectionCancelButton(): boolean {
-  return !!(
-    id("android:id/button3").findOnce() ||
-    className("android.widget.Button").text("取消").findOnce()
-  );
-}
-
-/** 标题 + 取消钮同时存在才算弹框已就绪（避免正文文案先出现就误点） */
-export const isMediaProjectionDialogVisible = (): boolean => {
-  try {
-    const hasTitle = !!(
-      textMatches(MEDIA_PROJECTION_TITLE_RE).findOnce() ||
-      textContains("要开始使用").findOnce()
-    );
-    if (!hasTitle) return false;
-    return hasMediaProjectionCancelButton();
-  } catch {
-    return false;
-  }
+const isMediaProjectionDialogVisible = (): boolean => {
+    try {
+        const hasTitle = !!(
+            select().textMatches(MEDIA_PROJECTION_TITLE_RE).findOnce()
+            || select().textContains('要开始使用').findOnce()
+        );
+        if (!hasTitle) return false;
+        return !!(
+            select().id('android:id/button3').findOnce()
+            || select().className('android.widget.Button').text('取消').findOnce()
+        );
+    } catch { return false; }
 };
 
-/** 弹框连续可见若干次后再点，避免动画半程 / 树未刷完 */
-function isMediaProjectionDialogStable(stableChecks = 3, intervalMs = 350): boolean {
-  for (let i = 0; i < stableChecks; i++) {
-    if (!isMediaProjectionDialogVisible()) return false;
-    if (i < stableChecks - 1) sleep(intervalMs);
-  }
-  return true;
-}
-
-/** 点击录屏权限弹框右侧确认钮（与「取消」水平对齐；确认钮常不在 a11y 树中） */
-export const tryConfirmMediaProjectionDialog = (): boolean => {
-  if (!isMediaProjectionDialogStable(2, 300)) return false;
-
-  try {
-    const btn1 = id("android:id/button1").findOne(400);
-    if (btn1) {
-      const label = (btn1.text() || "").trim();
-      if (label && label !== "取消") {
-        Record.log(`mediaProjection: 点击 button1「${label}」`);
-        return !!tryClickNode(btn1);
-      }
+const isMediaProjectionDialogStable = async (stableChecks = 3, intervalMs = 350): Promise<boolean> => {
+    for (let i = 0; i < stableChecks; i++) {
+        if (!isMediaProjectionDialogVisible()) return false;
+        if (i < stableChecks - 1) await sleep(intervalMs);
     }
-  } catch {
-    /* skip */
-  }
-
-  try {
-    const byText = textMatches(/^(立即开始|开始|允许|确定)$/).findOne(400);
-    if (byText) {
-      Record.log(`mediaProjection: 点击文案「${byText.text()}」`);
-      return !!tryClickNode(byText);
-    }
-  } catch {
-    /* skip */
-  }
-
-  try {
-    const cancel =
-      id("android:id/button3").findOne(500) ||
-      className("android.widget.Button").text("取消").findOne(500);
-    if (!cancel) {
-      Record.log("mediaProjection: 取消钮未就绪，跳过坐标点击");
-      return false;
-    }
-
-    const cancelBounds = cancel.bounds();
-    const panel =
-      id("com.android.systemui:id/buttonPanel").findOne(300) || cancel.parent();
-    if (!panel) return false;
-
-    const panelBounds = panel.bounds();
-    const confirmX = panelBounds.right - (cancelBounds.centerX() - panelBounds.left);
-    const confirmY = cancelBounds.centerY();
-    Record.log(`mediaProjection: 坐标确认 (${confirmX}, ${confirmY})`);
-    click(confirmX, confirmY);
     return true;
-  } catch (e) {
-    Record.error(`mediaProjection: 确认失败 ${(e as any)?.message || e}`);
-    return false;
-  }
 };
+
+export const tryConfirmMediaProjectionDialog = async (): Promise<boolean> => {
+    if (!await isMediaProjectionDialogStable(2, 300)) return false;
+    try {
+        const btn1 = select().id('android:id/button1').findOne(400);
+        if (btn1) {
+            const label = (btn1.text() || '').trim();
+            if (label && label !== '取消') {
+                Record.log(`mediaProjection: 点击 button1「${label}」`);
+                return await tryClickNode(btn1);
+            }
+        }
+    } catch {}
+    try {
+        const byText = select().textMatches(/^(立即开始|开始|允许|确定)$/).findOne(400);
+        if (byText) {
+            Record.log(`mediaProjection: 点击文案「${byText.text()}」`);
+            return await tryClickNode(byText);
+        }
+    } catch {}
+    try {
+        const cancel = select().id('android:id/button3').findOne(500)
+            || select().className('android.widget.Button').text('取消').findOne(500);
+        if (!cancel) return false;
+        const cancelBounds = cancel.bounds();
+        const panel = select().id('com.android.systemui:id/buttonPanel').findOne(300) || cancel.parent();
+        if (!panel) return false;
+        const panelBounds = panel.bounds();
+        const confirmX = panelBounds.right - (cancelBounds.centerX() - panelBounds.left);
+        const confirmY = cancelBounds.centerY();
+        Record.log(`mediaProjection: 坐标确认 (${confirmX}, ${confirmY})`);
+        return await click(confirmX, confirmY);
+    } catch (e) {
+        Record.error(`mediaProjection: 确认失败 ${(e as any)?.message || e}`);
+        return false;
+    }
+};
+
+export const isMediaProjectionDialogVisibleExport = isMediaProjectionDialogVisible;
 
 /**
- * 在 requestScreenCapture 阻塞期间轮询并自动点确认（部分机型需连点两次）。
- * 须在主线程调用 requestScreenCapture 之前启动。
+ * 在 takeScreenshot 阻塞前先启动弹框自动确认循环（后台异步）。
+ * 返回 stop 函数，截图完成后调用。
  */
-export const startMediaProjectionAutoConfirm = (durationMs = 35000) => {
-  threads.start(function () {
-    Record.log(`mediaProjection: 自动确认线程启动 ${durationMs}ms`);
-    // 等主线程走到 requestScreenCapture、系统弹框完成入场动画
-    sleep(1500);
-
-    const endAt = Date.now() + durationMs;
-    let confirmCount = 0;
-    const MAX_CONFIRMS = 3;
-
-    while (Date.now() < endAt && confirmCount < MAX_CONFIRMS) {
-      if (!isMediaProjectionDialogVisible()) {
-        sleep(500);
-        continue;
-      }
-      if (!isMediaProjectionDialogStable(3, 350)) {
-        Record.log("mediaProjection: 弹框未稳定，继续等待");
-        sleep(400);
-        continue;
-      }
-
-      if (tryConfirmMediaProjectionDialog()) {
-        confirmCount++;
-        Record.log(`mediaProjection: 已点击确认 (${confirmCount}/${MAX_CONFIRMS})，等待授权生效`);
-        sleep(2000);
-      } else {
-        sleep(500);
-      }
-    }
-    Record.log("mediaProjection: 自动确认线程结束");
-  });
-};
-
-export const closeRecentsByBottomButton = () => {
-  try {
-    recents();
-    sleep(500);
-    const btn = findBottomCloseButton(3000);
-    if (btn) {
-      const clicked = tryClickNode(btn);
-      sleep(600);
-      if (clicked) {
-        Record.info("已点击最近任务页底部关闭按钮");
-        home();
-        sleep(200);
-      return true;
-      }
-    }
-    Record.warn("未找到最近任务页底部关闭按钮");
-    home();
-    return false;
-  } catch (e) {
-    Record.error(`closeRecentsByBottomButton 异常: ${(e as any)?.message || e}`);
-    return false;
-  }
+export const startMediaProjectionAutoConfirm = (durationMs = 35000): () => void => {
+    let stopped = false;
+    (async () => {
+        Record.log(`mediaProjection: 自动确认启动 ${durationMs}ms`);
+        await sleep(1500);
+        const endAt = Date.now() + durationMs;
+        let confirmCount = 0;
+        while (!stopped && Date.now() < endAt && confirmCount < 3) {
+            if (!isMediaProjectionDialogVisible()) { await sleep(500); continue; }
+            if (!await isMediaProjectionDialogStable(3, 350)) { await sleep(400); continue; }
+            if (await tryConfirmMediaProjectionDialog()) {
+                confirmCount++;
+                Record.log(`mediaProjection: 已点击确认 (${confirmCount}/3)`);
+                await sleep(2000);
+            } else {
+                await sleep(500);
+            }
+        }
+        Record.log('mediaProjection: 自动确认结束');
+    })();
+    return () => { stopped = true; };
 };

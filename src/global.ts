@@ -1,84 +1,57 @@
-/*
- * @Author: BATU1579
- * @CreateDate: 2022-02-04 21:03:08
- * @LastEditor: BATU1579
- * @LastTime: 2023-08-07 08:06:32
- * @FilePath: \\src\\global.ts
- * @Description: 全局常量和配置项验证
- */
+import { EventEmitter } from 'events';
+import { getConfig } from './lib/config';
+import { LogLevel, LOG_STACK, Record, sendLog, setToken } from './lib/logger';
+import { ConfigInvalidException } from './lib/exception';
+import { sleep } from './lib/sleep';
 
-import { ConfigInvalidException } from "./lib/exception";
-import { LogLevel, LOG_STACK, Record, sendLog, setToken } from "./lib/logger";
+export const PROJECT_NAME = 'xianyu Script';
+export const VERSION = '1.0.4';
 
-export const PROJECT_NAME = "xianyu Script"
+export const LISTENER_INTERVAL = 100;
+export const SHORT_WAIT_MS = 300;
+export const LONG_WAIT_MS = 1000;
 
-/**
- * @description: 脚本版本号。建议根据 [语义化版本号] 迭代
- */
-export const VERSION = "1.0.4";
-
-export const LISTENER_INTERVAL = 100; // 监听间隔
-
-export const SHORT_WAIT_MS = 300; // 短等待时间
-
-export const LONG_WAIT_MS = 1000; // 长等待时间
-
-export const EVENT = events.emitter();
+export const EVENT = new EventEmitter();
 
 Record.info(`Launching...\n\n\tCurrent script version: ${VERSION}\n`);
 
 // ---------------------- configuration -------------------------
 
-const {
-    _TOKEN,
-    _SHOW_CONSOLE,
-} = hamibot.env;
-Record.info("Configuration loaded " + JSON.stringify(hamibot.env));
-// -------------------- register listener -----------------------
+const cfg = getConfig();
+const _TOKEN = cfg._TOKEN;
+const _SHOW_CONSOLE = cfg._SHOW_CONSOLE;
+Record.info('Configuration loaded ' + JSON.stringify(cfg));
 
-// register exit listener
-events.on("exit", () => {
-    threads.shutDownAll();
-    Record.info("Exit...");
+// -------------------- register exit handler -------------------
 
-    // send to pushplus
-    let collection = LOG_STACK.filter((frame) => {
-        return frame.getLevel() >= LogLevel.Log;
-    });
+process.on('exit', async () => {
+    Record.info('Exit...');
 
-    if (_TOKEN && _TOKEN !== "") {
+    let collection = LOG_STACK.filter(frame => frame.getLevel() >= LogLevel.Log);
 
-        Record.info("Sending logs to pushplus...");
-
+    if (_TOKEN && _TOKEN !== '') {
+        Record.info('Sending logs to pushplus...');
         for (let i = 0; i < 3; i++) {
-            if (sendLog(collection, `[LOG] ${PROJECT_NAME}`)) {
-                Record.info("Sending logs succeeds");
+            if (await sendLog(collection, `[LOG] ${PROJECT_NAME}`)) {
+                Record.info('Sending logs succeeds');
                 return;
             }
             Record.warn(`Sending failed, retry ${i + 1}`);
         }
-
-        Record.error("Failure to send logs !");
-
+        Record.error('Failure to send logs!');
     }
 
-    // send to hamibot
-    for (let item of collection.toStringArray()) {
-        hamibot.postMessage(item);
-    }
-
-    sleep(LONG_WAIT_MS * 5);
-    console.hide();
+    await sleep(LONG_WAIT_MS * 5);
 });
 
 // ------------------------ validation --------------------------
 
-Record.info("Verifying configurations");
+Record.info('Verifying configurations');
 
-// pushplus token
-if (_TOKEN && _TOKEN !== "" && setToken(_TOKEN) == false) {
-    throw new ConfigInvalidException("pushplus token", "needs to be a 32-bit hexadecimal number");
+if (_TOKEN && _TOKEN !== '' && setToken(_TOKEN) === false) {
+    throw new ConfigInvalidException('pushplus token', 'needs to be a 32-bit hexadecimal number');
 }
-export const SHOW_CONSOLE = _SHOW_CONSOLE === true || _SHOW_CONSOLE === 'true';
 
-Record.info("Start running script");
+export const SHOW_CONSOLE = _SHOW_CONSOLE === true || String(_SHOW_CONSOLE) === 'true';
+
+Record.info('Start running script');

@@ -1,47 +1,60 @@
-import { Record } from "./logger"
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { Record } from './logger';
+import { getConfig } from './config';
+import { sleep } from './sleep';
 
-// 本地代理服务器地址，通过 Hamibot 配置面板的 _LOCAL_SERVER 字段填写电脑局域网 IP
-// 例如：http://192.168.1.100:3000
-const localHost: string = (hamibot.env as any)._LOCAL_SERVER || 'http://10.10.30.129:3000'
+const localHost: string = getConfig()._LOCAL_SERVER || 'http://10.10.30.129:3000';
 
-const baseHeaders = { 'Content-Type': 'application/json' }
+const baseHeaders = { 'Content-Type': 'application/json' };
 
-type RequestOptions = { method?: string; headers?: object; body?: string }
+const AI_HTTP_TIMEOUT_MS = 180000;
 
-const request = (path: string, options: RequestOptions = {}, timeoutMs: number = 10000) => {
-    return http.request(`${localHost}${path}`, {
-        ...options,
+const request = async (
+    path: string,
+    options: AxiosRequestConfig = {},
+    timeoutMs = 10000
+): Promise<AxiosResponse> => {
+    return axios({
+        url: `${localHost}${path}`,
         headers: { ...baseHeaders, ...(options.headers || {}) },
         timeout: timeoutMs,
-    } as any)
-}
+        ...options,
+    });
+};
 
-// token 由本地服务器统一管理，脚本端无需登录
-export const xyLogin = () => {
-    // 登录在本地服务器启动时自动完成，此处保留空实现以兼容现有调用
-}
+// ------------------------------------------------------------------ //
+// 兼容层 —— 保留 body.json() / body.string() 形状供旧调用点使用
+// ------------------------------------------------------------------ //
 
-// getHeader / getNestHeader 已无需返回 Authorization，保留空实现以兼容现有调用
-export const getHeader = () => baseHeaders
-export const getNestHeader = () => baseHeaders
+const wrapResponse = async (p: Promise<AxiosResponse>) => {
+    const res = await p;
+    return {
+        statusCode: res.status,
+        body: {
+            json: () => res.data,
+            string: () => (typeof res.data === 'string' ? res.data : JSON.stringify(res.data)),
+        },
+    };
+};
+
+export const xyLogin = () => { /* 登录由服务端统一管理 */ };
+export const getHeader = () => baseHeaders;
+export const getNestHeader = () => baseHeaders;
 
 // ------------------------------------------------------------------ //
 // 日志
 // ------------------------------------------------------------------ //
 
-export const createLogs = (name: string, data: unknown): void => {
+export const createLogs = async (name: string, data: unknown): Promise<void> => {
     try {
-        request('/api/logs', {
-            method: 'POST',
-            body: JSON.stringify({ name, data }),
-        })
-    } catch (error) {
-        Record.error('createLogs error', error)
+        await request('/api/logs', { method: 'post', data: { name, data } });
+    } catch (e) {
+        Record.error('createLogs error', e);
     }
-}
+};
 
 // ------------------------------------------------------------------ //
-// 金币任务状态同步
+// 金币任务
 // ------------------------------------------------------------------ //
 
 export type GoldTaskSyncItem = {
@@ -53,270 +66,223 @@ export type GoldTaskSyncItem = {
     failRecords?: any[];
 };
 
-/**
- * 将金币任务列表状态同步到服务器，用于 Web 端实时查看。
- * 在后台线程中静默执行，不阻塞主流程。
- */
-export const syncGoldTasks = (tasks: GoldTaskSyncItem[]): void => {
+export const syncGoldTasks = async (tasks: GoldTaskSyncItem[]): Promise<void> => {
     try {
-        request('/api/gold/tasks/sync', {
-            method: 'POST',
-            body: JSON.stringify({ tasks }),
-        }, 6000);
-    } catch (error) {
-        // 同步失败不影响主流程，静默忽略
-    }
+        await request('/api/gold/tasks/sync', { method: 'post', data: { tasks } }, 6000);
+    } catch { /* 静默忽略 */ }
 };
 
 // ------------------------------------------------------------------ //
 // 订单查询
 // ------------------------------------------------------------------ //
 
-export const getGoodInfo = (nickName: string, title: string) => {
-    const res = request(`/api/order/good?nickName=${encodeURIComponent(nickName)}&title=${encodeURIComponent(title)}`)
-    return (res.body.json() as any)
-}
+export const getGoodInfo = async (nickName: string, title: string): Promise<any> => {
+    const res = await wrapResponse(request(`/api/order/good?nickName=${encodeURIComponent(nickName)}&title=${encodeURIComponent(title)}`));
+    return res.body.json();
+};
 
-export const getGoodInfoByOrderNumber = (orderNumber: string) => {
-    const res = request(`/api/order/number?orderNumber=${encodeURIComponent(orderNumber)}`)
-    return (res.body.json() as any)
-}
+export const getGoodInfoByOrderNumber = async (orderNumber: string): Promise<any> => {
+    const res = await wrapResponse(request(`/api/order/number?orderNumber=${encodeURIComponent(orderNumber)}`));
+    return res.body.json();
+};
 
 // ------------------------------------------------------------------ //
-// Element 缓存（读写本地文件，速度极快）
+// Element 缓存
 // ------------------------------------------------------------------ //
 
-const _loadElementCache = (): Map<string, any> => {
-    // 直接用 http.get 避免带 Content-Type 请求头影响 Hamibot 对响应的处理
-    const res = (http as any).get(`${localHost}/api/cache/element`, { timeout: 10000 })
-    const data: any = res.body.json()
+const _loadElementCache = async (): Promise<Map<string, any>> => {
+    const res = await axios.get(`${localHost}/api/cache/element`, { timeout: 10000 });
+    const data: any = res.data;
     if (data && data.code === 0 && Array.isArray(data.data)) {
-        const cacheMap = new Map<string, any>()
+        const cacheMap = new Map<string, any>();
         data.data.forEach((item: any) => {
-            if (item && item.key !== undefined) {
-                cacheMap.set(item.key, item.value)
-            }
-        })
-        return cacheMap
+            if (item && item.key !== undefined) cacheMap.set(item.key, item.value);
+        });
+        return cacheMap;
     }
-    return new Map<string, any>()
-}
+    return new Map<string, any>();
+};
 
-export const getElementCache = (): Map<string, any> => {
-    // 启动阶段服务器可能尚未就绪，最多重试3次，每次间隔500ms
-    let lastError: any = null
+export const getElementCache = async (): Promise<Map<string, any>> => {
+    let lastError: any = null;
     for (let attempt = 1; attempt <= 3; attempt++) {
         try {
-            const cacheMap = _loadElementCache()
-            Record.info(`getElementCache 加载成功，共 ${cacheMap.size} 条 (第${attempt}次)`)
-            return cacheMap
+            const cacheMap = await _loadElementCache();
+            Record.info(`getElementCache 加载成功，共 ${cacheMap.size} 条 (第${attempt}次)`);
+            return cacheMap;
         } catch (error) {
-            lastError = error
-            Record.warn(`getElementCache 第${attempt}次失败: ${error}`)
-            if (attempt < 3) sleep(500)
+            lastError = error;
+            Record.warn(`getElementCache 第${attempt}次失败: ${error}`);
+            if (attempt < 3) await sleep(500);
         }
     }
-    Record.error('getElementCache 3次均失败，使用空缓存', lastError)
-    return new Map<string, any>()
-}
+    Record.error('getElementCache 3次均失败，使用空缓存', lastError);
+    return new Map<string, any>();
+};
 
-export const saveElementCache = (cache: Map<string, any>) => {
+export const saveElementCache = async (cache: Map<string, any>): Promise<void> => {
     try {
-        const cacheData = Array.from(cache.entries()).map(([key, value]) => ({ key, value }))
-        const res = request('/api/cache/element', {
-            method: 'PUT',
-            body: JSON.stringify(cacheData),
-        })
-        const result: any = res.body.json()
-        // count 是服务端合并后的总条数（含历史数据）
-        const serverCount = result?.count ?? cache.size
-        Record.info(`saveElementCache 服务端共 ${serverCount} 条 (本次新增/更新 ${cache.size} 条)`)
+        const cacheData = Array.from(cache.entries()).map(([key, value]) => ({ key, value }));
+        const res = await request('/api/cache/element', { method: 'put', data: cacheData });
+        const result: any = res.data;
+        const serverCount = result?.count ?? cache.size;
+        Record.info(`saveElementCache 服务端共 ${serverCount} 条 (本次 ${cache.size} 条)`);
     } catch (error) {
-        Record.error('saveElementCache 保存失败', error)
+        Record.error('saveElementCache 保存失败', error);
     }
-}
+};
 
 // ------------------------------------------------------------------ //
 // 控制面板 — 任务队列
 // ------------------------------------------------------------------ //
 
-/** 拉取指定状态的任务列表，客户端用于轮询待执行任务（POST 接口，兼容 Hamibot GET 限制） */
-export const fetchPendingTasks = (): any => {
-    let raw = ''
+export const fetchPendingTasks = async (): Promise<any> => {
     try {
-        const res = request('/api/control/tasks/poll', {
-            method: 'POST',
-            body: JSON.stringify({ status: 'pending', limit: 1 }),
-        })
-        raw = res.body.string()
-        Record.info('fetchPendingTasks raw[' + raw.length + ']: ' + raw.substring(0, 100))
-        if (!raw) return null
-        return JSON.parse(raw)
+        const res = await request('/api/control/tasks/poll', {
+            method: 'post',
+            data: { status: 'pending', limit: 1 },
+        });
+        return res.data;
     } catch (error) {
-        Record.error('fetchPendingTasks raw: ' + raw.substring(0, 100))
-        Record.error('fetchPendingTasks error', error)
-        return null
+        Record.error('fetchPendingTasks error', error);
+        return null;
     }
-}
+};
 
-/** 认领任务（将状态置为 running） */
-export const claimTask = (taskId: string): void => {
+export const claimTask = async (taskId: string): Promise<void> => {
     try {
-        request(`/api/control/task/${taskId}`, {
-            method: 'PUT',
-            body: JSON.stringify({
+        await request(`/api/control/task/${taskId}`, {
+            method: 'put',
+            data: {
                 status: 'running',
-                started_at: new Date().toLocaleString('zh-CN', { hour12: false })
-            }),
-        })
+                started_at: new Date().toLocaleString('zh-CN', { hour12: false }),
+            },
+        });
     } catch (error) {
-        Record.error('claimTask error', error)
+        Record.error('claimTask error', error);
     }
-}
+};
 
-/** 上报任务完成 */
-export const completeTask = (taskId: string, success: boolean, message?: string): void => {
+export const completeTask = async (taskId: string, success: boolean, message?: string): Promise<void> => {
     try {
-        request(`/api/control/task/${taskId}`, {
-            method: 'PUT',
-            body: JSON.stringify({
+        await request(`/api/control/task/${taskId}`, {
+            method: 'put',
+            data: {
                 status: success ? 'completed' : 'error',
                 completed_at: new Date().toLocaleString('zh-CN', { hour12: false }),
                 message: message || null,
-            }),
-        })
+            },
+        });
     } catch (error) {
-        Record.error('completeTask error', error)
+        Record.error('completeTask error', error);
     }
-}
+};
 
-/** 查询单条任务状态（POST，兼容 Hamibot） */
-export const fetchTaskStatus = (taskId: string): any => {
+export const fetchTaskStatus = async (taskId: string): Promise<any> => {
     try {
-        const res = request('/api/control/task/status', {
-            method: 'POST',
-            body: JSON.stringify({ task_id: taskId }),
-        })
-        const raw = res.body.string()
-        if (!raw) return null
-        return JSON.parse(raw)
+        const res = await request('/api/control/task/status', {
+            method: 'post',
+            data: { task_id: taskId },
+        });
+        return res.data;
     } catch (error) {
-        Record.error('fetchTaskStatus error', error)
-        return null
+        Record.error('fetchTaskStatus error', error);
+        return null;
     }
-}
+};
 
 // ------------------------------------------------------------------ //
 // 控制面板 — 预警
 // ------------------------------------------------------------------ //
 
-/** 上报预警（在需要预警的地方调用此函数） */
-export const reportAlert = (
+export const reportAlert = async (
     level: 'info' | 'warn' | 'error',
     message: string,
     taskId?: string
-): void => {
+): Promise<void> => {
     try {
-        request('/api/control/alert', {
-            method: 'POST',
-            body: JSON.stringify({ level, message, task_id: taskId || null }),
-        })
+        await request('/api/control/alert', {
+            method: 'post',
+            data: { level, message, task_id: taskId || null },
+        });
     } catch (error) {
-        Record.error('reportAlert error', error)
+        Record.error('reportAlert error', error);
     }
-}
+};
 
 // ------------------------------------------------------------------ //
 // 远程调试
 // ------------------------------------------------------------------ //
 
-/** 轮询待执行的调试指令（POST，兼容 Hamibot） */
-export const pollDebugCommands = (): any => {
-    let raw = ''
+export const pollDebugCommands = async (): Promise<any> => {
     try {
-        const res = request('/api/debug/commands/poll', {
-            method: 'POST',
-            body: JSON.stringify({ limit: 5 }),
-        })
-        raw = res.body.string()
-        if (!raw) return null
-        return JSON.parse(raw)
+        const res = await request('/api/debug/commands/poll', {
+            method: 'post',
+            data: { limit: 5 },
+        });
+        return res.data;
     } catch (error) {
-        Record.error('pollDebugCommands error', error)
-        return null
+        Record.error('pollDebugCommands error', error);
+        return null;
     }
-}
+};
 
-/** 认领调试指令（标记为 running） */
-export const claimDebugCommand = (cmdId: string): void => {
+export const claimDebugCommand = async (cmdId: string): Promise<void> => {
     try {
-        request(`/api/debug/command/${cmdId}`, {
-            method: 'PUT',
-            body: JSON.stringify({ status: 'running' }),
-        })
+        await request(`/api/debug/command/${cmdId}`, {
+            method: 'put',
+            data: { status: 'running' },
+        });
     } catch (error) {
-        Record.error('claimDebugCommand error', error)
+        Record.error('claimDebugCommand error', error);
     }
-}
+};
 
-/** 上报调试指令执行结果 */
-export const reportDebugResult = (cmdId: string, success: boolean, result?: any, error?: string): void => {
+export const reportDebugResult = async (
+    cmdId: string,
+    success: boolean,
+    result?: any,
+    error?: string
+): Promise<void> => {
     try {
-        request(`/api/debug/command/${cmdId}`, {
-            method: 'PUT',
-            body: JSON.stringify({
+        await request(`/api/debug/command/${cmdId}`, {
+            method: 'put',
+            data: {
                 status: success ? 'completed' : 'error',
                 result: result ?? null,
                 error: error ?? null,
-            }),
-        })
+            },
+        });
     } catch (err) {
-        Record.error('reportDebugResult error', err)
+        Record.error('reportDebugResult error', err);
     }
-}
+};
 
 // ------------------------------------------------------------------ //
-// AI（页面识别 / 决策 / 操作日志）
+// AI
 // ------------------------------------------------------------------ //
 
-/** AI 接口可能含多轮 LLM，超时单独放宽（毫秒） */
-const AI_HTTP_TIMEOUT_MS = 180000
-
-export const aiRecognize = (body: { [key: string]: unknown }): any => {
+export const aiRecognize = async (body: { [key: string]: unknown }): Promise<any> => {
     try {
-        const res = request(
-            '/api/ai/recognize',
-            {
-                method: 'POST',
-                body: JSON.stringify(body),
-            },
-            AI_HTTP_TIMEOUT_MS
-        )
-        return res.body.json() as any
+        const res = await request('/api/ai/recognize', { method: 'post', data: body }, AI_HTTP_TIMEOUT_MS);
+        return res.data;
     } catch (e) {
-        Record.error('aiRecognize error', e)
-        return null
+        Record.error('aiRecognize error', e);
+        return null;
     }
-}
+};
 
-export const aiDecide = (body: { [key: string]: unknown }): any => {
+export const aiDecide = async (body: { [key: string]: unknown }): Promise<any> => {
     try {
-        const res = request(
-            '/api/ai/decide',
-            {
-                method: 'POST',
-                body: JSON.stringify(body),
-            },
-            AI_HTTP_TIMEOUT_MS
-        )
-        return res.body.json() as any
+        const res = await request('/api/ai/decide', { method: 'post', data: body }, AI_HTTP_TIMEOUT_MS);
+        return res.data;
     } catch (e) {
-        Record.error('aiDecide error', e)
-        return null
+        Record.error('aiDecide error', e);
+        return null;
     }
-}
+};
 
-export const aiReport = (
+export const aiReport = async (
     taskId: string,
     step: number,
     beforeState: { [key: string]: unknown },
@@ -324,11 +290,11 @@ export const aiReport = (
     execution: { [key: string]: unknown },
     afterState: { [key: string]: unknown },
     evaluation?: { [key: string]: unknown }
-): void => {
+): Promise<void> => {
     try {
-        request('/api/ai/report', {
-            method: 'POST',
-            body: JSON.stringify({
+        await request('/api/ai/report', {
+            method: 'post',
+            data: {
                 task_id: taskId,
                 step,
                 before_state: beforeState,
@@ -336,35 +302,38 @@ export const aiReport = (
                 execution,
                 after_state: afterState,
                 evaluation: evaluation ?? null,
-            }),
-        })
+            },
+        });
     } catch (e) {
-        Record.error('aiReport error', e)
+        Record.error('aiReport error', e);
     }
-}
+};
 
-export const aiOperationStart = (taskDescription: string, deviceInfo?: { [key: string]: unknown }): any => {
+export const aiOperationStart = async (
+    taskDescription: string,
+    deviceInfo?: { [key: string]: unknown }
+): Promise<any> => {
     try {
-        const res = request('/api/ai/operation/start', {
-            method: 'POST',
-            body: JSON.stringify({ task_description: taskDescription, device_info: deviceInfo ?? null }),
-        })
-        return res.body.json() as any
+        const res = await request('/api/ai/operation/start', {
+            method: 'post',
+            data: { task_description: taskDescription, device_info: deviceInfo ?? null },
+        });
+        return res.data;
     } catch (e) {
-        Record.error('aiOperationStart error', e)
-        return null
+        Record.error('aiOperationStart error', e);
+        return null;
     }
-}
+};
 
-export const aiOperationComplete = (taskId: string, result: string): any => {
+export const aiOperationComplete = async (taskId: string, result: string): Promise<any> => {
     try {
-        const res = request('/api/ai/operation/complete', {
-            method: 'POST',
-            body: JSON.stringify({ task_id: taskId, result }),
-        })
-        return res.body.json() as any
+        const res = await request('/api/ai/operation/complete', {
+            method: 'post',
+            data: { task_id: taskId, result },
+        });
+        return res.data;
     } catch (e) {
-        Record.error('aiOperationComplete error', e)
-        return null
+        Record.error('aiOperationComplete error', e);
+        return null;
     }
-}
+};

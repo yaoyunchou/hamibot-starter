@@ -6,9 +6,9 @@
  * 2. 在 GOLD_BLOCKER_CATALOG 的 GENERIC 之前 insert 一条
  * 3. detect 用 probeTexts（全部命中）或 probeAnyText（任一命中）
  * 4. handle 用 actions 组合：clickTexts → bounds → anchorClose
- *
- * 示例采集：logs/device/闲鱼/pages/金币页面-出现金币任务弹框-做任务弹窗
  */
+import { click, select } from 'accessibility';
+import { sleep } from '../../../lib/sleep';
 import { findByA11yId, tryClickNode } from "../utils/common";
 import { setRunInfo } from "./base";
 import type { GoldBlockerRule } from "./goldBlockers";
@@ -19,7 +19,7 @@ function isTaskPopupOpen(): boolean {
 
 function probeTextContains(text: string): boolean {
   try {
-    return !!className("android.widget.TextView").textContains(text).findOnce();
+    return !!select().className("android.widget.TextView").textContains(text).findOnce();
   } catch {
     return false;
   }
@@ -39,43 +39,51 @@ function probeAnyText(texts: string[]): boolean {
   return false;
 }
 
-function clickTextButton(text: string, timeout = 400): boolean {
-  const btn = className("android.widget.TextView").textContains(text).clickable(true).findOne(timeout);
+async function clickTextButton(text: string, timeout = 400): Promise<boolean> {
+  const btn = select().className("android.widget.TextView").textContains(text).clickable(true).findOne(timeout);
   if (!btn) return false;
-  tryClickNode(btn);
+  await tryClickNode(btn);
   return true;
 }
 
-function clickInBounds(left: number, top: number, right: number, bottom: number): boolean {
-  const tv = className("android.widget.TextView").clickable(true).boundsInside(left, top, right, bottom).findOne(400);
-  if (tv) {
-    tryClickNode(tv);
-    return true;
+/** 点击坐标范围内的可点击元素，若未找到则点击中心坐标 */
+async function clickInBounds(left: number, top: number, right: number, bottom: number): Promise<boolean> {
+  const cx = Math.floor((left + right) / 2);
+  const cy = Math.floor((top + bottom) / 2);
+  // 尝试在范围内找可点击的 TextView
+  const candidates = [
+    select().className("android.widget.TextView").clickable(true).findOnce(),
+    select().className("android.view.View").clickable(true).findOnce(),
+  ];
+  for (const el of candidates) {
+    if (!el) continue;
+    try {
+      const b = el.bounds();
+      if (b.left >= left && b.right <= right && b.top >= top && b.bottom <= bottom) {
+        await tryClickNode(el);
+        return true;
+      }
+    } catch { /* skip */ }
   }
-  const view = className("android.view.View").clickable(true).boundsInside(left, top, right, bottom).findOne(300);
-  if (view) {
-    tryClickNode(view);
-    return true;
-  }
-  click(Math.floor((left + right) / 2), Math.floor((top + bottom) / 2));
+  await click(cx, cy);
   return true;
 }
 
-function clickTextList(texts: string[], timeout = 350): boolean {
+async function clickTextList(texts: string[], timeout = 350): Promise<boolean> {
   for (let i = 0; i < texts.length; i++) {
-    if (clickTextButton(texts[i], timeout)) return true;
+    if (await clickTextButton(texts[i], timeout)) return true;
   }
   return false;
 }
 
-function anchorClose(anchorText: string, childIndex: number): boolean {
-  const el = className("android.widget.TextView").textContains(anchorText).findOne(500);
+async function anchorClose(anchorText: string, childIndex: number): Promise<boolean> {
+  const el = select().className("android.widget.TextView").textContains(anchorText).findOne(500);
   if (!el) return false;
   try {
-    const closeBtn = el.parent().child(childIndex);
+    const closeBtn = el.parent()?.child(childIndex);
     if (closeBtn) {
-      closeBtn.click();
-      sleep(800);
+      await tryClickNode(closeBtn);
+      await sleep(800);
       return true;
     }
   } catch {
@@ -84,23 +92,23 @@ function anchorClose(anchorText: string, childIndex: number): boolean {
   return false;
 }
 
-/** 点击 anchor 正下方、无文案的可点击关闭钮（只点关闭，不点 anchor 本身） */
-function clickEmptyCloseBelowAnchor(anchorText: string): boolean {
-  const anchor = className("android.widget.TextView").text(anchorText).findOne(500);
+/** 点击 anchor 正下方、无文案的可点击关闭钮 */
+async function clickEmptyCloseBelowAnchor(anchorText: string): Promise<boolean> {
+  const anchor = select().className("android.widget.TextView").text(anchorText).findOne(500);
   if (!anchor) return false;
   try {
     const anchorBottom = anchor.bounds().bottom;
     const parent = anchor.parent();
     if (!parent) return false;
-    for (let i = 0; i < parent.childCount(); i++) {
+    const n = typeof parent.childCount === "function" ? parent.childCount() : 0;
+    for (let i = 0; i < n; i++) {
       const child = parent.child(i);
       if (!child) continue;
-      const childClickable = typeof child.clickable === "function" ? (child.clickable as any)() : child.clickable;
-      if (!childClickable) continue;
+      if (!child.clickable) continue;
       if (!(child.text() || "").trim()) {
         const top = child.bounds().top;
         if (top >= anchorBottom && top <= anchorBottom + 250) {
-          tryClickNode(child);
+          await tryClickNode(child);
           return true;
         }
       }
@@ -114,20 +122,13 @@ function clickEmptyCloseBelowAnchor(anchorText: string): boolean {
 /** 声明式弹框配置 */
 export type BlockerCatalogEntry = {
   id: string;
-  /** 越小越先匹配；默认 100 */
   priority?: number;
   enabled?: boolean;
-  /** 季节性/低频：本轮首次未命中则不再扫描 */
   optional?: boolean;
-  /** 全部文案都出现才算命中 */
   probeTexts?: string[];
-  /** 任一文案出现即命中（与 probeTexts 二选一） */
   probeAnyText?: string[];
-  /** 额外 detect 条件，返回 false 则跳过 */
   when?: () => boolean;
-  /** 处理动作，按顺序尝试，任一成功即返回 */
-  onHandle: () => boolean;
-  /** handle 成功后等待 ms */
+  onHandle: () => boolean | Promise<boolean>;
   settleMs?: number;
 };
 
@@ -142,11 +143,11 @@ function entryToRule(e: BlockerCatalogEntry): GoldBlockerRule {
       if (e.probeAnyText && e.probeAnyText.length > 0) return probeAnyText(e.probeAnyText);
       return false;
     },
-    handle: () => {
+    handle: async () => {
       setRunInfo(`goldBlocker[${e.id}]: 处理拦截弹框`);
-      const ok = e.onHandle();
-      if (ok && e.settleMs) sleep(e.settleMs);
-      return ok;
+      const ok = await e.onHandle();
+      if (ok && e.settleMs) await sleep(e.settleMs);
+      return !!ok;
     },
   };
 }
@@ -180,38 +181,27 @@ export const GOLD_BLOCKER_CATALOG: BlockerCatalogEntry[] = [
     id: "dice_continue_treasure",
     priority: 64,
     optional: true,
-    // popup-only：对比 金币页面，仅弹框页有「继续寻宝」
     probeAnyText: ["继续寻宝"],
     settleMs: 1000,
-    onHandle: () => {
+    onHandle: async () => {
       const btn = findByA11yId("wealthBtn", 500);
       if (btn) {
-        tryClickNode(btn);
+        await tryClickNode(btn);
         return true;
       }
-      return clickTextButton("继续寻宝") || clickInBounds(246, 1624, 834, 1766);
+      return await clickTextButton("继续寻宝") || await clickInBounds(246, 1624, 834, 1766);
     },
   },
   {
     id: "dice_scratch_activity",
     priority: 65,
     optional: true,
-    // popup-only：对比 金币页面 vs 金币页面-摇色子-活动弹框，仅弹框页有这两句文案
     probeTexts: ["中奖图案", "开始刮奖"],
     settleMs: 800,
-    // 关闭钮在「开始刮奖」正下方，无文案；bounds [485,1905,598,2021]，与开始刮奖 y 相隔 99px
     onHandle: () =>
       clickEmptyCloseBelowAnchor("开始刮奖") ||
       clickInBounds(485, 1905, 598, 2021),
   },
-  // ── 在此追加新弹框（采集 pages 后填写）──
-  // {
-  //   id: "xxx_activity",
-  //   priority: 65,
-  //   optional: true,
-  //   probeAnyText: ["活动标题文案"],
-  //   onHandle: () => clickTextList(["关闭"]) || clickInBounds(l, t, r, b),
-  // },
   {
     id: "generic_dismiss",
     priority: 900,

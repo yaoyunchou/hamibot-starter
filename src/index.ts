@@ -1,21 +1,15 @@
-"ui";
-/*
- * @Author: BATU1579
- * @CreateDate: 2022-05-24 16:58:03
- * @LastEditor: BATU1579
- * @LastTime: 2022-09-23 17:45:32
- * @FilePath: \\src\\index.ts
- * @Description: 脚本入口
+/**
+ * AutoX.js v7 脚本入口（Node.js 引擎）
  */
-import { SHOW_CONSOLE } from "./global";
-import { init } from "./lib/init";
-import { xyBaseRunWithLog } from "./toolKit/xianyu";
-init();
+import { init } from './lib/init';
+import { xyBaseRunWithLog } from './toolKit/xianyu';
 
-xyBaseRunWithLog();
-
-if (SHOW_CONSOLE) {
-    console.show();
-}
-
-
+(async () => {
+    try {
+        await init();
+        await xyBaseRunWithLog();
+    } catch (e) {
+        console.error('[main] 启动失败:', e);
+        process.exit(1);
+    }
+})();

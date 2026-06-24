@@ -723,6 +723,13 @@ declare module 'widget-operation' {
          * @description: `UiObject` 表示一个控件，可以通过这个对象获取到控件的属性，也可以对控件进行点击、长按等操作。获取一个 `UiObject` 通常通过选择器的 `findOne()` , `findOnce()` 等函数，也可以通过 `UiCollection` 来获取，或者通过 `UiObject.child()` , `UiObject.parent()` 等函数来获取一个控件的子控件或父控件。
          */
         class UiObject {
+            /** 控件的描述文字（contentDescription） */
+            desc(): string;
+            /** 控件是否可编辑 */
+            editable(): boolean;
+            /** 控件在父节点中的索引 */
+            indexInParent(): number;
+
             /**
              * @description: 点击该控件，并返回是否点击成功。如果该函数返回 `false` ，可能是该控件不可点击（ `clickable` 为 `false` ），当前界面无法响应该点击等。
              * @return {boolean} 操作是否成功。

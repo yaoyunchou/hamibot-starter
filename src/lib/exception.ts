@@ -6,28 +6,24 @@
  * @FilePath: \\src\\lib\\exception.ts
  * @Description: 全局异常类
  */
+import { EventEmitter } from 'events';
 import {
     Record,
     getStackTrace,
     TraceCollectionType,
     TraceStackFrameType,
     LoggerSchemes
-} from "./logger";
+} from './logger';
 
-const ERROR_EVENTS = events.emitter();
+const ERROR_EVENTS = new EventEmitter();
 
-ERROR_EVENTS.on("error", function errorListener(err: Exception) {
-    // 防止重复输出异常信息
+ERROR_EVENTS.on('error', function errorListener(err: Exception) {
     Record.customLog(
         LoggerSchemes.error,
-        {
-            needPrint: false,
-            needRecord: true,
-            skipCallerNumber: 2
-        },
+        { needPrint: false, needRecord: true, skipCallerNumber: 2 },
         err.toString()
     );
-})
+});
 
 export interface Exception {
     readonly exceptionType: string;

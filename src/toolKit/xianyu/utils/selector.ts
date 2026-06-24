@@ -1,3 +1,4 @@
+import { select } from 'accessibility';
 import { Record } from "../../../lib/logger";
 import { getElementCache, saveElementCache } from "../../../lib/service";
 import { setRunInfo } from "../service/base";
@@ -10,7 +11,9 @@ import {
 
 
 // 元素查找缓存 - 存储 taskName + title 对应的策略索引
-const elementCache = getElementCache()
+// 后台异步加载，初始为空 Map，加载完成后替换
+let elementCache: Map<string, any> = new Map();
+getElementCache().then(cache => { elementCache = cache; }).catch(() => {});
 
 export const getRunElementCache = () => {
     return elementCache
@@ -79,35 +82,35 @@ const createElementStrategies = (title: string, findMethod: 'findOne' | 'find' =
     if (findMethod === 'findOne') {
         return [
             // === 精准匹配 ===
-            () => className("android.view.View").text(title).findOne(timeout),
-            () => className("android.view.View").desc(title).findOne(timeout),
-            () => className("android.widget.TextView").text(title).findOne(timeout),
-            () => className("android.widget.TextView").desc(title).findOne(timeout),
-            () => className("android.widget.ImageView").text(title).findOne(timeout),
-            () => className("android.widget.ImageView").desc(title).findOne(timeout),
+            () => select().className("android.view.View").text(title).findOne(timeout),
+            () => select().className("android.view.View").desc(title).findOne(timeout),
+            () => select().className("android.widget.TextView").text(title).findOne(timeout),
+            () => select().className("android.widget.TextView").desc(title).findOne(timeout),
+            () => select().className("android.widget.ImageView").text(title).findOne(timeout),
+            () => select().className("android.widget.ImageView").desc(title).findOne(timeout),
             // === 模糊匹配 ===
-            () => className("android.view.View").textContains(title).findOne(timeout),
-            () => className("android.view.View").descContains(title).findOne(timeout),
-            () => className("android.widget.TextView").textContains(title).findOne(timeout),
-            () => className("android.widget.TextView").descContains(title).findOne(timeout),
-            () => className("android.widget.ImageView").textContains(title).findOne(timeout),
-            () => className("android.widget.ImageView").descContains(title).findOne(timeout),
+            () => select().className("android.view.View").textContains(title).findOne(timeout),
+            () => select().className("android.view.View").descContains(title).findOne(timeout),
+            () => select().className("android.widget.TextView").textContains(title).findOne(timeout),
+            () => select().className("android.widget.TextView").descContains(title).findOne(timeout),
+            () => select().className("android.widget.ImageView").textContains(title).findOne(timeout),
+            () => select().className("android.widget.ImageView").descContains(title).findOne(timeout),
         ];
     }
     // find 模式同上：精准在前，模糊在后
     return [
-        () => probeAndFind(className("android.view.View").text(title)),
-        () => probeAndFind(className("android.view.View").desc(title)),
-        () => probeAndFind(className("android.widget.TextView").text(title)),
-        () => probeAndFind(className("android.widget.TextView").desc(title)),
-        () => probeAndFind(className("android.widget.ImageView").text(title)),
-        () => probeAndFind(className("android.widget.ImageView").desc(title)),
-        () => probeAndFind(className("android.view.View").textContains(title)),
-        () => probeAndFind(className("android.view.View").descContains(title)),
-        () => probeAndFind(className("android.widget.TextView").textContains(title)),
-        () => probeAndFind(className("android.widget.TextView").descContains(title)),
-        () => probeAndFind(className("android.widget.ImageView").textContains(title)),
-        () => probeAndFind(className("android.widget.ImageView").descContains(title)),
+        () => probeAndFind(select().className("android.view.View").text(title)),
+        () => probeAndFind(select().className("android.view.View").desc(title)),
+        () => probeAndFind(select().className("android.widget.TextView").text(title)),
+        () => probeAndFind(select().className("android.widget.TextView").desc(title)),
+        () => probeAndFind(select().className("android.widget.ImageView").text(title)),
+        () => probeAndFind(select().className("android.widget.ImageView").desc(title)),
+        () => probeAndFind(select().className("android.view.View").textContains(title)),
+        () => probeAndFind(select().className("android.view.View").descContains(title)),
+        () => probeAndFind(select().className("android.widget.TextView").textContains(title)),
+        () => probeAndFind(select().className("android.widget.TextView").descContains(title)),
+        () => probeAndFind(select().className("android.widget.ImageView").textContains(title)),
+        () => probeAndFind(select().className("android.widget.ImageView").descContains(title)),
     ];
 };
 /**
@@ -292,21 +295,21 @@ export const findTargetElementWithCacheStrict = (
 
     // 统一策略数组（包含 exact 与 contains 两段），以便缓存命中时可直接索引
     // 使用 findOnce() 替代 findOne(timeout)，避免每条策略阻塞 11-15 秒
-    const strategies: Array<() => UiObject | null> = [
+    const strategies: Array<() => Autox.UiObject | null> = [
         // exact（findOnce 非阻塞）
-        () => className("android.view.View").textMatches(exactRegex).findOnce(),
-        () => className("android.view.View").descMatches(exactRegex).findOnce(),
-        () => className("android.widget.TextView").textMatches(exactRegex).findOnce(),
-        () => className("android.widget.TextView").descMatches(exactRegex).findOnce(),
-        () => className("android.widget.Button").textMatches(exactRegex).findOnce(),
-        () => className("android.widget.Button").descMatches(exactRegex).findOnce(),
+        () => select().className("android.view.View").textMatches(exactRegex).findOnce(),
+        () => select().className("android.view.View").descMatches(exactRegex).findOnce(),
+        () => select().className("android.widget.TextView").textMatches(exactRegex).findOnce(),
+        () => select().className("android.widget.TextView").descMatches(exactRegex).findOnce(),
+        () => select().className("android.widget.Button").textMatches(exactRegex).findOnce(),
+        () => select().className("android.widget.Button").descMatches(exactRegex).findOnce(),
         // contains with filter（findOnce 预检 + find 过滤）
-        () => containsFilter(className("android.view.View").textContains(title)),
-        () => containsFilter(className("android.view.View").descContains(title)),
-        () => containsFilter(className("android.widget.TextView").textContains(title)),
-        () => containsFilter(className("android.widget.TextView").descContains(title)),
-        () => containsFilter(className("android.widget.Button").textContains(title)),
-        () => containsFilter(className("android.widget.Button").descContains(title)),
+        () => containsFilter(select().className("android.view.View").textContains(title)),
+        () => containsFilter(select().className("android.view.View").descContains(title)),
+        () => containsFilter(select().className("android.widget.TextView").textContains(title)),
+        () => containsFilter(select().className("android.widget.TextView").descContains(title)),
+        () => containsFilter(select().className("android.widget.Button").textContains(title)),
+        () => containsFilter(select().className("android.widget.Button").descContains(title)),
     ];
 
     const startTs = Date.now();
@@ -320,7 +323,7 @@ export const findTargetElementWithCacheStrict = (
             for (let i = 0; i < indices.length; i++) {
                 const idx = indices[i];
                 const cacheTs = Date.now();
-                const candidate = strategies[idx]() as UiObject | null;
+                const candidate = strategies[idx]() as Autox.UiObject | null;
                 const cacheElapsed = Date.now() - cacheTs;
                 if (candidate) {
                     const promoted = promoteIndex(indices, idx);

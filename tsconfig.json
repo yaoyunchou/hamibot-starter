@@ -1,7 +1,27 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2019",
         "module": "commonjs",
-        "sourceMap": true
-    }
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "strict": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": [
+            "./types",
+            "./node_modules/@types"
+        ],
+        "baseUrl": "."
+    },
+    "include": [
+        "src/**/*",
+        "types/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "src/toolKit/xianyu/service/getGold copy.ts",
+        "src/toolKit/xianyu/service/getGold20260622.ts"
+    ]
 }

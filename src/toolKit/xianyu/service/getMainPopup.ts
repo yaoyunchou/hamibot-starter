@@ -5,6 +5,9 @@
  * 3. 处理商品信息， 抓取对应的数据
  *
  */
+import { back, click, currentActivity, currentPackage, home, inputText, select, swipe } from 'accessibility';
+import { launch, launchApp } from 'app';
+import { sleep } from '../../../lib/sleep';
 import { Record } from "../../../lib/logger";
 import { findByA11yId, tryClickNode } from "../utils/common";
 import {
@@ -40,7 +43,7 @@ function backMainPageRetryDelayMs(): number {
  * 从淘宝/支付宝等外部 App 拉回闲鱼前台。
  * 注意：launchApp 只认应用名，包名必须用 launch()。
  */
-export function returnToXianyuApp(maxRetry = 5): boolean {
+export async function returnToXianyuApp(maxRetry = 5): Promise<boolean> {
   const from = currentPackage();
   if (from === APPNAME) return true;
 
@@ -58,21 +61,21 @@ export function returnToXianyuApp(maxRetry = 5): boolean {
     setRunInfo(`returnToXianyu: 第 ${i + 1}/${maxRetry} 次，当前 ${pkg}`);
     Record.info(`returnToXianyu: attempt ${i + 1}/${maxRetry} pkg=${pkg}`);
 
-    setRunInfo("returnToXianyu: 执行 back()");
-    Record.info("returnToXianyu: back()");
-    back();
-    sleep(2000);
+    setRunInfo("returnToXianyu: 执行 await back()");
+    Record.info("returnToXianyu: await back()");
+    await back();
+    await sleep(2000);
     let after = currentPackage();
     Record.info(`returnToXianyu: after back pkg=${after}`);
     if (after === APPNAME) {
-      setRunInfo("returnToXianyu: back() 已回闲鱼");
+      setRunInfo("returnToXianyu: await back() 已回闲鱼");
       return true;
     }
 
     setRunInfo("returnToXianyu: 执行 launch(闲鱼包名)");
     Record.info(`returnToXianyu: launch(${APPNAME})`);
     launch(APPNAME);
-    sleep(4000);
+    await sleep(4000);
     after = currentPackage();
     Record.info(`returnToXianyu: after launch pkg=${after}`);
     if (after === APPNAME) {
@@ -84,7 +87,7 @@ export function returnToXianyuApp(maxRetry = 5): boolean {
       setRunInfo("returnToXianyu: 执行 launchApp(闲鱼)");
       Record.info("returnToXianyu: launchApp(闲鱼)");
       launchApp("闲鱼");
-      sleep(4000);
+      await sleep(4000);
       after = currentPackage();
       Record.info(`returnToXianyu: after launchApp pkg=${after}`);
       if (after === APPNAME) {
@@ -97,10 +100,10 @@ export function returnToXianyuApp(maxRetry = 5): boolean {
 
     setRunInfo("returnToXianyu: home + launch");
     Record.info("returnToXianyu: home + launch");
-    home();
-    sleep(1200);
+    await home();
+    await sleep(1200);
     launch(APPNAME);
-    sleep(4000);
+    await sleep(4000);
     after = currentPackage();
     Record.info(`returnToXianyu: after home+launch pkg=${after}`);
     if (after === APPNAME) {
@@ -115,7 +118,7 @@ export function returnToXianyuApp(maxRetry = 5): boolean {
   return false;
 }
 
-export const backMainPage = () => {
+export const backMainPage = async () => {
   if (maxLoopTime >= MAX_BACK_MAIN_PAGE_ATTEMPTS) {
     setRunInfo(`backMainPage: 已达 ${MAX_BACK_MAIN_PAGE_ATTEMPTS} 次仍无法回到金币页，停止重试`);
     Record.error(`backMainPage: 超过最大重试 ${MAX_BACK_MAIN_PAGE_ATTEMPTS}`);
@@ -126,22 +129,22 @@ export const backMainPage = () => {
   const delay = backMainPageRetryDelayMs();
   if (delay > 0) {
     setRunInfo(`backMainPage: 等待 ${delay}ms 后重试 (${maxLoopTime + 1}/${MAX_BACK_MAIN_PAGE_ATTEMPTS})`);
-    sleep(delay);
+    await sleep(delay);
   }
 
   setRunInfo(`backMainPage: 尝试回到金币页 (${maxLoopTime + 1}/${MAX_BACK_MAIN_PAGE_ATTEMPTS})`);
   const appName = currentPackage();
 
   if (appName !== APPNAME) {
-    if (returnToXianyuApp(5)) {
+    if (await returnToXianyuApp(5)) {
       maxLoopTime = 0;
-      sleep(2000);
+      await sleep(2000);
       if (isOnGoldCoinPage(1200)) {
         assertOnGoldCoinPage("backMainPage", 300);
         return;
       }
       if (currentActivity() === PageType.goldCoin) {
-        sleep(2000);
+        await sleep(2000);
         if (isOnGoldCoinPage(1200)) {
           assertOnGoldCoinPage("backMainPage", 300);
           return;
@@ -152,11 +155,11 @@ export const backMainPage = () => {
       return;
     }
     maxLoopTime++;
-    backMainPage();
+    await backMainPage();
     return;
   }
 
-  // 新流程：任务弹框在金币 H5 内，已在金币页则不应 back() 退出
+  // 新流程：任务弹框在金币 H5 内，已在金币页则不应 await back() 退出
   if (isOnGoldCoinPage(600)) {
     maxLoopTime = 0;
     assertOnGoldCoinPage("backMainPage", 200);
@@ -172,7 +175,7 @@ export const backMainPage = () => {
   Record.info(`backMainPage: on xianyu activity=${activity}, goto goldCoin`);
 
   if (activity === PageType.goldCoin) {
-    sleep(2000);
+    await sleep(2000);
     if (isOnGoldCoinPage(1000)) {
       assertOnGoldCoinPage("backMainPage", 200);
       return;
@@ -180,7 +183,7 @@ export const backMainPage = () => {
     const probe = probeGoldCoinPage(800);
     setRunInfo(`backMainPage: WebHybrid 未就绪 (${probe.reason})，等待`);
     Record.info(`backMainPage: goldCoin wait ${probe.reason}`);
-    sleep(2500);
+    await sleep(2500);
     if (isOnGoldCoinPage(1000)) {
       assertOnGoldCoinPage("backMainPage", 200);
       return;
@@ -192,17 +195,17 @@ export const backMainPage = () => {
 };
 
 // 搜一搜喜欢的商品
-const searchForLikedGoods = () => {
+const searchForLikedGoods = async () => {
   setRunInfo('searchForLikedGoods: 进入1688页面');
   const page = findTargetElementWithCache("searchForLikedGoods", "1688");
   if (page) {
     setRunInfo('searchForLikedGoods: 开始滑动浏览');
-    let progressBar = className("android.widget.ProgressBar").findOne(1000);
+    let progressBar = select().className("android.widget.ProgressBar").findOne(1000);
     while (progressBar) {
-      const result = swipe(10, 2200, 10, 1700, 1000);
+      const result = await swipe(10, 2200, 10, 1700, 1000);
       if (result) {
-        sleep(1000);
-        progressBar = className("android.widget.ProgressBar").findOne(1000);
+        await sleep(1000);
+        progressBar = select().className("android.widget.ProgressBar").findOne(1000);
       }
     }
     setRunInfo('searchForLikedGoods: 浏览完成');
@@ -217,15 +220,15 @@ const SCROLL_LANDING_WAIT_MS = 2500;
 const SCROLL_POLL_INTERVAL_MS = 600;
 
 /** 淘宝/闲鱼浏览落地页上的进度提示（不走 scrollPage 缓存，避免 WebView 换页后缓存全 miss 直接跳过滑动） */
-function findScrollBrowseHint(): UiObject | null {
+function findScrollBrowseHint(): Autox.UiObject | null {
   try {
-    const tv = className("android.widget.TextView").textContains("滑动浏览").findOne(400);
+    const tv = select().className("android.widget.TextView").textContains("滑动浏览").findOne(400);
     if (tv) return tv;
   } catch {
     /* skip */
   }
   try {
-    const pb = className("android.widget.ProgressBar").findOne(400);
+    const pb = select().className("android.widget.ProgressBar").findOne(400);
     if (pb) return pb;
   } catch {
     /* skip */
@@ -233,7 +236,7 @@ function findScrollBrowseHint(): UiObject | null {
   return findTargetElementWithCache("scrollPage", "滑动浏览", -1);
 }
 
-function waitScrollBrowseHint(maxWaitMs: number): UiObject | null {
+async function waitScrollBrowseHint(maxWaitMs: number): Promise<Autox.UiObject | null> {
   const deadline = Date.now() + maxWaitMs;
   while (Date.now() < deadline) {
     const hint = findScrollBrowseHint();
@@ -241,28 +244,28 @@ function waitScrollBrowseHint(maxWaitMs: number): UiObject | null {
       setRunInfo("scrollPage: 检测到浏览进度指示");
       return hint;
     }
-    sleep(SCROLL_POLL_INTERVAL_MS);
+    await sleep(SCROLL_POLL_INTERVAL_MS);
   }
   setRunInfo("scrollPage: 未检测到进度指示，将至少滑动 15 次");
   return null;
 }
 
-const scrollPage = () => {
+const scrollPage = async () => {
   setRunInfo("scrollPage: 开始滑动浏览，等待落地页");
-  sleep(SCROLL_LANDING_WAIT_MS);
+  await sleep(SCROLL_LANDING_WAIT_MS);
 
-  let hint = waitScrollBrowseHint(8000);
+  let hint = await waitScrollBrowseHint(8000);
   let swipeCount = 0;
 
   while (swipeCount < SCROLL_BROWSE_MAX_SWIPES) {
     if (swipeCount >= SCROLL_BROWSE_MIN_SWIPES && !hint) break;
 
-    const ok = swipe(200, 2200, 200, 1700, 1000);
+    const ok = await swipe(200, 2200, 200, 1700, 1000);
     if (!ok) {
-      sleep(500);
+      await sleep(500);
       continue;
     }
-    sleep(1000);
+    await sleep(1000);
     swipeCount++;
     const remain = Math.max(0, SCROLL_BROWSE_MIN_SWIPES - swipeCount);
     if (remain > 0) {
@@ -282,10 +285,10 @@ const scrollPage = () => {
 };
 
 // 100coin
-const get100Coin = () => {
+const get100Coin = async () => {
   try {
     setRunInfo('get100Coin: 等待页面加载');
-    sleep(10000);
+    await sleep(10000);
     
     const buttonPatterns = [
       "前往加速",
@@ -310,8 +313,8 @@ const get100Coin = () => {
     if (foundButton) {
       setRunInfo(`get100Coin: 找到按钮「${buttonText}」，点击`);
       Record.info(`找到按钮: ${buttonText}`, foundButton);
-      tryClickNode(foundButton);
-      sleep(4000);
+      await tryClickNode(foundButton);
+      await sleep(4000);
       setRunInfo('get100Coin: 点击完成');
       // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
     } else {
@@ -319,7 +322,7 @@ const get100Coin = () => {
       if (scrollPageBtn) {
         setRunInfo('get100Coin: 执行滑动浏览策略');
         Record.info("找到滑动浏览按钮，执行滚动策略");
-        scrollPage();
+        await scrollPage();
       } else {
         setRunInfo('get100Coin: 未找到可用按钮');
         Record.info("没有找到任何可用按钮");
@@ -331,8 +334,8 @@ const get100Coin = () => {
     if (overBut) {
       setRunInfo('get100Coin: 奖励已领取，点击');
       Record.info("找到奖励已领取按钮，点击");
-      tryClickNode(overBut);
-      sleep(1000);
+      await tryClickNode(overBut);
+      await sleep(1000);
       // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
     }
 
@@ -345,14 +348,14 @@ const get100Coin = () => {
 // 去其他运用逛一逛（停留时间需覆盖外部 App 任务；不在此调 backMainPage，由 mainPopupFn 统一收口）
 const EXTERNAL_APP_DWELL_MS = 12000;
 
-const goOtherApp = () => {
+const goOtherApp = async () => {
   setRunInfo(`goOtherApp: 外部任务执行中，等待 ${EXTERNAL_APP_DWELL_MS / 1000}s`);
-  sleep(EXTERNAL_APP_DWELL_MS);
+  await sleep(EXTERNAL_APP_DWELL_MS);
   setRunInfo("goOtherApp: 外部任务结束，等待 mainPopupFn 拉回闲鱼");
 };
 
 // 搜一搜推荐商品
-export const searchForRecommendedGoods = () => {
+export const searchForRecommendedGoods = async () => {
   setRunInfo('searchForRecommendedGoods: 检查搜索页面');
   const page = findTargetElementWithCache(
     "searchForRecommendedGoods",
@@ -360,21 +363,21 @@ export const searchForRecommendedGoods = () => {
   );
   if (page) {
     setRunInfo('searchForRecommendedGoods: 输入关键词搜索');
-    setText(0, "iphone");
-    const searchBtn = className("android.widget.Button").findOne(300);
+    await inputText( "iphone");
+    const searchBtn = select().className("android.widget.Button").findOne(300);
     if (searchBtn) {
       searchBtn.click();
     }
-    sleep(1000);
+    await sleep(1000);
     let number = 1;
     let gameOver = findTargetElementWithCache(
       "searchForRecommendedGoods",
       "任务完成"
     );
     while (!gameOver) {
-      const result = swipe(200, 2200, 200, 1700, 1000);
+      const result = await swipe(200, 2200, 200, 1700, 1000);
       if (result) {
-        sleep(1000);
+        await sleep(1000);
       }
       number++;
       setRunInfo(`searchForRecommendedGoods: 滑动第${number}次`);
@@ -392,12 +395,12 @@ export const searchForRecommendedGoods = () => {
     // 不在此调 backMainPage，由路径引擎「归位-返回金币页」步骤统一收口
   } else {
     setRunInfo('searchForRecommendedGoods: 未找到搜索页面');
-    back();
+    await back();
   }
 };
 
 // 浏览指定频道好物
-export const browseGoodsInSpecifiedChannel = () => {
+export const browseGoodsInSpecifiedChannel = async () => {
   try {
     setRunInfo('browseGoodsInSpecifiedChannel: 开始浏览频道好物');
     let gameOver = findTargetElementWithCache(
@@ -407,9 +410,9 @@ export const browseGoodsInSpecifiedChannel = () => {
     );
     let maxRunTime = 20;
     while (!gameOver && maxRunTime > 0) {
-      const result = swipe(10, 2200, 10, 1200, 1000);
+      const result = await swipe(10, 2200, 10, 1200, 1000);
       if (result) {
-        sleep(500);
+        await sleep(500);
       }
       setRunInfo(`browseGoodsInSpecifiedChannel: 滑动中，剩余 ${maxRunTime} 次`);
       if (maxRunTime < 5) {
@@ -424,7 +427,7 @@ export const browseGoodsInSpecifiedChannel = () => {
     if (gameOver) {
       setRunInfo('browseGoodsInSpecifiedChannel: 找到领取按钮，点击');
       gameOver.click();
-      sleep(1000);
+      await sleep(1000);
     }
     setRunInfo('browseGoodsInSpecifiedChannel: 浏览完成');
   } catch (error) {
@@ -434,7 +437,7 @@ export const browseGoodsInSpecifiedChannel = () => {
 };
 
 // 发布一件新宝贝， 这个功能相对独立可以抽离出来
-export const publishNewGoods = () => {
+export const publishNewGoods = async () => {
   setRunInfo('publishNewGoods: 开始发布新宝贝');
   let flog = true;
   let msg = "";
@@ -445,7 +448,7 @@ export const publishNewGoods = () => {
   if (aiGoodButton) {
     setRunInfo('publishNewGoods: 点击「宝贝不在身边？点我」');
     aiGoodButton.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "宝贝不在身边？点我失败";
@@ -455,17 +458,17 @@ export const publishNewGoods = () => {
   if (flog && newIphone12But) {
     setRunInfo('publishNewGoods: 点击「iPhone 12」');
     newIphone12But.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "iPhone 12 点击失败";
     setRunInfo(`publishNewGoods: ${msg}`);
   }
-  const recommendGoods = className("android.widget.ScrollView").findOne(1000);
+  const recommendGoods = select().className("android.widget.ScrollView").findOne(1000);
   if (flog && recommendGoods) {
     setRunInfo('publishNewGoods: 选择推荐商品');
     recommendGoods.child(0).click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "选择推荐的商品失败";
@@ -476,7 +479,7 @@ export const publishNewGoods = () => {
   if (flog && publishBtn) {
     setRunInfo('publishNewGoods: 点击发布按钮');
     publishBtn.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "发布按钮未找到失败";
@@ -487,7 +490,7 @@ export const publishNewGoods = () => {
   if (continuePublish) {
     setRunInfo('publishNewGoods: 点击继续发布');
     continuePublish.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "不填，继续发布失败";
@@ -498,7 +501,7 @@ export const publishNewGoods = () => {
   if (flog && publishSuccessButton) {
     setRunInfo('publishNewGoods: 发布成功，关闭弹框');
     publishSuccessButton.parent().child(0).click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "关闭不填数据发布弹框确认弹框失败";
@@ -509,7 +512,7 @@ export const publishNewGoods = () => {
   if (flog && editButton) {
     setRunInfo('publishNewGoods: 点击管理按钮');
     editButton.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "点击管理失败";
@@ -520,7 +523,7 @@ export const publishNewGoods = () => {
   if (flog && deleteButton) {
     setRunInfo('publishNewGoods: 点击删除商品');
     deleteButton.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "删除商品";
@@ -531,7 +534,7 @@ export const publishNewGoods = () => {
   if (flog && deleteButtonQueRen) {
     setRunInfo('publishNewGoods: 确认删除');
     deleteButtonQueRen.click();
-    sleep(1000);
+    await sleep(1000);
   } else {
     flog = false;
     msg = "确认删除";
@@ -648,10 +651,10 @@ export const taskList = [
 /**
  * 关闭主弹框的逻辑
  */
-export const closeMainPopup = () => {
+export const closeMainPopup = async () => {
   setRunInfo('closeMainPopup: 尝试关闭主弹框');
-  sleep(1000);
-  const btnList = className("android.view.View").clickable(true).find();
+  await sleep(1000);
+  const btnList = select().className("android.view.View").clickable(true).find();
 
   let flog = false;
   for (let i = 0; i < btnList.length; i++) {
@@ -660,7 +663,7 @@ export const closeMainPopup = () => {
     if (react.left < 1000 && react.left > 900 && react.top > 600) {
       setRunInfo('closeMainPopup: 找到关闭按钮，点击');
       btn.click();
-      sleep(1000);
+      await sleep(1000);
       flog = true;
       return;
     }

@@ -1,3 +1,4 @@
+import { select } from 'accessibility';
 /**
  * 金币任务弹框内精准查找 — 基于 pages/金币页面-出现金币任务弹框 采集结构。
  * 在 taskWrap / taskListWrap 子树内查找，避免全屏 12 策略 + find() 扫万级节点。
@@ -11,11 +12,11 @@ export function isTaskPopupVisible(): boolean {
   return !!(findByA11yId("taskWrap", 200) || findByA11yId("taskListWrap", 200));
 }
 
-export function getTaskWrapRoot(): UiObject | null {
+export function getTaskWrapRoot(): Autox.UiObject | null {
   return findByA11yId("taskWrap", TASK_POPUP_SCOPE_TIMEOUT);
 }
 
-export function getTaskListWrapRoot(): UiObject | null {
+export function getTaskListWrapRoot(): Autox.UiObject | null {
   return findByA11yId("taskListWrap", TASK_POPUP_SCOPE_TIMEOUT);
 }
 
@@ -26,10 +27,10 @@ function isExcludedText(txt: string, excludeContains: (string | RegExp)[]): bool
   );
 }
 
-function collectTextViews(root: UiObject, matcher: (tv: UiObject) => boolean): UiObject[] {
-  const out: UiObject[] = [];
+function collectTextViews(root: Autox.UiObject, matcher: (tv: Autox.UiObject) => boolean): Autox.UiObject[] {
+  const out: Autox.UiObject[] = [];
   try {
-    const list = root.find(className("android.widget.TextView"));
+    const list = root.find(select().className("android.widget.TextView"));
     for (let i = 0; i < list.length; i++) {
       const tv = list[i];
       if (matcher(tv)) out.push(tv);
@@ -41,11 +42,11 @@ function collectTextViews(root: UiObject, matcher: (tv: UiObject) => boolean): U
 }
 
 /** 任务列表区内按文案精确找单个 TextView */
-export function findInTaskList(text: string, timeout = TASK_POPUP_SCOPE_TIMEOUT): UiObject | null {
+export function findInTaskList(text: string, timeout = TASK_POPUP_SCOPE_TIMEOUT): Autox.UiObject | null {
   const root = getTaskListWrapRoot();
   if (!root) return null;
   try {
-    const exact = root.findOne(className("android.widget.TextView").text(text));
+    const exact = root.findOne(select().className("android.widget.TextView").text(text));
     if (exact) return exact;
   } catch {
     /* skip */
@@ -54,14 +55,14 @@ export function findInTaskList(text: string, timeout = TASK_POPUP_SCOPE_TIMEOUT)
 }
 
 /** 任务列表区内找所有精确匹配文案的节点（如多个「去完成」「领取奖励」） */
-export function findAllInTaskList(text: string): UiObject[] {
+export function findAllInTaskList(text: string): Autox.UiObject[] {
   const root = getTaskListWrapRoot();
   if (!root) return [];
   const start = Date.now();
   try {
-    const list = root.find(className("android.widget.TextView").text(text));
+    const list = root.find(select().className("android.widget.TextView").text(text));
     if (!list || list.length === 0) return [];
-    const out: UiObject[] = [];
+    const out: Autox.UiObject[] = [];
     for (let i = 0; i < list.length; i++) out.push(list[i]);
     Record.info(`[taskPopup] findAll「${text}」${out.length}个 ${Date.now() - start}ms`);
     return out;
@@ -80,14 +81,14 @@ export type TaskPopupStrictOptions = {
 export function findTaskTitleStrict(
   title: string,
   options: TaskPopupStrictOptions = {}
-): UiObject | null {
+): Autox.UiObject | null {
   const { excludeContains = ["下单"] } = options;
   const root = getTaskListWrapRoot();
   if (!root) return null;
   const start = Date.now();
 
   try {
-    const exact = root.findOne(className("android.widget.TextView").text(title));
+    const exact = root.findOne(select().className("android.widget.TextView").text(title));
     if (exact) {
       Record.info(`[taskPopup] strict「${title}」exact ${Date.now() - start}ms`);
       return exact;
@@ -109,13 +110,13 @@ export function findTaskTitleStrict(
 }
 
 /** 签到钮：taskWrap 内 text=签到 且 clickable，排除「提醒签到收益」等 */
-export function findTaskPopupSignIn(): UiObject | null {
+export function findTaskPopupSignIn(): Autox.UiObject | null {
   const root = getTaskWrapRoot();
   if (!root) return null;
   const start = Date.now();
   try {
     const btn = root.findOne(
-      className("android.widget.TextView").text("签到").clickable(true)
+      select().className("android.widget.TextView").text("签到").clickable(true)
     );
     if (btn) {
       Record.info(`[taskPopup] 签到 clickable ${Date.now() - start}ms`);

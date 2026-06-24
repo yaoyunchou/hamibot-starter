@@ -13,18 +13,32 @@
 //     console.log('当前页面的包名', name)
 //     // currentPackage()
 
+import axios from 'axios';
 import { Record } from "../../../lib/logger";
 import { setRunInfo } from "../service/base";
+import { getConfig } from "../../../lib/config";
 
-const localHost: string = (hamibot.env as any)._LOCAL_SERVER || 'http://192.168.1.100:3000'
+const localHost: string = getConfig()._LOCAL_SERVER || 'http://192.168.1.100:3000'
 const baseHeaders = { 'Content-Type': 'application/json' }
-type RequestOptions = { method?: string; headers?: object; body?: string }
-const localRequest = (path: string, options: RequestOptions = {}) =>
-    http.request(`${localHost}${path}`, { ...options, headers: { ...baseHeaders, ...(options.headers || {}) } } as any)
+type RequestOptions = { method?: string; headers?: { [key: string]: string }; body?: string }
+const localRequest = async (path: string, options: RequestOptions = {}): Promise<{ statusCode: number; body: { json: () => any } }> => {
+    try {
+        const method = (options.method || 'GET').toUpperCase();
+        const headers = { ...baseHeaders, ...(options.headers || {}) };
+        const res = await axios({ method: method as any, url: `${localHost}${path}`, headers, data: options.body });
+        return { statusCode: res.status, body: { json: () => res.data } };
+    } catch (e: any) {
+        const status = e?.response?.status ?? 500;
+        const data = e?.response?.data ?? {};
+        return { statusCode: status, body: { json: () => data } };
+    }
+};
 
 const shopNameArr=["蓝小飞鱼","tb133799136652"]
-var storage = storages.create("shopName");
-var spreadBookInfoStorage = storages.create("spreadBookInfo");
+// v7: 使用内存 Map 替代 Rhino storages（此文件暂未被主流程引用）
+const _inMemoryStore: { [key: string]: any } = {};
+const storage = { get: (k: string) => _inMemoryStore[k], put: (k: string, v: any) => { _inMemoryStore[k] = v; }, contains: (k: string) => k in _inMemoryStore };
+const spreadBookInfoStorage = { get: (k: string) => _inMemoryStore['spread_' + k], put: (k: string, v: any) => { _inMemoryStore['spread_' + k] = v; } };
 
 const shopIndex = storage.get('shopName') || 0;
 
@@ -69,8 +83,8 @@ export var getInfo = function (text) {
 }
 var bookMaps = {}
 // 获取所有数据， 用map key进行唯一标识
-export  var buildBookSet= function (key,info) {
-    var bookStorage = storages.create("book");
+export  var buildBookSet= async function (key,info) {
+    const bookStorage = { get: (k: string) => _inMemoryStore['book_' + k], put: (k: string, v: any) => { _inMemoryStore['book_' + k] = v; } };
     
     if(info && info.title){
         if(bookMaps[key]) {
@@ -80,14 +94,13 @@ export  var buildBookSet= function (key,info) {
             bookMaps[key] = info;
         }
     }
-    sleep(1000)
+    await sleep(1000)
     Record.info(`${shopName} 开始获取数据 ${info.title}`)
     setRunInfo(`${info.title} 开始获取数据`)
     // 对数据进行推送
    
     // var url = "https://baidu.com";
-    var book = localRequest(`/api/book?search=${encodeURIComponent(info.title)}`);
-   
+    const book = await localRequest(`/api/book?search=${encodeURIComponent(info.title)}`);
 
     if(book.statusCode === 401){
         Record.error(`buildBookSet: 服务端返回 401，请检查本地服务器是否正常运行`)
@@ -96,7 +109,7 @@ export  var buildBookSet= function (key,info) {
         const bookData:any = book.body.json()
         if(bookData.code ==='200'){
                 // 更新数据
-            var result = localRequest('/api/book/view', {
+            const result = await localRequest('/api/book/view', {
                 method: 'POST',
                 body: JSON.stringify({
                     title: info.title,
@@ -120,8 +133,8 @@ export  var buildBookSet= function (key,info) {
 
 
 // 获取需要推广的数据
-var spreadBookInfo = () => {
-    var res = localRequest('/api/spread');
+var spreadBookInfo = async () => {
+    const res = await localRequest('/api/spread');
     
     if(res.statusCode === 200){
         console.log('-------e------', res)
@@ -133,8 +146,8 @@ var spreadBookInfo = () => {
 }
 
 // 收集樊登读书信息
-var getFSBookInfo = (book) => {
-    var res = localRequest('/api/fsbook', {
+var getFSBookInfo = async (book) => {
+    const res = await localRequest('/api/fsbook', {
         method: 'POST',
         body: JSON.stringify(book)
     });
@@ -149,16 +162,13 @@ var getFSBookInfo = (book) => {
 
 // 获取当前已经存在的书籍名称
 
-var getSavedBooks = () => {
-    var res = localRequest('/api/fsbooks?omit=recommend,wonderful,authorIntroduction,explainContent,receive&pageSize=2000');
+var getSavedBooks = async () => {
+    const res = await localRequest('/api/fsbooks?omit=recommend,wonderful,authorIntroduction,explainContent,receive&pageSize=2000');
     
     if(res.statusCode === 200) {
         try {
             const data:any = res.body.json()
-            // console.log('-------data------', data.data)
             const names = data.data.list.map(item => item.title)
-            // console.log('-------name------', names)
-    
             return names
         } catch (error) {
             return []
@@ -170,8 +180,8 @@ var getSavedBooks = () => {
 }
 
 
-const getGoodInfo = (nickName, title) => {
-    var res = localRequest(`/api/goods?nickName=${encodeURIComponent(nickName)}&title=${encodeURIComponent(title)}`);
+const getGoodInfo = async (nickName, title) => {
+    const res = await localRequest(`/api/goods?nickName=${encodeURIComponent(nickName)}&title=${encodeURIComponent(title)}`);
     if(res.statusCode === 200){
         const data:any = res.body.json()
         console.log('-------data------', data)

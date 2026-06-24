@@ -1,35 +1,22 @@
 /**
- * AI 决策循环：采集状态 → /api/ai/decide → 执行指令 → /api/ai/report
+ * AI 决策循环 — v7 版本（async/await）
  */
-import { Record } from "../../../lib/logger";
-import { getScreenWidth, getScreenHeight } from "../../../lib/screenSize";
-import { tryClickNode } from "../utils/common";
-import { dumpActiveWindowLayout } from "./layoutDump";
+import { back, click, longClick, select, swipe, takeScreenshot } from 'accessibility';
+import { Record } from '../../../lib/logger';
+import { getScreenWidth, getScreenHeight } from '../../../lib/screenSize';
+import { tryClickNode } from '../utils/common';
+import { dumpActiveWindowLayout } from './layoutDump';
+import { sleep } from '../../../lib/sleep';
 import {
-    aiDecide,
-    aiOperationComplete,
-    aiOperationStart,
-    aiReport,
-    completeTask,
-    createLogs,
-} from "../../../lib/service";
+    aiDecide, aiOperationComplete, aiOperationStart, aiReport,
+    completeTask, createLogs,
+} from '../../../lib/service';
 
-/** 与 setRunInfo 同源：写入 logs/device/trace，便于控制台查看 AI 步骤 */
 const aiTrace = (action: string) => {
-    threads.start(function () {
-        try {
-            createLogs("trace", {
-                time: new Date().toLocaleTimeString("zh-CN"),
-                action,
-            });
-        } catch (_) {}
-    });
+    createLogs('trace', { time: new Date().toLocaleTimeString('zh-CN'), action }).catch(() => {});
 };
 
-const clip = (s: string, n: number) => {
-    if (!s) return "";
-    return s.length <= n ? s : s.slice(0, n) + "…";
-};
+const clip = (s: string, n: number) => (!s ? '' : s.length <= n ? s : s.slice(0, n) + '…');
 
 export type ActionInstruction = {
     action: string;
@@ -43,115 +30,86 @@ export type ActionInstruction = {
 };
 
 let _stop = false;
+export const stopAiLoop = () => { _stop = true; };
 
-export const stopAiLoop = () => {
-    _stop = true;
-};
-
-const captureScreenshotBase64 = (): string | null => {
+const captureScreenshotBase64 = async (): Promise<string | null> => {
     try {
-        sleep(200);
-        const img = captureScreen();
+        await sleep(200);
+        const img = await takeScreenshot();
         if (!img) return null;
-        const base64 = (images as any).toBase64(img, "jpg", 60);
-        if (typeof (img as any).recycle === "function") (img as any).recycle();
+        const base64 = typeof (img as any).toBase64 === 'function'
+            ? (img as any).toBase64('jpg', 60)
+            : null;
+        if (typeof (img as any).recycle === 'function') (img as any).recycle();
         return base64 as string;
     } catch (e) {
-        Record.warn("captureScreenshotBase64: " + e);
+        Record.warn('captureScreenshotBase64: ' + e);
         return null;
     }
 };
 
-export const captureCurrentState = (opts?: { withScreenshot?: boolean }) => {
+export const captureCurrentState = async (opts?: { withScreenshot?: boolean }) => {
     const layout = dumpActiveWindowLayout();
-    const shot = opts?.withScreenshot !== false ? captureScreenshotBase64() : null;
-    return {
-        package: layout.package,
-        activity: layout.activity,
-        tree: layout.tree,
-        screenshot_base64: shot,
-    };
+    const shot = opts?.withScreenshot !== false ? await captureScreenshotBase64() : null;
+    return { package: layout.package, activity: layout.activity, tree: layout.tree, screenshot_base64: shot };
 };
 
-const findElementMetaByRef = (elements: any[], ref: string) => {
-    for (let i = 0; i < elements.length; i++) {
-        const e = elements[i];
-        if (e && e.ref === ref) return e;
-    }
-    return null;
-};
+const findElementMetaByRef = (elements: any[], ref: string) =>
+    elements.find(e => e && e.ref === ref) ?? null;
 
-export const executeAction = (
+export const executeAction = async (
     instruction: ActionInstruction,
     pageRecognition: any
-): { success: boolean; actual_action: string; actual_bounds: number[] | null; error?: string } => {
-    const act = (instruction.action || "").toLowerCase();
+): Promise<{ success: boolean; actual_action: string; actual_bounds: number[] | null; error?: string }> => {
+    const act = (instruction.action || '').toLowerCase();
     const params = instruction.params || {};
     const popups = pageRecognition?.popups || [];
 
-    const centerClick = (bounds: number[]) => {
+    const centerClick = async (bounds: number[]) => {
         if (!bounds || bounds.length < 4) return false;
-        const cx = Math.floor((bounds[0] + bounds[2]) / 2);
-        const cy = Math.floor((bounds[1] + bounds[3]) / 2);
-        return click(cx, cy);
+        return await click(Math.floor((bounds[0] + bounds[2]) / 2), Math.floor((bounds[1] + bounds[3]) / 2));
     };
 
     try {
-        if (act === "back") {
-            back();
-            return { success: true, actual_action: "back", actual_bounds: null };
+        if (act === 'back') {
+            await back();
+            return { success: true, actual_action: 'back', actual_bounds: null };
         }
-        if (act === "wait") {
-            sleep(Number(params.duration_ms) || 1000);
-            return { success: true, actual_action: "wait", actual_bounds: null };
+        if (act === 'wait') {
+            await sleep(Number(params.duration_ms) || 1000);
+            return { success: true, actual_action: 'wait', actual_bounds: null };
         }
-        if (act === "done" || act === "abort") {
+        if (act === 'done' || act === 'abort') {
             return { success: true, actual_action: act, actual_bounds: null };
         }
-        if (act === "swipe") {
-            const ok = swipe(
-                Number(params.startX),
-                Number(params.startY),
-                Number(params.endX),
-                Number(params.endY),
-                Number(params.duration) || 300
-            );
-            return { success: !!ok, actual_action: "swipe", actual_bounds: null };
+        if (act === 'swipe') {
+            const ok = await swipe(Number(params.startX), Number(params.startY), Number(params.endX), Number(params.endY), Number(params.duration) || 300);
+            return { success: !!ok, actual_action: 'swipe', actual_bounds: null };
         }
-        if (act === "scroll_down" || act === "scroll_up") {
+        if (act === 'scroll_down' || act === 'scroll_up') {
             const b = instruction.target_bounds;
             if (b && b.length >= 4) {
                 const cx = Math.floor((b[0] + b[2]) / 2);
-                const y1 =
-                    act === "scroll_down"
-                        ? Math.floor(b[1] + (b[3] - b[1]) * 0.75)
-                        : Math.floor(b[1] + (b[3] - b[1]) * 0.25);
-                const y2 =
-                    act === "scroll_down"
-                        ? Math.floor(b[1] + (b[3] - b[1]) * 0.25)
-                        : Math.floor(b[1] + (b[3] - b[1]) * 0.75);
-                swipe(cx, y1, cx, y2, 400);
+                const y1 = act === 'scroll_down' ? Math.floor(b[1] + (b[3] - b[1]) * 0.75) : Math.floor(b[1] + (b[3] - b[1]) * 0.25);
+                const y2 = act === 'scroll_down' ? Math.floor(b[1] + (b[3] - b[1]) * 0.25) : Math.floor(b[1] + (b[3] - b[1]) * 0.75);
+                await swipe(cx, y1, cx, y2, 400);
                 return { success: true, actual_action: act, actual_bounds: b };
             }
-            const w = getScreenWidth();
-            const h = getScreenHeight();
-            const cx = Math.floor(w / 2);
-            if (act === "scroll_down") swipe(cx, Math.floor(h * 0.7), cx, Math.floor(h * 0.3), 400);
-            else swipe(cx, Math.floor(h * 0.3), cx, Math.floor(h * 0.7), 400);
+            const w = getScreenWidth(); const h = getScreenHeight(); const cx = Math.floor(w / 2);
+            if (act === 'scroll_down') await swipe(cx, Math.floor(h * 0.7), cx, Math.floor(h * 0.3), 400);
+            else await swipe(cx, Math.floor(h * 0.3), cx, Math.floor(h * 0.7), 400);
             return { success: true, actual_action: act, actual_bounds: null };
         }
-        if (act === "close_popup") {
-            for (let i = 0; i < popups.length; i++) {
-                const p = popups[i];
-                const hint = p?.close_hint;
-                const bb = hint?.bounds || p?.bounds;
-                if (bb && bb.length >= 4 && centerClick(bb)) {
-                    return { success: true, actual_action: "click", actual_bounds: bb };
+        if (act === 'close_popup') {
+            for (const p of popups) {
+                const bb = p?.close_hint?.bounds || p?.bounds;
+                if (bb && bb.length >= 4 && await centerClick(bb)) {
+                    return { success: true, actual_action: 'click', actual_bounds: bb };
                 }
             }
-            return { success: false, actual_action: "close_popup", actual_bounds: null, error: "无关闭区域" };
+            return { success: false, actual_action: 'close_popup', actual_bounds: null, error: '无关闭区域' };
         }
-        if (act === "click" || act === "long_click") {
+        if (act === 'click' || act === 'long_click') {
             const els = pageRecognition?.clickable_elements || [];
             const ref = instruction.target_ref;
             const meta = ref ? findElementMetaByRef(els, ref) : null;
@@ -159,180 +117,116 @@ export const executeAction = (
             if (!bounds && instruction.target_text) {
                 const t = String(instruction.target_text);
                 try {
-                    const w = textContains(t).findOne(2000);
+                    const w = select().textContains(t).findOne(2000);
                     if (w) {
-                        tryClickNode(w);
+                        await tryClickNode(w);
                         const b = w.bounds();
-                        return {
-                            success: true,
-                            actual_action: act,
-                            actual_bounds: b ? [b.left, b.top, b.right, b.bottom] : null,
-                        };
+                        return { success: true, actual_action: act, actual_bounds: b ? [b.left, b.top, b.right, b.bottom] : null };
                     }
-                } catch (e) {}
+                } catch {}
             }
             if (bounds && bounds.length >= 4) {
-                if (act === "long_click")
-                    longClick(
-                        Math.floor((bounds[0] + bounds[2]) / 2),
-                        Math.floor((bounds[1] + bounds[3]) / 2)
-                    );
-                else centerClick(bounds);
+                const cx = Math.floor((bounds[0] + bounds[2]) / 2);
+                const cy = Math.floor((bounds[1] + bounds[3]) / 2);
+                if (act === 'long_click') await longClick(cx, cy);
+                else await centerClick(bounds);
                 return { success: true, actual_action: act, actual_bounds: bounds };
             }
-            return { success: false, actual_action: act, actual_bounds: null, error: "无法定位" };
+            return { success: false, actual_action: act, actual_bounds: null, error: '无法定位' };
         }
-        if (act === "input_text" && params.text) {
+        if (act === 'input_text' && params.text) {
             const els = pageRecognition?.clickable_elements || [];
             const ref = instruction.target_ref;
             const meta = ref ? findElementMetaByRef(els, ref) : null;
             if (meta && meta.bounds) {
                 const b = meta.bounds;
-                click(Math.floor((b[0] + b[2]) / 2), Math.floor((b[1] + b[3]) / 2));
-                sleep(300);
+                await click(Math.floor((b[0] + b[2]) / 2), Math.floor((b[1] + b[3]) / 2));
+                await sleep(300);
             }
             try {
-                setText(String(params.text));
-            } catch (e) {
-                Record.warn("setText " + e);
-            }
-            return { success: true, actual_action: "input_text", actual_bounds: meta?.bounds || null };
+                // v7 通过 select().inputText 或 Java 互操作输入文本
+                // @ts-ignore
+                if (typeof (globalThis as any).setText === 'function') (globalThis as any).setText(String(params.text));
+            } catch (e) { Record.warn('setText ' + e); }
+            return { success: true, actual_action: 'input_text', actual_bounds: meta?.bounds || null };
         }
-        return { success: false, actual_action: act, actual_bounds: null, error: "未实现" };
+        return { success: false, actual_action: act, actual_bounds: null, error: '未实现' };
     } catch (e) {
         return { success: false, actual_action: act, actual_bounds: null, error: String(e) };
     }
 };
 
-/**
- * task.payload: { task_description?, max_steps?, with_screenshot? }
- * onFinished：AI 线程完全退出时调用（用于任务轮询器释放槽位，避免异步执行期间误判空闲）
- */
 export const startAiLoop = (task: any, onFinished?: () => void) => {
     _stop = false;
     const payload = task.payload || task.meta || task.extra || {};
-    const description = payload.task_description || task.message || "AI 任务";
+    const description = payload.task_description || task.message || 'AI 任务';
     const maxSteps = Math.min(Number(payload.max_steps) || 30, 50);
     const withScreenshot = payload.with_screenshot !== false;
 
-    threads.start(function () {
+    (async () => {
         let opTaskId: string | null = null;
         let screenshotMissingLogged = false;
         try {
             aiTrace(`AI 任务说明: ${clip(description, 120)}`);
-            const startRes = aiOperationStart(description, {
-                screen: [getScreenWidth(), getScreenHeight()],
-            });
-            if (startRes && startRes.code === 0 && startRes.data && startRes.data.task_id) {
-                opTaskId = startRes.data.task_id;
-            }
-            Record.info("aiExecutor opTaskId=" + opTaskId);
-            aiTrace(`AI 已启动 服务端op=${opTaskId || "无"} 最多${maxSteps}步`);
+            const startRes = await aiOperationStart(description, { screen: [getScreenWidth(), getScreenHeight()] });
+            if (startRes?.code === 0 && startRes?.data?.task_id) opTaskId = startRes.data.task_id;
+            Record.info('aiExecutor opTaskId=' + opTaskId);
+            aiTrace(`AI 已启动 服务端op=${opTaskId || '无'} 最多${maxSteps}步`);
 
             let decideFailed = false;
             for (let step = 1; step <= maxSteps && !_stop; step++) {
-                const before = captureCurrentState({ withScreenshot: withScreenshot });
+                const before = await captureCurrentState({ withScreenshot });
                 if (withScreenshot && !before.screenshot_base64 && !screenshotMissingLogged) {
                     screenshotMissingLogged = true;
-                    aiTrace("AI: 未取到截图(需 Hamibot 截图权限)，仅用无障碍树决策");
+                    aiTrace('AI: 未取到截图，仅用无障碍树决策');
                 }
-                aiTrace(
-                    `AI 步${step} 采集中 pkg=${clip(before.package, 40)} act=${clip(before.activity || "", 50)}`
-                );
-                const decideRes = aiDecide({
-                    task: description,
-                    tree: before.tree,
-                    package: before.package,
-                    activity: before.activity,
-                    screenshot_base64: before.screenshot_base64 || undefined,
-                    task_id: opTaskId || undefined,
-                    step_count: step,
+                aiTrace(`AI 步${step} 采集中 pkg=${clip(before.package, 40)}`);
+                const decideRes = await aiDecide({
+                    task: description, tree: before.tree, package: before.package,
+                    activity: before.activity, screenshot_base64: before.screenshot_base64 || undefined,
+                    task_id: opTaskId || undefined, step_count: step,
                 });
                 if (!decideRes || decideRes.code !== 0 || !decideRes.data) {
-                    Record.error("aiDecide 失败 " + JSON.stringify(decideRes));
-                    aiTrace(`AI 步${step} 决策接口失败: ${clip(String(decideRes && decideRes.message || decideRes || "null"), 100)}`);
-                    decideFailed = true;
-                    break;
+                    Record.error('aiDecide 失败 ' + JSON.stringify(decideRes));
+                    decideFailed = true; break;
                 }
                 const pageRec = decideRes.data.page_recognition;
                 const ins: ActionInstruction = decideRes.data.instruction;
-                const action = (ins.action || "").toLowerCase();
-                const pageType = pageRec?.page_type || "?";
-                aiTrace(
-                    `AI 步${step} 识别页=${pageType} 指令=${ins.action || "?"} ref=${ins.target_ref || "-"}`
-                );
+                const action = (ins.action || '').toLowerCase();
+                aiTrace(`AI 步${step} 识别页=${pageRec?.page_type || '?'} 指令=${ins.action || '?'}`);
 
-                if (action === "done") {
-                    aiTrace(`AI 步${step} 模型判定任务完成 done`);
-                    if (opTaskId) {
-                        aiReport(
-                            opTaskId,
-                            step,
-                            { activity: before.activity, package: before.package },
-                            ins as any,
-                            { success: true, actual_action: "done" },
-                            {},
-                            {}
-                        );
-                        aiOperationComplete(opTaskId, "success");
-                    }
-                    completeTask(task.id, true, "ai_done");
+                if (action === 'done') {
+                    aiTrace(`AI 步${step} 任务完成`);
+                    if (opTaskId) { await aiReport(opTaskId, step, { activity: before.activity, package: before.package }, ins as any, { success: true, actual_action: 'done' }, {}, {}); await aiOperationComplete(opTaskId, 'success'); }
+                    await completeTask(task.id, true, 'ai_done');
                     return;
                 }
-                if (action === "abort") {
-                    aiTrace(`AI 步${step} 模型中止 abort`);
-                    if (opTaskId) aiOperationComplete(opTaskId, "abort");
-                    completeTask(task.id, false, "ai_abort");
+                if (action === 'abort') {
+                    aiTrace(`AI 步${step} 中止`);
+                    if (opTaskId) await aiOperationComplete(opTaskId, 'abort');
+                    await completeTask(task.id, false, 'ai_abort');
                     return;
                 }
 
-                const exec = executeAction(ins, pageRec);
-                aiTrace(
-                    `AI 步${step} 执行 ${exec.actual_action} ${exec.success ? "ok" : "失败"}${exec.error ? " " + clip(exec.error, 60) : ""}`
-                );
-                sleep(Number(ins.wait_after_ms) || 1500);
-                const after = captureCurrentState({ withScreenshot: false });
-
+                const exec = await executeAction(ins, pageRec);
+                aiTrace(`AI 步${step} ${exec.actual_action} ${exec.success ? 'ok' : '失败'}`);
+                await sleep(Number(ins.wait_after_ms) || 1500);
+                const after = await captureCurrentState({ withScreenshot: false });
                 if (opTaskId) {
-                    aiReport(
-                        opTaskId,
-                        step,
-                        {
-                            activity: before.activity,
-                            package: before.package,
-                            page_type: pageRec?.page_type,
-                        },
-                        ins as any,
-                        exec,
-                        { activity: after.activity, package: after.package },
-                        { expected_met: exec.success }
-                    );
+                    await aiReport(opTaskId, step, { activity: before.activity, package: before.package, page_type: pageRec?.page_type }, ins as any, exec, { activity: after.activity, package: after.package }, { expected_met: exec.success });
                 }
             }
-            if (_stop) {
-                aiTrace("AI 结束: 用户取消");
-                if (opTaskId) aiOperationComplete(opTaskId, "cancelled");
-                return;
-            }
-            if (decideFailed) {
-                aiTrace("AI 结束: 决策接口失败，任务标记为异常");
-                if (opTaskId) aiOperationComplete(opTaskId, "error");
-                completeTask(task.id, false, "ai_decide_fail");
-                return;
-            }
+            if (_stop) { aiTrace('AI 结束: 用户取消'); if (opTaskId) await aiOperationComplete(opTaskId, 'cancelled'); return; }
+            if (decideFailed) { aiTrace('AI 结束: 决策失败'); if (opTaskId) await aiOperationComplete(opTaskId, 'error'); await completeTask(task.id, false, 'ai_decide_fail'); return; }
             aiTrace(`AI 结束: 已达最大步数 ${maxSteps}`);
-            if (opTaskId) aiOperationComplete(opTaskId, "max_steps");
-            completeTask(task.id, true, "ai_max_steps");
+            if (opTaskId) await aiOperationComplete(opTaskId, 'max_steps');
+            await completeTask(task.id, true, 'ai_max_steps');
         } catch (e) {
-            Record.error("startAiLoop " + e);
+            Record.error('startAiLoop ' + e);
             aiTrace(`AI 异常退出: ${clip(String(e), 120)}`);
-            try {
-                completeTask(task.id, false, String(e));
-            } catch (_) {}
+            try { await completeTask(task.id, false, String(e)); } catch {}
         } finally {
-            try {
-                if (typeof onFinished === "function") onFinished();
-            } catch (_) {}
+            try { if (typeof onFinished === 'function') onFinished(); } catch {}
         }
-    });
+    })();
 };
